@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="DHotel : Hotel and Resort Website Theme built with Bootstrap - Responsive - Bootstrap 3">
+        <meta name="author" content="gie-art.com">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>DHotel : Hotel and Resort Website Theme built with Bootstrap - Responsive - Bootstrap 3</title>
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:regular,700,800,600,400,300&amp;latin" type="text/css" />
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500,500italic,400italic,300italic,300,100italic,100' rel='stylesheet' type='text/css'>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+        <!-- Flexslider-->
+        <link rel="stylesheet" href="assets/plugins/flexslider/flexslider.css">
+
+        <!-- OWl Carousle-->
+        <link rel="stylesheet" href="assets/plugins/owl-carousel/owl.carousel.css">
+        <link rel="stylesheet" href="assets/plugins/owl-carousel/owl.theme.css">
+
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+
+        <!-- Bootstrap Social -->
+        <link rel="stylesheet" href="assets/plugins/bootstrap-social/bootstrap-social.css">
+
+        <!-- SmartMenus jQuery Bootstrap Addon CSS -->
+        <link rel="stylesheet" href="assets/plugins/smartmenus/addons/bootstrap/jquery.smartmenus.bootstrap.css">
+
+        <!-- Bootstrap Select -->
+        <link rel="stylesheet" href="assets/plugins/bootstrap-select/dist/css/bootstrap-select.css">
+
+        <!-- Bootstrap DatePicker -->
+        <link rel="stylesheet" href="assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.css">
+
+        <!-- Main Css -->
+        <link rel="stylesheet" href="assets/main/css/layout.css">
+        <link rel="stylesheet" href="assets/main/css/orange.css" id="color-theme">
+        <link rel="stylesheet" href="assets/main/css/style-option.css">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div id="style-option-wrapper" class="style-option hidden-xs">
+            <a href="#" id="style-option-button" class="btn-custom"><i class="fa fa-cogs"></i></a>
+            <div class="style-option-inner">
+                <h3 class="btn-custom">DHotel - Style Option</h3>
+                <div class="option-panel">
+                    <form class="form-horizontal">
+                        <div class="row">
+                            <div class="col-xs-12">
+                            <label>Layout</label>
+                            <select class="form-control" id="option-layout">
+                                <option value="">-- Choose --</option>
+                                <option value="boxed-wrapper">Boxed</option>
+                                <option value="wide-wrapper">Wide</option>
+                            </select>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-xs-12">
+                            <label>Color</label>
+                            <div class="colors">
+                                <span class="color-switch">
+                                    <a title="Red" class="color-button color-red" id="assets/main/css/red.css" href="#">Red</a>
+                                    <a title="Violet" class="color-button color-violet" id="assets/main/css/violet.css" href="#">Violet</a>
+                                    <a title="Blue" class="color-button color-blue"  id="assets/main/css/blue.css" href="#">Blue</a>
+                                    <a title="Green" class="color-button color-green"  id="assets/main/css/green.css" href="#">Green</a>
+                                    <a title="Tosca" class="color-button color-tosca"  id="assets/main/css/tosca.css" href="#">Yellow</a>
+                                    <a title="Orange" class="color-button color-orange"  id="assets/main/css/orange.css" href="#">Orange</a>
+                                </span>
+                            </div>
+                            </div>
+                        </div>
+                    </form>
+                    <p>
+                    <a href="index.html">Restore to Default</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper wide-wrapper">
+            <div id="header">
+                <div class="header-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <ul class="header-top-left">
+                                    <li><a href="#"><i class="fa fa-phone"></i> +21 3223 234</a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i> mail@example.com</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <ul class="account-top-menu">
+                                    <li><a href="signup.html">Sign Up</a></li>
+                                    <li class="signin-dropdown">
+                                        <a href="#" data-toggle="dropdown" >My Account</a>
+                                        <div class="dropdown-menu dropdown-login" style="padding:15px;min-width:250px">
+                                        <form>                       
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon addon-login"><i class="fa fa-user"></i></span>
+                                                    <input type="text" placeholder="Username or email" required="required" class="form-control input-login">                                            
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon addon-login"><i class="addon fa fa-lock"></i></span>
+                                                    <input type="password" placeholder="Password" required="required" class="form-control input-login">                                            
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="checkbox">
+                                                    <label class="string optional" for="user_remember_me">
+                                                        <input type="checkbox" id="user_remember_me" style="">
+                                                        Remember me
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <input type="submit" class="btn btn-custom btn-block" value="Sign In">
+                                            <a href="forgot_password.html" class="btn-block text-center">Forgot password?</a>
+                                        </form>                                    
+                                    </div>
+                                    </li>
+                                    <li>
+                                        <div class="btn-group">
+                                            <button class="btn btn-custom btn-xs" type="button">EN</button>
+                                            <button data-toggle="dropdown" class="btn btn-custom btn-xs dropdown-toggle" type="button">
+                                                <span class="caret"></span>
+                                                <span class="sr-only">Toggle Dropdown</span>
+                                            </button>
+                                            <ul role="menu" class="dropdown-menu">
+                                            <li><a href="#">FRA</a></li>
+                                            <li><a href="#">JPN</a></li>
+                                            <li><a href="#">SPAIN</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="header-top-social">
+                                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-navbar">
+                    <div class="navbar main-navbar">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                                <a class="navbar-brand" href="index.html">
+                                    <div class="logo">
+                                        <img src="assets/main/img/general/logo.png" alt="" class="img-responsive hidden-xs">
+                                        <img src="assets/main/img/general/small-logo.png" alt="" class="img-responsive mini-logo hidden-lg hidden-sm hidden-md">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="active"><a href="index.html">Home</a></li>
+                                    <li>
+                                        <a href="#">Rooms <i class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="room_list.html">List View</a></li>
+                                            <li><a href="room_grid.html">Grid View</a></li>
+                                            <li><a href="room_detail.html">Detail View</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Booking <i class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="book_new.html">New Booking</a></li>
+                                            <li><a href="book_confirmation.html">Confirmation</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Pages <i class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="about.html">About</a></li>
+                                            <li>
+                                                <a href="#">Layouts <i class="caret"></i></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="404.html">404 Error</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="signup.html">Sign Up</a></li>
+                                            <li><a href="signin.html">Sign In</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Blog <i class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="post_list.html">List Posts</a></li>
+                                            <li><a href="post_grid.html">Grid Posts</a></li>
+                                            <li><a href="post_single.html">Single Post</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Gallery <i class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="gallery.html">Default</a></li>
+                                            <li><a href="gallery_detail.html">Detail Gallery</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section id="main-slider">
+                <div class="flexslider home-slider">
+                  <ul class="slides">
+                    <li>
+                      <div class="caption-wrapper">
+                          <div class="caption-inner">
+                            <a href="room_detail.html"><h2 class="caption-title">Delux Room</h2></a>
+                            <p class="hidden-xs hidden-sm">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi …
+                            </p>
+                            <a class="hidden-xs hidden-sm" href="room_detail.html">More detail <i class="fa fa-angle-double-right"></i></a>
+                            <div class="slide-price hidden-xs">
+                                <label>
+                                      <i class="fa fa-tag"></i>
+                                      <span>$925 <sup>/night</sup></span>
+                                </label>
+                            </div>
+                          </div>
+                      </div>
+                      <img src="assets/main/img/general/1.jpg" alt="" />
+                    </li>
+                    <li>
+                          <div class="caption-wrapper">
+                          <div class="caption-inner">
+                            <a href="room_detail.html"><h2 class="caption-title">Single Room</h2></a>
+                            <p class="hidden-xs hidden-sm">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi …
+                            </p>
+                            <a class="hidden-xs hidden-sm" href="room_detail.html">More detail <i class="fa fa-angle-double-right"></i></a>
+                            <div class="slide-price hidden-xs">
+                                <label>
+                                      <i class="fa fa-tag"></i>
+                                      <span>$800 <sup>/night</sup></span>
+                                </label>
+                            </div>
+                          </div>
+                      </div>
+                      <img src="assets/main/img/general/5.jpg" alt="" />
+                    </li>
+                    <li>
+                        <div class="caption-wrapper">
+                          <div class="caption-inner">
+                            <a href="room_detail.html"><h2 class="caption-title">Double Room</h2></a>
+                             <p class="hidden-xs hidden-sm">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi …
+                            </p>
+                            <a class="hidden-xs hidden-sm" href="room_detail.html">More detail <i class="fa fa-angle-double-right"></i></a>
+                            <div class="slide-price hidden-xs">
+                                <label>
+                                      <i class="fa fa-tag"></i>
+                                      <span>$740 <sup>/night</sup></span>
+                                </label>
+                            </div>
+                          </div>
+                      </div>
+                      <img src="assets/main/img/general/3.jpg" alt="" />
+                    </li>
+                    <li>
+                        <div class="caption-wrapper">
+                          <div class="caption-inner">
+                            <a href="room_detail.html"><h2 class="caption-title">Golden Moonsoon</h2></a>
+                             <p class="hidden-xs hidden-sm">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi …
+                            </p>
+                            <a class="hidden-xs hidden-sm" href="room_detail.html">More detail <i class="fa fa-angle-double-right"></i></a>
+                            <div class="slide-price hidden-xs">
+                                <label>
+                                      <i class="fa fa-tag"></i>
+                                      <span>$999 <sup>/night</sup></span>
+                                </label>
+                            </div>
+                          </div>
+                      </div>
+                      <img src="assets/main/img/general/4.jpg" alt="" />
+                    </li>
+                  </ul>
+                </div>
+                <div class="search-form-wrapper">
+                    <div class="container">
+                        <div class="row search-form">
+                            <form class="input-daterange form-custom">
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="start">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-calendar fa-fw"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="end">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-calendar fa-fw"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-2">
+                                    <select id="adults" class="form-control selectpicker">
+                                        <option value="none">Adults</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2 col-sm-2">
+                                    <select id="children" class="form-control selectpicker">
+                                        <option value="none">Children</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2 col-sm-2">
+                                    <button class="btn btn-custom btn-block"><i class="fa fa-search"></i> Search</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="main-page">
+                <div class="container">
+                    <div class="row welcome">
+                        <h2 class="big-title black-text">Welcome To DHotel</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi </p>
+                    </div>
+                    <div class="featured-rooms">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <div class="box">
+                                    <div class="box-img">
+                                        <a href="room_detail.html"><img src="assets/main/img/general/3.jpg" alt="" class="img-responsive" /></a>
+                                        <div class="box-price"><span>$750</span> <sup>/night</sup></div>
+                                    </div>
+                                    <div class="box-body">
+                                        <a href="room_detail.html"><h3 class="box-title">Delux Room</h3></a>
+                                        <div class="box-entry hidden-xs">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis mattis erat, dictum facilisis magna posuere ac. Curabitur consectetur magna mauris, et aliquam lectus ornare nec. </p>
+                                            <a href="room_detail.html" class="read-more">Read more <i class="fa fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="box-footer">
+                                        <div class="box-footer-inner">
+                                            <ul>
+                                                <li><a href="#">1 Bed</a></li>
+                                                <li><a href="#">2 People</a></li>
+                                                <li><a href="#">Wifi</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <div class="box">
+                                    <div class="box-img">
+                                        <a href="room_detail.html"><img src="assets/main/img/general/4.jpg" alt="" class="img-responsive" /></a>
+                                        <div class="box-price"><span>$500</span> <sup>/night</sup></div>
+                                    </div>
+                                    <div class="box-body">
+                                        <a href="room_detail.html"><h3 class="box-title">Premium Room</h3></a>
+                                        <div class="box-entry hidden-xs">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis mattis erat, dictum facilisis magna posuere ac. Curabitur consectetur magna mauris, et aliquam lectus ornare nec. </p>
+                                            <a href="room_detail.html" class="read-more">Read more <i class="fa fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="box-footer">
+                                        <div class="box-footer-inner">
+                                        <ul>
+                                            <li><a href="#">1 Bed</a></li>
+                                            <li><a href="#">2 People</a></li>
+                                            <li><a href="#">Wifi</a></li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <div class="box">
+                                    <div class="box-img">
+                                        <a href="room_detail.html"><img src="assets/main/img/general/10.jpg" alt="" class="img-responsive" /></a>
+                                        <div class="box-price"><span>$250</span> <sup>/night</sup></div>
+                                    </div>
+                                    <div class="box-body">
+                                        <a href="room_detail.html"><h3 class="box-title">Single Room</h3></a>
+                                        <div class="box-entry hidden-xs">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis mattis erat, dictum facilisis magna posuere ac. Curabitur consectetur magna mauris, et aliquam lectus ornare nec. </p>
+                                            <a href="room_detail.html" class="read-more">Read more <i class="fa fa-long-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="box-footer">
+                                        <div class="box-footer-inner">
+                                        <ul>
+                                            <li><a href="#">1 Bed</a></li>
+                                            <li><a href="#">2 People</a></li>
+                                            <li><a href="#">Wifi</a></li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="facilities-section">
+                <div class="facilities-overlay">
+                    <div class="container">
+                        <div class="facilities-inner">
+                            <h2 class="big-title white-text text-center">Our Facilities</h2>
+                            <div class="tab-wrapper">
+                                <ul role="tablist" class="nav nav-tabs" id="myTabs">
+                                  <li class="active"><a data-toggle="tab" role="tab" id="restaurant-tab" href="#restaurant"><i class="fa fa-cutlery"></i><span class="hidden-xs">Restaurant</span></a></li>
+                                  <li class=""><a data-toggle="tab" id="sport-tab" role="tab" href="#sport" aria-expanded="false"><i class="fa fa-bicycle"></i><span class="hidden-xs">Sport</span></a></li>
+                                  <li class=""><a data-toggle="tab" id="bar-tab" role="tab" href="#bar" aria-expanded="false"><i class="fa fa-glass"></i><span class="hidden-xs">Bar</span></a></li>
+                                  <li class=""><a data-toggle="tab" id="hall-tab" role="tab" href="#hall" aria-expanded="false"><i class="fa fa-institution"></i><span class="hidden-xs">Hall</span></a></li>
+                                </ul>
+                                <div id="myTabContent" class="tab-content">
+                                    <div id="restaurant" class="tab-pane fade active in">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-5">
+                                                <img src="assets/main/img/general/22.jpg" alt="" class="img-responsive">
+                                            </div>
+                                            <div class="col-md-8 col-sm-7">
+                                                <a href="#"><h3>Restaurant</h3></a>
+                                                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae a aut consequatur similique tempora excepturi iusto provident eum quam aperiam id est, voluptas recusandae quisquam, pariatur rerum tempore atque illo.</p>
+                                                <p><span class="color-text medium-weight">Charge : $50</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="sport" class="tab-pane fade">
+                                       <div class="row">
+                                            <div class="col-md-4 col-sm-5">
+                                                <img src="assets/main/img/general/19.jpg" alt="" class="img-responsive">
+                                            </div>
+                                            <div class="col-md-8 col-sm-7">
+                                                <a href="#"><h3>Sport</h3></a>
+                                                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae a aut consequatur similique tempora excepturi iusto provident eum quam aperiam id est, voluptas recusandae quisquam, pariatur rerum tempore atque illo.</p>
+                                                <p><span class="color-text medium-weight">Charge : $50</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="bar" class="tab-pane fade">
+                                       <div class="row">
+                                            <div class="col-md-4 col-sm-5">
+                                                <img src="assets/main/img/general/3.jpg" alt="" class="img-responsive">
+                                            </div>
+                                            <div class="col-md-8 col-sm-7">
+                                                <a href="#"><h3>Bar</h3></a>
+                                                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae a aut consequatur similique tempora excepturi iusto provident eum quam aperiam id est, voluptas recusandae quisquam, pariatur rerum tempore atque illo.</p>
+                                                <p><span class="color-text medium-weight">Charge : $50</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="hall" class="tab-pane fade">
+                                       <div class="row">
+                                            <div class="col-md-4 col-sm-5">
+                                                <img src="assets/main/img/general/5.jpg" alt="" class="img-responsive">
+                                            </div>
+                                            <div class="col-md-8 col-sm-7">
+                                                <a href="#"><h3>Hall</h3></a>
+                                                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae a aut consequatur similique tempora excepturi iusto provident eum quam aperiam id est, voluptas recusandae quisquam, pariatur rerum tempore atque illo.</p>
+                                                <p><span class="color-text medium-weight">Charge : $50</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="widgets-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3 class="widget-title">Upcoming Events</h3>
+                            <div class="widget">
+                                <div class="events">
+                                    <div class="event-item">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                                <div class="event-date">
+                                                    <span>5</span>
+                                                    Sept, 15
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8 col-sm-8 col-xs-8">
+                                                <div class="event-description">
+                                                    <a href="post_single.html"><h3>Dance Performing</h3></a>
+                                                    <p>Nesciunt tofu stumptown aliqua, retro synth</p>
+                                                </div>
+                                                <div class="event-countdown">
+                                                    <ul class="countdown">
+                                                        <li><span class="days">00</span> d</li>
+                                                        <li><span class="hours">00</span> h</li>
+                                                        <li><span class="minutes">00</span> m</li>
+                                                        <li><span class="seconds">00</span> s</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="event-item">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                                <div class="event-date">
+                                                    <span>15</span>
+                                                    Sept, 15
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8 col-sm-8 col-xs-8">
+                                                <div class="event-description">
+                                                    <a href="post_single.html"><h3>Global Conference</h3></a>
+                                                    <p>Nesciunt tofu stumptown aliqua, retro synth</p>
+                                                </div>
+                                                <div class="event-countdown">
+                                                    <ul class="countdown">
+                                                        <li><span class="days">00</span> d</li>
+                                                        <li><span class="hours">00</span> h</li>
+                                                        <li><span class="minutes">00</span> m</li>
+                                                        <li><span class="seconds">00</span> s</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="event-item">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                                <div class="event-date">
+                                                    <span>30</span>
+                                                    Sept, 15
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8 col-sm-8 col-xs-8">
+                                                <div class="event-description">
+                                                    <a href="post_single.html"><h3>Summer Hot Deals</h3></a>
+                                                    <p>Nesciunt tofu stumptown aliqua, retro synth</p>
+                                                </div>
+                                                <div class="event-countdown">
+                                                    <ul class="countdown">
+                                                        <li><span class="days">00</span> d</li>
+                                                        <li><span class="hours">00</span> h</li>
+                                                        <li><span class="minutes">00</span> m</li>
+                                                        <li><span class="seconds">00</span> s</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="widget-title">News</h3>
+                            <div class="widget">
+                                <div class="widget-news">
+                                    <ul>
+                                        <li>
+                                            <div class="widget-news-item">
+                                                <img class="img-responsive" alt="" src="assets/main/img/general/10.jpg">
+                                                <div class="widget-news-title">
+                                                    <a href="post_single.html"><h3>Proin lobortis mattis erat, dictum facilisis magna posuere</h3></a>
+                                                    <span class="published-date"><i class="fa fa-clock-o"></i> Sept, 10 2015</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="widget-news-item">
+                                                <img class="img-responsive" alt="" src="assets/main/img/general/22.jpg">
+                                                <div class="widget-news-title">
+                                                    <a href="post_single.html"><h3>Curabitur consectetur magna mauris</h3></a>
+                                                    <span class="published-date"><i class="fa fa-clock-o"></i> Sept, 10 2015</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="widget-news-item">
+                                                <img class="img-responsive" alt="" src="assets/main/img/general/19.jpg">
+                                                <div class="widget-news-title">
+                                                    <a href="post_single.html"><h3>Quis nostrud exercitation ullamco laboris nisi</h3></a>
+                                                    <span class="published-date"><i class="fa fa-clock-o"></i> Sept, 10 2015</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="widget-news-item">
+                                                <img class="img-responsive" alt="" src="assets/main/img/general/8.jpg">
+                                                <div class="widget-news-title">
+                                                    <a href="post_single.html"><h3>Sed do eiusmod tempor incididunt</h3></a>
+                                                    <span class="published-date"><i class="fa fa-clock-o"></i> Sept, 10 2015</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="widget-title">Recent Photos</h3>
+                            <div class="widget">
+                                <div class="recent-photos">
+                                    <ul>
+                                        <li>
+                                         <a href="photos_detail.html"><img src="assets/main/img/general/1.jpg" alt="" class="img-responsive"></a>
+                                        </li>
+                                        <li>
+                                         <a href="photos_detail.html"><img src="assets/main/img/general/10.jpg" alt="" class="img-responsive"></a>
+                                        </li>
+                                        <li>
+                                         <a href="photos_detail.html"><img src="assets/main/img/general/19.jpg" alt="" class="img-responsive"></a>
+                                        </li>
+                                        <li>
+                                         <a href="photos_detail.html"><img src="assets/main/img/general/2.jpg" alt="" class="img-responsive"></a>
+                                        </li>
+                                        <li>
+                                         <a href="photos_detail.html"><img src="assets/main/img/general/21.jpg" alt="" class="img-responsive"></a>
+                                        </li>
+                                        <li>
+                                         <a href="photos_detail.html"><img src="assets/main/img/general/4.jpg" alt="" class="img-responsive"></a>
+                                        </li>
+                                        <li>
+                                         <a href="photos_detail.html"><img src="assets/main/img/general/5.jpg" alt="" class="img-responsive"></a>
+                                        </li>
+                                        <li>
+                                         <a href="photos_detail.html"><img src="assets/main/img/general/6.jpg" alt="" class="img-responsive"></a>
+                                        </li>
+                                        <li>
+                                         <a href="photos_detail.html"><img src="assets/main/img/general/8.jpg" alt="" class="img-responsive"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="testi">
+                <div class="testi-overlay"> 
+                    <div class="container">
+                        <div class="testi-inner">
+                            <h2 class="big-title white-text text-center">Happy Customers</h2>
+                                <div id="testi-slides" class="owl-carousel">
+                                    <div class="item active">
+                                        <div class="text-center">
+                                            <img src="assets/main/img/people/1.jpg" class="img-circle" alt="">
+                                            <blockquote>
+                                             <p class="testimonial-text"><i class="fa fa-quote-left"></i>
+                                            Lorem ipsum dolor sit amet, consectetur adipisg elitm Ut tincidunt purus iaculis ipsum dctum non dtum quam consectetur adipisg elitm Ut tincidunt, Ut tincidunt purus iaculis ipsum dctum non dtum quam consectetur adipisg elitm Ut tincidunt.
+                                            Lorem ipsum dolor sit amet, consectetur adipisg elitm Ut tincidunt purus iaculis ipsum dctum non dtum quam consectetur adipisg elitm Ut tincidunt.
+                                            <i class="fa fa-quote-right"></i></p> 
+                                            </blockquote>
+                                            <p>
+                                                John Doe &ndash; Company Inc
+                                            </p>
+                                            <span class="clearfix"></span>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="text-center">
+                                            <img src="assets/main/img/people/2.jpg" class="img-circle" alt="">
+                                            <blockquote>
+                                            <p class="testimonial-text">
+                                            <i class="fa fa-quote-left"></i>Lorem ipsum dolor sit amet, consectetur adipisg elitm Ut tincidunt purus iaculis ipsum dctum non dtum quam consectetur adipisg elitm Ut tincidunt, Ut tincidunt purus iaculis ipsum dctum non dtum quam consectetur adipisg elitm Ut tincidunt.
+                                            Lorem ipsum dolor sit amet, consectetur adipisg elitm Ut tincidunt purus iaculis ipsum dctum non dtum quam consectetur adipisg elitm Ut tincidunt.
+                                            <i class="fa fa-quote-right"></i></p>
+                                            </blockquote>
+                                            <p>
+                                                John Doe &ndash; Company Inc
+                                            </p>
+                                            <span class="clearfix"></span>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="text-center">
+                                            <img src="assets/main/img/people/3.jpg" class="img-circle" alt="">
+                                            <blockquote>
+                                            <p class="testimonial-text">
+                                            <i class="fa fa-quote-left"></i>Lorem ipsum dolor sit amet, consectetur adipisg elitm Ut tincidunt purus iaculis ipsum dctum non dtum quam consectetur adipisg elitm Ut tincidunt, Ut tincidunt purus iaculis ipsum dctum non dtum quam consectetur adipisg elitm Ut tincidunt.
+                                            Lorem ipsum dolor sit amet, consectetur adipisg elitm Ut tincidunt purus iaculis ipsum dctum non dtum quam consectetur adipisg elitm Ut tincidunt.
+                                            <i class="fa fa-quote-right"></i></p>
+                                            </blockquote>
+                                            <p>
+                                                John Doe &ndash; Company Inc
+                                            </p>
+                                            <span class="clearfix"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="partners">
+                <div class="container">
+                    <div class="partner-inner">
+                        <h2 class="big-title text-center">Our Partner</h2>
+                        <div class="partner-slides">
+                                <div class="item"><a href="#"><img src="assets/main/img/general/p1.png" alt="Partner Logo"></a></div>
+                                <div class="item"><a href="#"><img src="assets/main/img/general/p2.png" alt="Partner Logo"></a></div>
+                                <div class="item"><a href="#"><img src="assets/main/img/general/p3.png" alt="Partner Logo"></a></div>
+                                <div class="item"><a href="#"><img src="assets/main/img/general/p4.png" alt="Partner Logo"></a></div>
+                                <div class="item"><a href="#"><img src="assets/main/img/general/p5.png" alt="Partner Logo"></a></div>
+                                <div class="item"><a href="#"><img src="assets/main/img/general/p6.png" alt="Partner Logo"></a></div>
+                                <div class="item"><a href="#"><img src="assets/main/img/general/p7.png" alt="Partner Logo"></a></div>
+                                <div class="item"><a href="#"><img src="assets/main/img/general/p8.png" alt="Partner Logo"></a></div>
+                        </div>
+                    </div>  
+                </div>
+            </section>
+            <section id="footer">
+                <!--FOOTER WIDGETS-->
+                <div class="footer-widgets">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="widget">
+                                    <div class="widget-content">
+                                        <h5>About</h5>
+                                        <div class="footer-logo">
+                                            <a href="index.html" class="logo"><h1>D<span>Hotel</span></h1></a>
+                                        </div>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="widget">
+                                    <div class="widget-content address">
+                                        <h5>Address</h5>
+                                        <!--CONTACT INFO-->
+                                        <p><strong>DHotel Office</strong><br/>
+                                            Main Street 90210 New York,<br/>
+                                            United States 
+                                        </p>
+                                        <span><i class="fa fa-phone"></i> 234-234 345</span><br/>
+                                        <span><i class="fa fa-envelope-o"></i> info@example.com</span><br/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="widget">
+                                    <div class="widget-content">
+                                        <h5>Links</h5>
+                                        <ul>
+                                            <li><a href="signup.html">Sign Up</a></li>
+                                            <li><a href="signin.html">Sign in</a></li>
+                                            <li><a href="faq.html">Faq</a></li>
+                                            <li><a href="contact.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="widget last">
+                                    <div class="widget-content">
+                                        <h5>Newsletter</h5>
+                                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                        <form class="subscribe-form navbar-form">
+                                            <div class="form-group">
+                                                <input type="text" placeholder="Enter your email address" class="form-control">
+                                            </div>   
+                                            <button class="btn btn-custom" type="submit">Subscribe Now</button>                                 
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-footer">
+                    <div class="container">
+                        <div class="main-footer-inner">
+                            <div class="copyright">
+                                &copy;&nbsp;2015&nbsp;<a href="index.html">DHotel</a>&nbsp;‐&nbsp;All Rights Reserved&nbsp;          
+                            </div>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="faq.html">Faq</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <a  id="toTop" href="#" class="btn-back-top btn-custom" data-toggle="tooltip" data-placement="top" title="Back to Top"><i class="fa fa-angle-up"></i></a>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="assets/plugins/jquery/jquery.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <!-- Plugins -->
+        <script src="assets/plugins/flexslider/jquery.flexslider.js"></script>
+        <!-- Owl Carousel -->
+        <script src="assets/plugins/owl-carousel/owl.carousel.js"></script>
+        <!-- SmartMenus jQuery plugin -->
+        <script type="text/javascript" src="assets/plugins/smartmenus/jquery.smartmenus.js"></script>
+        <!-- SmartMenus jQuery Bootstrap Addon -->
+        <script type="text/javascript" src="assets/plugins/smartmenus/addons/bootstrap/jquery.smartmenus.bootstrap.js"></script>
+        <!-- Shuffle Plugin-->
+        <script src="assets/plugins/shuffle/jquery.shuffle.min.js"></script>
+        <script src="assets/main/js/shuffle_init.js"></script>
+        <!-- CountDown -->
+        <script src="assets/plugins/countdown/jquery.countdown.js"></script>
+
+        <!-- Bootstrap Select -->
+        <script src="assets/plugins/bootstrap-select/dist/js/bootstrap-select.js"></script>
+
+        <!-- Bootstrap DatePicker -->
+        <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+        <script type="text/javascript" src="assets/main/js/main.js"></script>
+        <script type="text/javascript" src="assets/main/js/style-option.js"></script>
+    </body>
+</html>

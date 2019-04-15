@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <title>Documentation Adonis Music Template</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icon/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/icon/site.webmanifest">
+    <link rel="mask-icon" href="assets/images/icon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body class="body-blue">
+<div class="page-wrapper">
+    <!-- ******Header****** -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="branding">
+                <h1 class="logo">
+                    <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                    <span class="text-highlight">Adonis</span><span class="text-bold">Docs</span>
+                </h1>
+            </div><!--//branding-->
+           <!-- <ol class="breadcrumb">
+                <li><a href="index.html">Home</a> &nbsp;&nbsp;/&nbsp;&nbsp;</li>
+                <li class="active">Quick Start</li>
+            </ol>-->
+        </div><!--//container-->
+    </header><!--//header-->
+    <div class="doc-wrapper">
+        <div class="container">
+            <div id="doc-header" class="doc-header">
+                <div class="meta"><i class="fa fa-clock-o"></i> Last updated: June 09th, 2018</div>
+            </div><!--//doc-header-->
+            <div class="doc-body d-flex">
+                <div class="col-9">
+                    <div class="content-inner">
+                        <section id="installation-section" class="doc-section">
+                            <h2 class="section-title">Installation</h2>
+                            <div class="section-block"><p>
+                                The template is made of using Bootstrap v4.1. You can always use other features of bootstrap what are not included in the templates. To learn more go to <a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/"> official bootstrap documentation</a></p>
+                                <p>In addition We used the following js plugins in the template</p>
+                                <ul>
+                                    <li><a target="_blank" href="https://owlcarousel2.github.io/OwlCarousel2/">Owl carousel</a></li>
+                                    <li><a target="_blank" href="https://github.com/utatti/perfect-scrollbar">Perfect scrollbar</a></li>
+                                    <li><a target="_blank" href="https://imagesloaded.desandro.com/">ImagesLoaded</a></li>
+                                    <li><a target="_blank" href="http://jplayer.org/">jPlayer</a></li>
+                                    <li><a target="_blank" href="http://animejs.com/">anime.js</a></li>
+                                    <li><a target="_blank" href="https://masonry.desandro.com/">masonry</a></li>
+                                    <li><a target="_blank" href="https://github.com/browserstate/history.js/">history.js</a></li>
+                                </ul></div>
+                            <div id="step1"  class="section-block">
+                                <p>Ddownload the main package from themeforest and unzip the file. You will find a directory called "html". Inside the "html" directory you will find several demo directory. Choose a demo for your project
+                                </p>
+                            </div><!--//section-block-->
+                            <div id="step2"  class="section-block">
+                                <h3 class="block-title">Header</h3>
+                                <p>After you choose a demo you will find index file inside the demo directory. Open index.html file and look into the head. You need to change the href attributes of all links according to your asset directory structure
+                                </p>
+                                <div class="code-block">
+                                    <h6>Head Example</h6>
+<pre class="language-markup">
+<code class="language-markup">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;link href="../assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+    &lt;link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet"&gt;
+    &lt;link href="../assets/vendors/owl/css/owl.carousel.min.css" rel="stylesheet"&gt;
+    &lt;link href="../assets/vendors/select2/select2.min.css" rel="stylesheet"&gt;
+    &lt;link href="../assets/vendors/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet"&gt;
+    &lt;link href="../assets/css/adonis.css" rel="stylesheet"&gt;
+&lt;/head&gt;</code>
+                                        </pre>
+                                </div>
+
+                            </div><!--//section-block-->
+                            <div id="step3"  class="section-block">
+                                <h3 class="block-title">Footer</h3>
+                                <p>Change src attribute of scripts. And you are ready to start
+                                </p>
+<pre class=" language-markup">
+<code class="language-markup">&lt;script src="../assets/vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"&gt;&lt;/script&gt;
+    &lt;script src="../assets/js/dropdown-menu.js"&gt;&lt;/script&gt;
+    &lt;script src="../assets/js/player.js"&gt;&lt;/script&gt;
+    &lt;script src="../assets/js/viewport.js"&gt;&lt;/script&gt;
+    &lt;script src="../assets/vendors/masonry/masonry.pkgd.min.js"&gt;&lt;/script&gt;
+    &lt;script src="../assets/vendors/history/jquery.history.js"&gt;&lt;/script&gt;
+    &lt;script src="../assets/js/app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+</pre>
+                            </div><!--//section-block-->
+
+                        </section><!--//doc-section-->
+                        <section id="layout" class="doc-section">
+                            <h2 class="section-title mb-3">Layout</h2>
+                            <div id="layout-columns" class="section-block">
+                                The template can be arranged into one, two and three columns. Different demos are designed in different columns. Fore example Demo one is one column, demo two is two column with right sidebar etc.
+                                <p>Sidebar/sidemenu are fixed width where content will take remaining space after sidebar/side menu. You can adjust sidebar/sidemenu from scss variables.</p>
+
+                            </div>
+
+                            <div id="layout-gutters" class="section-block">
+                                <h2 class="section-title mb-3">Gutters</h2>
+                                <p>The possible gutter sizes are gutter-4, gutter-10, gutter-20, gutter-30, gutter-40, gutter-50, gutter-60 and gutter-80. You can also use md, lg and xl to the gutters like gutter-lg-30. Multiple gutters class also works</p>
+                                <h4>html example</h4>
+                                <pre class="language-html mb-4">
+<code class="language-html">&#x3C;div class=&#x22;row gutter-4 gutter-lg-10&#x22;&gt;
+    &lt;div class=&#x22;col-md-4&#x22;&#x3E;Content&#x3C;/div&#x3E;
+    &lt;div class=&#x22;col-md-4&#x22;&#x3E;Content&#x3C;/div&#x3E;
+    &lt;div class=&#x22;col-md-4&#x22;&#x3E;Content&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</code>
+</pre>
+                            </div>
+                        </section><!--//doc-section-->
+                        <section id="components" class="doc-section">
+                            <h2 class="section-title">Components</h2>
+                            <div class="section-block">
+                                <p>JavaScript functions are designed inside an object called "adonisObj" instead of separate function. The object has unique prefix so each functions inside the object does not need to have unique prefix. It is easily changeable with much hassle.</p>
+                                <div id="components-viewportAnimate" class="section-block">
+                                    <h3 class="section-title mb-3">Viewport Animation</h3>
+
+                                    <p>You can animate html elements when they are visible by using viewport animate. It require a class and two data settings. See below example</p>
+                                    <h4>Html</h4>
+<pre class="language-html mb-4">
+<code class="language-html">&#x3C;div class=&#x22;viewport-animate&#x22; data-animation-item=&#x22;.item&#x22; data-animation=&#x22;zoomIn&#x22;&gt;
+    &lt;div class=&#x22;item&#x22;&#x3E;Content&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;item&#x22;&#x3E;Content&#x3C;/div&#x3E;
+    &#x3C;div class=&#x22;item&#x22;&#x3E;Content&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</code>
+</pre>
+                                    <table class="table table-striped mb-4">
+                                        <tbody><tr>
+                                            <th style="width:20%">Data Settings</th>
+                                            <th style="width:80%">Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-animation-item (required)</em></td>
+                                            <td>Items selector</td>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-animation (required)</em></td>
+                                            <td>Choose from zoomIn, slideUp, slideRight, slideRightSkew, slideLeftSkew, slideLeftSkew, randomBounch, bounchIn, fadeInSkew, elasticUp and cardDealer</td>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-offset (optional)</em></td>
+                                            <td>It specify at which position section should be triggered. If value is set to 100% the elements will be triggered as soon as they are visible in the page, if value is set to 50%, it will be triggered when the elements hit the half height the window.</td>
+                                        </tr>
+                                        </tbody></table>
+
+                                    <h4>JavaScript (optional)</h4>
+                                    <p>You can also initiate the viewport animation by custom class. Html components can be animated on viewport using "adonisObj.viewportAnimate" function. </p>
+                                    <p><strong>Note:</strong> Data settings are still required</p>
+
+                                    <table class="table table-striped mb-4">
+                                        <tbody><tr>
+                                            <th style="width:20%">Parameters</th>
+                                            <th style="width:80%">Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td><em>Selector (required)</em></td>
+                                            <td>jQuery selector. eg.  $('.viewport-animate')</td>
+                                        </tr>
+                                        </tbody></table>
+<pre class="language-javascript"><code class="language-javascript">&#x3C;script&#x3E;
+    jQuery(document).ready(function(){
+        adonisObj.viewportAnimate( $(&#x27;.viewport-animate&#x27;));
+    });
+&#x3C;/script&#x3E;
+</code></pre>
+                                </div>
+                                <div id="components-carousel" class="section-block">
+                                    <h3 class="section-title mb-3">Carousel</h3>
+                                <p>Carousel is run by owl carousel v2.0. Here we made a simple settings for carousel. The settings is simple. add a class "adonis-carousel" and give some data settings. </p>
+                                    <h4>html</h4>
+                                    <pre class="language-html mb-4"><code class="language-html">&#x3C;div class=&#x22;adonis-carousel&#x22; data-auto-width=&#x22;yes&#x22; data-loop=&#x22;no&#x22; data-dots=&#x22;yes&#x22; data-responsive-width=&#x22;0:80%|400:260px&#x22;&#x3E;
+    &#x3C;div class=&#x22;gutter-30&#x22;&#x3E;
+        &#x3C;div class=&#x22;owl-carousel owl-theme-adonis&#x22;&#x3E;
+            &#x3C;div class=&#x22;item&#x22;&#x3E;&#x3C;/item&#x3E;
+            &#x3C;div class=&#x22;item&#x22;&#x3E;&#x3C;/item&#x3E;
+            &#x3C;div class=&#x22;item&#x22;&#x3E;&#x3C;/item&#x3E;
+        &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</code>
+</pre>
+                                    <table class="table table-striped mb-4">
+                                        <tbody><tr>
+                                            <th style="width:20%">Data Settings</th>
+                                            <th style="width:80%">Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-items (optional)</em></td>
+                                            <td>Type: number eg. data-items="4". Default: 4</td>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-dots (optional)</em></td>
+                                            <td>Choose from yes or no. Default: no</td>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-items-responsive (optional)</em></td>
+                                            <td>If set it will take number of itesm from the settings. eg. data-items-responsive="0:1|600:2|900:3"</td>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-auto-width (optional)</em></td>
+                                            <td>Choose from yes or no. Default: no, eg. data-auto-width="yes"</td>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-loop (optional)</em></td>
+                                            <td>If set to yes carousel will start over when slides are reached to end. Default: no, eg. data-loop="yes"</td>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-nav (optional)</em></td>
+                                            <td>If set to yes carousel will generate a next/previous navigation. Default: no, eg. data-nav="no"</td>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-mousewheel (optional)</em></td>
+                                            <td>If set to yes carousel will change slide on mousewheel. Default: no, eg. data-=""</td>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-center (optional)</em></td>
+                                            <td>If set to yes carousel will center the active slides. Default: no, eg. data-center="no"</td>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-stagePadding (optional)</em></td>
+                                            <td>Stage padding set padding/space to the first slide. Default: 0, eg. data-stagePadding="30"</td>
+                                        </tr>
+                                        </tbody></table>
+                                    <p><strong>Note: </strong>Instead of using margin to slides we used padding using gutters. Use the given structure for carousel. To learn more go the <a class="scrollto" href="#layout-gutters">Gutters</a></p>
+                                    To learn more go to <a href="https://owlcarousel2.github.io/OwlCarousel2/docs/started-welcome.html" target="_blank">owl carousel official documentation</a>
+
+                                </div>
+                                <div id="components-autoColumn" class="section-block">
+                                    <h3 class="section-title mb-3">Auto Columns</h3>
+                                    <p>You can set different width colums for different screen from it's parent/row by using auto columns.</p>
+                                        <strong>Note: </strong> "Auto columns" calculate parent's width instead of screen size. For example you can use this inside a sidebar or half row of your content. It calculate parent's width and set column size accordingly</p>
+                                    <h4>Example html</h4>
+                                    <pre class="language-html mb-4"><code class="language-html">&#x3C;div class=&#x22;row auto-columns&#x22; data-auto-columns-items=&#x22;.col-auto&#x22; data-responsive-width=&#x22;0:80%|400:260px&#x22;&#x3E;
+    &#x3C;div class=&#x22;col-auto&#x22;&#x3E;&#x3C;/item&#x3E;
+    &#x3C;div class=&#x22;col-auto&#x22;&#x3E;&#x3C;/item&#x3E;
+    &#x3C;div class=&#x22;col-auto&#x22;&#x3E;&#x3C;/item&#x3E;
+&#x3C;/div&#x3E; </code>
+</pre>
+                                    <table class="table table-striped mb-4">
+                                        <tbody><tr>
+                                            <th style="width:20%">Data Settings</th>
+                                            <th style="width:80%">Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-responsive-width (required)</em></td>
+                                            <td> Set column size for different screens sizes. For example data-responsive-width="0:80%|400:350px" means thi setting has two arguments. <br><br>
+        1. First argument is 0:80%. Value before colon ":" refer to parent size and value after ":" refer column size. It means when parent width is over 0 pixel and smaller than next parent size (which is 400 pixels in this case) columns size will be 80% of parents's width. <br><br>
+        2. Second argument is 400:350px. It means when parent's size is over 400 pixels, columns size will be 350 pixels. You can add as many sizes as you want seperated by "|" (pipe/vertical bar). You can use "%" or "px" at any size</td>
+</td>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-auto-columns-items (optional)</em></td>
+                                            <td>If the option is set, it will take the selector otherwise column size will be applied on children elements</td>
+                                        </tr>
+
+
+                                        </tbody></table>
+
+                                </div>
+                                <div id="components-autofitColumn" class="section-block">
+                                    <h3 class="section-title mb-3">Auto fit Columns</h3>
+                                    <p>Auto fit columns give you ability to set column size with minimal settings for all screen size. You just need to provide your expected column size and maximum size for column. This function will calculate parent's width and give columns size. The function will always make make columns equal and perfectly fit inside row</p>
+                                    <h4>Example html</h4>
+                                    <pre class="language-html mb-4"><code class="language-html">&#x3C;div class=&#x22;row auto-fit-columns&#x22; data-width=&#x22;260&#x22; data-max-width=&#x22;300&#x22;&#x3E;
+    &#x3C;div class=&#x22;col-auto&#x22;&#x3E;&#x3C;/item&#x3E;
+    &#x3C;div class=&#x22;col-auto&#x22;&#x3E;&#x3C;/item&#x3E;
+    &#x3C;div class=&#x22;col-auto&#x22;&#x3E;&#x3C;/item&#x3E;
+&#x3C;/div&#x3E; </code>
+</pre>
+                                    <p></p>
+
+                                    <table class="table table-striped mb-4">
+                                        <tbody><tr>
+                                            <th style="width:20%">Data Settings</th>
+                                            <th style="width:80%">Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-width (required)</em></td>
+                                            <td>Provide your expected width for the column</td>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-max-width (optional)</em></td>
+                                            <td>Provide maximum width for the columns</td>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-auto-fit-items (optional)</em></td>
+                                            <td>By using this option you can specify any selector inside the parent element which may not be it's immediate children element. You just have to select jQuery selector for the elements</td>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-auto-fit-item-parent (optional)</em></td>
+                                            <td>By using this option you can specify a parent div to calculate width instead of the main element</td>
+                                        </tr>
+
+
+                                        </tbody></table>
+
+                                </div>
+                                <div id="components-autoColumnsRow" class="section-block">
+                                    <h3 class="section-title mb-3">Auto Columns Row</h3>
+                                    <p>"Auto columns row" is pretty similar to "Auto fit columns". Only one change is it give column class on the parent div instead of each child elements.</p>
+                                    <h4>Example html</h4>
+                                    <pre class="language-html mb-4"><code class="language-html">&#x3C;div class=&#x22;row auto-cols-row&#x22; data-width=&#x22;260&#x22; data-max-width=&#x22;300&#x22;&#x3E;
+    &#x3C;div class=&#x22;col-auto&#x22;&#x3E;&#x3C;/item&#x3E;
+    &#x3C;div class=&#x22;col-auto&#x22;&#x3E;&#x3C;/item&#x3E;
+    &#x3C;div class=&#x22;col-auto&#x22;&#x3E;&#x3C;/item&#x3E;
+&#x3C;/div&#x3E; </code>
+</pre>
+                                    <p></p>
+
+                                    <table class="table table-striped mb-4">
+                                        <tbody><tr>
+                                            <th style="width:20%">Data Settings</th>
+                                            <th style="width:80%">Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-width (required)</em></td>
+                                            <td>Provide your expected width for the column</td>
+                                        </tr>
+                                        <tr>
+                                            <td><em>data-max-width (optional)</em></td>
+                                            <td>Provide maximum width for the columns</td>
+                                        </tr>
+                                        </tbody></table>
+
+                                </div>
+                            </div>
+                        </section><!--//doc-section-->
+
+                    </div><!--//content-inner-->
+                </div><!--//doc-content-->
+                <div class="doc-sidebar col-3">
+                    <nav id="doc-nav">
+                        <ul id="doc-menu" class="nav doc-menu flex-column">
+                            <li>
+                                <a class="scrollto" href="#installation-section">Installation</a>
+                            </li>
+                            <li>
+                                <a class="scrollto" href="#layout">Layout</a>
+                                <ul class="nav doc-sub-menu doc-menu flex-column">
+                                    <li><a class="scrollto" href="#layout-gutters">Gutters</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="scrollto" href="#components">Components</a>
+                                <ul class="nav doc-sub-menu doc-menu flex-column">
+                                    <li><a class="scrollto" href="#components-viewportAnimate">Viewport Animate</a></li>
+                                    <li><a class="scrollto" href="#components-carousel">Carousel</a></li>
+                                    <li><a class="scrollto" href="#components-autoColumn">Auto Columns</a></li>
+                                    <li><a class="scrollto" href="#components-autofitColumn">Auto Fit Columns</a></li>
+
+                                    <!--<li><a class="scrollto" href="#components-autoColumnsRow">Auto Columns Row</a></li>
+                                    <li><a class="scrollto" href="#components-multiLevelSideMenu">multiLevelSideMenu & animation</a></li>
+                                    <li><a class="scrollto" href="#components-search">search</a></li>
+                                    <li><a class="scrollto" href="#components-scrollAnimate">scrollAnimate</a></li>
+                                    <li><a class="scrollto" href="#components-viewportAjax">viewportAjax</a></li>
+                                    <li><a class="scrollto" href="#components-Ajax">Ajax</a></li>
+                                    <li><a class="scrollto" href="#components-ajaxTab">ajaxTab</a></li>
+                                    <li><a class="scrollto" href="#components-masonry">masonry</a></li>
+                                    <li><a class="scrollto" href="#components-movingBorder">movingBorder</a></li>
+                                    <li><a class="scrollto" href="#components-shadowEffect">shadowEffect</a></li>
+                                    <li><a class="scrollto" href="#components-dropdown-dot-menu">dropdown dot menu</a></li>-->
+                                </ul><!--//nav-->
+                            </li>
+                        </ul><!--//doc-menu-->
+                    </nav>
+                </div><!--//doc-sidebar-->
+            </div><!--//doc-body-->
+        </div><!--//container-->
+    </div><!--//doc-wrapper-->
+
+</div><!--//page-wrapper-->
+
+<footer id="footer" class="footer text-center">
+    <div class="container">
+        <small class="copyright">Adonis music system template. All rights reserved.</small>
+
+    </div><!--//container-->
+</footer><!--//footer-->
+
+
+<!-- Main Javascript -->
+<script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
+
+</body>
+</html>
+

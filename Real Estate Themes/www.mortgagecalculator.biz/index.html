@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<meta name="format-detection" content="telephone=no">
+		<title>Mortgage Calculator With PMI, Real Estate Taxes &amp; Property Insurance ~ PITI Home Loan Calculator</title>
+		<link rel="canonical" href="https://www.mortgagecalculator.biz/" >
+        <link rel="alternate" hreflang="es" href="https://www.mortgagecalculator.biz/espanol.php" />
+		<meta name="description" content="">
+		<meta name="author" content="Trey Conway">
+		<link href='https://fonts.googleapis.com/css?family=Gudea:400,700' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link href="https://www.mortgagecalculator.biz/css/hsm-meanmenu.css" rel="stylesheet">
+		<link href="https://www.mortgagecalculator.biz/css/hsm-style.css" rel="stylesheet">
+		<link href="https://www.mortgagecalculator.biz/css/hsm-layout.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+		<script src="https://www.mortgagecalculator.biz/scripts/html5shiv.js"></script>
+		<script src="https://www.mortgagecalculator.biz/scripts/respond.min.js"></script>
+		<![endif]-->
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.mortgagecalculator.biz/iconset/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="https://www.mortgagecalculator.biz/iconset/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://www.mortgagecalculator.biz/iconset/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="https://www.mortgagecalculator.biz/iconset/manifest.json">
+<link rel="mask-icon" href="https://www.mortgagecalculator.biz/iconset/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://www.mortgagecalculator.biz/iconset/favicon.ico">
+<meta name="msapplication-config" content="https://www.mortgagecalculator.biz/iconset/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+ 
+<script src="https://www.mortgagecalculator.biz/js/moment.js"></script> 
+<script Language='JavaScript'>
+function computeMonthlyPayment(prin, numPmts, intRate) {
+
+var pmtAmt = 0;
+
+if(intRate == 0) {
+ pmtAmt = prin / numPmts;
+} else {
+  intRate = intRate / 100.0 / 12;
+
+ var pow = 1;
+ for (var j = 0; j < numPmts; j++)
+ pow = pow * (1 + intRate);
+
+ pmtAmt = (prin * pow * intRate) / (pow - 1);
+
+}
+
+return pmtAmt;
+
+}
+
+
+
+
+function fn(num, places, comma) {
+
+var isNeg=0;
+
+ if(num < 0) {
+  num=num*-1;
+  isNeg=1;
+ }
+
+ var myDecFact = 1;
+ var myPlaces = 0;
+ var myZeros = "";
+ while(myPlaces < places) {
+  myDecFact = myDecFact * 10;
+  myPlaces = Number(myPlaces) + Number(1);
+  myZeros = myZeros + "0";
+ }
+ 
+	onum=Math.round(num*myDecFact)/myDecFact;
+		
+	integer=Math.floor(onum);
+
+	if (Math.ceil(onum) == integer) {
+		decimal=myZeros;
+	} else{
+		decimal=Math.round((onum-integer)* myDecFact)
+	}
+	decimal=decimal.toString();
+	if (decimal.length<places) {
+  fillZeroes = places - decimal.length;
+	 for (z=0;z<fillZeroes;z++) {
+  decimal="0"+decimal;
+  }
+  }
+
+ if(places > 0) {
+ decimal = "." + decimal;
+ }
+
+ if(comma == 1) {
+	integer=integer.toString();
+	var tmpnum="";
+	var tmpinteger="";
+	var y=0;
+
+	for (x=integer.length;x>0;x--) {
+		tmpnum=tmpnum+integer.charAt(x-1);
+		y=y+1;
+		if (y==3 & x>1) {
+			tmpnum=tmpnum+",";
+			y=0;
+		}
+	}
+
+	for (x=tmpnum.length;x>0;x--) {
+		tmpinteger=tmpinteger+tmpnum.charAt(x-1);
+	}
+
+
+	finNum=tmpinteger+""+decimal;
+ } else {
+ finNum=integer+""+decimal;
+ }
+
+ if(isNeg == 1) {
+  finNum = "-" + finNum;
+ }
+
+	return finNum;
+}
+
+
+
+
+function sn(num) {
+
+ num=num.toString();
+
+
+ var len = num.length;
+ var rnum = "";
+ var test = "";
+ var j = 0;
+
+ var b = num.substring(0,1);
+ if(b == "-") {
+ rnum = "-";
+ }
+
+ for(i = 0; i <= len; i++) {
+
+ b = num.substring(i,i+1);
+
+ if(b == "0" || b == "1" || b == "2" || b == "3" || b == "4" || b == "5" || b == "6" || b == "7" || b == "8" || b == "9" || b == ".") {
+  rnum = rnum + "" + b;
+
+ }
+
+ }
+
+ if(rnum == "" || rnum == "-") {
+ rnum = 0;
+ }
+
+ rnum = Number(rnum);
+
+ return rnum;
+
+}
+
+function computeForm(form) {
+	
+	 var Vclosingcosts = document.calc.closingcosts.value; 
+	 if(Vclosingcosts == 0 || Vclosingcosts == "") {
+  Vclosingcosts = 0;
+ }	 
+ var Vdownpayment = sn(document.calc.downpayment.value);
+ var Vfinanceclose = document.calc.financeclose.options[document.calc.financeclose.selectedIndex].value;
+ var Vhomevalue = sn(document.calc.homevalue.value);
+ var Vprincipal =sn(parseFloat(document.calc.homevalue.value) + parseFloat(Vclosingcosts)*Vfinanceclose - parseFloat(Vdownpayment));
+ var VintRate = sn(document.calc.intRate.value);
+ var VnumYears = sn(document.calc.numYears.value);
+ var VannualTax = document.calc.annualTax.value;
+ var Vannualrepairs = document.calc.annualrepairs.value;
+
+ var VmonthlyTax =0;
+ if(VannualTax == 0 || VannualTax == "") {
+  VannualTax = 0;
+  VmonthlyTax =0;
+ } else {
+//  VannualTax = sn((VannualTax * document.calc.homevalue.value)/100); //
+  VannualTax = sn(VannualTax); 
+  VmonthlyTax = VannualTax / 12;
+  VmonthlyTax *= 100;
+  VmonthlyTax = Math.round(VmonthlyTax);
+  VmonthlyTax /= 100;
+ }
+
+ var Vmonthlyrepairs = 0;
+ if(Vannualrepairs == 0 || Vannualrepairs == "") {
+  Vannualrepairs = 0;
+  Vmonthlyrepairs =0;
+ } else {
+  Vannualrepairs = sn(Vannualrepairs); 
+  Vmonthlyrepairs = Vannualrepairs / 12;
+  Vmonthlyrepairs *= 100;
+  Vmonthlyrepairs = Math.round(Vmonthlyrepairs);
+  Vmonthlyrepairs /= 100;
+ }
+
+ var VannualInsurance = document.calc.annualInsurance.value;
+ var VmonthlyInsurance = 0;
+ if(VannualInsurance == 0 || VannualInsurance == "") {
+  VannualInsurance = 0;
+  VmonthlyInsurance = 0;
+ } else {
+//  VannualInsurance = sn((VannualInsurance * document.calc.homevalue.value)/100); //
+  VannualInsurance = sn(VannualInsurance);
+  VmonthlyInsurance = VannualInsurance / 12;
+  VmonthlyInsurance *= 100;
+  VmonthlyInsurance = Math.round(VmonthlyInsurance);
+  VmonthlyInsurance /= 100;
+ }
+ 
+	 var Vhomevalue = document.calc.homevalue.value;
+ var VmonthlyPMI0 = document.calc.monthlyPMI.value;
+ var VmonthlyPMI = document.calc.monthlyPMI.value;
+
+ if(VmonthlyPMI == 0 || VmonthlyPMI == "" || Vhomevalue > 1.249999999*Vprincipal ) {
+  VmonthlyPMI = 0;
+ }	 
+	 else {
+  VmonthlyPMI = sn((VmonthlyPMI * Vprincipal)/100);
+		 VmonthlyPMI = VmonthlyPMI / 12;
+  VmonthlyPMI *= 100;
+  VmonthlyPMI = Math.round(VmonthlyPMI);
+  VmonthlyPMI /= 100;
+ }
+
+ var VmonthlyHOA = document.calc.monthlyHOA.value;
+
+ var VotherPmts = Number(VmonthlyTax) + Number(VmonthlyInsurance) + Number(VmonthlyPMI) + Number(VmonthlyHOA) + Number(Vmonthlyrepairs);
+
+ var VnumPmts = VnumYears * 12;
+
+ var Vloanamount =sn(parseFloat(document.calc.homevalue.value) + parseFloat(Vclosingcosts)*Vfinanceclose - parseFloat(Vdownpayment));
+
+var pointstype = "";
+   var closeCostPerc0 = sn(document.calc.closingCost.value);
+   var closeCostPerc = sn(document.calc.closingCost.value);
+      if(document.calc.ptsDol.selectedIndex == 0) {
+         // if(closeCostPerc >= 1) {
+         closeCostPerc = closeCostPerc / 100;
+      // } else {
+      //    closeCostPerc = closeCostPerc;
+      // }
+    closeCostAmt = Vloanamount * closeCostPerc;
+    pointstype += "points";
+      } else {
+         closeCostAmt = sn(document.calc.closingCost.value);
+		  pointstype += "dollar";
+      }
+
+Vloanamount = Vloanamount + closeCostAmt*Vfinanceclose;
+
+ var VpmtAmt = computeMonthlyPayment(Vloanamount, VnumPmts, VintRate);
+ var VtotalMtgPmt = Number(VpmtAmt) + Number(VotherPmts);
+
+ var Vtotalinterest =  sn(parseFloat(VnumPmts) * parseFloat(VpmtAmt) - parseFloat(Vloanamount));
+
+ var Vclosingtotal = Number(closeCostAmt) + Number(Vclosingcosts);
+ document.calc.closingtotal.value = "$" + fn(Vclosingtotal,2,1);
+ document.calc.monthlyPI.value = "$" + fn(VpmtAmt,2,1);
+ document.calc.otherPmts.value = "$" + fn(VotherPmts,2,1);
+ document.calc.monthlyPmt.value = "$" + fn(VtotalMtgPmt,2,1);
+ document.calc.loanamount.value = "$" + fn(Vloanamount,0,1);
+ document.calc.totalinterest.value = "$" + fn(Vtotalinterest,0,1);
+
+
+      var Vsavecalculation = "";
+         Vsavecalculation += "<h2>Your Mortgage Loan Details</h2> If you want to purchase a home valued at $"+fn(Vhomevalue,2,1)+" using a $"+fn(Vloanamount,2,1)+" "+fn(VnumYears,2,1)+"-year fixed-rate home loan at a "+fn(VintRate,5,1)+"% APR, your monthly principal &amp; interest payment will be $" + fn(VpmtAmt,2,1) +". That payment amount includes the core loan payment covering principal and interest, but it does not include other expenses associated with homeownership. When these other expenses amounting to $" + fn(VotherPmts,2,1) + " per month are added to the core loan payment, that brings the total monthly epxense to $" + fn(VtotalMtgPmt,2,1) + ". This payment amount is based upon a down payment of $"+fn(Vdownpayment,2,1)+" and total loan closing costs of $" + fn(Vclosingtotal,2,1) + " (including the cost of points). The total interest expense over the life of the loan will be $" + fn(Vtotalinterest,0,1) + " if ordinary scheduled payments are made through the duration of the loan term.<br/><br/> <blockquote><h2>Save Your Calculation</h2> The following link enables you to save your calculation. Copy it to share your numbers with your spouse, email it to yourself for later analysis, or to quickly compare homes or loan options side-by-side.<br><br><div style='word-break: break-all;'><a rel='nofollow' target='_blank' href='https://mortgagecalculator.biz/?yrs="+VnumYears+"&hv="+Vhomevalue+"&down="+Vdownpayment+"&pmi="+VmonthlyPMI0+"&apr="+VintRate+"&ptax="+VannualTax+"&ins="+VannualInsurance+"&hoa="+VmonthlyHOA+"&fix="+Vannualrepairs+"&pd="+pointstype+"&dp="+closeCostPerc0+"&close="+Vclosingcosts+"&fclose="+Vfinanceclose+"'>https://mortgagecalculator.biz/?yrs="+VnumYears+"&hv="+Vhomevalue+"&down="+Vdownpayment+"&pmi="+VmonthlyPMI0+"&apr="+VintRate+"&ptax="+VannualTax+"&ins="+VannualInsurance+"&hoa="+VmonthlyHOA+"&fix="+Vannualrepairs+"&pd="+pointstype+"&dp="+closeCostPerc0+"&close="+Vclosingcosts+"&fclose="+Vfinanceclose+"</a></div><br/>Current local mortgage rates are displayed below, so you can periodicially revisit this page to quickly recalculate your payments as market conditions change.<br/></blockquote>";
+      var v_savecalculation_cell = document.getElementById("savecalculation");
+      v_savecalculation_cell.innerHTML = "" + Vsavecalculation + "";
+
+}
+
+function monthlyAmortSched(form) {
+
+ {
+
+	 var Vclosingcosts = document.calc.closingcosts.value; 
+	 if(Vclosingcosts == 0 || Vclosingcosts == "") {
+  Vclosingcosts = 0;
+ }	 
+
+ var Vdownpayment = sn(document.calc.downpayment.value);
+ var Vhomevalue = sn(document.calc.homevalue.value);
+ var Vfinanceclose = document.calc.financeclose.options[document.calc.financeclose.selectedIndex].value;
+ var Vprincipal = sn(parseFloat(document.calc.homevalue.value) + parseFloat(Vclosingcosts)*Vfinanceclose - parseFloat(Vdownpayment));
+var closeCostAmt = 0;
+   var closeCostPerc = sn(document.calc.closingCost.value);
+      if(document.calc.ptsDol.selectedIndex == 0) {
+         // if(closeCostPerc >= 1) {
+         closeCostPerc = closeCostPerc / 100;
+      // } else {
+      //    closeCostPerc = closeCostPerc;
+      // }
+    closeCostAmt = Vprincipal * closeCostPerc;
+      } else {
+         closeCostAmt = sn(document.calc.closingCost.value);
+      }
+
+ var Vclosingtotal = Number(closeCostAmt) + Number(Vclosingcosts);
+
+
+Vprincipal = Vprincipal + closeCostAmt*Vfinanceclose;
+ var VintRate = sn(document.calc.intRate.value);
+ var VnumYears = sn(document.calc.numYears.value);
+ var VannualTax = document.calc.annualTax.value;
+ var Vannualrepairs = document.calc.annualrepairs.value;
+ var VmonthlyTax =0;
+ if(VannualTax == 0 || VannualTax == "") {
+  VannualTax = 0;
+  VmonthlyTax =0;
+ } else {
+  VannualTax = sn(VannualTax);
+  VmonthlyTax = VannualTax / 12;
+  VmonthlyTax *= 100;
+  VmonthlyTax = Math.round(VmonthlyTax);
+  VmonthlyTax /= 100;
+ }
+
+ var Vmonthlyrepairs = 0;
+ if(Vannualrepairs == 0 || Vannualrepairs == "") {
+  Vannualrepairs = 0;
+  Vmonthlyrepairs =0;
+ } else {
+  Vannualrepairs = sn(Vannualrepairs); 
+  Vmonthlyrepairs = Vannualrepairs / 12;
+  Vmonthlyrepairs *= 100;
+  Vmonthlyrepairs = Math.round(Vmonthlyrepairs);
+  Vmonthlyrepairs /= 100;
+ }
+
+ var VannualInsurance = document.calc.annualInsurance.value;
+ var VmonthlyInsurance = 0;
+ if(VannualInsurance == 0 || VannualInsurance == "") {
+  VannualInsurance = 0;
+  VmonthlyInsurance = 0;
+ } else {
+  VannualInsurance = sn(VannualInsurance);
+  VmonthlyInsurance = VannualInsurance / 12;
+  VmonthlyInsurance *= 100;
+  VmonthlyInsurance = Math.round(VmonthlyInsurance);
+  VmonthlyInsurance /= 100;
+ }
+
+ var VmonthlyPMI = document.calc.monthlyPMI.value;
+ var VPMIrate = document.calc.monthlyPMI.value;
+
+ if(VmonthlyPMI == 0 || VmonthlyPMI == "" || Vhomevalue > 1.249999999*Vprincipal) {
+  VmonthlyPMI = 0;
+ } else {
+  VmonthlyPMI = sn((VmonthlyPMI * Vprincipal)/100);
+		 VmonthlyPMI = VmonthlyPMI / 12;
+  VmonthlyPMI *= 100;
+  VmonthlyPMI = Math.round(VmonthlyPMI);
+  VmonthlyPMI /= 100;
+ }
+
+ var VotherPmts = Number(VmonthlyTax) + Number(VmonthlyInsurance) + Number(VmonthlyPMI) + Number(Vmonthlyrepairs);
+
+ var Vpmipermonth = Number(VmonthlyPMI);
+
+ var VnumPmts = VnumYears * 12;
+
+ var pmtAmt = computeMonthlyPayment(Vprincipal, VnumPmts, VintRate);
+ var VtotalMtgPmt = Number(pmtAmt) + Number(VotherPmts);
+
+ var prin = Vprincipal;
+
+ var Vint = VintRate;
+
+ if(Vint >= 1) {
+  Vint /= 100;
+  }
+ Vint /= 12;
+
+ var nPer = VnumPmts;
+
+ var intPort = 0;
+ var accumInt = 0;
+ var prinPort = 0;
+ var accumPrin = 0;
+ var count = 0;
+ var pmtRow = "";
+ var pmtNum = 0;
+ var accumTotal = 0;
+
+
+var Vyear = Number(document.calc.originationyear.value);
+var Vyear1 = Vyear;
+var Vday = Number(document.calc.originationday.selectedIndex) + Number(1);
+//if(Vday > 28) {
+//         Vday = 28;
+//      }
+var Vmonth = Number(document.calc.originationmonth.selectedIndex);
+var Vmonth1 = Vmonth;
+var pmtMonth = Vmonth;
+if (Vmonth > 12) {
+	Vmonth = 0;
+	Vyear = Vyear + 1;
+	}
+
+	  var calculateddate = moment([Vyear, Vmonth - 1, Vday]);	  
+	  while (!calculateddate.isValid()) {
+		  Vday = Vday -1;
+		  calculateddate = moment([Vyear, Vmonth - 1, Vday]);
+		  }
+var Vday1 = Vday;
+
+var loanDate = (Vmonth1 + "/" + Vday1 + "/" + Vyear1);
+var monthArr = new Array("blank","January","February","March","April","May","June","July","August","September","October","November","December","January");
+
+// var today = new Date();
+ var thedate = new Date(Vyear, Vmonth, Vday);
+ var dayFactor = thedate.getTime();
+ var pmtDay = Vday;
+ var loanMM = Vmonth;
+ var loanYY = Vyear;
+ if(loanYY < 1900) {
+  loanYY += 1900;
+ }
+//  var loanDate = (loanMM + "/" + pmtDay + "/" + loanYY);
+// var today = new Date();
+//  var dayFactor = today.getTime();
+//  var pmtDay = today.getDate();
+//  var loanMM = today.getMonth() + 1;
+//  var loanYY = today.getFullYear();
+//  if(loanYY < 1900) {
+//   loanYY += 1900;
+//  }
+//  var loanDate = (loanMM + "/" + pmtDay + "/" + loanYY);
+ var monthMS = 86400000 * 30.4375;
+
+ var pmtDate = 0;
+ var displayPmtAmt = 0;
+ var accumYearPrin = 0;
+ var accumYearInt = 0;
+ var VcurrentLTV = 0;
+ var Vpmithismonth = 0;
+ var Vpmipaymentcount = 0;
+ 
+  dayFactor = Number(dayFactor) - Number(monthMS);
+
+ while(count < nPer) {
+
+  if(count < (nPer - 1)) {
+
+  intPort = prin * Vint;
+  intPort *= 100;
+  intPort = Math.round(intPort);
+  intPort /= 100;
+
+  accumInt = Number(accumInt) + Number(intPort);
+  accumYearInt = Number(accumYearInt) + Number(intPort);
+
+  prinPort = Number(pmtAmt) - Number(intPort);
+  prinPort *= 100;
+  prinPort = Math.round(prinPort);
+  prinPort /= 100;
+
+  accumPrin = Number(accumPrin) + Number(prinPort);
+  accumYearPrin = Number(accumYearPrin) + Number(prinPort);
+  
+  prin = Number(prin) - Number(prinPort);
+
+  displayPmtAmt = Number(prinPort) + Number(intPort);
+  VcurrentLTV =  100 * prin / Vhomevalue;
+   if (VcurrentLTV < 78 || (Vprincipal * 1.25) < Vhomevalue) {
+	   Vpmipermonth = 0;
+	   }
+   if (VcurrentLTV > 78 && (Vprincipal * 1.25) > Vhomevalue) {
+//	   Vpmithismonth = prin * VPMIrate / 1200;
+	   Vpmipaymentcount = Vpmipaymentcount + 1;
+	   }
+
+
+  } else {
+
+  intPort = prin * Vint;
+  intPort *= 100;
+  intPort = Math.round(intPort);
+  intPort /= 100;
+
+  accumInt = Number(accumInt) + Number(intPort);
+  accumYearInt = Number(accumYearInt) + Number(intPort);
+
+  prinPort = prin;
+
+  accumPrin = Number(accumPrin) + Number(prinPort);
+  accumYearPrin = Number(accumYearPrin) + Number(prinPort);
+
+  prin = 0;
+
+  //pmtAmt = Number(intPort) + Number(prinPort);
+  displayPmtAmt = Number(prinPort) + Number(intPort);
+  VcurrentLTV =  100 * prin / Vhomevalue;
+  }
+
+  count = Number(count) + Number(1);
+
+  pmtNum = Number(pmtNum) + Number(1);
+
+  dayFactor = Number(dayFactor) + Number(monthMS);
+
+  pmtDate = new Date(dayFactor);
+
+//  pmtMonth = pmtDate.getMonth();
+
+  pmtMonth = pmtMonth + 1;
+  if (pmtMonth > 12) {
+	  pmtMonth = 1;
+	  }
+  
+  pmtYear = pmtDate.getFullYear();
+  if(pmtYear < 1900) {
+  pmtYear += 1900;
+  }
+
+        calculateddate.add(1, 'months');				
+		while (Vday1 > 28 && moment(calculateddate).date() < Vday1 && moment(calculateddate).date() < moment(calculateddate).daysInMonth()) {
+			calculateddate.add((1), 'days');	
+			pmtDay = calculateddate.format('D');		
+			}
+
+		if (moment(calculateddate).daysInMonth() < Vday1) {
+			pmtDay = moment(calculateddate).daysInMonth();					
+			}
+
+
+  accumTotal = Number(accumPrin) + Number(accumInt);
+
+  pmtString = (pmtMonth + "/" + pmtDay + "/" + pmtYear);
+
+  pmtRow += "<tr><td align=right><font face='arial'><small>" + pmtNum + "</small></td>";
+  pmtRow += "<td align=right><font face='arial'><small>" + pmtString + "</small></td>";
+  pmtRow += "<td align=right><font face='arial'><small>" + "$" + fn(prinPort,2,1) + "</small></td>";
+  pmtRow += "<td align=right><font face='arial'><small>" + "$" + fn(intPort,2,1) + "</small></td>";
+  pmtRow += "<td align=right><font face='arial'><small>" + "$" + fn(displayPmtAmt,2,1) + "</small></td>";
+  pmtRow += "<td align=right><font face='arial'><small>" + "$" + fn(prin,2,1) + "</small></td>";
+  pmtRow += "<td align=right><font face='arial'><small>" + " " + fn(VcurrentLTV,2,1) + "%</small></td>";
+  pmtRow += "<td align=right><font face='arial'><small>" + "$" + fn(Vpmipermonth,2,1) + "</small></td></tr>";
+ 
+
+  if(pmtMonth == 12 || count == nPer) {
+
+  pmtRow += "<tr bgcolor='#F1FDEB'><td align=right><font face='arial'><strong>Total</strong></td>";
+  pmtRow += "<td align=center><font face='arial'><strong>" + pmtYear + "</strong></td>";
+  pmtRow += "<td align=right><font face='arial'><strong>" + "$" + fn(accumYearPrin,2,1) + "</strong></td>";
+  pmtRow += "<td align=right><font face='arial'><strong>" + "$" + fn(accumYearInt,2,1) + "</strong></td>";
+  pmtRow += "<td align=right><font face='arial'><small> </small></td>";
+  pmtRow += "<td align=right><font face='arial'><small> </small></td><td align=right><font face='arial'><small> </small></td><td align=right><font face='arial'><small> </small></td></tr>";
+
+
+  accumYearPrin = 0;
+  accumYearInt = 0;
+
+  }
+
+  if(count > 2400) {
+  alert("Using your current entries you will never pay off this loan.");
+  break;
+  } else {
+  continue;
+  }
+
+ }
+
+
+
+ var part1 = "<head><title>Amortization Schedule</title></head>";
+ part1 += "<body bgcolor= '#FFFFFF'><br /><br /><center><font face='arial'>";
+ part1 += "<a href='https://www.mortgagecalculator.biz/' target='_blank'><img alt='MorgageCalculator logo.' src='https://www.mortgagecalculator.biz/img/logo.png' border='0'/></a></center><br /> ";
+ part1 += "<center><font face='arial'><big><strong>Your Home Loan Amortization Schedule</strong></big></center>";
+
+ var part2 = "<center><table border=1 cellpadding=2 cellspacing=0>";
+ part2 += "<tr><td colspan=8><font face='arial'><small><b>Loan ";
+ part2 += "Date: " + loanDate + "<br />Principal: $" + fn(Vprincipal,2,1) + "<br />Number of ";
+ part2 += "Payments: " + nPer + "<br />Interest Rate: " + fn(VintRate,3,0) + "%<br />";
+ part2 += "P&amp;I Payment: $" + fn(pmtAmt,2,1) + "<br />Taxes, Insurance &amp; HOA: $" + fn(VotherPmts,2,1) + "<br />Total Monthly Payment: $" + fn(VtotalMtgPmt,2,1) + "<br/> Total Closing Costs: $"+ fn(Vclosingtotal,2,1) +"</small></td></tr><tr><td colspan=8>";
+ part2 += "<center><font face='arial'><strong>Schedule of Principal &amp; Interest Payments</font></strong><br /><font face='arial'>";
+ part2 += "<small>This table reflects the P&amp;I portion of the mortgage. An extra $" + fn(VotherPmts,2,1) + " is added to each monthly payment to cover other fees, making $" + fn((VotherPmts+pmtAmt),2,1) + " the all-in monthly payment. ";
+if (VmonthlyPMI > 0) { 
+ part2 += "Borrowers who put less than 20% down are required to pay for Property Mortgage Insurance (PMI). Lenders typically automatically remove PMI when the Loan-to-Value (LTV) falls to 78%.  Based on our calculations you will be required to make "+ Vpmipaymentcount +" monthly PMI payments. After "+ Vpmipaymentcount +" months your overall monthly payment will drop by " + "$" + fn(VmonthlyPMI,2,1) + " to $" + fn((VtotalMtgPmt-VmonthlyPMI),2,1) +" to reflect the removal of PMI. ";
+	} else {
+ part2 += "Borrowers who put less than 20% down are typically required to pay for Property Mortgage Insurance (PMI). Lenders usually automatically remove PMI when the Loan-to-Value (LTV) falls to 78%. According to the date you entered you are not required to pay for PMI. ";		
+		}
+ part2 += "</small></center></td></tr> <tr bgcolor='#8FD36F'><td align='center'><font face='arial'><strong>Pmt</strong></td>";
+ part2 += "<td align='center'><font face='arial'><strong>Date</strong></td>";
+ part2 += "<td align='center'><font face='arial'><strong>Principal</strong></td>";
+ part2 += "<td align='center'><font face='arial'><strong>Interest</strong></td>";
+ part2 += "<td align='center'><font face='arial'><strong>Payment</strong></td>";
+ part2 += "<td align='center'><font face='arial'><strong>Balance</strong></td><td align='center'><font face='arial'><strong>LTV</strong></td><td><font face='arial'><strong>PMI</strong></td></tr>";
+
+ var part3 = ("" + pmtRow + "");
+
+ var part4 = "<tr><td colspan='2'><font face='arial'><small><b>Grand Total</b></small></td>";
+ part4 += "<td align=right><font face='arial'><small><b>" + "$" + fn(accumPrin,2,1) + "</b></small></td>";
+ part4 += "<td align=right><font face='arial'><small><b>" + "$" + fn(accumInt,2,1) + "</b></small></td>";
+ part4 += "<td align=right><font face='arial'><small><b>" + "$" + fn(accumTotal,2,1) + "</b></small></td><td> </td><td> </td><td> </td></tr></table><br /><center><form method='post'>";
+ part4 += "<input type='button' value='Close Window' onClick='window.close()'></form>";
+ part4 += "</center></body></html>";
+
+
+ var schedule = (part1 + "" + part2 + "" + part3 + part4 + "");
+ reportWin = window.open("","","width=600,height=400,toolbar=yes,menubar=yes,scrollbars=yes");
+ reportWin.document.write(schedule);
+ reportWin.document.close();
+
+ }
+
+}
+
+
+function clear_results(form) {
+
+ document.calc.monthlyPI.value = "";
+ document.calc.otherPmts.value = "";
+ document.calc.monthlyPmt.value = "";
+ document.calc.loanamount.value = "";
+ document.calc.totalinterest.value = "";
+
+   var v_savecalculation_cell = document.getElementById("savecalculation");
+   v_savecalculation_cell.innerHTML = "";
+
+}</script>
+
+<!-- analytic -->
+</head>
+	<body class="hsm" onload="computeForm(this.form)">
+    
+
+    
+
+
+		<section id="content" class="content-block-outer" role="main">
+			<div class="wrapper-new">
+				<div class="content-out">
+					<div class="content-outer">
+				<div class="sidebar-left">
+					<div class="sidebar-top">
+						</div>
+					<header id="header">
+						<div class="logo">
+							<a href="https://www.mortgagecalculator.biz/"> <img src="https://www.mortgagecalculator.biz/img/logo.png" alt="MorgageCalculator logo." width="280px" height="185px"/> </a>
+						</div>
+						<nav>
+							<div id="main-nav">
+								<ul>
+									<li class="item-with-ul">
+										<a href="https://www.mortgagecalculator.biz/c/rent-or-buy.php">Rent or Buy?</a>
+										<ul>
+											<li><a href="https://www.mortgagecalculator.biz/c/affordability.php">Renter Home Affordability</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/tax-savings.php">Tax-Savings</a></li>
+										</ul>
+									</li>
+									<li class="item-with-ul">
+										<a href="https://www.mortgagecalculator.biz/c/budget-planner.php">Budgeting</a>
+										<ul>
+											<li><a href="https://www.mortgagecalculator.biz/c/budget-planner.php">Budget Planning</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/qualification.php">Mortgage Qualification</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/balance.php">Loan Balance</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/early-payoff.php">Mortgage Payoff Goal</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/tax-benefits.php">Tax Benefits</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/biweekly.php">Bi-Weekly Payments</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/extra-payments.php">Extra Payments</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/purchase-money-balance.php">Purchase Money Loan Balance</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/canadian.php">Canadian Qualification</a></li>
+										</ul>
+									</li>
+									<li class="item-with-ul">
+										<a href="https://www.mortgagecalculator.biz/c/term-comparison.php">Compare Loans</a>
+										<ul>
+											<li><a href="https://www.mortgagecalculator.biz/c/amortization-calc.php">Explainer Calculator</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/apr.php">APR Calculator</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/term-comparison.php">Term Comparison</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/rate-comparison.php">Rate Comparison</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/biweekly-calc.php">Bi-Weekly Savings</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/additional-payments.php">Additional Payments</a>
+											</li>
+										</ul>
+									</li>
+									<li class="item-with-ul">
+										<a href="https://www.mortgagecalculator.biz/c/arm.php">Adjustable Rates</a>
+										<ul>
+											<li><a href="https://www.mortgagecalculator.biz/c/arm-vs-fixed-rates.php">ARM vs Fixed Rates</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/arm-apr.php">ARM APR</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/interest-only.php">Interest Only vs. Principal</a></li>
+										</ul>
+									</li>
+									<li class="item-with-ul">
+										<a href="https://www.mortgagecalculator.biz/c/refinancing.php">Refinance</a>
+										<ul>
+											<li><a href="https://www.mortgagecalculator.biz/c/refinance.php">Consolidation vs Refinancing</a></li>
+										</ul>
+									</li>
+									<li class="item-with-ul">
+										<a href="https://www.mortgagecalculator.biz/c/home-sellers.php">Sellers</a>
+										<ul>
+											<li><a href="https://www.mortgagecalculator.biz/c/tax-vs-deferred.php">Taxable Vs. Tax-deferred</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/commissions.php">Real Estate Commissions</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/real-estate-commissions.php">Commission Rebates</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/canadian-estate.php">Canadian Estate Planning</a></li>
+										</ul>
+									</li>
+									<li class="item-with-ul">
+										<a href="https://www.mortgagecalculator.biz/c/investors.php">Investors</a>
+										<ul>
+											<li><a href="https://www.mortgagecalculator.biz/c/commercial-loan.php">Commercial Loans</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/property-analysis.php">Residential Income Analysis</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/ror-calc.php">Portfolio Rate of Return</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/1031-exchange.php">1031 Exchange</a></li>
+											<li><a href="https://www.mortgagecalculator.biz/c/1031-exchange-deadline.php">1031 Exchange Deadline</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="https://www.mortgagecalculator.biz/resources/">Resources</a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+					</header>
+                    
+                    <div class="holder" style="width:280px;"><br /></div>
+
+					<div class="sidebar-calculator-block">
+						<div class="bankrateWidget" app="oa" kind="tabbed" tabs="mortgage,cd,creditcard,auto" widgetwidth="280" pkey="i01zfw6c7a" fontfamily="arial,sans-serif" linkscolor="#0000ff" titlebarbackgroundcolor="#f1fdeb" activetabbackgroundcolor="#08b5db" nextbuttonbackgroundcolor="#08b5db" pid="orgcalcmortbiz" campaign="mcbside#/index.php"></div><script src="//widgets.bankrate.com/booter.js"></script>
+					</div>
+                    
+					<div class="image-block">
+                    </div>
+					<div class="mlogo"> <a href="https://www.mortgagecalculator.biz/c/free.php"><img src="https://www.mortgagecalculator.biz/img/free-calculators.gif" alt="" /></a>
+					</div>
+					<div class="mlogo">
+						<img src="https://www.mortgagecalculator.biz/img/mlogo.gif" alt="" />
+					</div>
+
+					<div class="sidebar-calculator-block">
+						<iframe width="300px" height="240px" frameborder="0" scrolling="no" src="https://www.mortgagecalculator.biz/c/mini.php"></iframe>
+					</div>
+					<div class="get-yours-link">
+					<a href="https://www.mortgagecalculator.biz/c/free.php">
+					
+					Get Yours Here</a></div>
+
+					<div class="bottom-links">
+						<h3>Helpful Real Estate Links</h3>
+						<ul>
+							<li><a href="http://www.makinghomeaffordable.gov/" target="_blank">MakingHomeAffordable.gov</a></li>
+							<li><a href="https://www.nar.realtor/" target="_blank">NAR</a></li>
+							<li><a href="https://www.fhfa.gov/" target="_blank">FHFA.gov</a></li>
+							<li><a href="http://www.nahb.org/" target="_blank">NAHB.org</a></li>
+							<li><a href="http://www.reri.org/" target="_blank">RERI.org</a></li>
+							<li><a href="http://www.areuea.org/" target="_blank">AREUEA.org</a></li>
+							<li><a href="http://naeba.org/" target="_blank">NAEBA.org</a></li>
+							<li><a href="http://www.cre.org/" target="_blank">CRE.org</a></li>
+							<li><a href="http://www.inman.com/" target="_blank">Inman News</a></li>
+							<li><a href="http://realtytimes.com/" target="_blank">Realty Times</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="page-right">
+			<div class="heading-block">
+				<div class="main-heading">
+				  <h1>Free Online Mortgage Payment Calculator With Amortization Tables</h1></div>
+    <ul id="breadcrumbs">
+    <li><a href="https://www.mortgagecalculator.biz/">Home</a></li>
+    </ul>
+   </div>
+   			<div class="bottom-section">
+				<!-- <div class="info-block">
+					<label class="text-lbl"><strong>Are you using a cell phone?</strong></label>
+					<p><a href="https://www.mortgagecalculator.biz/m/" class="click_btn">Click here</a> for the mobile friendly version of this page.</p>
+				</div> -->
+
+   				<div class="table-block">
+<form name="calc" method="post" action="#">
+ 
+ <table>
+ <tbody>
+<tr>
+<td colspan="2"><h3>Home Loan Information</h3></td>
+</tr>
+
+ <tr>
+ <td class="first-column">
+ Loan Term (Years):
+ </td>
+ <td align="center">
+ <input name="numYears" type="number" onKeyUp="clear_results(this.form);computeForm(this.form)" size="10" 
+value="30" onfocus="this.value = this.value=='30'?'':this.value;" onblur="this.value = this.value==''?'30':this.value;"/> 
+  </td>
+ </tr>
+
+ <tr>
+ <td class="first-column">
+ Home Value:
+ </td>
+ <td align="center">
+ <input name="homevalue" type="number" onKeyUp="clear_results(this.form);computeForm(this.form)" size="10"
+value="250000" onfocus="this.value = this.value=='250000'?'':this.value;" onblur="this.value = this.value==''?'250000':this.value;"/>   
+ </td>
+ </tr>
+
+
+ <tr>
+ <td class="first-column">
+ Downpayment:
+ </td>
+ <td align="center">
+ <input name="downpayment" type="number" onKeyUp="clear_results(this.form);computeForm(this.form)" size="10" 
+value="50000" onfocus="this.value = this.value=='50000'?'':this.value;" onblur="this.value = this.value==''?'50000':this.value;"/>
+ 
+ </td>
+ </tr>
+
+ <tr>
+ <td class="first-column">
+ <acronym title="Private Mortgage Insurance">PMI</acronym> (%): </td>
+ <td align="center">
+ <input name="monthlyPMI" type="number" onKeyUp="clear_results(this.form);computeForm(this.form)" step=0.01 size="10"
+value="0.5" onfocus="this.value = this.value=='0.5'?'':this.value;" onblur="this.value = this.value==''?'0.5':this.value;"/> 
+ </td>
+ </tr>
+
+
+ <tr>
+ <td class="first-column">
+ Interest rate (<a href="#viewrates"><strong>% APR</strong></a>):
+ </td>
+ <td align="center">
+ <input name="intRate" type="number" step="0.01" onKeyUp="clear_results(this.form);computeForm(this.form)" size="10"
+value="5" onfocus="this.value = this.value=='5'?'':this.value;" onblur="this.value = this.value==''?'5':this.value;"/> 
+ </td>
+ </tr>
+
+ <tr>
+ <td colspan="2" align="center">
+<input type="button" class="table-btn" name="getbest" value="See Local Rates" onClick="location.href='#viewrates'" /> 
+ </td>
+ </tr>
+
+<tr>
+<td colspan="2"><h3>Other Home Ownership Expenses</h3></td>
+</tr>
+
+ <tr>
+ <td class="first-column">
+ Annual Property Taxes ($):
+ </td>
+ <td align="center">
+ <input name="annualTax" type="number" onKeyUp="clear_results(this.form);computeForm(this.form)" size="10" step="0.01"
+value="2400" onfocus="this.value = this.value=='2400'?'':this.value;" onblur="this.value = this.value==''?'2400':this.value;"/> 
+ </td>
+ </tr>
+
+ <tr>
+ <td class="first-column">
+ Homeowners Insurance ($/Yr):
+ </td>
+ <td align="center">
+ <input name="annualInsurance" type="number" onKeyUp="clear_results(this.form);computeForm(this.form)" step=0.01 size="10" 
+value="1200" onfocus="this.value = this.value=='1200'?'':this.value;" onblur="this.value = this.value==''?'1200':this.value;"/> 
+ </td>
+ </tr>
+
+
+ <tr>
+ <td class="first-column">
+ Monthly <acronym title="Homeowner's association dues">HOA</acronym> Fees ($): </td>
+ <td align="center">
+ <input name="monthlyHOA" type="number" onKeyUp="clear_results(this.form);computeForm(this.form)" step=0.01 size="10"
+value="0" onfocus="this.value = this.value=='0'?'':this.value;" onblur="this.value = this.value==''?'0':this.value;"/>  
+ </td>
+ </tr>
+
+ <tr>
+ <td class="first-column">
+ Annual Home Repairs ($):
+ </td>
+ <td align="center">
+ <input name="annualrepairs" type="number" onKeyUp="clear_results(this.form);computeForm(this.form)" size="10" step="0.01"
+value="2400" onfocus="this.value = this.value=='2400'?'':this.value;" onblur="this.value = this.value==''?'2400':this.value;"/>  
+ </td>
+ </tr>
+
+<tr>
+<td colspan="2"><h3>Closing Costs</h3></td>
+</tr>
+
+<tr>
+<td class="first-column">Discount Points  <select name="ptsDol" size="1" onChange="clear_results(this.form);computeForm(this.form)">
+<option value="points" >points</option>
+<option value="dollar" >dollars</option>
+</select> :</td>
+<td align="center">
+<input name="closingCost" type="number" step="any" onKeyUp="clear_results(this.form);computeForm(this.form)" size="10"
+value="1" onfocus="this.value = this.value=='1'?'':this.value;" onblur="this.value = this.value==''?'1':this.value;"/> 
+</td>
+</tr>
+
+ 
+ <tr>
+ <td class="first-column">
+ Other Closing Costs:
+ </td>
+ <td align="center">
+ <input name="closingcosts" type="number" onKeyUp="clear_results(this.form);computeForm(this.form)" size="10" step="0.01"
+value="1200" onfocus="this.value = this.value=='1200'?'':this.value;" onblur="this.value = this.value==''?'1200':this.value;"/>
+ </td>
+ </tr>
+
+ <tr>
+ <td class="first-column">
+ Finance Loan Closing Costs?
+ </td>
+ <td align="center">
+ <select name="financeclose" size="1" onChange="clear_results(this.form);computeForm(this.form)">
+ <option value="0" >No</option>
+ <option value="1" >Yes</option>
+ </select>
+ </td>
+ </tr>
+
+ 
+  <tr>
+ <td class="first-column">
+ Loan Origination Date:
+ </td>
+ <td align="center">
+ <select name="originationmonth" id="originationmonth" size="1" onChange="clear_results(this.form);computeForm(this.form)">
+ <option value="0">Month</option>
+ <option value="1">Jan</option>
+ <option value="2">Feb</option>
+ <option value="3">Mar</option>
+ <option value="4">Apr</option>
+ <option value="5">May</option>
+ <option value="6">Jun</option>
+ <option value="7">Jul</option>
+ <option value="8">Aug</option>
+ <option value="9">Sep</option>
+ <option value="10">Oct</option>
+ <option value="11">Nov</option>
+ <option value="12">Dec</option>
+ </select>
+<select name="originationday" id="originationday" size="1">
+ <option value = "1" selected> 1</option>
+ <option value = "2"> 2</option>
+ <option value = "3"> 3</option>
+ <option value = "4"> 4</option>
+ <option value = "5"> 5</option>
+ <option value = "6"> 6</option>
+ <option value = "7"> 7</option>
+ <option value = "8"> 8</option>
+ <option value = "9"> 9</option>
+ <option value = "10"> 10</option>
+ <option value = "11"> 11</option>
+ <option value = "12"> 12</option>
+ <option value = "13"> 13</option>
+ <option value = "14"> 14</option>
+ <option value = "15"> 15</option>
+ <option value = "16"> 16</option>
+ <option value = "17"> 17</option>
+ <option value = "18"> 18</option>
+ <option value = "19"> 19</option>
+ <option value = "20"> 20</option>
+ <option value = "21"> 21</option>
+ <option value = "22"> 22</option>
+ <option value = "23"> 23</option>
+ <option value = "24"> 24</option>
+ <option value = "25"> 25</option>
+ <option value = "26"> 26</option>
+ <option value = "27"> 27</option>
+ <option value = "28"> 28</option>
+ <option value = "29"> 29</option>
+ <option value = "30"> 30</option>
+ <option value = "31"> 31</option>
+ </select>
+
+ <input name="originationyear" id="originationyear" type="number" onKeyUp="clear_results(this.form);computeForm(this.form)" onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue" value="2019"  size="4" width="40px"/>
+
+<script type="text/javascript">
+var date = new Date();
+var day1 = date.getDate();
+var month1 = date.getMonth() + 1;
+var year1 = date.getFullYear();
+// var today = year + "-" + month + "-" + day;       
+document.getElementById("originationyear").value = year1;
+document.getElementById("originationday").value = day1;
+document.getElementById("originationmonth").value = month1;
+</script>
+ </td>
+ </tr>
+ 
+ 
+
+ <tr>
+ <td colspan="2" align="center">
+<input type="button" class="table-btn" name="compute" value="Figure Mortgage Payment" onClick="computeForm(this.form)" /> 
+ </td>
+ </tr>
+
+ <tr>
+ <td class="first-column"> Total monthly payment: </td>
+ <td align="center">
+ <input type="text" class="text-bg" name="monthlyPmt" size="10" readonly />
+ </td>
+ </tr>
+
+ <tr>
+ <td class="first-column">Principal &amp; Interest:</td>
+ <td align="center">
+ <input type="text" class="text-bg" name="monthlyPI" size="10" readonly />
+ </td>
+ </tr>
+
+ <tr>
+ <td class="first-column">Taxes, Ins., PMI &amp; HOA:</td>
+ <td align="center">
+ <input type="text" class="text-bg" name="otherPmts" size="10" readonly />
+ </td>
+ </tr>
+
+ <tr>
+ <td class="first-column">
+ Total Closing Costs:
+ </td>
+ <td align="center">
+ <input type="text" class="text-bg" name="closingtotal" size="10" readonly />
+ </td>
+ </tr>
+ 
+ <tr>
+ <td class="first-column">
+ Loan Amount:
+ </td>
+ <td align="center">
+ <input type="text" class="text-bg" name="loanamount" size="10" readonly />
+ </td>
+ </tr>
+
+ <tr>
+ <td class="first-column">
+ Total Interest Expense:
+ </td>
+ <td align="center">
+ <input type="text" class="text-bg" name="totalinterest" size="10" readonly />
+ </td>
+ </tr>
+ <tr>
+ <td align='center'>
+ <input type="button" class="table-btn" name="sched" value="Create Amortization Schedule" onClick="computeForm(this.form);monthlyAmortSched(this.form)" />
+ </td>
+ <td align='center'>
+<input type="reset" class="table-btn" value="Clear" onClick="clear_results(this.form)" />
+ </td>
+ </tr>
+ </tbody>
+ </table>
+<div id="savecalculation"></div>
+
+ </form>
+
+ </div>
+
+ <p>&nbsp;</p>
+<a name="viewrates"></a>
+<h3>Current Mortgage Rates</h3>
+<div class="myFinance-widget" data-show-filters="true" data-widget-id="0e398780-2190-4caf-9640-aecf30df3c9c" data-property-value="250000" data-purchase-price="250000" data-percent="20" data-current-loan-balance="200000"  data-table-title="Save Money With Today's Best Fixed Mortgage Rates" data-campaign="mortcalcbiz_fulltable_mortgage"></div>
+
+
+<h3>Advice For Home Buyers</h3>
+
+				<div class="accordion accordion-close" id="section1">Learn More About the Advanced Features in Our Free Tools</div>
+				<div class="accordion-content">
+ 
+   <p><img src="https://www.mortgagecalculator.biz/img/house-in-hands.jpg" alt="house" width="130" class="alignright" /> The above tool computes monthly payments based on the amount borrowed, the loan term &amp; APR. It also computes your total monthly payments including property tax, property insurance and PMI payments. You can click on the "Create Amortization Schedule" button to create a printable amortization report.   </p>
+
+
+					<ul>
+						<li>Lightning Quick Automatic Results
+							<ul>
+								 <li>It works automatically on-the-fly to show the results immediately as you edit the input variables. </li>
+								<li>There is no need to click a submit button to see your results.</li> 
+								<li>The output fields are shown in blue text with a yellow background.</li>
+								<li>Click the <em>amortization schedule</em> button to create a printable amortization chart.</li>
+							</ul>
+						</li>
+						<li>Private Mortgage Insurance (PMI)
+							<ul>  
+								<li>If you put down 20% or more of the home's value, PMI is typically not required &amp; it automatically computes PMI as zero in those cases.</li>
+								<li> If your down payment is below 20%, you will typically be required to carry PMI until the outstanding loan-to-value ratio (LTV) falls below 80%. Many lenders automatically cancel PMI at 78%, however you can request cancelation at 80%.</li>
+								<li>On low-rate governmental loan programs, mortgage insurance is typically required even if you have a strong down payment.</li>
+							</ul>
+						</li>
+					</ul>       
+                    </div>                    
+                    
+				<div class="accordion" id="section2">Home Buying Guide Introduction</div>
+				<div class="accordion-content content-blk">                    
+                    
+<h2>Tips and Advice for First Time Home Buyers</h2>
+<p><img src="https://www.mortgagecalculator.biz/img/for-sale.jpg" alt="Home For Sale." width="630" height="420" /> </p>
+<p>For most people, the dream of owning a home is a lifelong goal. You spend years securing your financial position, looking for a suitable area and deciding when it's time to buy. Buying a home is the single largest, most important purchase many people make in their lives. It's more expensive than a car, costs more to maintain and insure and it can't move once you buy it. It is not a choice to make lightly. For those who are considering buying a home, a quality resource is necessary. There are hundreds of online articles available free, but they only tell part of the story. Books are more complete, but they can be quite expensive for a quality resource. Instead, read on and learn virtually everything you'll need to navigate the real estate market successfully.</p>
+<h3>Quick Tips for New Home Buyers</h3>
+<ul class="arrow">
+ <li>Your home purchase is not made in a vacuum. Make sure you can afford your home and still save for your other financial goals, including retirement and an emergency fund</li>
+ <li>Make sure your finances are in order! The last thing you need is to spend your savings on a home and find you can't afford your insurance plans</li>
+ <li>Remember that lenders will tell you how much you qualify to borrow, NOT how much you can afford. Make sure you know your finances well enough to know what you can handle</li>
+ <li>Even if you plan to live in your home for the rest of your life, be aware that circumstances change. Look for the valuable sale qualities, so if you do need to sell, you'll be able to get a good price</li>
+ <li>Know that home prices fluctuate. Your home will see various rises and falls in value over the course of the decades you own it. Fortunately, it should generally appreciate in value in the long term</li>
+ <li>Expect to live in the home you buy for at least five years, possibly longer. Otherwise, consider renting instead. Further renting versus buying advice is included later in this article. </li>
+ <li>Shop around. Lenders are businesses, and they will compete for you. Gather offers and take your time to find the best deal. Pay attention to the small print &amp; actual costs. Some companies may do a bait-n-switch strategy where the offered rate doesn't apply to you, so it makes sense to look past the advertisements to the actual offer.</li>
+ <li>Take the time to find a quality real estate agent. The right people on your team make all the difference in finding the best home for your money</li>
+ <li>Know that, while a real estate agent may work for you, they work for themselves first. They only get paid when you buy, and they get a higher commission the more you spend. Don't let them sell you on more house than you can afford</li>
+ <li>Avoid deals that seem too good to be true. As with most things in life, if it's too good to be true, it's not true. You don't have the time or money to let yourself fall for a shady deal</li>
+ <li>Always get a home inspection, no matter what the seller says</li>
+ <li>Make sure your insurance is as comprehensive as you can afford. If you're in a quake or flood-prone area, make sure you're insured against the damages</li>
+</ul>
+ <h3>Making the Decision to Buy</h3>
+<p>
+ The first question you need to ask yourself before you consider buying a home is this. "Can I live in this home long enough to make it worthwhile?" Some people will tell you that if you plan to rent for more than a few years, it's cheaper to buy a home. Others will write down complex math formulas figuring variable rents and interest rates to determine the best decision. Some will caution you about the problems of buying a home, warning you away. They're all working to answer the same question. Do you continue to rent, or do you buy a home of your own?</p>
+<p>
+ In the end, the decision is simple. Which option is cheaper? Buying and owning should be cheaper than renting. Unfortunately, it's difficult to determine which route is cheaper in advance. You have no way of knowing how much maintenance and home improvements will cost. On the other hand, you have no way of knowing how much your rent might increase over the years you might otherwise be living in a home. </p>
+<p>
+ The numbers involved make matters more complicated. How do you compare a $600/month rent to a $300,000 house and determine which is better? Try this experiment: take your monthly rent and multiply it by 200. If you pay $600 each month, the number you end up with is $120,000. Where do these numbers come from? The typical short mortgage is a 15-year term. That works out to be about 180 months, so we round the number to 200 for convenient math. Paying $600 a month will get you your current rental home, or it will get you approximately $120,000 worth of mortgage for a home of your own.</p>
+<p>
+ You also need to factor in the cost of inflation. Your $600/monthly rent today is very likely to increase over the next ten or more years. In fact, at a moderate four percent inflation each year, your $600 rent will be almost $900 in ten years. In 20, it will be over $1,300! Your landlord might not follow inflation that closely, but you can't predict the exact price changes ten or more years in advance.</p>
+<p>
+ On one hand, the price to continue renting will increase with inflation every few years. What about the price of buying a home? The cost of housing fluctuates up and down each year, but the general trend is higher. If you wait, you'll pay more for a home than you would if you bought now, or you will buy a smaller home for the same payment. Then again, isn't the cost of ownership subject to inflation as well? The solution to that problem is a fixed-rate mortgage, which lets you lock in a set rate &amp; your monthly payments for an extended period of time. If you buy a $120,000 home for your $600/month payment is still $600/month when the term ends in 15 years. In that time, ideally, your home will have appreciated. You may end up with a home worth $200,000 when you only paid $120,000.</p>
+<p>
+ There are also adjustable-rates, which have advantages &amp; disadvantages of their own. Later we cover more about the pros and cons of each type of loan, as well as the different term lengths.</p>
+<p>Another factor some people don't consider is how illiquid real estate is. If your job goes away in 5-years or you get transfered to a different location, you might be forced to sell your home at a lower price or cover the loan while also renting another property.</p>
+<h3>The Benefits of Home Ownership</h3>
+<p>
+ Owning your own home is a valuable investment. It's not simply a place to live. There are a number of good reasons to buy a home. </p>
+<p>
+ <strong>Equity.</strong> Your home has value, unless you destroy it. If you own a home worth $400,000, you can trade down to a $300,000 home and free up $100,000 for investments, expenses and other purchases. You can tap into your home's equity as leverage for borrowing money. You can even get a reverse mortgage, where the lender gives you a monthly check that is paid off when the house sells. These methods aren't for everyone, but they are certainly available.</p>
+<p>
+ <strong>Customization.</strong> When you rent, you're subject to some limitations on your property. The landlord owns the building, after all. You can't build an addition. You can't blow out walls to expand rooms. In some cases, you're even limited in the colors you can use for interior paint. You might not even be allowed to have a pet! Renters have maintenance covered by their landlord, but that benefit might not be worth the limitations. Of course, some homeowners associations limit exterior colors and yard decorations, and zoning can interfere with extensions, but in general, you have a lot more freedom. </p>
+<p>
+ As a cautionary note, don't go too deep into customizing your home. Your tastes may change over the years, so what seemed like a good idea when you bought might be a hassle a decade later. You also have to consider the possibility of eventually selling the home. Customizing your home too deeply will limit the number of potential buyers.</p>
+<p>
+ <strong>You are your own landlord.</strong> In other words, you avoid landlords with issues. Maintenance is your own responsibility, which means you need to handle it yourself, but you avoid the bad landlord issue. You'll never have to wait for your landlord to call their exterminator or their plumber when something goes wrong. </p>
+<h3>The Advantages of Renting</h3>
+<p>
+ Home ownership isn't all sunshine and rainbows. Renting is a viable housing option for millions of people because it works. Owning a home isn't for everyone. Here are some of the advantages you see when you rent.</p>
+<ul class="arrow">
+ <li><strong>Renters have a simple time with housing.</strong> They don't have to deal with closing costs, home inspections and real estate agents. Finding a place to rent is much easier than finding a suitable home to purchase.</li>
+ <li><strong>As a renter, you're not responsible for more than the absolute basic maintenance.</strong> Your landlord will probably appreciate it if you can change light bulbs and fix clogged toilets on your own, but any major issues are strictly on their head. You can sit back and relax while they fix the problems caused by aging buildings and years of tenants moving in and out.</li>
+ <li><strong>You're not locked down in one place as a renter.</strong> The typical lease only lasts for a single year, with the option to continue monthly or sign another year. When you buy a home, you're typically planning to live there for five years at the barest minimum.</li>
+ <li><strong>Renters have it easy financially.</strong> It's easy to budget on a monthly scale. The down payment and closing fees for a home can strain even the most financially sound bank account.</li>
+ <li><strong>Diversified investments</strong>. Homeowners tend to invest most of their savings in buying a home. The majority of their equity is eaten up by the home, and if something happens to it, that equity may be lost. Renters have more freedom to invest in savings, stocks or even a small business.</li>
+ <li><strong>Potentially lower costs. </strong>The above inflation advice might frighten you about rising rent, but in some areas, the cost of purchasing will run far ahead of general inflation. If you live in the right area, you'll find home prices to be much further out of reach than similar rental units.</li>
+</ul>
+ <h3>Faulty Reasoning to Avoid</h3>
+<p>
+ There are plenty of good reasons to buy, and there are plenty of bad reasons as well. Much of the advice you find online or from friends and relatives may be applicable in limited circumstances -- or it may be false altogether! </p>
+<p>
+ <strong>Renting seems cheaper.</strong> Buying a home means dealing with large numbers. In reality, renting deals with large numbers as well. It's a difference in units. A home factors in the cost of the whole home, while renting simply counts the monthly cost. Use the above rule of thumb (monthly rent multiplied by 200) to give you an idea of the "home ownership" cost of renting -- or reverse it, dividing the cost of the home by 200, to calculate equivalent loan payments.</p>
+<p>
+ <strong>Job security.</strong> Job security goes both ways. Most of the time, you have no reason to fear losing your job, and it is safe to buy a home. On the other hand, if you're actively at risk of downsizing or being fired, you should probably postpone buying a home. That said, it's entirely possible to bounce back from a job loss in a month or two, and you might even end up in a better financial position. Don't let the vague, unfounded possibility of losing your job prevent you from owning a home.</p>
+<p>
+ <strong>Pushy real estate agents.</strong> Many real estate agents take their jobs seriously, doing their best to find the best home for a given individual. Some, however, are simply in it for the commission. These agents tend to be pushy, driving you to buy a home above the price you can afford -- or driving you to buy when you shouldn't buy at all. Picking the right agent is incredibly important, and you need to be able to resist the most finely tuned sales pitch.</p>
+<p>
+ <strong>Forgetting the logistics.</strong> Buying a home means buying a location. Consider your proximity to schools, stores and work. If the commute is going to be significant, that can be a source of stress and fuel expenses. </p>
+<p>
+ <strong>Over and under buying.</strong> It's easy to want a home that fits certain criteria, such as a good location and a certain size. It's also easy to discover that the criteria you want are more expensive than you can afford. Overbuying is a common problem, and it leaves people scrambling with loans and debt. On the other hand, it's easy to want to save money buy purchasing a home well below your means. If you buy with the intention of selling and moving in a few years, you need to remember that your down payment and closing fees will eat into your savings and lower the amount of house you can afford next time.</p>
+<p>
+ <strong>"It's the adult thing to do."</strong> Also known as the American Dream effect, the urge to buy a home simply because it's what people do when they're adults can be detrimental. The peer pressure to buy a home isn't a good reason to buy.</p>
+<p>
+ <strong>Buy while prices are low.</strong> Or, alternately, buy now before prices skyrocket. Yes, the cost of buying a home will go up over the next decade or two. So will the cost of renting. So too, hopefully, will your income. Don't rush into a purchase simply because you fear you won't be able to afford it later.</p>
+ 
+                    </div>                    
+                    
+				<div class="accordion" id="section3">Preparing Your Finances</div>
+				<div class="accordion-content content-blk">  
+ 
+<h3>Examining the Finances</h3>
+<p>
+ Buying a home is a huge financial decision. If you're thinking about buying in the near future, you need to know your financial situation. The last thing you need is to dive into purchasing a house you have no idea if you can afford. Brokers, agents and home sellers all want to get as much out of you as possible, so you need to know your limits.</p>
+<p>
+ The first thing you need to do is make a detailed list of your expenses. While you're at it, make a second column and estimate what those expenses would be if you owned a home. Use monthly data, so you have an easy visible equivalency. What should you note down? </p>
+<ul class="arrow">
+ <li><strong>Your expected monthly income.</strong> This shouldn't change between renting and buying</li>
+ <li><strong>Your taxes</strong>, specifically what you pay in income tax for social security, federal income tax and state/local taxes</li>
+ <li><strong>Your housing expenses.</strong> You won't have a figure for rent for home ownership, but you will have both the home loan and property taxes to consider. You also need to note down your home insurance, gas and electric utilities, water, phone, television, Internet and other utilities. Remember that as a renter you may not have to cover garbage service or maintenance, which are projected expenses in home ownership. Likewise, you will need to furnish your new home</li>
+ <li><strong>The cost of food is important.</strong> Shopping for food and eating out should both be considered</li>
+ <li><strong>Transportation costs.</strong> Car loans, fares for public transit, vehicle registration fees, fuel costs, insurance and maintenance are all important. Remember to consider potential home locations when you figure the gas expense of a commute, maintenance costs and access to public transportation</li>
+ <li><strong>Appearance items.</strong> You don't necessarily buy clothing every month, but if you average out a year's worth of records, you can come up with a monthly figure. Also include frequent expenses such as a haircuts and dry cleaning</li>
+ <li><strong>Debts.</strong> Note your credit card debt, student, auto, and other loans.</li>
+ <li><strong>Entertainment. </strong>Movie tickets and rentals cost money, vacations cost money, gifts cost money, hobbies cost money, pets cost money. Anything you spend money on that could be classified as entertainment should be added here. Most of this shouldn't change with a new home, but if you think it might, note that down</li>
+ <li><strong>Required health and finance expenses.</strong> If you have an investment broker, a financial advisor or an accountant, note the cost. The same goes for regular hospital and dental visits, ongoing prescription drugs and therapy</li>
+ <li><strong>Insurance expenses.</strong> You'll have noted some of these in other categories, so anything remaining should go here. This includes health insurance and life insurance</li>
+ <li><strong>Education.</strong> This is important if you or your spouse are attending college, or if you're starting a family and will need to fund a child's education</li>
+ <li><strong>Child expenses.</strong> Any parent has expenses for childcare, toys and other such expenses</li>
+ <li><strong>Anything else you spend money on that doesn't fit in one of the above categories.</strong> If you can, review bank records for the past year to determine everything you may have spent money on.</li>
+</ul>
+<h4>Aside: Slashing Your Spending</h4>
+<p>
+ If you've never had a budget before, you might be realizing that you spend more than you realize on frivolities or expenses you can minimize. Slashing your expenses will help you save for a home -- after all, every penny you put into savings or an investment will earn you that much more interest. Every personal financial situation is different, but here are some general ideas you can use to cut expenses. </p>
+<ul class="arrow">
+ <li>
+ <strong>Extinguish debts.</strong> Carrying a credit card balance, paying minimum for car loans and holding off student debts are costing you in the long term. Interest will continue to pile up. Paying more each month will cost you more in the short term, but your interest expenses will drop. It also helps minimize the risk of a missed payment or a debt entering collections, both of which will hurt your credit; causing penalties, fees &amp; higher rates. If you have money saved, apply it! Your savings account probably has a lower interest rate than your credit card, so you're losing money by carrying a balance.</li>
+ <li><strong>Trim down frivolous purchases.</strong> Everyone has something they spend more on than they should. Maybe this is expensive designer clothing, rather than rugged utilitarian or out of season clothes. Maybe it's non-essential luxury or a hobby you can cut back to save a little more. It might be as simple as a daily lunch at a fast food restaurant costing you $100 every month. Or it might mean replacing pre-made coffee with your own machine.</li>
+ <li><strong>Buy food and other items in bulk.</strong> A membership to a store like Sam's Club or Costco will cover its investment in the bulk savings on items you frequently purchase. Groceries are a huge expense for many people, so cutting back will help significantly. Buy off-brand items to save a few bucks and you'll be surprised and how little impact it has on your life. Remember, marketers spend a lot of effort to convince you that off-brands and generics are somehow worse or harmful. Most of the time, the formulas and recipes are identical, but the price is slashed.</li>
+ <li><strong>Don't slash everything.</strong> It's tempting to cut out every hobby, every bit of takeout and every luxury in the interest of saving money. This almost never works. The more you slash, the harder it is to stick to your budget. You'll justify it by saying it's only a one-time purchase, over and over, and suddenly you realize you're spending just as much as you were. Leave yourself room in your budget for fun money, a bit each month for eating out, luxuries and entertainment. It's not a bad thing to treat yourself, as long as you know you can handle the expense.</li>
+ <li><strong>Maintain your budget.</strong> Even if you're the type of person who saves as much as possible, a budget helps. In fact, a budget is one of the most essential pieces of information you have if you're looking to buy a home. Budgets aren't a tool for the over-spenders to limit themselves, like a diet. They're a tool to build financial awareness.</li>
+</ul>
+<h3>Establishing Savings</h3>
+<p>
+ Setting a savings goal is intimidating. When you're putting together a budget, and you decide you want to save $200,000, realizing you can only put away $200 a month and figuring it would take 80 years to reach your goal is intimidating. Thankfully, it's rarely as shocking and depressing as that example.</p>
+<ul class="arrow">
+ <li><strong>Set a goal.</strong> Most people should have two primary long-term goals: retirement and a home. It's hard to choose figures for these goals, especially in your 20s and 30s. While you should probably consider buying a home eventually, think about retirement. If you think you might enjoy working even when you're 70 or 80, you don't necessarily need to save specifically for retirement -- and even then, not an early retirement in your 50s and 60s</li>
+ <li><strong>Establish a retirement account -- or not. </strong>Retirement accounts like 401Ks are amazing tax breaks, if you can match your employer contribution. They also lock your money in place until a designated age is reached. You can cash out earlier, but you typically get hit with a significant fee.</li>
+ <li><strong>Save an emergency fund.</strong> Now that you have a budget, you know how much it costs to maintain your lifestyle. Try to have at least three months worth of your expenses set aside. If you have a particularly at-risk job or a variable income, it might be better to shoot for six months or more. The idea is that, if you suddenly lose your job, you don't have to stress out about affording surviving while you try to find new employment</li>
+ <li><strong>Save for the future. </strong>Maybe you want to go back to college to further your career. Maybe you want to build a family and send children to college. Either way, you need to save for education. Some areas offer interesting educational savings accounts, so investigate local universities and financial institutions</li>
+ <li><strong>Save for a business.</strong> This isn't for everyone, but if you've ever thought you might want to start a business, you should save for the start up costs</li>
+</ul>
+ <h3>Protecting the Future</h3>
+<p>
+ Insurance is expensive. Insurance is also critically important. If you're living without insurance, you're taking an incredible personal and financial risk. Here are some cautionary examples.</p>
+<ul class="arrow">
+ <li>
+ <strong>Disability:</strong> What if you don't have disability insurance and an accident costs you the use of your legs? Costly therapy, slashed work income and the potential legal fees all cut into your savings.</li>
+ <li><strong>Home:</strong> What if you live in Kansas and lack storm coverage? Even if you don't live in a particularly tornado-prone area, a freak storm can blow up at any time. A tornado tearing your house -- or your whole neighborhood -- apart will tear your savings apart just as easily.</li>
+ <li><strong>Life:</strong> An unexpected illness, a freak infection, a bad accident. Anything can cause the loss of a loved one, and the lack of proper life insurance means you won't be able to compensate for their lost income. You might be forced to sell a house at a loss just to move to somewhere you can afford.</li>
+</ul>
+<p>
+ As with any major purchase, shop around when you search for affordable insurance. Gathering quotes and balancing coverage is an art form all its own, so take your time and make sure you're properly insured.</p>
+<h3>Knowing Your Credit</h3>
+<p><img src="https://www.mortgagecalculator.biz/img/credit-score.jpg" width="630" height="402" alt="Credit Score." /> </p>
+<p>Possibly the largest factor influencing your borrowing cost is your credit rating. You need to learn how to check your credit report, know what your credit score means and discover how to fix any errors. </p>
+<p>
+ Your credit score is a number that indicates your financial responsibility. Lower scores mean one of two things. Either you're virtually unknown to the credit bureaus or you're financially irresponsible. Both of these can be fixed. A higher score indicates that you're a lower risk investment for a lender -- you're more likely to meet their expectations. </p>
+<h4>What's In Your Credit Report?</h4>
+<p>
+ Your credit report is a record of your financial history, but it only contains certain types of financial information. If you're the kind of person who uses cash for everything, you'll find you have little record of it in your credit report. On the other hand, frequent users of credit cards will have a long and detailed credit report. What does the report contain?</p>
+<ul class="arrow">
+ <li><strong>The types of credit you use.</strong> This includes bank loans, credit cards and other forms of credit</li>
+ <li><strong>How long your financial accounts have been open</strong>. Having a credit card for years and a long, established bank account will build a reputable credit history.</li>
+ <li><strong>If your bills are paid on time.</strong> Overdue bills are reported to the credit bureaus and can reflect negatively on your report, especially if you're a frequently late.</li>
+ <li><strong>Identifying information.</strong> Your credit report is a personal history, so it includes your name, address, soc. number, birthday and employment information. All of this information is there for identification, and is not used in figuring your score. You won't be penalized for the type of job you have or the location of your home</li>
+ <li><strong>Each individual line of credit is reported.</strong> Lenders and credit companies report any account you have open, the type of account, the date you opened, your credit limit and your balance. They also note your account history and, if you closed the account, that date as well.</li>
+ <li><strong>Previous inquiries into your credit history.</strong> Each time you apply for a loan, the lender asks for your credit report. The record only stretches back two years, so all that searching you did for an auto loan four years ago won't be relevant. It will also list recent requests you make for your own report</li>
+ <li><strong>Any records related to overdue accounts sent to collections.</strong> All of this information is a matter of public record, and is simply collected in one place for lenders. This includes bankruptcies, foreclosures, lawsuits, wage garnishments and court judgments</li>
+</ul>
+<h4>Why Check Your Credit Report?</h4>
+<p>
+ Seeing a copy of your credit report is very valuable for financial awareness. It also allows you to identify and correct any errors on the report. Even in the age of computers, clerical errors are common. If someone else defaults on their loan, and their social security number is a digit away from yours, it could be misreported on your report. You may find that some information is incomplete, potentially due to using a slightly different name than your given name. It's possible that other errors occur, leading to misreported late payments and other issues you might otherwise never notice.</p>
+<p>
+ Your credit score and report are held by three different companies. These companies are <a href="http://www.equifax.com/home/en_us">Equifax</a>, <a href="http://www.experian.com/">Experian</a> and <a href="http://www.transunion.com/">TransUnion</a>. You are entitled to pull your report from each of these companies, once per year, for no cost. You can streamline this process by visiting the official credit report website set up by the U.S. Government for claiming your credit report. That site is <a href="https://www.annualcreditreport.com/">AnnualCreditReport.com</a>.</p>
+<p>
+ In addition to your free report, you are often eligible to receive another free report if you are denied for employment, housing or credit in the past 60 days due to your credit rating. You can also purchase an additional report if you've already used your free report, generally for a low fee.</p>
+<p>
+ Beware of sites that claim to offer free credit reports. Many of these sites pull your report free and then charge you for the service. Some will attempt to lock you into a contract of some kind for credit monitoring or other services. You do not need these services under any circumstances.</p>
+<h4>Factors Impacting Your Score</h4>
+<p>
+ With three different companies recording your financial history based on incoming reports, there are going to be errors and discrepancies between them. This means that your credit score will vary by a few points from one agency to the next. Each agency figures the score differently, so a discrepancy is no cause for concern unless it is more than a few points. How do these companies come up with your score? The process is decidedly complex.</p>
+<ul class="arrow">
+ <li><strong>Your score counts every factor and category of reported information.</strong> No single piece of information determines your score itself.</li>
+ <li><strong>Every factor is weighted differently.</strong> The weighting of each factor depends on your own personal credit history and the company measuring it. It is impossible to identify a "most important" factor for this reason.</li>
+ <li><strong>Your score only includes what is in your credit report.</strong> The credit bureaus do not know or care about external factors. However, a lender may ask for additional information in order to make their decision, so your credit score is not the sole determining factor of your potential rates.</li>
+ <li><strong>Positive information helps, negative information hurts.</strong> Late accounts will lower your score, but a visible display of effort catching up and restoring your accounts will raise it.</li>
+ <li><strong>Raising your score more than a few points takes time.</strong> If you want to buy a house next month but your credit score is too low for the loan you need, you won't be able to make up the difference in time. Building credit is a long process.</li>
+ <li><strong>Remove debt collection notices is possible, if you negotiate with the collections agency. </strong>This is a complex process that has little bearing on housing purchases, but is worth researching if you have unpaid debts in collections.</li>
+</ul>
+ All of that simply serves to illustrate that your credit is complex, but how much of it is of practical use? You know what goes into your credit score. How do you improve your credit score?
+ </p>
+ <ul class="arrow">
+ <li>
+ <strong>Be on time.</strong> Paying your bills on time shows a demonstrated history of reliability, which is important for lenders who want to be paid for their loans. Get current and stay current. The longer your history of being on-time, the more beneficial it is. If you missed some bills or two a few years ago, it will be much less relevant to a lender than if you miss a couple every month.</li>
+ <li><strong>Take your time.</strong> Building credit is a long process that won't happen over night. You need to work down outstanding bills and loans, keep your accounts up to date and avoid the other negative factors.</li>
+ <li><strong>Keep credit balances low.</strong> Using credit cards builds your history, but it only grows your score when the balance is low. Carrying a high balance tells lenders that you're close to the edge. Extinguishing debts will bolster your score significantly, though it may take some time to factor in completely.</li>
+ <li><strong>Don't open and close credit cards.</strong> You gain a benefit from having credit cards with long histories. Opening a credit card for a quick use and closing it again won't affect your score positively. In fact, it's possible that rapid opens and closes will lower your score. Closing an account doesn't remove it from your credit history, after all.</li>
+ <li><strong>Be focused when searching for a loan.</strong> Frequent inquiries into your credit history are lumped under the search for a single loan, if they're within a small enough time frame. If they stretch out too long, your score interprets it as frequent denied loans, which hurts your score.</li>
+ <li><strong>Don't worry about credit inquiries.</strong> Most credit inquiries are ignored by the credit bureaus and lenders alike. Additionally, when you're shopping for a loan, recent inquiries don't matter. Any request made in the previous 30 days is ignored for the purpose of a new request.</li>
+</ul>
+
+                    </div>                    
+                    
+				<div class="accordion" id="section4">House Pricing</div>
+				<div class="accordion-content content-blk"> 
+
+<h3>What Affects the Cost of Housing?</h3>
+<p>
+ Housing prices fluctuate from year to year. Sometimes they rise and sometimes they fall. The general trend is upward, but the recent collapse of the housing bubble shows that the unexpected can cause a drastic fall. Housing prices are still depressed, but they are on the rise. What factors influence the price of housing? How can you guess whether prices will rise or fall? Here are the major factors that contribute to housing costs. You can research these factors online or with your local city archives. This historical data will give you an idea of the trends, upward or downward, that a particular area faces. This helps you decide whether to jump on a purchase or wait a few years for further decline.</p>
+<ul class="arrow">
+ <li><strong>Jobs.</strong> If you were to move from your current location, what would be a deciding factor? Chances are your answer is a job. Most people move to find a job. The presence of jobs, the growth of the job market and the diversity of available jobs are all important. A place like silicon valley is great for IT professionals, but other professionals may avoid the area. If, somehow, the computer field collapsed, silicon valley would suffer a housing collapse. Job quality is important as well. An area with high earning jobs will see higher housing prices than an area where fast food jobs are the norm. Areas with incoming industries with high growth will experience increasing housing prices. For the reverse, simply look at Detroit. When the auto manufacturers went overseas, the Motor City collapsed</li>
+ <li><strong>Housing availability.</strong> You can't buy a house if a house doesn't exist, after all. If there is a low density of housing, and no one wants to sell, no amount of saving will get you a house in that area. When a house does become available, it will command a premium. On the other hand, an area with a large amount of vacant houses will see lower housing prices. People building suburbs and condominium complexes will drive down housing prices in the area. Look for a vacancy rate of around five percent for a housing market with prices on the rise. A vacancy rate around ten percent is more likely to be a buyer's market, where you can negotiate a nice low price</li>
+ <li><strong>Listings versus sales.</strong> An area where a large number of homes are listed for sale but few of them are actually selling creates a buyer's market. Sellers are desperate to sell their homes, so buyers are free to negotiate a lower price for an ideal location. Conversely, an area with a falling number of new listings indicates high demand for the housing in that area. Few listings and high purchase rates lead to a seller's market, where the buyer has much less room to negotiate and prices will rise</li>
+ <li><strong>Comparing rental rates.</strong> Investigate local rental prices. While you're at it, figure how much it would cost monthly to actually own that property. Ideally, you will buy when the cost to own is roughly the same as the cost to rent, if not cheaper. </li>
+</ul>
+ <h3>Finding a Deal on Housing</h3>
+<p>
+ Negotiation is a complex task. You need to consider a whole range of factors that will influence the sale price of a home. Looking for deals is simply the first step.</p>
+<p>
+ <strong>Beware the discount offers.</strong> Real estate agents and private sellers sometimes advertise that a home is being sold for "50 percent off!" or at a huge price reduction. The question you should ask yourself is why the price was reduced that much. Was it simply overpriced to begin with, and the reduction is designed to draw in new buyers? Is there a major defect in the home that makes it less attractive to buy? Chances are a house with such a discount will have some compelling reason to avoid it.</p>
+<p>
+ <strong>Identify ways to add your own value.</strong> You might not be able to get a great deal on the house itself, but if you can identify a few ways to add value, you'll be able to boost your equity quickly. This can be as simple as a fresh coat of paint and some new flooring. It can be as complex as a large addition or remodel. Of course, if you're pushing your budget to the limit to see the house in your price range, you need to be wary about investing in improvements you can't afford.</p>
+<p>
+ <strong>Buy when buyers are scared.</strong> A depressed housing market wards people off. Why would they want to buy a house when house values are falling? Smart buyers know that the price will improve over time, especially with a little work. Think of it like shopping for discounts at a retail store. Figure how much the monthly cost of buying the home would be, and look for a cost that's in line with or lower than local rental costs. Look for the beginnings of an incline in home sales, which indicates that prices have reached their bottom. Of course, look for any improvements in the job market, which will attract more buyers.</p>
+<p>
+ <strong>Scout the sellers.</strong> A motivated seller has a reason to sell the house, and will strike a deal to get it done. Some houses are owned by banks or managed by real estate agents with a lower motivation to sell. These sellers will try to get the best sell prices. You're looking for sellers who need to move, need to downsize or otherwise want to get out of their home as soon as possible. They'll cut you a discount just to be rid of the home. Of course, do a home inspection to make sure they're not running from a critical flaw.</p>
+<p>
+ <strong>Pick a good neighborhood.</strong> It's rare that a good neighborhood turns into a slum. Good neighborhoods tend to stay good, and that means a solid level of housing prices. Drastic changes to the area or the job market can change this, of course, but you can't hold off just because you want to predict the unpredictable.</p>
+<h3>Picking the Perfect House</h3>
+<p>
+ Shopping for the perfect vehicle is touch. Picking the right job is extremely difficult. Deciding the best way to spend your evening may take all night. What does that say about picking the place you'll live for a decade or longer, up to the rest of your life? You need to consider a wide range of factors before you even look at a single property. </p>
+<p>
+ Unless you're fabulously wealthy, you'll have a budget limiting the places you can life. If you can only afford a $300,000 home, you're not going to find a home in the heart of a city where property values start at $750,000. On the other hand, you don't want to start your search with average property values of $50,000. The quality of the neighborhood goes a long way towards setting its value and sale price. What characterizes a good location?</p>
+<ul class="arrow">
+ <li><strong>The local economy.</strong> A strong economy means a good area. A poor economy means a maze of sale signs and a bunch of unemployed neighbors</li>
+ <li><strong>Access to amenities.</strong> If you like to bike, does the area have access to trails and bike paths along roads? If you're a sports fan, can you easily access arenas and stadiums? If you're an outdoorsman, are you close to a lake, river or park?</li>
+ <li><strong>Schools.</strong> If you're thinking of raising a family any time in the next two decades, consider your access to schools. More importantly, consider the quality of those schools. Expensive private schools will cater to more expensive areas, while the lowest income neighborhoods are relegated to under-funded public institutions</li>
+ <li><strong>Crime rates.</strong> Everyone considers crime rates, and for good reason. High crime rates lower property values, not to mention adding the risk of becoming a target of those crimes yourself</li>
+</ul>
+ <h3>Types of Homes</h3>
+<p>
+ The style of architecture you prefer may not have a huge effect, but the type of building certainly does. Here are the various types of residences you may be looking at, and their advantages.</p>
+<p>
+ <strong>New construction detached homes.</strong> These are the houses that were built for sale. No one has lived in them before you. They are full of modern amenities, built to satisfy the modern buyer. They're built up to modern codes as well, meaning they're not going to be full of lead paint, asbestos, faulty wiring and ancient rodents. They tend to have high energy efficiency, and many may come with green amenities. Of course, new construction is only as good as the builders. Always get a home inspection, even on new construction. You never know what problems are hidden by a fresh paint job.</p>
+<p>
+ New construction can be misleading. Typically, you'll visit a suburb full of identical homes, and you'll be taken through a model home on tour. It's beautiful, fully furnished and laid out professionally. The home you end up buying has no furniture and none of the bright, attractive colors. Prices are also less negotiable on new construction. You don't have leverage of a motivated seller or a poor appraisal. </p>
+<p>
+ <strong>Used detached homes.</strong> These homes have been owned and lived in for years before you. It might be new construction from last decade, or it might be two centuries old and adapted to new technology. Used homes are typically less expensive, because they lack significant construction labor expenses. You're also able to negotiate with the seller and use various sources of damage as leverage. Of course, that means you need to handle that damage yourself. Ideally, a used home won't have large maintenance and remodel tasks to take care of before you move in. </p>
+<p>
+ Used homes are also, well, used. They may have old damage that was hidden from inspectors and old residents. It may be laid out in a form over function design -- high ceilings that raise your heating bill as well, old insulation that has lost potency over the years, etc. Floor plans might not quite work with modern appliances, and you may find yourself using the word "compromise" more than you prefer.</p>
+<p>
+ <strong>Condominiums.</strong> a condominium is a single building with multiple units. Picture an apartment building -- multiple units with similar layouts in the same attached building. The difference between an apartment and a condominium is the ownership. A landlord owns an apartment building and the tenants rent from them. In a condominium, each unit is owned by the person inside it. Condos are generally cheaper than detached housing, so you can get more condo for the price of a detached home. They also cost less to maintain, since external maintenance tasks can be split amongst the other residents. They often come with other amenities as well, such as pools and gyms attached. </p>
+<p>
+ Like apartments and dorms, however, condos offer a lack of privacy. You're only separated from your neighbors by thing walls and ceilings, which can lead to quite a bit of noise. For maximum privacy, hunt out a top floor corner unit, but expect a premium for the privacy.</p>
+<p>
+ Condominiums also have complex legal, financial and social ramifications. If a legal issue occurs, you have to deal with property lines, shared space rules, other tenant concerns and a whole labyrinth of legal rulings. You may find odd restrictions on your condo usage or fees. A few rules are fine, to regulate noise and safety. Too many rules, however, and you may feel more like a prison than a home.</p>
+<h3>The Mythical Fixer-Upper</h3>
+<p><img src="https://www.mortgagecalculator.biz/img/fixer-upper.jpg" width="630" height="420" alt="Fixer Upper." /> </p>
+<p>The fixer-upper is a frequent joke among sitcoms. No sooner has the buyer signed the contract than the walls fall in around them. Fixer-upper homes are a good way to get more house for less money, but they can backfire easily as well.</p>
+<p>
+ What benefit does a fixer-upper offer? Well, first off you'll end up in a nicer home than you would if you maxed out your budget on a pristine home. You essentially sacrifice your time in place of your money. You'll be in complete control of your decorations, from paint to layout. You'll also increase the value of your home -- assuming the work is done right, of course.</p>
+<p>
+ Rule number one of shopping for a fixer-upper is get an inspection. Let's reiterate: <strong>get a home inspection.</strong> Your home will have problems, and you expect that. What you don't want is to find the insulation you wanted to replace hiding structure flaws that make the home completely unsafe. Hidden fire damage, among other issues, can and will condemn a house you just bought. Old, hidden lead paint or asbestos can cost a fortune to remove if you weren't expecting the costs.</p>
+<p>
+ Be wary of contractors. At the same time, be wary of doing all the work yourself. If you have the skills and experience to renovate your home, by all means, take the time to do it. On the other hand, if you don't, hiring a contractor is a sure way to avoid the issues that doom so many fixer-uppers. The three mores of contractors are simple. It will be more disrupted than you plan, it will take longer than you plan, and it will cost more than you plan. This goes whether you're doing the work yourself or you're working with contractors.</p>
+<p>
+ <strong>Categories of repairs.</strong> There are three types of work you might end up doing on a fixer-upper. The first is structural repairs. This is major damage or old work that you need to bring up to modern code. Roof work, foundation work, new wiring and plumbing are all variations. They cost a lot and do little to add value to your home. Unless you have money to burn, avoid a home where you need to focus on structural renovations. If you do get a home with structural repairs to perform, see if you can get a credit with the seller for doing the work. </p>
+<p>
+ Renovations are the main value increase. Remodel a kitchen or a bathroom and add value instantly. Modern appliances, new walls, fresh windows and counters all add value. The more functional and valuable the remodel, the more your home benefits. </p>
+<p>
+ Cosmetics are the third type of repairs, and include everything from new carpets to landscaping. Some will add value, some will add curb appeal and some are designed to attract buyers. </p>
+<h3>The Rise of the Foreclosure</h3>
+<p>
+ The housing bubble burst, and that left banks to foreclose on thousands of homes. When you sign a mortgage, you're signing the house as collateral. If you fall behind on the contract, the bank can repossess the house. This has happened widely across the country over the last several years, so you often find foreclosures for sale. Foreclosures have the advantage of a motivated seller -- the bank wants their money back -- and a low asking price. On the other hand, there are a number of risks.</p>
+<p>
+ <strong>Physical issues.</strong> Some people are very unhappy when their home is foreclosed on by the bank. Some of these unhappy people will tear the house apart on their way out. It might be splashes of paint on the carpet and holes knocked in the drywall. It might be broken windows and plugged faucets letting water run. It might be a complete strip of anything metal to sell for scrap.</p>
+<p>
+ Most of the time, lenders will not allow an inspection prior to purchase of a foreclosed home. You are, more or less, gambling on the quality of the home. In some cases, you may end up with a quality fixer-upper. In others, you may end up with little more than a trash heap.</p>
+<p>
+ <strong>Financial issues.</strong> Some people rush to sell their home before the foreclosure process finishes. They may lie about the remainder owed to sell quickly. They may lie about any financial detail to get it out of their hands. If you're not careful, you get stuck with the bill. </p>
+<p>
+ <strong>Personal issues.</strong> Rarely, the previous foreclosed tenant hasn't quite moved out. Sometimes, they're very set on staying in place. Rarely, they're armed. Once you own the property, this becomes your problem. It's rare, but it's not impossible.</p>
+ 
+                    </div>                    
+                    
+				<div class="accordion" id="section5">Financing Options</div>
+				<div class="accordion-content content-blk">  
+ 
+<h3>All About Home Loans </h3>
+<p>
+ What is a mortgage? The word is thrown around constantly in terms of house buying, but it is rarely explained. Thankfully, the definition is simple, as it is a type of loan designed to assist you in purchasing a house. When you consider your income and your local housing market, it's easy to see why a loan is necessary. A house may cost $100,000, or $500,000 or even $1,000,000+. Regardless of cost, chances are you don't have that kind of cash sitting under your mattress. Mortgages allow you to leverage your income to buy a house in a series of monthly installments.</p>
+<p>
+ The monthly cost is the combination of the principal and the interest. The principal is the original amount you borrow. A $100,000 loan has a $100,000 principal. That same loan at a four percent interest rate has roughly $33,000 in interest costs over 15 years or $72,000 over 30 years. The exact amount varies based on interest rates, the amount you pay each month and the term of the loan.</p>
+<p>
+ There are primarily two types of mortgage: fixed-rate &amp; adjustable loans. They each have their own advantages and disadvantages.</p>
+<p>
+ <strong>Fixed-rates</strong> are simple. You have a set principal and a set interest rate. The rate never changes for the term of the loan. It starts at four percent day one of year one, and stays at four percent for the remainder of the term. Your monthly payment never changes. You'll never be surprised by a rate hike.</p>
+<p>
+ <strong>Adjustable-rates</strong> do not have a fixed interest rate. Instead, the rate changes based on what other rates for other financial transactions are doing. If the national rate is on the rise, chances are yours will rise as well, and you'll end up paying more. On the other hand, if national rates fall, so till will yours, leading to a lower monthly fee for a time.</p>
+<p>
+ <strong>Hybrid mortgages</strong> are those loans that start out with a fixed interest rate and then, after seven, ten or another period of years, convert into an adjustable-rates. This offers an advantage to short-term homeowners looking to convert houses or discharge their debt while the rate is low. Otherwise, homeowners may be surprised when it converts into an adjustable rate and the monthly cost rises.</p>
+<p>
+ <strong>Interest-only mortgages</strong> are the closest a legitimate mortgage can get to fraud. For the first few years of the term -- the same sort of periods as in a hybrid note -- the monthly cost is very low. This is because it only goes towards paying accruing interest. Once the period runs out, the full principal is still owed, and no progress has been made over the previous years. Monthly payments skyrocket and most homeowners are unprepared. Beware of this reset, and make sure you can handle it before you sign up for one.</p>
+<h4>The Subprime Bubble</h4>
+<p>
+ In recent financial news, specifically in the late 2000s, the housing bubble burst. This was mostly caused by the increase in subprime lending. Lenders for years had been increasing the amount of loans they extended to people who perhaps should not have qualified for those loans. This was in part due to extensive government incentives and subsidies for companies that helped people find housing. Jobs were plentiful, housing costs were rising due to the prevalence of new buyers and everything looked strong.</p>
+<p>
+ The crash happened in the late 2000s when market prices began to falter. The heaviest hit areas were those full of people holding subprime notes. Monthly interst costs jumped, borrowers defaulted, jobs declined and every factor leading to a strong economy dropped. The cycle continued in a spiral of depression that led to the current recession. Thankfully, government policies are changing to help avoid this issue in the future.</p>
+<h3>Which to Choose? Fixed or Adjustable?</h3>
+<p>
+ <strong>Fixed-rates</strong> are stable. The monthly cost is fixed, the rate is fixed, the principal is fixed. There are no surprises. You always know what your amount due is going to be, and you have an easy time budgeting for that each month.</p>
+<p>While that stability can be quite beneficial, these often have higher starting rates than adjustable loans. This is because lenders don't want to get burned if the economy causes rates to rise. This happened in the 1980s, where many holders of 6% fixed-rates cried with joy while the Federal Funds rate shot up to 15 percent. The opposite is also true, of course. If you're locked into a six percent interest rate and the market decides interest rates will fall to four percent, you're still stuck with the higher rate (unless you refinance).</p>
+<p>
+ With a fixed-rate mortgage, you are likely signing on for either a 15 or a 30-year term. Lenders will charge you a higher interest rate the longer the term. This is because a longer term gives interest rates more time to rise. It also gives you more time to encounter financial hardship and default. </p>
+<p>
+ <strong>Adjustable-rates</strong> are the bank's way of maximizing their profits while following the market. They're volatile, because they change with the level of interest prevalent in the wider market at large. If the market rates rise, so do yours. If it lowers, the same may happen to you. What makes adjustable-rates attractive?</p>
+<p>
+ Most of the time, they start at a lower rate than a fixed rate mortgage. A fixed rate may start at seven percent, and an adjustable loan for the same principal and term may be a mere five percent. </p>
+<p>
+ Lower interest rates also potentially allow you to qualify for a larger loan. If you have a budget of $150,000, borrowing at six percent will give you a smaller principal than borrowing at four percent. </p>
+<p>
+ If you're buying your home while rates are high, your adjustable-rate may starts off with a lower than market rate. Then, if the market rates drop, so too will your relatively-low rate. This allows you to enjoy lower rates without refinancing to get them. It's also a benefit for those cases where you may not qualify for refinancing.</p>
+<p>
+ Adjustable-rate mortgages have one safety against rising rates. They typically have a clause that identifies the maximum possible rate for the loan. Even if the market rises beyond that cap, your rate will remain capped. You can talk with your lender to identify what this cap is and what the maximum possible payment would be, which helps you plan for the worst-case scenario. Adjustable-rate loans also typically have a periodic adjustment cap, which limits the size of an individual rate jump.</p>
+<p>
+ How often does an adjustable-rate mortgage adjust? Typically, the change takes place once every six months or once a year. Some rare loans will adjust monthly, which can be a warning sign of something you want to avoid. Your lender will send you a notice of the coming adjustment, how it's figured and how much you'll spend each month.</p>
+<p>
+ Before you consider signing for adjustable-rates, consider these factors:</p>
+<ul class="arrow">
+
+ <li>You need a monthly budget that can withstand a higher monthly payment without compromising your other financial goals. Don't sign for adjustable-rates if the low introductory rate is the highest you can handle.</li>
+ <li>Make sure you have the financial reserves to cover you in the event that your job is lost. Six months of monthly expenses is ideal with adjustable-rate mortgages.</li>
+ <li>Can you afford the worst-case scenario, where the interest rate hits the highest possible rate allowed?</li>
+ <li>If you're combining your finances with your spouse or a family member, will you be able to handle it if they suddenly lose a job? Financial hardship is not an acceptable excuse for a financial institution</li>
+ <li>Consider whether you're starting a family. Having children costs money, which will lower your available funds, reducing the amount you can afford each month</li>
+ <li>Not knowing what your rate is going to be in the coming months is a lot of stress to handle. Make sure you're able to take on the psychological strain of an adjustable rate</li>
+</ul>
+ <h3>Loan Terms</h3>
+<p>
+ Mortgages typically come in two term lengths: 15-year and 30-year. Like the different rate categories, these have their advantages and disadvantages.</p>
+<p>
+ 30-year mortgages typically have lower monthly payments than a 15-year term with the same principal. This makes sense, after all, because you have twice as long to repay the same amount of principal. Your monthly cost won't be exactly half, because of the interest accumulation, but they will be lower. The lower payments a 30-year offers allow you to save for other financial goals, like retirement. Even if you can afford the higher monthly payments of a 15-year tern, you may want to take the 30-year term and apply the extra money to retirement or other savings.</p>
+<p>
+ If you can handle the higher payments of a 15-year and still apply money to retirement or other savings, by all means, grab a 15-year note, as it allows you to accumulate home equity much faster. You'll have your house owned outright in just over a decade and a half, which can be an awesome situation for someone in their 40s or 50s. Of course, just because you have a 30-year note doesn't mean you have to pay the minimum. You can just as easily send in more than the minimum each month. Finishing a 30-year in 20 or 25 years will save you a bundle on interest. Extra payments early in a loan will lead to greater savings as they prevent some of the associated interest from accumulating for decades.</p>
+<h3> Points &amp; Fees</h3>
+<p>
+ Lenders charge fees for doing the research and paperwork to prepare your loan. These are typically identified as points. A point is an up-front fee in exchange for access to better rates. One point is equal to one percent of the principal of the loan. For a $100,000 mortgage, that is $1,000. Typically, a lender will charge you more than one point. </p>
+<p>
+ Points are not all bad. For fixed-rates, the more points you pay up front, the lower your ongoing interest rate. Conversely, if you can't pay more than a single point or two, you'll find higher rates. This might be the difference between 7.25 and a 7.75 percent, but it's still significant -- especially for high principals over long terms.</p>
+<p>
+ Lenders will charge other fees as well. Before you sign, ask for an itemized list of these fees. This will help you negotiate a lower signing fee. As always, beware any deals that claim to have no fees. Lenders want to make money, and if they aren't doing it by charging you fees, they will by charging greater interest. Some fees you might see are application and processing fees, credit report fees and appraisals. </p>
+<p>
+ Application fees tend to run between $500 and $1,000. Most lenders charge this fee regardless of whether or not you're approved for the loan or you accept their offer -- it's a test of sincerity. Some lenders will waive this fee if you're approved and accept their offer.</p>
+<p>
+ Credit report fees are relatively minor, typically less than $100. This is simply a way for the lender to obtain a current copy of your credit report. Make sure you've pulled it yourself before you waste your time -- and the lender's time -- with a low score or problematic report. You'll lose your fees and you'll end up declined.</p>
+<p>
+ Appraisal fees cover an inspection of the house you're looking to buy. This helps prevent overpaying for a house with a serious fault. This is a protection for you and the lender. You can factor repairs into the home's value &amp; the lender knows the collateral is good. The lender risks buyers running off without paying, leaving them holding the property. If the property value declines and you overpaid to begin with, the lender takes a serious loss. An appraisal fee can run from $300 to $1,500, depending on the scale and complexity of the home.</p>
+<p>
+ 20% is a common down payment. A higher down payment is enticing to lenders and can help get you approved. Putting less down is cheaper upfront, but you need to do some convincing to get it. Additionally, if you are paying under 20 percent, you will be required to get Private Mortgage Insurance. PMI is a type of insurance specifically designed to compensate the lender if you default while having paid a lower-than-usual down payment.</p>
+<h3>Picking the Best Loan</h3>
+<p>
+ The hardest part of picking a loan is finding all the possible quotes. You'll need to know your credit score and financial situation, as mentioned in all the previous talk of financial awareness. Shopping around for home loans is the same as shopping for a good auto loan or good insurance rates. Call lenders, offer them your information and ask for a quote. You can do plenty of research with the power of the Internet at your disposal, but some lenders may not have a significant online presence. You may want to do some good old-fashioned legwork for this one.</p>
+<p>
+ What characterizes a good lender?</p>
+<ul class="arrow">
+ <li><strong>A straightforward attitude.</strong> Good lenders will explain their terms in plain English. If they start confusing you with technical terms or disregarding clauses as "unimportant" without explaining them, you should consider it a warning sign</li>
+ <li><strong>Local approval. </strong>Good lenders can approve your loan there in the office. They won't have to send away and wait for corporate approval. This is an even stronger indicator now with a global computer system</li>
+ <li><strong>Market knowledge.</strong> Good lenders will know the sort of properties that are available in various areas. They will know the sort of property you're looking at, and they will warn you about potential surprises</li>
+ <li><strong>Competitive nature. </strong>Lenders are businesses. Make them compete for your business. If they're set in their office and secure in their position, be wary. It's possible they have the best offer and know it, but it's also possible they're using their confidence to make you believe that when a better loan is available down the street</li>
+ <li><strong>Nationally licensed. </strong>As of January 2011, loan officers must be licensed. Avoid any lender that doesn't have a license</li>
+</ul>
+ <p>
+ Remember, even if you have a good real estate agent, you don't need to take their advice for a lender. They might know the best deals in town. They might know the best deals that were in town 20 years ago. Investigate their suggestion, but don't take their word as gospel.</p>
+<p>
+ The same goes for brokers. Brokers attempt to work with a wide selection of lenders to get a good deal, but they can't work with everyone. A good broker will get you the best deal, and they will charge for it. It's a steep price, but it's worth the saved time and hassle of shopping for your loan alone.</p>
+<h3>Typical Financing Problems</h3>
+<p>
+ When you're saving for a home, checking your credit report and working with an agent to find a property, the anticipation builds. Your dream of home ownership is almost here. It's so close you can feel it. Having the rug pulled out from under you at this stage in the game is incredibly depressing and likely means you have to put your dreams on hold. To help avoid this, here are some of the most common problems and how to handle them.</p>
+<p>
+ <strong>Low income.</strong> If you don't have enough income, you won't be able to get financing. If the lender feels you've stretched yourself too thin, you're going to face a declined mortgage. To handle it:</p>
+<ul class="arrow">
+ <li><strong>Have patience</strong>. Unless you can immediately get a promotion or a new, higher paid position, chances are it will be a while before you can demonstrate a higher income</li>
+ <li><strong>Increase your savings &amp; down payment offer. </strong>You can increase your chances of approval by offering 25 or 30 percent instead of the typical 20 percent.</li>
+ <li><strong>Cosign.</strong> A wealthy benefactor, be they friend or family, can drastically improve your chances of approval. Of course, you have to trust them with your financial situation, and if you default, they are on the hook</li>
+</ul>
+<strong>Credit history issues.</strong> If you happen to have a number of outstanding debts, be careful with your application. A high credit balance and outstanding loans are red flags for lenders, especially if you're maxing out your credit cards each month. Errors on your credit report may also crop up, though ideally you will have scanned your credit report and fixed any errors before you apply for a mortgage. To cope:</p>
+<ul class="arrow">
+ <li>Work to <strong>clean your credit report</strong> before you apply.</li>
+ <li><strong>Shop around </strong>for lenders who understand you're a person rather than a credit score. Some lenders are more understanding and flexible than others, willing to give you the benefit of the doubt</li>
+ <li><strong>Cosign. </strong>Again, a cosigner will improve your chances of approval.</li>
+ <li><strong>Lower your expectations.</strong> If you have a lot of debt and not a lot of income, you might simply be looking at a loan out of your grasp. Shooting for a smaller loan may not get you the home you want, but it could be the difference between approval and denial</li>
+ <li><strong>Trim your expenses and apply the savings to your debts</strong>. Minimizing your debts in advance of an application will help you get approval -- especially since it demonstrates that you're willing and able to adjust to meet your new obligations.</li>
+</ul>
+<strong>The appraiser claims a lower value than your offer.</strong> It can be a shock to see a professional appraiser set the value of your future home lower than you offered. Thankfully, even reaching this step shows the lender and the seller that you're interested. You can use the appraiser's estimate to negotiate a lower purchase price. Of course, make sure your appraiser is a local who knows local prices, otherwise the estimate may not be fitting.</p>
+<h3>Documentation</h3>
+<p>
+ When you're applying you need plenty of information. If you want the process to go as smoothly as possible, try to have all the documentation available. This helps you avoid running back and forth between homes, banks, deposit boxes, computers and other data stores to find the paperwork you need. Here is a list of what you should bring.</p>
+<ul class="arrow">
+ <li>The sales contract for the home you're looking at buying</li>
+ <li>Paystubs for the last 30 days, or longer if you're self-employed. Make sure these are originals, not reproductions</li>
+ <li>The most recent two years worth of W-2s and tax returns</li>
+ <li>Residence history for at least two years</li>
+ <li>Three months of bank statements and investment statements</li>
+ <li>A diploma or transcript if you're an active or recent student</li>
+ <li>A sales contract for your current home, if you're selling</li>
+ <li>Information for your landlord if you're renting</li>
+ <li>Pink slips for vehicles less than five years old</li>
+ <li>Any paperwork relating to bankruptcy, social security benefits or disability</li>
+</ul>
+ As you can see, banks will ask for virtually anything relating to your financial history. They may ask for documents not on this list. If possible, call them beforehand and ask what paperwork you need to gather. Most lenders will have a list they can provide.</p>
+ 
+                    </div>                    
+                    
+				<div class="accordion" id="section6">Building Your Team</div>
+				<div class="accordion-content content-blk">  
+ 
+<h3>Building a Home Buying Super Squad</h3>
+<p>
+ As you may have gathered, buying a home is a huge amount of work. You're not the only one working on it, though, and you can build a great team of people to make the process much easier. Here are the team members you should find.</p>
+<ul class="arrow">
+ <li><strong>Yourself.</strong> Without you, the team doesn't exist. They don't have a purpose. You have to pay them, you have to direct their work and you have to be satisfied with the results.</li>
+ <li><strong>The real estate agent.</strong> This is the person who knows the area. They hunt down the best properties that suit your needs, connect you with the seller and get the deal rolling. They may work for an agency, or they may fly solo as a broker.</li>
+ <li><strong>The lender.</strong> Without a mortgage, chances are you won't be buying a house.</li>
+ <li><strong>The inspector.</strong> A property inspector should be aware of local house prices as well as the various construction problems. Finding problems before you buy is their job, and they can save you thousands.</li>
+ <li><strong>Advisors.</strong> Even if you don't keep one on retainer, visiting a financial advisor will help you determine how much house you can afford, how much you should cut back your personal spending and how to navigate the tax structures that come with home ownership.</li>
+ <li><strong>The escrow officer.</strong> Escrow is a service that holds money between a transfer of goods from one person to another. Neither side knows the other, so neither trusts the other. You give your money to escrow, and they make sure you get either the property or your money back.</li>
+</ul>
+ <h3>Finding a Real Estate Agent</h3>
+<p>
+ Real estate agents come in two flavors: the buyer's and the seller's. Seller's agents work for the seller and try to convince you to buy. Buyer's agents work with you and try to convince the seller to sell. These days, agents work for both sides, and get a commission from both. You can use this to your advantage. Offer the agent a bonus if they can get you a cheaper price, and watch them work for you. Real estate agents are paid if you buy. If you don't, they get nothing.</p>
+<p>
+ What makes a good agent?</p>
+<ul class="arrow">
+ <li><strong>They work with you, not for you.</strong> Agents should offer options and advice, educating you about your options. They should not, ever, make decisions for you.</li>
+ <li><strong>They don't try to do it all alone.</strong> Agents know when they need expert assistance, usually from an inspector or other team member. </li>
+ <li><strong>A good agent specializes</strong> in a certain property type in a certain geographical area. Specialists have a better working knowledge of what they can do for you.</li>
+ <li><strong>Good agents work full time. </strong>Part time agents working from their couch on nights and weekends probably won't have the energy to dedicate to your dream.</li>
+ <li><strong>Good agents have their own contacts.</strong> You shouldn't need to connect them with the other members of your team -- they should offer ideas.</li>
+</ul>
+ You will probably have to interview a few agents before you select the perfect one. To help with the interview process, here are some sample questions.</p>
+<ul class="arrow">
+ <li>Are you full-time?</li>
+ <li>What agency do you represent?</li>
+ <li>Tell me about your office</li>
+ <li>How long have you worked in real estate as an agent?</li>
+ <li>What kind of license do you have?</li>
+ <li>How do you keep current in your industry?</li>
+ <li>Do you have a good grasp of my needs as a buyer?</li>
+ <li>What do you think of (the name of another agent you're interviewing)?</li>
+ <li>How many buyers and sellers are you working with right now?</li>
+ <li>Do you work in partnerships or on your own?</li>
+ <li>What should I know about your firm?</li>
+ <li>Do you have references?</li>
+</ul>
+ You can also ask plenty of questions of their references, particularly about the performance of the agent and their shortcomings. </p>
+<h3>The Rest of the Team</h3>
+<p>
+ To find the right lender, call around. This was extensively covered above. </p>
+<p>
+ To find a property inspector, check local listings and real estate publications. Inspectors need to be public to be hired, and they need to be hired to be paid. This means you should have no trouble finding a home inspector and, more importantly, will have a public source of feedback to identify if the inspector is adequate.</p>
+<p>
+ To find an escrow officer, talk with the seller and the real estate agent. Escrow can be handled by a lawyer, bank, broker or dedicated firm. Either way, their job is simple, and they are not hard to find.</p>
+<p>
+ Finding financial advisors is a matter of preference. If you're secure in your budget and cost estimates, you don't need to worry about contracting a financial advisor. At the same time, if you already have one on retainer, you don't need to find one. If you choose to go with a financial advisor, ask them many of the same sorts of questions you did when you interviewed your real estate broker. </p>
+<p>
+ Once you've put your team together, you're ready to start the hunt.</p>
+                     </div>                    
+                    
+				<div class="accordion" id="section7">Negotiating Price &amp; Terms</div>
+				<div class="accordion-content content-blk"> 
+<h3>Tips for Negotiating</h3>
+<p><img src="https://www.mortgagecalculator.biz/img/handshake.jpg" width="630" height="431" alt="Handshake." /> </p>
+<p>Negotiation is a fluid process that's all about leveraging your advantages, controlling your emotions and making a deal.</p>
+<p>
+ <strong>Control yourself and your emotions.</strong> We all know about the grocery store impulse buy -- imagine if you did the same with a house. You'd be out a heck of a lot more than a $1.50 candy bar if something went wrong. Keep your emotions at arm's length and approach every aspect of the deal rationally. Take your time! There's virtually nothing pushing you to close the deal. The seller may try to pressure you to make a decision, but don't fall prey to faulty judgment because you were rushed.</p>
+<p>
+ <strong>Be realistic.</strong> Lying to yourself about your finances is a great way to get into a lot of debt very quickly, ending up with a foreclosed house or bankruptcy. Be realistic about what you make, what you save and what you can afford. Don't shop for an ideal house above your means. </p>
+<p>
+ <strong>Pick your style.</strong> Some negotiators go into it wanting to win. You win, the seller loses. This ruthless, cutthroat negotiation style can get you a great deal. It might also close off certain avenues that might have otherwise brought you to an ideal home. The other tactic is the compromise; the &ldquo;everybody wins&rdquo; style. Make the best of the situation for both sides, cut deals that benefit both and work in all market conditions. Cutthroats are tolerated; cooperatives are assisted. </p>
+<p>
+ <strong>Deal in person, in paper.</strong> Phones are for appointments, not for deals. Don't make or accept an offer over the phone. Oral agreements are valueless. They don't hold up in court and they don't reflect in paperwork unless that paperwork is crafted around the agreement. If it's not in paper, it might as well not be true.</p>
+<h3>Making the Offer</h3>
+<ul class="arrow">
+ <li>Good offers are realistic. Don't lowball the seller with an expectation to raise the price later -- the seller can easily say no and refuse to deal</li>
+ <li>A good offer has factual finances behind it</li>
+ <li>A good offer is open to future alterations if remodels and work is required down the line</li>
+</ul>
+ You will, more likely than not, get a counter offer. This allows the seller to tweak the terms of the offer to be more to their liking. This could change escrow dates, prices and other details. You review and counter-counter-offer until the two parties agree. If details are too contentious to come to an agreement, that's a sign the deal won't happen. </p>
+<p>
+ Most of the time, you want to negotiate in a buyer's market. This isn't always possible. A buyer's market gets you the best prices with a motivated seller. </p>
+<p>
+ Avoid low-ball offers. What is a low-ball? A low-ball is an offer that's too low to be realistic. If a seller accepts it, you stand to make quite a bit of profit, in which case you're probably in for a shock. Most of the time, they won't accept. From a seller's point of view, the buyer probably didn't do their research. At best they assume your ignorance, and at worst they find the offer insulting. </p>
+<h3>Beware of Fake Sellers</h3>
+<p>
+ Real estate is fraught with peril, and fake sellers exist. What do they gain from being a fake seller? You've probably seen fake sellers in other circumstances. The garage sale with everything priced near retail or eBay prices is a primary example. These are the people who like the idea of selling their home, but don't realistically want to. Here are a few warning signs.</p>
+<ul class="arrow">
+ <li><strong>Are the numbers realistic?</strong> If they're selling a $250,000 house for $600,000, you're not going to whittle them down -- they don't want to sell</li>
+ <li><strong>Are they motivated?</strong> People sell their homes because they need to, whether it's financial stress or the desire to move. If the seller has no discernable reason to sell their home, they probably won't accept an offer</li>
+ <li><strong>Do they have a time frame?</strong> Once again, sellers have a reason to sell, and often that reason includes a deadline. If there's nothing pressing them to make a deal, they'll hold out until you've wasted your time</li>
+ <li><strong>Are they genuine?</strong> Bad sellers hide details, lie about the condition of their home and generally make you focus on buyer beware. If you keep encountering bad surprises, back away from this fake seller</li>
+ <li><strong>Do they cooperate? </strong>If they're uncooperative, they might have something to hide. It's not worth the time</li>
+</ul>
+<h3>Excellent Online Resources</h3>
+<p>
+ There are a number of excellent online resources you can take advantage of in your search for a home. These range all through the process, from personal finance to escrow. </p>
+<ul class="arrow">
+ <li>
+ <a href="http://www.realtor.com/">Realtor.com</a> is excellent for searching house listings. It's a massive national site with millions of listed homes, which gives you two opportunities. First, you can use it to browse homes in your prospective area to get an idea of property values and amenities. Second, you might even find a few homes to look at.</li>
+ <li><a href="http://www.fema.gov/">FEMA</a>, the Federal Emergency Management Agency, has information on disaster statistics for any given area. This will help you learn what disasters may occur in your prospective areas so you know what you need to insure against. It might also give your home inspector clues to look for damage in old used houses.</li>
+ <li><a href="http://www.ashi.org/">The American Society of Home Inspectors</a> is hands down the best way to locate a quality, licensed home inspector in your area. They know their stuff.</li>
+ <li><a href="https://portal.hud.gov/hudportal/HUD">The United States Department of Housing and Urban Development</a> is a great resource for two things. The first is listing and assistance for those with disabilities and assisted living. Second, it's great for finding any complaints about discrimination that have cropped up in your area.</li>
+</ul>
+<p>
+ <strong>Beware</strong> of online "how much house can you afford" apps. These may give you a basic idea of what you can afford, but they won't tell the whole story. They don't know your credit score or any flags in your credit report that can change your rates. They also don't have your entire financial situation on hand, which can greatly affect you - which is why we published this extensive article for our homepage!</p>
+<h3>Things to Do After you Buy</h3>
+<p>
+ The day is finally here. The escrow has been transferred. You've moved into your new home. Your new home! You are, officially, a homeowner. The majority of the work is done, but you're not off the hook just yet. Here are several things you need to take care of as a new homeowner.</p>
+<p>
+ <strong>Maintain your budget.</strong> At the start of this whole process, you did a detailed audit of your finances. You learned your spending habits, figured out how to trim the fat off your monthly bills and hopefully learned something about responsible finances along the way. Now that you own a home, you should keep up with your budget. Maintaining sound financial habits will help you keep up with your obligations and keep some money on the side to continue investing in your future. </p>
+<p>
+ If you don't have some already, you may want to invest in a budgeting program. It can be as simple as linking your bank account to Mint.com, as manual as creating an Excel spreadsheet or as automatic as buying and setting up Quicken. Feel free to try the temporary free versions of the various budgeting programs so you know if it works for you. The easier it is to maintain your budget, the easier you will find it to follow.</p>
+<p>
+ <strong>Set up automatic payments.</strong> This idea isn't for everyone, but it works for most people. You're going to be stuck with your mortgage for 15 or 30 years. During that time, it's easy for paperwork to get lost. A bill lost in the mail or late can lead to late or missed payments. A one-time problem can cause a cascade of additional fees. </p>
+<p>
+ Most modern lenders allow you to set up a direct debit to your bank account, typically on a scheduled day of the month. This allows you some control, without risking errors. Automatic billing is excellent when you have stable income. Note that if you do lose your job and have trouble with your finances, you will probably want to remove automatic billing to avoid the risk of overdrafting an account.</p>
+<p>
+ <strong>Rebuild your savings.</strong> Chances are good that your down payment wiped out most of your emergency fund. Now that the house is closed and the purchase made, it's time to start rebuilding that fund. You still have house payments to make, so putting away extra money will be important if you run into financial trouble. You should definitely consider this a top priority. Extra money once your fund is rebuilt can go to retirement, saving for another large purchase or entertainment.</p>
+<p>
+ You might consider, once your fund is back to a six-month buffer, applying some of your extra cash towards your principal. Paying it down earlier will reward you with lower overall payments and a higher degree of financial freedom. The longer it takes to repay, the more you spend on interest. The contract term, 15 or 30 years, is the maximum amount of time you have to pay it. There typically is no penalty for paying more than the minimum each month.</p>
+<p>
+ Calculate what 1/12th of your monthly payment is, then add that much extra each month, making sure it applies to the principal. Factoring in the lower interest over time, if you keep it up, that one extra payment each year will cut over four years off a 30-year term.</p>
+<p>
+ <strong>Ignore the junk mail.</strong> As a homeowner, you were immediately put on a number of mailing lists. You're a member of an entirely new demographic. This means you become the target of a number of "services" offered to new homeowners. Some of these include:</p>
+<ul class="arrow">
+ <li><strong>Mortgage insurance.</strong> If you bought your house with less than 20 percent down, you have to get mandatory Private Mortgage Insurance, or PMI. If you already have it, or if you paid with a 20 percent or more down, you do NOT need mortgage insurance. The offers you get in the mail as a new homeowner are typically overpriced for the meager amount of coverage they offer. Mortgage insurance might be a good idea in certain circumstances, but chances are you don't need to bother with it.</li>
+ <li><strong>Home security offers.</strong> A home security system is a good idea to protect your investment. That said, the offers you get in the mail are aimed at new homeowners to scare them into purchasing an expensive security system. If you want to get a home security system, treat it like any other large purchase. Take your time, shop around, talk to security specialists and get quotes</li>
+ <li><strong>Refinance offers.</strong> You might get your first refinance offers within months of closing on the house, which is certainly not enough time for interest rates to change that drastically. Refinancing is always an option, but you shouldn't refinance through a company sending you direct mail shortly after signing your first loan.</li>
+</ul>
+<strong>Keep an eye on interest rates and property values.</strong> These are two figures you should check every six months or once each year. Watch the local and national interest rates. If you have fixed-rates, you can attempt to refinance if rates drop below where they were when you signed. This refinancing might fail, but if it works, you'll slash your house payments. If they rise, well, you can revel in your fixed-rates and ignore refinancing requests.
+</p>
+<p>
+Property values have a different focus. When your property taxes are figured, they consider the estimated value of your home at the time. If property values are on the rise, your taxes may rise as well. On the other hand, if property values fall, you probably won't hear about it from the IRS. In these cases, you should talk to the county tax assessor to get a reassessment. If they appraise your house at a lower value, your property taxes will decrease.</p>
+<p>
+ <strong>Keep records.</strong> This goes hand in hand with budgeting. Keeping detailed records, as well as receipts, is a very important task. This goes double for any purchases you make with an aim to improve the value of your home. You can use these records as proof of the value you've put into your home, which comes in handy for a number of possible purposes down the road.</p>
+<p>
+ <strong>Start maintenance early.</strong> If you set yourself a schedule for replacing furnace filters, cleaning the home, checking gutters and all the other little maintenance tasks, you'll have two things. First, you'll quickly develop a working knowledge of your new home, inside and out. Second, you'll be able to recognize problems as they develop, rather than when they explode. Preventative maintenance early will save you a lot of time and money down the line.</p>
+<p>
+ <strong>Gather information.</strong> As a homeowner, if something happens, you need to handle it. That means you need to know who to call in the event of an emergency or an issue. Talk to your neighbors, find out whom they recommend for maintenance tasks. Gather a reference book of phone numbers for places like your power company, your water company, your appliance maintenance people and local businesses that help homeowners. Learn the names and numbers of your neighbors so you have someone to call in an emergency. You don't need to write down 911, but the non-emergency numbers for the fire department, police station, school, doctor's office and hospital are all useful to have.</p>
+<p>
+ <strong>Furnish your home, but slowly.</strong> You just spent a ton of money on a house. Now you have a small apartment's worth of items to fill a large house. You might feel that your possessions are spread woefully thin. You buy a chair, and then a sofa. An entertainment center to support the TV. A couple of bookshelves, and of course the books to fill them, all follow. Soon enough, you've spent thousands of dollars furnishing your home, and find you're still out of savings and have home payments to make. </p>
+<p>
+ Furnishing your home is a good idea. However, before you go out and buy a dining room set, figure out what you can afford. No one is going to pressure you into filling your house with stuff. Buy a piece here and there, refurbish old furniture, hunt through garage sales and flea markets -- deals come to those who wait.</p>
+<p>
+ <strong>Start early with organization and storage.</strong> There is no better time to organize your stuff than when you're first moving in and unpacking. Getting a head start on organization and storage will save you plenty of hassle over the coming years. Of course it's going to slip and fade, but a solid base is easier to return to than it is to create out of a mess.</p>
+<p>
+ <strong>Enjoy your new home.</strong> The most important part of home ownership is enjoying your home. Sit back, relax and look around at what you own. You went through a lot of hassle to buy this, so you've earned the relaxation. </p>
+
+
+ </div>
+
+
+				<div class="accordion" id="section8">General Purchase Considerations</div>
+				<div class="accordion-content content-blk">
+
+<h3>Key Tips &amp; Advice For Homebuyers</h3>
+    <p>Things to consider when buying a home:</p>
+    <ul class="arrow">
+    <li>While 30-years is the most popular term in the United States, a 15-year term builds equity much quicker;</li>
+    <li>Home buyers in the US move on average of once every 5 to 7 years;</li>
+    <li>Early payments apply primarily to interest rather than the principal;</li>
+    <li>Using a <a href="https://www.mortgagecalculator.biz/c/term-comparison.php">shorter loan term</a>, <a href="https://www.mortgagecalculator.biz/c/extra-payments.php">paying extra</a> &amp; making <a href="https://www.mortgagecalculator.biz/c/biweekly.php">bi-weekly payments</a> can better help offset any transaction-based expenses associated with moving again in 5 or 7 years.</li>
+    </ul>
+    
+					<h3>Do Home Prices Always Go Up?</h3>
+					<div class="tabs_table">
+						<ul class="tabs">
+						 <li><a rel="tab_1" class="selected">Yes, mostly</a></li>
+						 <li><a rel="tab_2" class="">But why?</a></li>
+						</ul>
+						<div class="panes">
+						 <div class="tab-content" id="tab_1" style="display: block;">
+						  <p class="l-child">In the United States real estate prices have went up about 6-fold since 1970.</p>
+						 </div>
+						 <div class="tab-content" id="tab_2" style="display: none;">
+						  <p class="l-child">Our monetary policy is biased toward inflation. If you back out general inflation, outside of during market bubbles, real estate typically performs roughly inline with general inflation. Rather than looking at raw prices, better metrics to use for analyzing real estate prices are:
+						  </p><ul>
+						<li>Home price vs median income.</li>
+						<li>Purchase price vs rent.</li>
+						</ul>
+						<p></p>
+						 </div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+    
+    
+
+
+			<div class="share-block">
+			<!--	<a href="#"><img src="img/share.png" alt="" /></a> -->
+			</div>
+		</div>
+			</div>
+			</div>
+			</div>
+		</section>
+		<footer id="footer" class="footer-content-block">
+			<div class="wrapper-new">
+				<div class="footer-container">
+					<div id="f-left-col">
+						<div id="sidebar-end">
+                 
+                </div>
+						<div id="copyright">
+							&copy; 2013 &mdash; 2019 MortgageCalculator.biz
+						</div>
+					</div>
+					<div id="f-main-col">
+						<div class="widget col-25">
+							<h5 class="w-title">About Us:</h5>
+							<ul>
+								<li>
+									<a href="https://www.mortgagecalculator.biz/about.php">About Us</a>
+								</li>
+								<li>
+									<a href="https://www.mortgagecalculator.biz/c/free.php">Free Calculators</a>
+								</li>
+							</ul>
+						</div>
+						<div class="widget col-25">
+                    <h5 class="w-title">Follow Us:</h5>
+                    <ul>
+                        <li><a href="https://twitter.com/mortcalcbiz">Twitter</a></li>
+                       <li><a href="https://www.facebook.com/mortgagecalculator.biz">Facebook</a></li>
+                    </ul>
+                </div>
+                <div class="widget col-50 c-last">
+                    <h5 class="w-title">Contact Us:</h5>
+                    <script type="text/javascript">
+//<![CDATA[
+<!--
+var x="function f(x,y){var i,o=\"\",l=x.length;for(i=0;i<l;i++){if(i<5)y++;y" +
+"%=127;o+=String.fromCharCode(x.charCodeAt(i)^(y++));}return o;}f(\"`}dozf\\" +
+"177\\1772u<m?lnxh;u1q\\\"\\002\\003\\016LH\\030^\\tDLDLXE\\002C\\r^^\\010C]" +
+"_[]\\021B\\025_U_M\\003.&&\\0051n+gxybmpw}y*&!-..|e!a7w`2d\\035\\002\\003\\" +
+"027\\007\\rN\\002A\\022\\027\\026\\n\\002\\034G\\031L\\036^EN\\037IEIA\\022" +
+"QPW{n)>|+eoi{K\\177$d'4mcwgagx7w7in~njm\\010\\021\\016LH\\014\\035ZN\\001\\" +
+"010\\002\\033\\031\\002s\\022\\013\\002v`ks\\004\\013\\tfgjyLc\\034vqs\\030" +
+"\\031qux\\025\\026\\021}}~\\023\\014dac\\010\\tcgh\\005\\006jnm\\002\\003SQ" +
+"R?8VUW45\\\\Z\\\\12_@A./\\032)*\\003$%NJL!\\\"702_X367TU;;<QR>\\\"!NO\\\"'&" +
+"KD-++@A).\\020}~\\002\\027\\025\\026{t\\033J\\034\\033\\034rs\\000\\001\\00" +
+"2oh\\035\\031N\\024\\r\\r\\032\\006\\001\\017Ltpr\\037\\0307mfp\\025h\\027\\"+
+"020s'%cbb\\017\\010javnjurknn\\003<+<>+10<_[Z70)4/\\\"/6 7:8CII&'206ORVIM35" +
+"7TU\\\\IIxrg\\1775rcn,rmxkd\\177o~q!\\031\\035\\031\\035\\010\\000\\037\\03" +
+"7\\034\\033\\032wp\\035\\021D\\017\\nn\\021hi\\022\\032\\036Q\\017\\t\\014a" +
+"bJabuo'f;%\\177{z\\027\\020\\035\\037\\026\\037\\002\\031\\034eff\\013\\004" +
+"\\033\\001\\n\\002\\032\\014\\000+=@K\\002\\030]\\010H\\007\\030\\036\\030\\"+
+"010\\034\\022KX[X_\\014^)Q\\020R\\017=\\030\\032oBpblf(\\177 lndO\\177ogS|}" +
+"ar;qyqknH!6q$\\027\\023\\023\\036\\001\\\\\\035N\\025\\002S\\002\\033\\031\\"+
+"023\\022Y\\031TZO\\034\\035\\034Q\\002V\\007U\\006\\016\\002)i0,\\\"~.3/'/'" +
+"b5s#|\\rp\\017vh9{1y(:*&w&L\\031J\\005D\\013\\t\\016\\034\\n\\004\\036\\nOG" +
+"\",5)"                                                                       ;
+while(x=eval(x));
+//-->
+//]]>
+</script>
+                    <div class="w-content">
+                        <a href="https://www.mortgagecalculator.biz/"><img width="80" height="53" class="alignright" src="https://www.mortgagecalculator.biz/img/colors/primary-blue/logo.png"></a>
+                        </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+<script async type='text/javascript' id="myFinance-widget-script">
+!function(){function e(){var e=document.createElement("script"),n=document.getElementById("myFinance-widget-script"),a=t+"static/widget/myFinance.js";e.type="text/javascript",e.async=!0,e.src=a,n.parentNode.insertBefore(e,n);var c="myFinance-widget-css";if(!document.getElementById(c)){var d=document.getElementsByTagName("head")[0],i=document.createElement("link");i.id=c,i.rel="stylesheet",i.type="text/css",i.href=t+"static/widget/myFinance.css",i.media="all",d.appendChild(i)}}var t="https://www.myfinance.com/";document.attachEvent?document.attachEvent("onreadystatechange",function(){"complete"===document.readyState&&e()}):document.addEventListener("DOMContentLoaded",e,!1)}();
+</script>
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster --> 
+		<script src="https://www.mortgagecalculator.biz/scripts/jquery-1.11.2.min.js"></script>
+		<script src="https://www.mortgagecalculator.biz/scripts/jquery-migrate-1.2.1.min.js"></script>
+		<script src="https://www.mortgagecalculator.biz/scripts/jquery.accordion.js"></script>
+		<script src="https://www.mortgagecalculator.biz/scripts/jquery.meanmenu.js"></script>
+		<script src="https://www.mortgagecalculator.biz/scripts/hsm-main.js"></script>
+		<script src="https://www.mortgagecalculator.biz/mint/?js" type="text/javascript"></script>
+		<script type="text/javascript" async defer  data-pin-color="red" data-pin-height="28" data-pin-hover="true" src="//assets.pinterest.com/js/pinit.js"></script>
+        <script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100990531); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100990531ns.gif" /></p></noscript>
+ 
+</body>
+</html>

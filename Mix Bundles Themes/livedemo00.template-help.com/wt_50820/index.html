@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home</title>
+<meta charset="utf-8">
+<meta name = "format-detection" content = "telephone=no" />
+<script src="/cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script><link rel="icon" href="images/favicon.ico">
+<link rel="shortcut icon" href="images/favicon.ico" />
+<link rel="stylesheet" href="css/camera.css">
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link rel="stylesheet" href="css/stuck.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery.js"></script>
+<script src="js/jquery-migrate-1.1.1.js"></script>
+<script src="js/script.js"></script> 
+<script src="js/superfish.js"></script>
+<script src="js/jquery.equalheights.js"></script>
+<script src="js/jquery.mobilemenu.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/tmStickUp.js"></script>
+<script src="js/jquery.ui.totop.js"></script>
+<script src="js/owl.carousel.js"></script> 
+<script src="js/camera.js"></script>
+<!--[if (gt IE 9)|!(IE)]><!-->
+<script src="js/jquery.mobile.customized.min.js"></script>
+<!--<![endif]-->
+<script>
+ $(document).ready(function(){
+  
+
+       /////////////////////// camera with owl carousel //////////////////////////
+
+        var $owl = $("#owl"),
+            $camera = $('#camera_wrap');
+       /* carousel */
+        $owl.owlCarousel({
+            items : 4, //10 items above 1000px browser width
+            itemsDesktop : [995,3], //5 items between 1000px and 901px
+            itemsDesktopSmall : [767, 3], // betweem 900px and 601px
+            itemsTablet: [700, 3], //2 items between 600 and 0
+            itemsMobile : [479, 3], // itemsMobile disabled - inherit from itemsTablet option
+            navigation : true,
+            pagination :  false
+        });
+       
+       $camera.camera({
+            loader: false,
+            pagination: true,
+            minHeight: '500',
+            thumbnails: false,
+            height: '46.875%',
+            caption: true,
+            navigation: false,
+            fx: 'mosaic',
+            time: 4000,
+            onStartTransition:function(){
+              var ind = $camera.find('.camera_pag_ul>li.cameracurrent').index();
+              (ind < 0)&&(ind = 0);
+
+              $('.item', $owl)
+                .removeClass('active')
+                .eq(ind).addClass('active');
+
+              $owl
+                .data('owlCarousel')
+                .goTo(ind);
+            }
+          });
+          
+        $owl.find('.item a').click(function(){
+          var $this = $(this),
+              ind = $this.parents('.owl-item').index();
+          $('.camera_pag_ul>li').eq(ind).click();
+          return false;
+        })
+
+        /////////////////////// end of camera with owl carousel //////////////////////////    
+
+  $().UItoTop({ easingType: 'easeOutQuart' });
+  $('#stuck_container').tmStickUp({});
+
+   $("#owl1").owlCarousel({
+            items : 4, //10 items above 1000px browser width
+            itemsDesktop : [995,3], //5 items between 1000px and 901px
+            itemsDesktopSmall : [767, 2], // betweem 900px and 601px
+            itemsTablet: [700, 2], //2 items between 600 and 0
+            itemsMobile : [479, 1], // itemsMobile disabled - inherit from itemsTablet option
+            navigation : true,
+            pagination :  false
+        });
+  }); 
+</script>
+<!--[if lt IE 9]>
+ <div style=' clear: both; text-align:center; position: relative;'>
+   <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+     <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+   </a>
+</div>
+<script src="js/html5shiv.js"></script>
+<link rel="stylesheet" media="screen" href="css/ie.css">
+
+
+<![endif]-->
+</head>
+
+<body class="page1" id="top">
+<!--==============================
+              header
+=================================-->
+<section id="stuck_container">
+<header>
+<!--==============================
+            Stuck menu
+=================================-->
+  <div class="container">
+    <div class="row">
+      <div class="grid_12">
+        <h1>
+          <a href="index.html">
+            <img src="images/logo.png" alt="Logo alt">
+          </a>
+        </h1>
+        <div class="navigation ">
+          <nav>
+            <ul class="sf-menu">
+             <li class="current"><a href="index.html">About</a></li>
+             <li><a href="index-1.html">Reservations</a></li>
+             <li><a href="index-2.html">Rooms</a>
+               <ul>
+                  <li><a href="#">Rooms</a></li>
+                  <li><a href="#">roof Suites  </a>
+                    <ul>
+                      <li><a href="#">Dolore ipsu</a></li>
+                      <li><a href="#">Consecte</a></li>
+                    </ul>
+                  </li>
+               </ul>
+             </li>
+             <li><a href="index-3.html">blog</a></li>
+             <li><a href="index-4.html">gallery</a></li>
+             <li><a href="index-5.html">Contact</a></li>
+           </ul>
+          </nav>
+      
+          <div class="clear"></div>
+        </div>       
+       <div class="clear"></div>  
+      </div>
+   </div> 
+  </div> 
+</header>        
+</section> 
+<div class="slider_wrapper ">
+  <div id="camera_wrap" class="">
+    <div data-src="images/slide.jpg"></div>
+    <div data-src="images/slide1.jpg"></div>
+    <div data-src="images/slide2.jpg"></div>
+    <div data-src="images/slide3.jpg"></div>
+    <div data-src="images/slide.jpg"></div>
+  </div>
+  <div class="car_div">
+    <div id="owl">
+      <div class="item active"><a href="#"><img src="images/thumb.jpg" alt=""></a></div>
+      <div class="item"><a href="#"><img src="images/thumb1.jpg" alt=""></a></div>
+      <div class="item"><a href="#"><img src="images/thumb2.jpg" alt=""></a></div>
+      <div class="item"><a href="#"><img src="images/thumb3.jpg" alt=""></a></div>
+      <div class="item active"><a href="#"><img src="images/thumb.jpg" alt=""></a></div>
+    </div>
+  </div>
+</div>  
+<div class="page1_block">
+  <div class="container">
+    <div class="row">
+      <div class="grid_12">
+        <h2>Best rates guaranteed!</h2>
+        <strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</strong> <br>
+        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit.
+      </div>
+    </div>
+  </div>
+</div>
+<!--=====================
+          Content
+======================-->
+<section class="content">
+  <div class="container">
+    <div class="row">
+      <div class="grid_4">
+        <div class="box">
+          <div class="maxheight">
+            <div class="box_title">Spa &amp; Recreation</div>
+            <img src="images/page1_img1.jpg" alt="">
+            <div class="box_bot">Lorem ipsum dolor sit, consectetuer adipiscing elit, sed diam nonummy euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Ut wisi enim ad minim. <a href="#" class="quest"></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="grid_4">
+        <div class="box">
+          <div class="maxheight">
+            <div class="box_title bt__1">Special Offer</div>
+            <img src="images/page1_img2.jpg" alt="">
+            <div class="box_bot">Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper. <a href="#" class="quest"></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="grid_4">
+        <div class="box">
+          <div class="maxheight">
+            <div class="box_title bt__2">Wedding Package </div>
+            <img src="images/page1_img3.jpg" alt="">
+            <div class="box_bot">Ut wisi enim minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis aliquip commodo consequat. Duis autem vel eum iriure dolor in hendrerit.<a href="#" class="quest"></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="grid_12">
+        <h3>For guests</h3>
+        <div id="owl1">
+          <div class="item"> 
+            <img src="images/page1_img4.jpg" class="img_inner" alt="">
+            <div class="text1"><a href="#">culinary experience</a></div>
+          </div>
+          <div class="item">
+            <img src="images/page1_img5.jpg" class="img_inner" alt="">
+            <div class="text1"><a href="#">wellness &amp; relaxation</a></div>
+          </div>
+          <div class="item">
+            <img src="images/page1_img6.jpg" class="img_inner" alt="">
+            <div class="text1"><a href="#">Modern Aqua Center</a></div>
+          </div>
+          <div class="item">
+            <img src="images/page1_img7.jpg" class="img_inner" alt="">
+            <div class="text1"><a href="#">outdoor events</a></div>
+          </div>
+          <div class="item"> 
+            <img src="images/page1_img4.jpg" class="img_inner" alt="">
+            <div class="text1"><a href="#">culinary experience</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--==============================
+              footer
+=================================-->
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="grid_12">  
+         <div class="copyright">Lagoon &copy; <span id="copyright-year"></span> All Rights Reserved &nbsp;&nbsp;|&nbsp;&nbsp; <a href="index-5.html">Privacy Policy</a> <!--{%FOOTER_LINK} -->
+          </div>
+      </div>
+    </div>
+  </div>  
+</footer>
+<script type="text/javascript">
+ var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7078796-5']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();</script>
+</body><!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9FT69');</script><!-- End Google Tag Manager -->
+</html>
+

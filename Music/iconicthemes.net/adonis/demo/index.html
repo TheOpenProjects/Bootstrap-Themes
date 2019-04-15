@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>
+        Adonis Music template
+    </title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/icon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/icon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/adonis.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gilda+Display|Poppins:400,700" rel="stylesheet">
+    <link href="../assets/css/adonis.css" rel="stylesheet">
+    <style>
+        body{
+            font-family: "Poppins", sans-serif;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        img{max-width: 100%;}
+        .top-banner{height: 80vh; background-size: cover;}
+        .gradient{
+           /* /!* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7e7fed+0,784ed9+100 *!/
+            background: #7e7fed; /!* Old browsers *!/
+            background: -moz-linear-gradient(top, #170352 0%, #090A29 100%); /!* FF3.6-15 *!/
+            background: -webkit-linear-gradient(top, #170352 0%,#090A29 100%); /!* Chrome10-25,Safari5.1-6 *!/
+            background: linear-gradient(to bottom, #170352 0%,#090A29 100%); /!* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ *!/
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#170352', endColorstr='#784ed9',GradientType=0 ); /!* IE6-9 *!/*/
+            background: rgba(48,49,118,0.8);
+        }
+
+        #demos .demo-hover .screenshot{
+            background-size: 100%;
+            background-position: top center;
+            width: 100%;
+            height: 100%;
+            -moz-transition: all 4s ease-in-out;
+            -webkit-transition: all 4s ease-in-out;
+            transition: all 5s ease-in-out;
+        }
+        #demos .demo-hover:hover .screenshot{
+            background-position: bottom center;
+            -webkit-box-shadow: 5px 6px 32px 0 rgba(0,0,0,0.3);
+            box-shadow: 5px 6px 32px 0 rgba(0,0,0,0.3);
+        }
+        .overlay{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+        }
+        .adonis-icon svg{
+            color: currentColor;
+        }
+        .demo-header{
+            position: absolute;
+            width: 100%;
+            z-index: 100;
+            left: 0;
+            top: 0;
+        }
+        .btn-outline-light{
+            color: #FFFFFF;
+        }
+        .demos{
+            background: rgba(48,49,118,0.8);
+        }
+        canvas {
+            display: block;
+        }
+        .g-d{
+            font-family: 'Gilda Display', serif;
+        }
+        .poppins{
+            font-family: 'Poppins', sans-serif;
+        }
+        .adonis-svg-library{
+            position: absolute;
+            height: 0px;
+        }
+    </style>
+</head>
+<body>
+<div id="site-content">
+    <div id="site-content-inner">
+        <header class="demo-header pt-4">
+            <div class="container">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center p-3 px-md-4 mb-3">
+                    <div class="brand">
+                        <span class="brand d-flex align-items-center">
+                            <span class="adonis-icon mr-md-2 mr-1 icon-5x text-light"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 32"><path d="M2.594 0.275c-0.257-0.166-0.571-0.265-0.908-0.265-0.932 0-1.688 0.756-1.688 1.688 0 0.028 0.001 0.055 0.002 0.082l-0-0.004v13.246l16.702-6.219zM26.030 14.49l-4.184-2.541-21.846 8.102v10.154c-0.001 0.024-0.002 0.051-0.002 0.079 0 0.927 0.752 1.679 1.679 1.679 0.319 0 0.617-0.089 0.871-0.243l-0.007 0.004c1.501-0.888 22.21-13.433 23.489-14.214 0.52-0.316 0.863-0.88 0.863-1.524s-0.342-1.207-0.855-1.519l-0.008-0.004z"></path></svg></span>
+                            <strong class="p-1 fs-6 fs-md-8 text-light">Adonis</strong>
+                        </span>
+                    </div>
+                    <nav class="nav">
+                        <a class="nav-link text-light scrollto" href="#demos">DEMOS</a>
+                        <a class="nav-link text-light" href="../documentation/">DOCUMENTATION</a>
+                        <a class="btn rounded-btn btn-outline-light pl-4 pr-4 mr-2 btn-lg ml-4" href="https://themeforest.net/item/adonis-music-system-template/22087191">PURCHASE</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="top-banner position-relative d-flex flex-column justify-content-center">
+            <div class="overlay" style="z-index:-1;background-image: url('assets/img/landing-top.jpg')"><div class="overlay gradient"></div></div>
+            <div class="container">
+                <div class="bannger-middle d-flex flex-column justify-content-center">
+                    <div class="mb-4">
+                        <h2 class="fs-13 text-light text-center" style="letter-spacing: 3px">ADONIS MUSIC TEMPLATE</h2>
+                            <p class="text-light text-center" style="letter-spacing: 2px">Fully AJAX driven, fresh design, ultra responsive design and endless possibilities</p>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a class="btn rounded-btn btn-outline-light pl-5 pr-5 mr-2 btn-lg scrollto" href="#demos">VIEW DEMOS</a>
+                        <a class="btn rounded-btn btn-light pl-5 pr-5 ml-2 btn-lg" href="https://themeforest.net/item/adonis-music-system-template/22087191">PURCHASE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="container">
+            <div class="pt-5 pb-4"></div>
+            <div class="row">
+                <div class="col-md-5">
+                    <img src="assets/img/mobile-mockup.jpg" alt="adonis mobile view">
+                </div>
+                <div class="col-md-7">
+                    <h3 class="pt-md-5 g-d fs-12">Start your own<br> music store</h3>
+                    <div style="width: 50px;"><hr class="mr-auto mb-4 mt-4" style="border-color: #666666"></div>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><span class="adonis-icon icon-6x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-check"></use></svg></span> Eight different layout</li>
+                        <li class="mb-2"><span class="adonis-icon icon-6x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-check"></use></svg></span> Built on Bootstrap 4.0</li>
+                        <li class="mb-2"><span class="adonis-icon icon-6x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-check"></use></svg></span> Fully ajax driven</li>
+                        <li class="mb-2"><span class="adonis-icon icon-6x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-check"></use></svg></span> Retina display ready</li>
+                        <li class="mb-2"><span class="adonis-icon icon-6x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-check"></use></svg></span> Both light and dark version</li>
+                        <li class="mb-2"><span class="adonis-icon icon-6x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-check"></use></svg></span> Ultra responsive</li>
+                        <li class="mb-2"><span class="adonis-icon icon-6x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-check"></use></svg></span> Organised CSS using SASS, easily changeable sass variable settings</li>
+                        <li class="mb-2"><span class="adonis-icon icon-6x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-check"></use></svg></span> Properly documented JavaScript code</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-5 pb-4"></div>
+            <hr>
+            <div class="pt-5 pb-4"></div>
+            <div class="row">
+
+
+                <div class="col-md-6">
+                    <h3 class="g-d fs-12 mt-md-5">Simple And Easy Start</h3>
+                    <div style="width: 50px;"><hr class="mr-auto mb-4 mt-4" style="border-color: #666666"></div>
+                    <p>The template has dozens of unique features and layouts which empower you to create professional music store easily. Adonis music system is optimized for better performance in terms of such SEO, fast loading, low memory consumption and lot more awesome features </p>
+                </div>
+                <div class="col-md-5 offset-md-1">
+                    <img src="assets/img/layerd-screenshot.jpg" alt="">
+                </div>
+            </div>
+            <div class="mb-5"></div>
+        </section>
+        <section class="demos position-relative">
+            <canvas style="position: relative; z-index: 40;" id="canvasDemoTop"></canvas>
+            <div class="overlay" style='background: url(assets/img/banner-2.jpg) no-repeat ;background-attachment: fixed;background-size: cover;z-index: 22;'></div>
+            <div class="overlay" style='background: rgba(48,49,118,0.8); z-index: 30'></div>
+            <div class="container pt-5 position-relative" style="z-index: 50" id="demos">
+                <div class="title-box mb-5 mt-5">
+                    <h5 class="text-light">DEMOS</h5>
+                    <h3 class="text-light g-d fs-10">Discover the appropriate demo <br>for your project</h3>
+                </div>
+                <div class="row gutter-30 gutter-lg-50">
+                    <div class="col-md-6">
+                        <a href="../demo-01/" target="_blank">
+                            <div class="demo-hover">
+                                <div class="screenshot"><img src="assets/img/screenshots/demo-01.jpg" alt=""></div>
+                            </div>
+                            <div class="title-box text-center p-3">
+                                <h4 class="text-light">Demo 01</h4>
+                                <p class="text-light">Fluid, no sidebar, white, centered logo &amp; left aligned menu</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="../demo-02/" target="_blank">
+                            <div class="demo-hover">
+                                <div class="screenshot"><img src="assets/img/screenshots/demo-02.jpg" alt=""></div>
+                            </div>
+                            <div class="title-box text-center p-3">
+                                <h4 class="text-light">Demo 02</h4>
+                                <p class="text-light">Fluid, right sidebar, white, left aligned logo &amp; center aligned menu</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="../demo-03/" target="_blank">
+                            <div class="demo-hover">
+                                <div class="screenshot"><img src="assets/img/screenshots/demo-03.jpg" alt=""></div>
+                            </div>
+                            <div class="title-box text-center p-3">
+                                <h4 class="text-light">Demo 03</h4>
+                                <p class="text-light">Fluid, left sidebar, white, left aligned logo &amp; center aligned menu</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="../demo-04/" target="_blank">
+                            <div class="demo-hover">
+                                <div class="screenshot"><img src="assets/img/screenshots/demo-04.jpg" alt=""></div>
+                            </div>
+                            <div class="title-box text-center p-3">
+                                <h4 class="text-light">Demo 04</h4>
+                                <p class="text-light">Fluid, left side menu, white background</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="../demo-05/" target="_blank">
+                            <div class="demo-hover">
+                                <div class="screenshot"><img src="assets/img/screenshots/demo-05.jpg" alt=""></div>
+                            </div>
+                            <div class="title-box text-center p-3">
+                                <h4 class="text-light">Demo 05</h4>
+                                <p class="text-light">Fluid, white, fixed top player &amp; left aligned menu</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="../demo-01-boxed/" target="_blank">
+                            <div class="demo-hover">
+                                <div class="screenshot"><img src="assets/img/screenshots/demo-01-boxed.jpg" alt=""></div>
+                            </div>
+                            <div class="title-box text-center p-3">
+                                <h4 class="text-light">Demo 01 (boxed)</h4>
+                                <p class="text-light">Boxed, no sidebar, white, centered logo &amp; left aligned menu</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="../demo-01-dark/" target="_blank">
+                            <div class="demo-hover">
+                                <div class="screenshot"><img src="assets/img/screenshots/demo-01-dark.jpg" alt=""></div>
+                            </div>
+                            <div class="title-box text-center p-3">
+                                <h4 class="text-light">Demo 01 Dark</h4>
+                                <p class="text-light">Fluid, no sidebar, dark, centered logo &amp; left aligned menu</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="../demo-02-dark/" target="_blank">
+                            <div class="demo-hover">
+                                <div class="screenshot"><img src="assets/img/screenshots/demo-02-dark.jpg" alt=""></div>
+                            </div>
+                            <div class="title-box text-center p-3">
+                                <h4 class="text-light">Demo 02 Dark</h4>
+                                <p class="text-light">Fluid, right sidebar, dark, left aligned logo &amp; center aligned menu</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="spacer pb-5"></div>
+                <h3 class="text-light g-d fs-10">More demos are coming soon ...</h3>
+                <div class="spacer pb-5"></div>
+            </div>
+        </section>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="adonis-svg-library">
+            <symbol id="icon-check" viewBox="0 0 58 58">
+                <polyline xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:#7b8ff4;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="  42,20 26,38 16,30 "/>
+            </symbol>
+        </svg>
+    </div><!--/#site-content-inner-->
+</div><!--/#site-content-->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../assets/vendors/jquery/jquery.min.js"></script>
+<script src="../assets/vendors/bootstrap/js/popper.min.js"></script>
+<script src="../assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/vendors/masonry/masonry.pkgd.min.js"></script>
+
+<script>
+    jQuery(document).ready(function(){
+        function draw() {
+            var canvas = document.getElementById('canvasDemoTop');
+            $(canvas).attr('width',$(canvas).parent().width()).attr('height',$(canvas).parent().width()/10);
+            if (canvas.getContext) {
+                var ctx = canvas.getContext('2d');
+                var sWidth = Math.floor(canvas.width);
+                var sHeight = Math.floor(canvas.height);
+                var path = new Path2D();
+                path.moveTo(0,0);
+                path.lineTo((sWidth),0);
+                path.lineTo(0,sHeight);
+                ctx.fillStyle = "#ffffff";
+                ctx.fill(path);
+            }
+        }
+        draw();
+        $(window).resize(function(){
+            draw();
+        });
+
+        $('.scrollto').click(function(){
+            $('html, body').animate({
+                scrollTop: $($(this).attr('href')).offset().top
+            }, 1000);
+        });
+    });
+
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121776216-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-121776216-1');
+</script>
+
+</body>
+</html>

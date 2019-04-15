@@ -1,0 +1,477 @@
+body {
+  background: -webkit-linear-gradient(320deg, #c5da7b 0, #009995 100%);
+  background: linear-gradient(130deg, #c5da7b 0, #009995 100%);
+  background-attachment: fixed;
+  color: #fff;
+}
+a {
+  color: #fff;
+}
+a.link:hover {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+}
+header {
+  -webkit-box-shadow: 0 0 40px rgba(0,0,0,0.03);
+          box-shadow: 0 0 40px rgba(0,0,0,0.03);
+  background: rgba(0,153,149,0.25);
+}
+header.full {
+  background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+header.full:hover {
+  background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+header.fixed {
+  background: rgba(46,107,106,0.79);
+  -webkit-box-shadow: 0 0 60px rgba(0,0,0,0.12);
+          box-shadow: 0 0 60px rgba(0,0,0,0.12);
+}
+header.fixed:hover {
+  background: rgba(0,107,104,0.95);
+  -webkit-box-shadow: 0 0 40px rgba(0,0,0,0.08);
+          box-shadow: 0 0 40px rgba(0,0,0,0.08);
+}
+header:hover {
+  background: rgba(0,122,119,0.39);
+  -webkit-box-shadow: 0 0 60px rgba(0,0,0,0.07);
+          box-shadow: 0 0 60px rgba(0,0,0,0.07);
+}
+header .logo {
+  color: #fff;
+}
+header nav ul li a {
+  color: #fff;
+}
+header nav ul li a:hover {
+  color: #bfbfbf;
+}
+header nav ul li a:focus {
+  color: #bfbfbf;
+}
+header nav ul li a:after {
+  background: #bfbfbf;
+}
+header nav ul li.active a {
+  color: #fff !important;
+}
+header .nav_b .nav_b_line {
+  background: #fff;
+}
+.main:nth-child(2n) {
+  background: rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.portfolio .thumbnail {
+  background: #c5da7b;
+  border: 1px solid #fff;
+}
+.portfolio .thumbnail:hover {
+  background: #fff;
+}
+.portfolio .thumbnail .active-arrow {
+  border-color: transparent transparent #c4d978 transparent;
+}
+.portfolio .thumbnail .description {
+  background: rgba(31,92,90,0.6);
+}
+.portfolio .thumbnail .title {
+  color: #fff;
+}
+.portfolio .og-expanded .thumbnail {
+  border-bottom-color: #c4d978;
+}
+.portfolio .og-expander .og-close::before,
+.portfolio .og-expander .og-close::after {
+  background: #fff;
+}
+.portfolio .og-expander .og-close:hover::before,
+.portfolio .og-expander .og-close:hover::after {
+  background: #999;
+}
+.portfolio_2 .grid-item .bg {
+  background: rgba(31,92,90,0.6);
+}
+.portfolio_2 .grid-item .cont .title {
+  color: #fff;
+}
+.portfolio_2 .grid-item .cont .icons .icn {
+  color: #fff;
+}
+.portfolio_2 .grid-item .cont .icons .icn:hover {
+  background: rgba(255,255,255,0.08);
+}
+.portfolio_3 .sy-pager li a {
+  color: #009995;
+  background: #fff;
+}
+.portfolio_3 .sy-pager li.sy-active a {
+  color: #fff;
+  background: rgba(0,107,104,0.4);
+}
+.portfolio_3 .slide_nav .s_next,
+.portfolio_3 .slide_nav .s_prev {
+  background: #fff;
+  color: #009995;
+}
+.portfolio_3 .slide_nav .s_next:hover,
+.portfolio_3 .slide_nav .s_prev:hover {
+  background: rgba(0,153,149,0.8);
+  color: #fff;
+}
+.portfolio_3 ul.slider li .slide .slide_right .title_area .title {
+  background: #fff;
+  color: #009995;
+}
+.portfolio_3 ul.slider li .slide .slide_right .desc {
+  color: #fff;
+}
+.portfolio_4 .f_nav .f_next,
+.portfolio_4 .f_nav .f_prev {
+  background: #fff;
+  color: #009995;
+  opacity: 1;
+}
+.portfolio_4 .f_nav .f_next:hover,
+.portfolio_4 .f_nav .f_prev:hover {
+  background: #009995;
+  color: #fff;
+}
+.portfolio_4 .btn {
+  background: rgba(31,92,90,0.6);
+  color: #fff;
+}
+.portfolio_4 .btn:hover {
+  background: rgba(31,92,90,0.6);
+  color: #fff;
+}
+.portfolio_4 .btn .bg {
+  background: rgba(31,92,90,0.6);
+}
+.portfolio_4 .btn:focus,
+.portfolio_4 .btn:active {
+  color: #fff;
+}
+.popup {
+  background: #fff;
+}
+.popup .popup_content {
+  color: rgba(31,92,90,0.6);
+}
+.popup .popup_content .title_area .title {
+  background: #fff;
+}
+.h_title h2.main_h {
+  color: #fff;
+}
+.h_title h2.main_h:before {
+  background: #fff;
+}
+.h_title .sub_h {
+  color: rgba(255,255,255,0.06);
+}
+.h_title .sub_h:before {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(197,218,123,0.8)), to(rgba(197,218,123,0)));
+  background: -webkit-linear-gradient(bottom, rgba(197,218,123,0.8) 0%, rgba(197,218,123,0) 100%);
+  background: linear-gradient(to top, rgba(197,218,123,0.8) 0%, rgba(197,218,123,0) 100%);
+}
+.blog_area .blog_item:hover {
+  -webkit-box-shadow: 0 0 30px rgba(0,0,0,0.1);
+          box-shadow: 0 0 30px rgba(0,0,0,0.1);
+}
+.blog_area .blog_item .bg {
+  background: -webkit-gradient(linear, left bottom, left top, from(#fff), to(rgba(255,255,255,0.3)));
+  background: -webkit-linear-gradient(bottom, #fff 0%, rgba(255,255,255,0.3) 100%);
+  background: linear-gradient(to top, #fff 0%, rgba(255,255,255,0.3) 100%);
+}
+.blog_area .blog_item .title {
+  color: #005c59;
+  background: #fff;
+}
+.blog_area_2 .blog_item {
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.blog_area_2 .blog_item.right .img:after {
+  border-color: transparent transparent transparent transparent;
+}
+.blog_area_2 .blog_item .img:after {
+  border-color: transparent transparent transparent transparent;
+}
+.blog_area_2 .blog_item .txt .desc {
+  color: #fff;
+}
+.blog_area_2 .blog_item .txt .title {
+  color: #536d00;
+}
+.blog_area_3 .blog_item .desc {
+  color: #fff;
+}
+.loader_area {
+  background: -webkit-linear-gradient(320deg, #c5da7b 0, #009995 100%);
+  background: linear-gradient(130deg, #c5da7b 0, #009995 100%);
+}
+.loader_area .loader {
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+}
+.services_area .service_item {
+  background: rgba(255,255,255,0.15);
+}
+.services_area .service_item:hover {
+  background: rgba(255,255,255,0.25);
+  -webkit-box-shadow: 0 0 40px rgba(0,0,0,0.05);
+          box-shadow: 0 0 40px rgba(0,0,0,0.05);
+}
+.services_area .service_item .icon {
+  background: #fff;
+  color: #009995;
+}
+.services_area .service_item .desc {
+  color: #fff;
+}
+.slidee li {
+  background: #ccc;
+}
+.slidee li .img {
+  border: 1px solid #fff;
+}
+.slidee li .port_desc {
+  background: #fff;
+}
+.slidee li .port_desc .desc {
+  color: #004d4b;
+}
+.slidee li .port_desc .title {
+  color: #004d4b;
+}
+.f_scroll {
+  background: rgba(255,255,255,0.2);
+}
+.f_scroll .handle {
+  background: rgba(255,255,255,0.6);
+}
+.team_area .team_item .img .bg {
+  background: rgba(31,92,90,0.6);
+}
+.team_area .team_item .img .social .fa {
+  color: #fff;
+  border: 1px solid #fff;
+}
+.team_area .team_item .img .name {
+  color: #fff;
+}
+.team_area_2 .team_item {
+  background: rgba(0,0,0,0.07);
+}
+.team_area_2 .team_item .name {
+  color: #fff;
+}
+.team_area_2 .team_item .img {
+  -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.3);
+          box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+.testimonials_area .testimonials_item:hover {
+  -webkit-box-shadow: 0 0 50px rgba(0,0,0,0.1);
+          box-shadow: 0 0 50px rgba(0,0,0,0.1);
+}
+.testimonials_area .testimonials_item .txt {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+.testimonials_area_2 ul.sl .s_next,
+.testimonials_area_2 .slide_nav .s_next,
+.testimonials_area_2 ul.sl .s_prev,
+.testimonials_area_2 .slide_nav .s_prev {
+  background: #fff;
+  color: #009995;
+}
+.testimonials_area_2 ul.sl .s_next:hover,
+.testimonials_area_2 .slide_nav .s_next:hover,
+.testimonials_area_2 ul.sl .s_prev:hover,
+.testimonials_area_2 .slide_nav .s_prev:hover {
+  background: rgba(0,153,149,0.8);
+  color: #fff;
+}
+.testimonials_area_2 .test_item .txt {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+p {
+  color: #fff;
+}
+.about_area section.ex {
+  border-left: 1px solid #fff;
+}
+.about_area section.ex .desc {
+  background: rgba(255,255,255,0.15);
+}
+.about_area section.ex .desc:before {
+  border-color: transparent rgba(255,255,255,0.15) transparent transparent;
+}
+.about_area section.ex .desc span.pr {
+  color: #fff;
+}
+.about_area section.ex .desc {
+  color: #fff;
+}
+.about_area section.ex h5 {
+  color: #fff;
+}
+.about_area section.ex h5 span {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+.about_area section.ex h5 span:last-child {
+  background: rgba(255,255,255,0.15);
+}
+.about_area section.ex h5:before {
+  background: #fff;
+  border: 2px solid #fff;
+  -webkit-box-shadow: 0 0 0px 10px transparent;
+          box-shadow: 0 0 0px 10px transparent;
+}
+.about_area section.skills .skill_item .title {
+  color: #fff;
+}
+.about_area section.skills .skill_item .skill {
+  background: rgba(255,255,255,0.15);
+}
+.about_area section.skills .skill_item .skill .skill_in {
+  background: rgba(255,255,255,0.95);
+  height: 12px;
+}
+.darken .about_area section.ex h5:before {
+  -webkit-box-shadow: 0 0 0px 10px #bfd66e;
+          box-shadow: 0 0 0px 10px #bfd66e;
+  box-shadow: 0 0 0px 10px #bfd66e;
+}
+.mfp-bg {
+  background: rgba(32,75,74,0.8);
+  opacity: 0.9;
+}
+.mfp-figure:after {
+  -webkit-box-shadow: 0 0 100px rgba(0,0,0,0.3);
+          box-shadow: 0 0 100px rgba(0,0,0,0.3);
+}
+button.mfp-close::before,
+button.mfp-close::after {
+  background: #fff;
+}
+button.mfp-close:hover::before,
+button.mfp-close:hover::after {
+  background: #fff;
+}
+.popup button.mfp-close::before,
+.popup button.mfp-close::after {
+  background: #c5da7b;
+}
+.popup button.mfp-close:hover::before,
+.popup button.mfp-close:hover::after {
+  background: #d1e195;
+}
+.contact_area .contact_input_item:after {
+  border-bottom: 1px solid #fff;
+}
+.contact_area .contact_input_item:before {
+  border-bottom: 2px solid #fff;
+}
+.contact_area .contact_input_item.focus .placeholder {
+  font-size: 18px;
+}
+.contact_area .contact_input_item .placeholder {
+  opacity: 0.35;
+}
+.contact_area .contact_input_item .in {
+  background: transparent;
+  color: #fff;
+}
+.btn_c {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
+.btn_c:hover {
+  background: #fff;
+  color: #009995;
+}
+.btn_c .bg {
+  background: #fff;
+}
+.btn_c:focus,
+.btn_c:active {
+  color: #009995;
+}
+.me_block .me_bg {
+  background: #c5da7b;
+}
+.me_block .txt .name {
+  background: rgba(0,153,149,0.3);
+}
+.me_block .txt .desc {
+  background: rgba(0,153,149,0.2);
+}
+.me_block:hover .txt .name {
+  background: rgba(0,153,149,0.89) !important;
+}
+.back-to-top {
+  background: rgba(255,255,255,0.5);
+  color: #009995;
+  border: 1px solid rgba(0,153,149,0.2);
+}
+.back-to-top:hover {
+  background: #fff;
+}
+.about_area_2 section.ex h5 span:after {
+  color: #fff;
+}
+.about_area_2 section.ex .desc {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  margin-top: 17px;
+}
+.about_area_2 section.ex .desc:before {
+  border-color: transparent rgba(255,255,255,0.15) transparent transparent;
+  top: -30px;
+  left: 30px;
+}
+.about_area_2 section.skills .skill_item .skill {
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.demo_changer i {
+  color: #009995 !important;
+}
+.demo_changer .demo-icon {
+  background: rgba(255,255,255,0.3) !important;
+}
+.demo_changer .form_holder {
+  background: rgba(255,255,255,0.3) !important;
+}
+.demo_changer .form_holder p {
+  color: #fff !important;
+  border-top: 1px solid rgba(255,255,255,0.2) !important;
+}
+.contact_area .contact_input_item .placeholder {
+  opacity: 0.55;
+}
+footer .social a {
+  background: rgba(255,255,255,0.3);
+  color: #fff;
+  opacity: 1;
+}
+.portfolio li .thumbnail:before,
+.portfolio_2 .grid-item:before,
+.portfolio_3 ul.slider li .slide .slide_left:before,
+.portfolio_4_1 .slidee li.active:before,
+.blog_area .blog_item .blog_item_in:before,
+.blog_area_2 .blog_item .img .img_in:before,
+.blog_area_3 .blog_item .img:before,
+.team_area .team_item:before,
+.testimonials_area .testimonials_item .img:before,
+.testimonials_area_2 .test_item .info .img:before {
+  background: #c5da7b;
+}

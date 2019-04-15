@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+<meta charset="utf-8">
+<!--Fonts-->
+<script src="/cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script><link href='http://fonts.googleapis.com/css?family=Maiden+Orange' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'>
+<!--CSS-->
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/jquery.fancybox-1.3.4.css">
+<link rel='shortcut icon' href='images/favicon.ico'>
+<!--JS-->
+<script src="js/jquery-1.7.1.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/MathUtils.js"></script>
+<script src="js/superfish.js"></script>
+<script src="js/jquery.easing.js"></script>
+<script src="js/jquery.color.js"></script>
+<script src="js/switcher.js"></script>
+<script src="js/uScroll.js"></script>
+<!--Carousel-->
+<script src="js/jcarousellite.js" ></script>
+<script src="js/jquery.mousewheel.js"></script>
+<!-- Fancybox -->
+<script src="js/FancyBox.js"></script>
+<script src="js/jquery.fancybox-1.3.4.js"></script>
+<!--Map-->
+<script src="js/googleMap.js"></script>
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<link rel="stylesheet" href="css/ie.css" type="text/css" media="all">
+<![endif]-->
+<!--[if lt IE 8]>
+<div style=' clear: both; text-align:center; position: relative;'>
+<a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a>
+</div>
+<![endif]-->
+</head>
+<body>
+<div class="glob">
+    <div class="page_spinner"></div> 
+    <div class="spinner"></div>
+    <!--header --> 
+    <header></header>
+    <!--end header-->
+    <!--content -->
+        <div class="main">
+        <h1><a href="#!/page_splash" id="logo">Lola Davis</a></h1>
+        <div id="characters">
+          <img src="images/character1.png" alt="" class="character1">  
+          <img src="images/character2.png" alt="" class="character2">  
+          <img src="images/character3.png" alt="" class="character3">  
+        </div>
+        <div id="characters2">  
+          <img src="images/character2.png" alt="" class="character2">  
+          <img src="images/character3.png" alt="" class="character3">  
+        </div>
+        <div class="center">           
+			<div id="content"> 
+				<ul>
+                    <li id="page_splash"></li>
+   	                <li id="page_about">
+                        <div class="container">
+                            <img src="images/character1.png" alt="" class="man">  
+                            <div>
+                                <div>
+                                    <article class="col1">
+                                        <img src="images/page1_pic1.jpg" alt="" class="fleft imgIndent">
+                                        <div class="extra-wrap">
+                                            <h2>Welcome, Friend!</h2>
+                                            <p>Mertase delerta usce suscipit varius miuocis natoque<br>penat ibus et magnis dis parturient monnascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio.<br>Morbi nunc od</p>
+                                            <a href="#!/page_more" class="more"><img src="images/more_arrow.png" alt="">Read More</a>
+                                        </div>
+                                        <div class="banner1">
+                                            <p class="title1">Half Price <span>Drinks</span></p>
+                                            <p class="title2">Happy Hours <span>3-6 pm</span></p>
+                                        </div>
+                                    </article>
+                                    <article class="col2">
+                                        <ul class="list1">
+                                            <li><img src="images/list1_arrow.png" alt=""><a href="#!/page_more">upcoming events</a></li>
+                                            <li><img src="images/list1_arrow.png" alt=""><a href="#!/page_more">about us</a></li>
+                                            <li><img src="images/list1_arrow.png" alt=""><a href="#!/page_more">our Menu</a></li>
+                                            <li><img src="images/list1_arrow.png" alt=""><a href="#!/page_more">Drinks</a></li>
+                                            <li><img src="images/list1_arrow.png" alt=""><a href="#!/page_more">Reservation</a></li>
+                                            <li><img src="images/list1_arrow.png" alt=""><a href="#!/page_more">Catering</a></li>
+                                            <li><img src="images/list1_arrow.png" alt=""><a href="#!/page_more">fresh video</a></li>
+                                            <li class="last"><img src="images/list1_arrow.png" alt=""><a href="#!/page_more">Locations</a></li>
+                                        </ul>
+                                    </article>
+                                </div>
+                            </div>
+                       </div>
+                      <img src="images/shadow.png" alt="" class="shadow">
+                    </li>
+					<li id="page_menu">
+                        <div class="container">
+                            <img src="images/character1.png" alt="" class="man">
+                            <div>
+                                <div>
+                                    <article class="col3">
+                                        <h2>Our Menu</h2>
+                                        <div id="arrows">
+                                            <a class="prev"></a>
+                                            <a class="next"></a>
+                                        </div>
+                                        <div id="carousel">
+                                            <ul>
+                                                <li>
+                                                    <a rel="Appendix" href="images/fancybox/image-blank.png"><span></span><img src="images/page2_pic1.jpg" alt=""></a>
+                                                    <a href="#!/page_more" class="titleName">Seafood Festival</a>
+                                                    <p>Aliquam erat volutpatroin eu purus sapien eu accu</p>
+                                                </li>
+                                                <li>
+                                                    <a rel="Appendix" href="images/fancybox/image-blank.png"><span></span><img src="images/page2_pic2.jpg" alt=""></a>
+                                                    <a href="#!/page_more" class="titleName">Brunch</a>
+                                                    <p>Volutpatroin eu purus sapien eu accumsan</p>
+                                                </li>
+                                                <li>
+                                                    <a rel="Appendix" href="images/fancybox/image-blank.png"><span></span><img src="images/page2_pic3.jpg" alt=""></a>
+                                                    <a href="#!/page_more" class="titleName">Appetizers</a>
+                                                    <p>Purus sapien eu accumsan dolounc iaculis ligula eget</p>
+                                                </li>
+                                                <li>
+                                                    <a rel="Appendix" href="images/fancybox/image-blank.png"><span></span><img src="images/page2_pic4.jpg" alt=""></a>
+                                                    <a href="#!/page_more" class="titleName">Garden Fresh Salads</a>
+                                                    <p>Accumsan dolounc iaculis</p>
+                                                </li>
+                                                <li>
+                                                    <a rel="Appendix" href="images/fancybox/image-blank.png"><span></span><img src="images/page2_pic5.jpg" alt=""></a>
+                                                    <a href="#!/page_more" class="titleName">Seafood Festival</a>
+                                                    <p>Aliquam erat volutpatroin eu purus sapien eu accu</p>
+                                                </li>
+                                                <li>
+                                                    <a rel="Appendix" href="images/fancybox/image-blank.png"><span></span><img src="images/page2_pic6.jpg" alt=""></a>
+                                                    <a href="#!/page_more" class="titleName">Appetizers</a>
+                                                    <p>Volutpatroin eu purus sapien eu accumsan</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                       </div>
+                       <img src="images/shadow.png" alt="" class="shadow">
+                    </li>
+                     <li id="page_drinks">
+                        <div class="container">
+                        <img src="images/character1.png" alt="" class="man">
+                            <div>
+                                <div>
+                                    <article class="col4">
+                                        <h2>Wine List</h2>
+                                        <ul class="list2">
+                                            <li>
+                                                <img src="images/page3_pic1.jpg" alt="">
+                                                <a href="#!/page_more" class="titleName">Aglianico del Vulture</a>
+                                            </li>
+                                            <li>
+                                                <img src="images/page3_pic2.jpg" alt="">
+                                                <a href="#!/page_more" class="titleName">Frascati Secco</a>
+                                            </li>
+                                            <li>
+                                                <img src="images/page3_pic3.jpg" alt="">
+                                                <a href="#!/page_more" class="titleName">Vino Nobile de Monte-pulciano</a>
+                                            </li>
+                                            <li>
+                                                <img src="images/page3_pic4.jpg" alt="">
+                                                <a href="#!/page_more" class="titleName">Ribera del Duero</a>
+                                            </li>
+                                        </ul>
+                                    </article>
+                                    <article class="col2">
+                                        <ul class="list1">
+                                            <li><img src="images/list1_arrow.png" alt=""><div><a href="#!/page_more">Prosecco, Riondo, Veneto, Italy</a></div></li>
+                                            <li><img src="images/list1_arrow.png" alt=""><div><a href="#!/page_more">Verdicchio dei Castelli di Jesi, Perlugo, Pievalta, Extra Brut, Marche, Italy</a></div></li>
+                                            <li class="margTop1"><img src="images/list1_arrow.png" alt=""><div><a href="#!/page_more">Franciacorta, Berlucchi, Storica '61, Lombardy, Italy</a></div></li>
+                                            <li class="margTop1"><img src="images/list1_arrow.png" alt=""><div><a href="#!/page_more">Franciacorta, Miolo, Tenuta Villa Crespia, Lombardy, Italy</a></div></li>
+                                            <li><img src="images/list1_arrow.png" alt=""><div><a href="#!/page_more">Coates & Seely, Rose, Brut, England, Hampshire</a></div></li>
+                                        </ul>
+                                    </article>
+                                </div>
+                            </div>
+                       </div>
+                       <img src="images/shadow.png" alt="" class="shadow">
+					</li>
+                    <li id="page_reservations">
+                        <div class="container">
+                        <img src="images/character1.png" alt="" class="man">
+                            <div>
+                                <div>
+                                    <article class="col5">
+                                        <h2>Reserve your Table!</h2>
+                                        <img src="images/page4_pic1.jpg" alt="" class="fleft imgIndent1">
+                                        <p><strong>Duis sem est, viverra eu inter suscipit nec maundisse commodo tempor sagittis!</strong></p>
+                                        <p class="text">In justo est, sollicitudin eu scelerisque pretium, placerat eget elit. Praesent faucibus rutrum odio at rhoncus. Pellentesque vitae tortor id neque fermentum pretium. Maecenas ac lacus ut  <strong>call +1 800 559 6580</strong> neque rhoncus laoreet sed id tellus. Donec justo tellus, tincidunt vitae pellentesque nec, pharetra a egestas eget elementum sed; rutrum egecongr et viverra turpis, a commodo.<br><strong>For parties call +1 800 559 6580</strong></p>
+                                    </article>
+                                    <article class="col6">
+                                        <div>
+                                            <p class="title1">Our Hours</p>
+                                            <p class="title2">Open 7 days a week</p>
+                                            <p class="title3">8am-10 pm</p>
+                                            <p class="title4">+1 800 603 6035</p>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="images/shadow.png" alt="" class="shadow">
+                    </li>
+                    <li id="page_contacts">
+                        <div class="container">
+                        <img src="images/character1.png" alt="" class="man">
+                            <div>
+                                <div>
+                                    <article class="col7">
+                                        <div id="map"><figure class="google_map"></figure></div>
+                                        <div class="extra-wrap">
+                                            <h2>Postal Address</h2>
+                                            <p class="margBot"><strong>9863 - 9867 Mill Road,<br>Cambridge, MG09 99HT.</strong></p>
+                                            <div class="info2">
+                                                <p><span>Freephone:</span> +1 800 559 6580</p>
+                                                <p><span>Telephone:</span> +1 800 603 6035</p>
+                                                <p><span>FAX:</span> +1 800 889 9898</p>
+                                                <p class="last"><span>E-mail:</span>  <a href="#"><strong><span class="__cf_email__" data-cfemail="bed3dfd7d2fedadbd3d1d2d7d0d590d1ccd9">[email&#160;protected]</span></strong></a></p>
+                                                <p class="last"><span>Skype:</span>  <a href="#"><strong>@skypename</strong></a></p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="images/shadow.png" alt="" class="shadow">
+                    </li>
+                   	<li id="page_privacy">
+                    	<div class="container">
+                        <img src="images/character1.png" alt="" class="man">
+                            <div>
+                                <div>
+                                    <article class="col8">
+                                        <h2>Privacy Policy</h2>
+                                        <div class="scroll">
+                                            <div>
+                                                <p class="titleName">Quisque placerat metus at neque aliquam sit</p>
+                                                <p class="margBot1">Quis porttitor orci elementum! In lobortis consectetur elit sed fringilla? Aliquam malesuada urna eu dolor volutpat lobortis! Curabitur pellentesque, turpis sit amet iaculis condimentum, urna mi aliquet turpis, itae pharetra mauris eros non arcu. Aenean felis augue, dignissim in tempus eget, cursus sit amet sem? Cras vehicula vehicula nunc id fringilla? Nulla vestibulum condimentum felis, in viverra erat vehicula sed.</p>
+                                                <p class="titleName">metus at neque aliquam sit facilisis pellentesque pharetra</p>
+                                                <p class="margBot2">Aliquam malesuada urna eu dolor volutpat lobortis! Curabitur pellentesque, turpis sit amet iaculis condimentum, urna mi aliquet turpis, itae pharetra mauris eros non arcu. Aenean felis augue, dignissim in tempus eget, cursus sit amet sem? Cras vehicula vehicula nunc id fringilla? Nulla vestibulum condimentum felis, in viverra erat vehicula sed. </p>
+                                                <p class="titleName">Quisque placerat metus at neque aliquam sit</p>
+                                                <p class="margBot1">Quis porttitor orci elementum! In lobortis consectetur elit sed fringilla? Aliquam malesuada urna eu dolor volutpat lobortis! Curabitur pellentesque, turpis sit amet iaculis condimentum, urna mi aliquet turpis, itae pharetra mauris eros non arcu. Aenean felis augue, dignissim in tempus eget, cursus sit amet sem? Cras vehicula vehicula nunc id fringilla? Nulla vestibulum condimentum felis, in viverra erat vehicula sed.</p>
+                                                <p class="titleName">metus at neque aliquam sit facilisis pellentesque pharetra</p>
+                                                <p class="margBot2">Aliquam malesuada urna eu dolor volutpat lobortis! Curabitur pellentesque, turpis sit amet iaculis condimentum, urna mi aliquet turpis, itae pharetra mauris eros non arcu. Aenean felis augue, dignissim in tempus eget, cursus sit amet sem? Cras vehicula vehicula nunc id fringilla? Nulla vestibulum condimentum felis, in viverra erat vehicula sed. </p>
+                                                <p class="titleName">Quisque placerat metus at neque aliquam sit</p>
+                                                <p class="margBot1">Quis porttitor orci elementum! In lobortis consectetur elit sed fringilla? Aliquam malesuada urna eu dolor volutpat lobortis! Curabitur pellentesque, turpis sit amet iaculis condimentum, urna mi aliquet turpis, itae pharetra mauris eros non arcu. Aenean felis augue, dignissim in tempus eget, cursus sit amet sem? Cras vehicula vehicula nunc id fringilla? Nulla vestibulum condimentum felis, in viverra erat vehicula sed.</p>
+                                                <p class="titleName">metus at neque aliquam sit facilisis pellentesque pharetra</p>
+                                                <p class="margBot2">Aliquam malesuada urna eu dolor volutpat lobortis! Curabitur pellentesque, turpis sit amet iaculis condimentum, urna mi aliquet turpis, itae pharetra mauris eros non arcu. Aenean felis augue, dignissim in tempus eget, cursus sit amet sem? Cras vehicula vehicula nunc id fringilla? Nulla vestibulum condimentum felis, in viverra erat vehicula sed. </p>
+                                            </div>
+        								</div>
+                                        <a href="#!/page_more"><span class="__cf_email__" data-cfemail="1c6c6e756a7d7f655c787971737075727732736e7b">[email&#160;protected]</span></a>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="images/shadow.png" alt="" class="shadow">
+                    </li>
+                	<li id="page_more">
+                    	<div class="container">
+                        <img src="images/character1.png" alt="" class="man">
+                            <div>
+                                <div>
+                                    <article class="col8">
+                                        <h2>Lorem Ipsum</h2>
+                                        <div class="scroll2">
+                                            <div>
+                                                <p class="titleName">Quisque placerat metus at neque aliquam sit</p>
+                                                <p class="margBot1">Quis porttitor orci elementum! In lobortis consectetur elit sed fringilla? Aliquam malesuada urna eu dolor volutpat lobortis! Curabitur pellentesque, turpis sit amet iaculis condimentum, urna mi aliquet turpis, itae pharetra mauris eros non arcu. Aenean felis augue, dignissim in tempus eget, cursus sit amet sem? Cras vehicula vehicula nunc id fringilla? Nulla vestibulum condimentum felis, in viverra erat vehicula sed.</p>
+                                                <p class="titleName">metus at neque aliquam sit facilisis pellentesque pharetra</p>
+                                                <p class="margBot2">Aliquam malesuada urna eu dolor volutpat lobortis! Curabitur pellentesque, turpis sit amet iaculis condimentum, urna mi aliquet turpis, itae pharetra mauris eros non arcu. Aenean felis augue, dignissim in tempus eget, cursus sit amet sem? Cras vehicula vehicula nunc id fringilla? Nulla vestibulum condimentum felis, in viverra erat vehicula sed. </p>
+                                                <p class="titleName">Quisque placerat metus at neque aliquam sit</p>
+                                                <p class="margBot1">Quis porttitor orci elementum! In lobortis consectetur elit sed fringilla? Aliquam malesuada urna eu dolor volutpat lobortis! Curabitur pellentesque, turpis sit amet iaculis condimentum, urna mi aliquet turpis, itae pharetra mauris eros non arcu. Aenean felis augue, dignissim in tempus eget, cursus sit amet sem? Cras vehicula vehicula nunc id fringilla? Nulla vestibulum condimentum felis, in viverra erat vehicula sed.</p>
+                                                <p class="titleName">metus at neque aliquam sit facilisis pellentesque pharetra</p>
+                                                <p class="margBot2">Aliquam malesuada urna eu dolor volutpat lobortis! Curabitur pellentesque, turpis sit amet iaculis condimentum, urna mi aliquet turpis, itae pharetra mauris eros non arcu. Aenean felis augue, dignissim in tempus eget, cursus sit amet sem? Cras vehicula vehicula nunc id fringilla? Nulla vestibulum condimentum felis, in viverra erat vehicula sed. </p>
+                                                <p class="titleName">Quisque placerat metus at neque aliquam sit</p>
+                                                <p class="margBot1">Quis porttitor orci elementum! In lobortis consectetur elit sed fringilla? Aliquam malesuada urna eu dolor volutpat lobortis! Curabitur pellentesque, turpis sit amet iaculis condimentum, urna mi aliquet turpis, itae pharetra mauris eros non arcu. Aenean felis augue, dignissim in tempus eget, cursus sit amet sem? Cras vehicula vehicula nunc id fringilla? Nulla vestibulum condimentum felis, in viverra erat vehicula sed.</p>
+                                                <p class="titleName">metus at neque aliquam sit facilisis pellentesque pharetra</p>
+                                                <p class="margBot2">Aliquam malesuada urna eu dolor volutpat lobortis! Curabitur pellentesque, turpis sit amet iaculis condimentum, urna mi aliquet turpis, itae pharetra mauris eros non arcu. Aenean felis augue, dignissim in tempus eget, cursus sit amet sem? Cras vehicula vehicula nunc id fringilla? Nulla vestibulum condimentum felis, in viverra erat vehicula sed. </p>
+                                            </div>
+        								</div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="images/shadow.png" alt="" class="shadow">
+                    </li>
+				</ul>
+			</div> 
+       </div>
+    </div>
+    <!--content end-->
+</div>
+<!--footer-->
+<footer>
+    <nav class="menu">
+        <ul id="menu">
+            <li class="btn1 with_ul"><a href="#!/page_about"><span>About</span><div class="button"><div></div></div></a><!--<img src="images/star.png" alt="" class="star">-->
+                <ul class="submenu_1">
+            	   <li><a href="#!/page_more">history</a></li>
+            	   <li><a href="#!/page_more">staff</a>
+                        <ul class="submenu_2">
+                    	   <li><a href="#!/page_more">profile</a></li>
+                    	   <li class="last"><a href="#!/page_more">info</a></li>
+                        </ul> 
+                    </li>
+            	   <li class="last"><a href="#!/page_more">hours</a></li>
+                   <li class="triangle"></li>
+                </ul> 
+            </li>
+            <li><img src="images/star.png" alt="" class="star"></li>
+            <li class="btn2"><a href="#!/page_menu"><span>Our Menu</span><div class="button"><div></div></div></a></li>
+            <li><img src="images/star.png" alt="" class="star"></li>
+            <li class="btn3"><a href="#!/page_drinks"><span>Drinks</span><div class="button"><div></div></div></a><!--<img src="images/star.png" alt="" class="star">--></li>
+            <li><img src="images/star.png" alt="" class="star"></li>
+            <li class="btn4"><a href="#!/page_reservations"><span>Reservations</span><div class="button"><div></div></div></a><!--<img src="images/star.png" alt="" class="star">--></li>
+            <li><img src="images/star.png" alt="" class="star"></li>
+            <li class="btn5"><a href="#!/page_contacts"><span>Contacts</span><div class="button"><div></div></div></a></li>
+        </ul>
+    </nav>
+    <div class="clear"></div>
+    <div class="patternPart"></div>
+    <div class="privPart">
+        <div>
+            <p>tequila &copy; 2013 &bull; <a href="#!/page_privacy">Privacy Policy</a> &bull;</p>
+        </div>
+    </div>
+    <!-- {%FOOTER_LINK} -->  
+</footer>
+<!--footer end-->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+$(window).load(function() {	
+	$('.page_spinner').delay(500).fadeOut(800);
+	$('body').stop().delay(500).css({overflow:'visible'})
+})
+</script>
+<!--coded by Lynx-->
+
+<!--LIVEDEMO_00 -->
+
+<script type="text/javascript">
+ var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7078796-5']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();</script>
+
+</body><!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9FT69');</script><!-- End Google Tag Manager -->
+</html>

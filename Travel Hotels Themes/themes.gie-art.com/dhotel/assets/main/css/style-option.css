@@ -1,0 +1,92 @@
+/*------------------------------
+
+Style Option - For Demo Purpose
+
+--------------------------------*/
+.style-option{
+	left: -260px;
+}
+
+.style-option.in{
+	left: 0 !important;
+}
+
+#style-option-wrapper{
+	width: 300px;
+	top: 150px;
+	height: 100%;
+	z-index: 2000;
+	transition : all 0.5s ease 0s;
+	position: fixed;
+}
+
+.style-option-inner{
+	background: #FFF;
+	float: left;
+	/*overflow-y : scroll;*/
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.style-option-inner h3{
+	color: #FFF;
+	font-size: 16px;
+	padding: 15px;
+	text-transform: uppercase;
+	font-weight: 500;
+	margin-top: 0;
+	margin-bottom: 15px;
+	width: 100%;
+}
+
+.option-panel{
+	padding: 15px;
+}
+
+#style-option-button{
+	float: right;
+	display: block;
+	width: 45px;
+	height: 45px;
+	font-size: 25px;
+	line-height: 45px;
+	text-align: center;
+	transition : none 0s ease 0s ;
+	top: 100px;
+	position: relative;
+	color: #FFF !important;
+}
+
+.color-switch a {
+    border: 2px solid transparent;
+    display: inline-block;
+    height: 30px;
+    margin-bottom: 8px;
+    margin-right: 5px;
+    text-indent: -9999px;
+    width: 30px;
+}
+.color-switch a:hover, .color-switch a.active {
+    border: 2px solid #e60061;
+    box-shadow: 2px 2px 0 #666;
+}
+.color-switch a:last-child {
+    margin-right: 0;
+}
+.color-switch a.color-red {
+    background: none repeat scroll 0 0 #e91b23;
+}
+.color-switch a.color-violet {
+    background: none repeat scroll 0 0 #563d7c;
+}
+.color-switch a.color-blue {
+    background: none repeat scroll 0 0 #3498db;
+}
+.color-switch a.color-green {
+    background: none repeat scroll 0 0 #81c83c;
+}
+.color-switch a.color-tosca {
+    background: none repeat scroll 0 0 #41B28A;
+}
+.color-switch a.color-orange {
+    background: none repeat scroll 0 0 #F7A81B;
+}

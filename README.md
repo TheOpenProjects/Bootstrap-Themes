@@ -1,2 +1,0 @@
-# Bootstrap-Themes
-Bootstrap Themes

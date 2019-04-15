@@ -1,0 +1,87 @@
+
+.demo_changer{
+    z-index: 900;
+    position: fixed;
+    left: -213px;
+    top: 120px;
+    font-weight: 400
+}
+
+
+.demo_changer hr {
+	border-color:#E0E0E0;
+}
+
+.demo_changer i {
+	color:#313131;
+	font-size:26px;
+}
+.demo_changer .btn{
+	margin-top:10px;
+}
+.demo_changer .demo-icon{
+  cursor: pointer;
+	text-align:center;
+	background: rgba(255,255,255,0.3);
+  float: right;
+  height: 50px;
+	line-height:57px;
+  width:50px;
+	position: relative;
+	z-index: 2;
+}
+.demo_changer .form_holder {
+	cursor: pointer;
+	font-size: 12px;
+	background: rgba(255,255,255,0.3);
+    float: right;
+	padding: 15px;
+    width: 212px;
+}
+.demo_changer .form_holder p{
+    font-size: 13px;
+		color: #454c53;
+		border-top:1px solid rgba(69,76,83,0.5);
+		font-family: 'Roboto', sans-serif;
+		font-weight: 100;
+		margin-top: 10px;
+		margin-bottom: 5px;
+		padding-top: 10px
+}
+
+
+.predefined_styles a {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	margin: 5px;
+	position: relative;
+  transition: transform 0.1s linear
+}
+
+.predefined_styles a.current{
+	outline: 5px solid rgba(255,255,255,0.6);
+  box-shadow: 0 0 20px rgba(0,0,0,0.35)
+}
+
+.predefined_styles a .tr{
+	position: absolute;
+	width: 35px;
+	top: 0;
+	right: 0;
+	height: 50px;
+	-webkit-clip-path: polygon(100% 0, 30% 0, 100% 100%);
+clip-path: polygon(100% 0, 30% 0, 100% 100%);
+}
+
+
+@media only screen and (max-width: 576px) {
+.predefined_styles a {
+	height: 30px;
+	margin: 2px 5px;
+}
+.predefined_styles a .tr{
+	height: 30px;
+}
+
+}

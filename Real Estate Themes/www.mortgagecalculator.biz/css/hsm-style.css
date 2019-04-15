@@ -1,0 +1,839 @@
+/* =General
+--------------------------------------------------------------------------------------------------------*/ 
+
+
+/* hides the spin-button for  firefox */
+input[type=number] {
+    -moz-appearance:textfield;
+}
+/* hides the spin-button for chrome*/
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+   appearance:none;
+-moz-appearance: textfield; /* Firefox */
+-webkit-appearance:none; /* Safari and Chrome */
+    margin: 0;
+}
+
+/* #03631c w previously 8FD36F (top header color) & 81C363 (headings) & #73B754 (links) */
+
+/* https://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+body.hsm, .hsm div, .hsm span, .hsm applet, .hsm object, .hsm iframe,
+.hsm h1, .hsm h2, .hsm h3, .hsm h4, .hsm h5, .hsm h6, .hsm p, .hsm blockquote, .hsm pre,
+.hsm a, .hsm abbr, .hsm acronym, .hsm address, .hsm big, .hsm cite, .hsm code,
+.hsm del, .hsm dfn, .hsm em, .hsm font, .hsm img, .hsm ins, .hsm kbd, .hsm q, .hsm s, .hsm samp,
+.hsm small, .hsm strike, .hsm strong, .hsm sub, .hsm sup, .hsm tt, .hsm var,
+.hsm b, .hsm u, .hsm i, .hsm center,
+.hsm dl, .hsm dt, .hsm dd, .hsm ol, .hsm ul, .hsm li,
+.hsm fieldset, .hsm form, .hsm label, .hsm legend,
+.hsm table, .hsm caption, .hsm tbody, .hsm tfoot, .hsm thead, .hsm tr, .hsm th, .hsm td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+.hsm a {
+	font-weight:bold;}
+
+.hsm blockquote {
+	color:#000;
+	margin-left: 20px;
+	padding: 10px;
+	border-radius: 15px;
+	border-left:dotted thick #03631c;
+	border-top:dotted thick #03631c;
+	outline: 0;
+	font-size: 100%;
+	vertical-align:baseline;
+	background-color:#CFEEC0;	
+	}
+
+
+.hsm body { line-height: 1; }
+.hsm ol, .hsm ul { list-style: none; }
+.hsm blockquote, .hsm q { quotes: none; }
+.hsm blockquote:before, .hsm blockquote:after,
+.hsm q:before, .hsm q:after { content: ''; content: none; }
+:focus { outline: 0; }
+.hsm ins { text-decoration: none; }
+.hsm del { text-decoration: line-through; }
+.hsm table { border-collapse: collapse; border-spacing: 0; }
+.hsm .clear { clear: both; height: 1px; font-size: 1px; line-height: 1px; }
+.hsm img { border: 0;display: block;
+    max-width: 100%; height:auto; }
+
+
+body.hsm {
+	background: url("https://www.mortgagecalculator.biz/img/body-bg.jpg");
+	font-size: 12px;
+	line-height: 21px;
+	color: #888;
+	padding-bottom: 60px;
+	height: auto;
+
+	-webkit-text-size-adjust: 100%
+}
+.hsm * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.hsm *:before,
+.hsm *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* End General
+--------------------------------------------------------------------------------------------------------*/
+
+
+
+/* =Typography
+--------------------------------------------------------------------------------------------------------*/
+
+/* fonts */
+body.hsm , .hsm input[type="number"], .hsm input[type="text"], .hsm input[type="submit"], .hsm input[type="button"], .hsm button, .hsm textarea, .hsm select, .hsm .footer-content-block h1, .hsm .footer-content-block h2, .hsm .footer-content-block h3, .hsm .footer-content-block h4, .hsm .footer-content-block h5, .hsm .footer-content-block h6 { font-family: 'Open Sans', sans-serif; }
+.hsm h1, .hsm h2, .hsm h3, .hsm h4, .hsm h5, .hsm h6, .hsm #main-nav, .hsm .nivo-caption, .hsm #homepage-post { font-family: 'Gudea', sans-serif; }
+
+/* links */
+.hsm a { color: #888; text-decoration: none; }
+.hsm a:hover { text-decoration: underline; }
+
+/* p tag */
+.hsm p { padding-bottom: 18px; }
+.hsm input{
+	 appearance:none;
+-moz-appearance:none; /* Firefox */
+-webkit-appearance:none; /* Safari and Chrome */
+border-radius:0;
+-moz-border-radius:0;
+-webkit-border-radius:0;
+}
+/* =Headings
+--------------------------------------------------------------------------------------------------------*/
+
+.hsm .wrapper-new {
+    margin: 0 auto;
+    max-width: 1160px; /* CHANGED1 960 */
+}
+
+.content-block-outer h1 {
+	font-size: 26px;
+	line-height: 30px;
+	padding: 6px 0 18px;
+	padding-bottom: 11px;
+}
+.content-block-outer h1 em,.content-block-outer  h1 i {
+	font-size: 18px;
+	line-height: 20px;
+	padding-top: 7px;
+	font-weight: normal;
+	font-style: normal;
+	float: right;
+}
+
+.content-block-outer h2 { font-size: 20px; line-height: 25px; padding: 4px 0 14px; }
+.content-block-outer h3 { font-size: 18px; line-height: 23px; padding: 4px 0 12px; }
+.content-block-outer h4 { font-size: 16px; line-height: 21px; padding: 4px 0 10px; }
+.content-block-outer h5 { font-size: 15px; line-height: 21px; padding: 4px 0 10px; }
+.content-block-outer h6 {
+	font-size: 14px;
+	line-height: 19px;
+	font-weight: normal;
+	padding: 4px 0 3px;
+}
+
+
+#breadcrumbs, #breadcrumbs a { color: #03631c; }
+#breadcrumbs li { background-image: url("https://www.mortgagecalculator.biz/img/colors/secondary-green/bc.png"); }
+#breadcrumbs li {
+	float: left;
+	padding: 0 0 0 16px;
+	margin-right: 6px;
+	background-position: 3px 7px;
+	background-repeat: no-repeat;
+	list-style-type: none;
+	list-style-position: outside;
+}
+#breadcrumbs li:first-child { background: none; padding-left: 5px; }
+#breadcrumbs li a { float: left; }
+#breadcrumbs li a:hover { text-decoration: underline; }
+
+
+/* End Headings
+--------------------------------------------------------------------------------------------------------*/
+.wrapper-new{
+	max-width: 1160px; /* CHANGED1 960 */
+	margin: 0 auto;
+}
+.content-block-outer{
+	width:100%;
+	float: left;
+	margin-top: 25px;
+}
+.content-block-outer .content-outer{
+	float: left;
+	width: 100%;
+	display: table;
+}
+.content-block-outer .sidebar-left{
+	/* width: 29%; CHANGED1 NUKED */
+	width: 280px;
+	display:table-cell;
+	vertical-align:top;
+	margin-top: 25px;
+	background: #efefef;
+}
+.content-block-outer .sidebar-top{
+	background: url("https://www.mortgagecalculator.biz/img/body-bg.jpg");
+	float: left;
+	width: 100%;
+	min-height: 25px;
+}
+.content-block-outer .page-right{
+	width: 100%;
+	max-width:680px;
+	display:table-cell;
+	vertical-align:top;
+}
+.content-block-outer #main-nav {
+    background-color: #24d4fa;
+    float: left;
+    font-size: 14px;
+    line-height: 33px;
+    margin-bottom: 40px;
+    width:100%;
+}
+.content-block-outer #main-nav ul li {
+    display: block;
+    float: left;
+    height: 35px;
+    margin-top: 1px;
+    position: relative;
+    width: 100%;
+}
+.content-block-outer .content-out{
+	display: inline-block;
+	float: left;
+	width: 100%;
+}
+
+.content-block-outer #main-nav ul li.current-menu-item, #main-nav ul li:hover {
+    border-color: #21ccf1;
+}
+.content-block-outer #main-nav ul li a{
+	display: block;
+    height: 35px;
+    padding-left: 25px;
+    text-decoration: none;
+    color:#fff;
+    float: left;
+    width: 100%;
+     background-color: #03b5dc;
+}
+.content-block-outer #main-nav ul li.current-menu-item a,.content-block-outer #main-nav ul li:hover a,.content-block-outer #main-nav ul li ul,.content-block-outer #main-nav ul ul a {
+    background-color: #03b5dc;
+}
+/* second level */
+.content-block-outer #main-nav ul li ul {
+	visibility:hidden;
+  opacity:0;
+  transition:visibility 0s   ease-out 0.5s,opacity 0.5s ease-out;
+	position: absolute;
+	left: 146px;
+	border: #fff 1px solid;
+	border-left: none;
+	top: -1px;
+	font-size: 14px;
+	white-space: nowrap;
+
+	z-index: 100;
+	max-width: 200px;
+	width:100%;
+}
+.content-block-outer #main-nav ul li ul a{
+	color:#c5f4fe;
+}
+.content-block-outer #main-nav ul li:hover ul{
+	visibility:visible;
+  opacity:1;
+  transition-delay:0s;
+}
+.content-block-outer #main-nav ul li.current-menu-item a,.content-block-outer #main-nav ul li:hover a,.content-block-outer #main-nav ul li ul,.content-block-outer #main-nav ul ul a {
+    background-color: #03b5dc;
+}
+.content-block-outer #main-nav ul ul li:hover a,.content-block-outer #main-nav ul ul li.current-menu-item a { color: #fff !important;}
+.content-block-outer #main-nav ul ul li:hover a,.content-block-outer #main-nav ul ul li.current-menu-item a {
+    background-color: #01aad1;
+}
+.content-block-outer #main-nav ul ul a {
+    padding: 0 10px !important;
+    text-align: left;
+   
+}
+.content-block-outer #main-nav ul li.item-with-ul >   a {
+    background: url("https://www.mortgagecalculator.biz/img/menu-dd.png")  93% center no-repeat #03b5dc;
+ 
+}
+.content-block-outer .image-block,.mlogo{
+	float: left;
+	width: 100%;
+	text-align: center;
+}
+.content-block-outer .image-block > img,.content-block-outer .mlogo img {
+    display: inline-block;
+    
+}
+.content-block-outer .bottom-links{
+	float: left;
+	width: 100%;
+	padding-left: 30px;
+	margin-top: 200px;
+}
+.content-block-outer .bottom-links h3{
+	color: #05a8cc;
+}
+.content-block-outer header {
+    float: left;
+    width: 100%;
+    margin-bottom: 78px;
+}
+.content-block-outer .bottom-links  a:hover {
+    color: #03b5dc;
+}
+.content-block-outer .sidebar-left iframe{
+	width: 100%;
+}
+.content-block-outer .logo {
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+.content-block-outer .sidebar-calculator-block{
+	float: left;
+    width: 100%;
+}
+.footer-content-block {
+    clear: both;
+    float: left;
+    width: 100%;
+    font-size: 12px;
+  margin-bottom: 50px;
+  
+}
+.footer-content-block .footer-container{
+	  background:#03b5dc;
+    color: #a8eefe;
+    float: left;
+    width: 100%;  padding-bottom: 30px;
+}
+.footer-content-block #f-left-col{
+	/* width: 29%; CHANGED1 nuked this row */
+	max-width: 280px;  /* CHANGED1 added this row */
+	float: left;
+}
+.footer-content-block #f-main-col{
+	width: 71%;
+	float: left;
+}
+.footer-content-block #copyright {
+    clear: both;
+    font-size: 12px;
+    padding-top: 31px;
+    text-align: center;
+}
+.footer-content-block .widget {
+    border-right-style: solid;
+    border-right-width: 1px;
+    float: left;
+    line-height: 22px;
+    margin: 30px 4px 0 30px;
+    padding: 3px 0;
+}
+.footer-content-block .col-25 {
+    width: 130px;
+}
+.footer-content-block .w-title {
+    color: #fff !important;
+    font-size: 12px !important;
+    font-weight: normal !important;
+    line-height: 22px !important;
+    padding: 0 !important;
+}
+.footer-content-block ul li {
+    background: url("https://www.mortgagecalculator.biz/img/footer-li.png") no-repeat scroll 0 9px rgba(0, 0, 0, 0);
+    padding-left: 14px;
+}
+.footer-content-block a {
+    text-decoration: none;
+}
+.footer-content-block a {
+    color: #90eaff;
+}
+
+img:hover {
+    opacity: 0.85;
+} 
+
+.footer-content-block a:hover { color: #fff; text-decoration: underline; }
+
+.footer-content-block .widget, .footer-content-block img.alignleft, .footer-content-block img.alignright, .footer-content-block img.aligncenter {
+    border-color: #04c7f2;
+}
+.footer-content-block .c-last {
+    border-right: medium none !important;
+    max-width: 350px;
+    width: 100%;
+    position: relative;
+    margin:0;
+      padding: 30px 4px 0 30px;
+}
+.footer-content-block .c-last .w-content {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+}
+.footer-content-block .c-last .w-content img{
+	border:1px solid #04c7f2;
+}
+.footer-content-block #sidebar-end {
+    background: none repeat scroll 0 0 #efefef;
+    float: left;
+    margin-top: -1px;
+    padding: 12px 24px 26px 25px;
+    position: relative;
+    width: 100%;
+}
+.get-yours-link{
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+.get-yours-link a{
+	font-size:32px; font-weight:bold; color:#03B5DC;
+}
+
+
+.content-block-outer .page-right {
+	padding: 25px 40px 0 20px;
+	background:#ffffff;
+	position:relative;
+}
+.content-block-outer .heading-block {
+	float:left;
+	width:100%;
+	background:#f1fdeb;
+	border:1px solid #03631c;
+	margin-bottom:25px;
+}
+.content-block-outer .main-heading {
+	float:left;
+	width:100%;
+	padding: 15px 15px 12px;
+	background:#03631c;
+}
+.content-block-outer .main-heading h1{
+	padding:0;
+	color:#ffffff;
+}
+.content-block-outer .heading-block ul {
+	float:left;
+	width:100%;
+	padding:5px 15px;
+}
+.content-block-outer .heading-block ul li{
+	float:left;
+	margin-left:6px;
+}
+.content-block-outer .heading-block ul li:first-child{
+	margin-left:0;
+}
+.content-block-outer .heading-block ul li a{
+	color:#03631c;
+}
+.content-block-outer .bottom-section {
+	float:left;
+	width:95%;
+	margin:0 15px 10px;
+}
+.content-block-outer .text-lbl {
+	display:block;
+	position:relative;
+	font-size:13px;
+	padding-left: 23px;
+	margin-bottom: 1px;
+}
+.content-block-outer .text-lbl:before{
+	display:block;
+	content:"";
+	position:absolute;
+	background:url("https://www.mortgagecalculator.biz/img/tick-mark.png")no-repeat 0 0;
+	height:15px;
+	width:15px;
+	top:4px;
+	left:0;
+}
+.content-block-outer .info-block p {
+	font-size:13px;
+}
+.content-block-outer .info-block .click_btn {
+	display:inline;
+	background:#ffb300;
+	padding:0 4px;
+	color:#ffffff;
+	margin-left:23px;
+	font-weight:600;
+}
+.content-block-outer .info-block {
+	float:left;
+	width:100%;
+	padding-left:15px;
+}
+.content-block-outer .table-block, .tabbed-table {
+	float:left;
+	width:100%;
+	margin-bottom: 3px;
+}
+.content-block-outer .table-block table, .tabbed-table table { 
+	border-collapse: collapse;
+	font-size: 12px;
+	cursor: default; 
+	float:left;
+	width:100%;
+}
+.content-block-outer .table-block table th, .tabbed-table table th, .tab-content table th {
+	background: #EFEFEF;
+	font-weight: 900;
+	text-align: left;
+	padding: 5px 10px 6px 14px;
+	border: #DDE0E4 1px solid;
+}
+.content-block-outer .table-block table td, .tabbed-table table td, .tab-content table td {
+	padding: 5px 10px 6px 14px;
+	border: #DDE0E4 1px solid;
+	color: #666;
+	text-align:center;
+}
+.content-block-outer .table-block table tr:hover td, .tabbed-table table tr:hover td { background: #FFc; color: #000; }
+.content-block-outer .cell-hidden { border: none; background: none; }
+.content-block-outer .table-block table td.first-column {
+	text-align:right;
+	width: 57%;
+}
+.content-block-outer .table-block input[type="text"], .tabbed-table input[type="text"], .tab-content input[type="text"] {
+	font-weight:bold;
+	max-width: 150px;
+    padding: 5px 10px;
+	border: 1px solid #dde0e4;
+    color: #333;
+    font-size: 13px;
+}
+.content-block-outer .table-block input[type="number"], .tabbed-table input[type="number"], .tab-content input[type="number"] {
+	font-weight:bold;
+	max-width: 120px;
+    padding: 5px 10px;
+	border: 1px solid #dde0e4;
+    color: #333;
+    font-size: 13px;
+}
+.content-block-outer .table-block input::-webkit-input-placeholder, .tabbed-table input::-webkit-input-placeholder, .tab-content input::-webkit-input-placeholder{
+	color:#000000;
+	opacity:1;
+}
+
+.content-block-outer .table-block input:-moz-placeholder, .tabbed-table input:-moz-placeholder, .tab-content input:-moz-placeholder {
+	color:#000000;
+	opacity:1;
+}
+
+.content-block-outer .table-block input::-moz-placeholder, .tabbed-table input::-moz-placeholder, .tab-content input::-moz-placeholder {
+	color:#000000;
+	opacity:1;
+}
+
+.content-block-outer .table-block input:-ms-input-placeholder, .tabbed-table input:-ms-input-placeholder, .tab-content input:-ms-input-placeholder {
+	color:#000000;
+	opacity:1;
+}
+.content-block-outer .table-btn, .tabbed-table .table-btn {
+	text-align:center;
+	background:#efefef;
+    border: 1px solid #dde0e4;
+    color: #888;
+    cursor: pointer;
+    padding: 5px 10px 2px;
+	height:30px;
+}
+.content-block-outer .table-btn:hover, .tabbed-table .table-btn:hover {
+	background: #03631c;
+    border: #03631c;
+	color:#ffffff;
+}
+.content-block-outer .text-bg {
+	background:#ffffcc;
+	color:#08b5db !important;
+	font-size: 15px !important;
+    font-weight: 600 !important;
+	max-width: 120px !important;
+}
+.content-block-outer .bottom-section h3 {
+	color:#03631c;
+}
+.content-block-outer .accordion {
+	float:left;
+	width:100%;
+	padding-bottom: 20px;
+	background:url("https://www.mortgagecalculator.biz/img/accordion-img.png") no-repeat 14px 7px #efefef;
+	border: 1px solid #e3e3e3;
+	color: #888;
+	font-size: 13px;
+	cursor:pointer;
+	 margin-top: 10px;
+     padding: 5px 14px 6px 44px;
+}
+.content-block-outer .title-block {
+	float:left;
+	width:100%;
+	background:#efefef;
+	border: 1px solid #e3e3e3;
+	color: #888;
+	font-size: 13px;
+	cursor:pointer;
+	 margin-top: 10px;
+    padding: 0 14px 0 44px;
+}
+.content-block-outer .content-block {
+	float:left;
+	width:100%;
+}
+.content-block-outer .accordion-content {
+	float:left;
+	width:100%;
+	padding:14px;
+	border: 1px solid #e3e3e3;
+}
+
+.content-block-outer .accordion:hover { 
+	background-color: #ffc;
+}
+.content-block-outer .accordion-open {
+	background-position: 14px -75px;
+}
+.content-block-outer .accordion-content p img {
+/*	float:right;
+	width:130px; */
+	max-width:100%; 
+	border:1px solid #03631c;
+	margin-left:5px;
+	margin-right:5px;
+	padding:0;
+}
+
+
+
+.aligncenter { margin: 0 auto; display: block; }
+.alignright { float: right; margin-left: 18px; margin-bottom: 4px; }
+.alignleft { float: left; margin-right: 18px; margin-bottom: 4px; }
+
+
+
+
+.content-block-outer .accordion-content ul{
+	align:left;
+	width:100%;
+	padding-left:15px;
+}
+.content-block-outer .accordion-content ul li{
+	align:left;
+	position:relative;
+	padding:0 0 10px 25px;
+	font-size:13px;
+}
+
+.content-block-outer .accordion-content ul li:before{
+	display:block;
+	position:absolute;
+	left:0;
+	top:4px;
+	height:15px;
+	width:15px;
+	content:"";
+	background:url("https://www.mortgagecalculator.biz/img/tick-mark.png")no-repeat 0 0;
+}
+.content-block-outer .accordion-content ul li ul{ 
+	margin-left: -10px;
+    padding: 4px 0 0;
+}
+.content-block-outer .accordion-content ul li ul li{ 
+	position:relative;
+	padding:0 0 1px 14px;
+	font-size: 11px;
+}
+.content-block-outer .accordion-content ul li ul li:before{
+	display:block;
+	position:absolute;
+	left:0;
+	top:9px;
+	height:5px;
+	width:7px;
+	content:"";
+	background:url("https://www.mortgagecalculator.biz/img/li-inner.png")no-repeat 0 0;
+}
+
+.bottom-section p {
+	font-size:13px;
+}
+.bottom-section ul{
+	align:left;
+	width:100%;
+	padding-left:15px;
+}
+.bottom-section ul li{
+	align:left;
+	position:relative;
+	padding:0 0 10px 25px;
+	font-size:13px;
+}
+
+.bottom-section ul li:before{
+	display:block;
+	position:absolute;
+	left:0;
+	top:4px;
+	height:15px;
+	width:15px;
+	content:"";
+	background:url("https://www.mortgagecalculator.biz/img/tick-mark.png")no-repeat 0 0;
+}
+.bottom-section ul li ul{ 
+	margin-left: -10px;
+    padding: 4px 0 0;
+}
+.bottom-section ul li ul li{ 
+	position:relative;
+	padding:0 0 1px 14px;
+	font-size: 11px;
+}
+.bottom-section ul li ul li:before{
+	display:block;
+	position:absolute;
+	left:0;
+	top:9px;
+	height:5px;
+	width:7px;
+	content:"";
+	background:url("https://www.mortgagecalculator.biz/img/li-inner.png")no-repeat 0 0;
+}
+
+.content-block-outer .bottom-section h2 {
+	color: #01aad1;
+	 align: left;
+    margin-top: 20px;
+}
+.content-block-outer .accordion-content img {
+	padding-bottom:18px;
+}
+.content-block-outer .content-blk ul {
+	padding-bottom:18px;
+}
+.content-block-outer .bottom-section h4 {
+	color: #08b5db;
+}
+.content-block-outer .content-blk p a {
+	color:#03631c;
+}
+.content-block-outer .accordion-content ul li a {
+	color:#03631c;
+}
+.bottom-section .content-blk p a {
+	color:#03631c;
+}
+.bottom-section ul li a {
+	color:#03631c;
+}
+
+.bottom-section a {
+	color:#03631c;
+}
+
+.bottom-section .tab-content a {
+	color:#03631c;
+}
+
+
+.content-block-outer .tabs_table { clear: both; }
+.content-block-outer .tabs {	 padding: 1px 0 0 4px !important; margin-bottom: -1px; }
+.content-block-outer .tabs li {
+	float: left;
+	list-style-type: none !important;
+	list-style-position: outside !important;
+	cursor: pointer;
+	white-space: nowrap;
+	margin-left: -4px;
+	padding: 0 !important;
+}
+.content-block-outer .tabs li a {
+	display: block;
+	float: left;
+	padding: 14px;
+	background: #EFEFEF;
+	margin: 0;
+	color: #888 !important;
+	border: 1px solid #e3e3e3;
+}
+.content-block-outer .tabs li a:hover { text-decoration: none; background: #ffc; }
+.content-block-outer .tabs li a.selected { background: #fff; border-bottom: #fff 1px solid; position: relative; color: #888 !important;padding: 14px; }
+.content-block-outer .panes { border: 0; padding: 0px;float: left; width: 100%; }
+/* EDIT FOOTER TABS .content-block-outer .panes { border: 1px solid #e3e3e3; padding: 14px;float: left; width: 100%; } */
+.content-block-outer .tabs li:before {
+	background:none !important;
+}
+.content-block-outer .tab-content ul li {
+	display:block;
+	float:none;
+}
+
+
+.bottom-section .tabs li a:hover { text-decoration: none; background: #ffc; }
+.bottom-section .tabs li a.selected { background: #fff; border-bottom: #fff 1px solid; position: relative; color: #888 !important;padding: 14px; }
+.bottom-section .panes { border: 0; padding: 0px;float: left; }
+/* EDIT FOOTER TABS .bottom-section .panes { border: 1px solid #e3e3e3; padding: 14px;float: left; } */
+.bottom-section tabs li:before {
+	background:none !important;
+}
+.bottom-section .tab-content ul li {
+	display:block;
+	float:none;
+}
+
+
+
+
+.content-block-outer .share-block {
+	position:absolute;
+	display:block;
+	height: 90px !important;
+    left: auto !important;
+    opacity: 1 !important;
+    right: -21px !important;
+    top: 25px !important;
+	background:#03b5dc;
+}
+
+.hsm .content-block-outer .table-block input[type="number"], .hsm .content-block-outer .tabs_table .panes .tab-content  input[type="number"] {
+appearance: textfield!important;
+-moz-appearance: textfield!important;
+-webkit-appearance: textfield!important;
+}
+
+.hsm .content-block-outer .table-block input[type="number"], .hsm .content-block-outer .tabs_table .panes .tab-content  input[type="number"] {
+appearance: textfield!important;
+-moz-appearance: textfield!important;
+-webkit-appearance: textfield!important;
+}

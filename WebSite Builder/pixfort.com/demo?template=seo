@@ -1,0 +1,2203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://pixfort.com/core/images/favicon.ico">
+    <title>PIXFORT Builder</title>
+    <link rel="stylesheet" type="text/css" href="https://pixfort.com/assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://pixfort.com/core/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://pixfort.com/core/css/pixfort.css?v=1.0.1" />
+    <link rel="stylesheet" type="text/css" href="https://pixfort.com/core/css/jquery.fancybox.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700|Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://pixfort.com/assets/css/main.css"/>
+    <!--    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto:300,400,500" rel="stylesheet">-->
+
+
+    <style type="text/css" id="pix_page_style"></style>
+    <script type="text/javascript">
+        window.base_url = "https:\/\/pixfort.com\/";
+    </script>
+</head>
+<body class="pix_loading pixfort_builder">
+
+<div id="pix_loader">
+    <div class="showbox">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-miterlimit="10"/>
+            </svg>
+        </div>
+        <div class="pix_loader_text">Loading PixFort Page Builder</div>
+    </div>
+</div>
+<!--Header-->
+<div id="pixbuilder_header" class="pixbuilder">
+    <div class="left">
+        <a href="https://pixfort.com/" id="pix_logo">
+            <div class="logo">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     width="19px" height="19px" viewBox="0 0 19 19" enable-background="new 0 0 19 19" xml:space="preserve">
+                    <rect y="14" fill="#FFFFFF" width="5" height="5"/>
+                    <rect y="7" fill="#FFFFFF" width="5" height="5"/>
+                    <rect x="7" y="7" fill="#FFFFFF" width="5" height="5"/>
+                    <rect fill="#FFFFFF" width="5" height="5"/>
+                    <rect x="7" fill="#FFFFFF" width="5" height="5"/>
+                    <rect x="14" fill="#FFFFFF" width="5" height="5"/>
+                </svg>
+            </div>
+        </a>
+    </div>
+    <div class="center">
+        <div class="page_name">
+            <span class="page_label">Page: </span>
+            <span id="header_page_name"><span>index</span>.html</span>
+            <a href="#" id="pix_empty_page">EMPTY PAGE</a>
+        </div>
+    </div>
+    <div class="right">
+        <button type="submit" class="header_btn demo_popup" name="submit">
+            <i class="material-icons">check</i> Save Project
+        </button>
+        <input type="hidden" name="markup" value="" id="markupField2">
+        <button type="submit" class="header_btn demo_popup"><i class="material-icons icon_btn">visibility</i> Preview</button>
+        <button class="header_btn quick" id="pix_preview" data-tooltip="tooltip" data-placement="bottom" title="Quick Preview">
+            <i class="material-icons">whatshot</i>
+        </button>
+    </div>
+</div><!--Left Bar-->
+	<div id="pixbuilder_left_bar">
+		<div id="left_area">
+			<div id="left_sidebar">
+				<div class="left_buttons">
+					<a href="#" class="left_button pix_click" id="add_section" data-tooltip="tooltip" data-placement="right" title="Add section" data-left-sidebar="sections_panel">
+						<i class="material-icons">dashboard</i>
+					</a>
+					<a href="#" class="left_button pix_click" id="pix_pages" data-tooltip="tooltip" data-placement="right" title="Add Template" data-left-sidebar="templates_panel">
+						<i class="material-icons">view_carousel</i>
+					</a>
+					<a href="#" class="left_button pix_click" id="pix_pages2" data-tooltip="tooltip" data-placement="right" title="Manage Pages" data-left-sidebar="pages_panel">
+						<i class="material-icons">layers</i>
+					</a>
+                    <a href="#" class="left_button pix_click" id="pix_pages3" data-tooltip="tooltip" data-placement="right" title="Manage Project" data-left-sidebar="project_panel">
+                        <i class="material-icons">settings</i>
+                    </a>
+                    <div class="pix_left_bottom">
+                        <a href="#" class="left_button pix_bottom disabled" id="pix_undo" data-tooltip="tooltip" data-placement="right" title="Undo" data-pix-action="undo">
+                            <i class="material-icons">undo</i>
+                        </a>
+                        <a href="#" class="left_button  pix_bottom disabled" id="pix_redo" data-tooltip="tooltip" data-placement="right" title="Redo" data-pix-action="redo">
+                            <i class="material-icons">redo</i>
+                        </a>
+                    </div>
+				</div>
+			</div>
+			<div id="pix_left_panels" class="pixbuilder">
+				<div class="left_panel" id="sections_panel">
+					<div class="left_inner pix_templates_inner">
+						<div class="panel_main">
+							<div class="panel_title">
+								<span>Sections</span>
+								<a class="close" aria-label="Close"><i class="pixicon-close"></i></a>
+							</div>
+                            <div class="items_div scrollbar-macosx">
+                                <ul class="pix_sec_cat_ul">
+                                    <li>
+                                        <a href="#" class="pix_sec_cat" data-left-sidebar="section_panel_1" data-panel-parent="add_section">All Sections</a>
+                                    </li>
+                                </ul>
+                            </div>
+							
+						</div>
+						<div id="pix_sub_sec_area">
+							<div class="sub_left_panel" id="section_panel_1">
+								<div class="left_inner pix_sections_inner">
+									<div class="panel_title">
+										<a href="#" class="return_button" data-left-sidebar="sections_panel" data-panel-parent="add_section"><i class="pixicon-arrow-left"></i></a>All Sections
+										<a class="close" aria-label="Close"><i class="pixicon-close"></i></a>
+									</div>
+									<div class="items_div scrollbar-macosx">
+										<div class="pix_items">
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="left_panel" id="pages_panel">
+					<div class="left_inner pix_templates_inner">
+						<div class="panel_main">
+							<div class="panel_title">
+								<span>Pages</span>
+								<a class="close" aria-label="Close"><i class="pixicon-close"></i></a>
+							</div>
+                            <div class="items_div scrollbar-macosx">
+                                <div id="pix_left_pages_view">
+                                    <ul id="pix_left_pages_ul"></ul>
+                                    <div class="pix_left_sidebar_btn_div">
+                                        <a class="btn btn-primary pix_animate_ease pix_add_new_page" id="">
+                                            Add new Page
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+						</div>
+					</div>
+				</div>
+				<div class="left_panel left_panel2" id="templates_panel">
+					<div class="left_inner pix_templates_inner">
+						<div class="panel_main">
+							<div class="panel_title">
+								<span>Templates</span>
+								<a class="close" aria-label="Close"><i class="pixicon-close"></i></a>
+							</div>
+                            <div class="items_div scrollbar-macosx">
+                                <div class="templates_items_inner" id="pix_templates_list"></div>
+                            </div>
+
+						</div>
+					</div>
+				</div>
+				<div class="left_panel" id="project_panel">
+					<div class="left_inner">
+						<div class="panel_main">
+							<div class="panel_title">
+								<span>Project</span>
+								<a class="close" aria-label="Close"><i class="pixicon-close"></i></a>
+							</div>
+							<div class="pix_panel_inner_box2">
+                                <div class="project_name_area">
+                                    <div class="project_name_title">Project Name:</div>
+                                    <div class="project_name_value">PixFort Landing Page</div>
+                                </div>
+                                <div class="project_leftbar_area">
+                                    <div class="project_leftbar_title">Export Project</div>
+                                    <div class="project_leftbar_text">Click on the button to export the project as .zip file contains HTML files.</div>
+                                    <a href="#" id="zip" target="_blank" class="pix-btn-primary project_leftbar_btn demo_popup"><i class="material-icons ">move_to_inbox</i> <span>Export Project</span></a>
+                                </div>
+                                <div class="project_leftbar_area">
+                                    <div class="project_leftbar_title">Publish via FTP</div>
+                                    <div class="project_leftbar_text">Publish your project directly via FTP to your hosting/server.</div>
+                                    <a href="#" id="ftp" target="_blank" class="pix-btn-primary project_leftbar_btn demo_popup"><i class="material-icons">public</i> <span>Publish</span></a>
+                                </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+<div id="pix-right-sidebar">
+	<div id="pix-right-sidebar-inner">
+		<div id="pix-right-sidebar-header">
+			<div class="panel_title">
+				<span id="pix-right-sidebar-title">Settings</span>
+				<a class="close" aria-label="Close"><i class="pixicon-close"></i></a>
+			</div>
+			<ul class="nav nav-justified pix_settings_tab" id="pix-sidebar-tabs">
+			</ul>
+		</div>
+		<div id="pix-sidebar-content" class="items_div pixbuilder scrollbar-macosx">
+		</div>
+
+	</div>
+</div>
+<!-- PIXBUILDER Footer -->
+	<div class="pix_footer_div">
+		<div class="left">
+			<a href="http://help.pixfort.com" target="_blank" class="footer_btn footer_help pixbuilder_out_link">
+				<i class="material-icons">help</i>
+			</a>
+<!--			<a href="#" id="pix_edit" class="footer_btn" data-toggle="pix-modal" data-target="#edit_source_modal">-->
+			<a href="#" id="pix_edit_source" class="footer_btn">
+				<i class="material-icons">code</i> <span> Source Code</span>
+			</a>
+			<a href="#" id="pix_custom_css" class="footer_btn" data-toggle="pix-modal" data-target="#edit_css_modal">
+                <svg fill="#777777" width="17px" height="17px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220.5 199.5"><path d="M32.8 0l-7.4 37H176l-4.7 23.9H20.6l-7.3 37h150.6l-8.4 42.2-60.7 20.1-52.6-20.1 3.6-18.3h-37L0 166.2l87 33.3 100.3-33.3 13.3-66.8 2.7-13.4 17.1-86z"/></svg> <span> Custom CSS</span>
+			</a>
+			<span class="pix_popups_div dropup">
+				<a href="#" id="pix_popups" class="footer_btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="material-icons">library_books</i> <span> Popups</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="#" data-toggle="modal" data-target="#imageGallery2" class="pix_pop_name">Popup 1</a>
+						<div class="pix_popup_tools">
+							<a href="#" class="pix_pop_opt" title="Open Popup"><i class="material-icons">open_in_new</i></a>	
+							<a href="#" class="pix_pop_opt" title="Settings"><i class="material-icons">settings</i></a>	
+							<a href="#" class="pix_pop_opt"><i class="material-icons">delete</i></a>
+						</div>
+					</li>
+				    <li>
+						<a href="#" class="pix_pop_name">Popup 2</a>
+						<div class="pix_popup_tools">
+							<a href="#" class="pix_pop_opt" title="Open Popup"><i class="material-icons">open_in_new</i></a>	
+							<a href="#" class="pix_pop_opt" title="Settings"><i class="material-icons">settings</i></a>	
+							<a href="#" class="pix_pop_opt"><i class="material-icons">delete</i></a>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="pix_pop_name">Popup 3</a>
+						<div class="pix_popup_tools">
+							<a href="#" class="pix_pop_opt" title="Open Popup"><i class="material-icons">open_in_new</i></a>	
+							<a href="#" class="pix_pop_opt" title="Settings"><i class="material-icons">settings</i></a>	
+							<a href="#" class="pix_pop_opt"><i class="material-icons">delete</i></a>
+						</div>
+					</li>
+				    <li><a class="pix_add_popup" data-toggle="pix-modal" data-target="#pix_add_popups" href="#">Add New Popup</a></li>
+			  </ul>
+			</span>
+
+		</div>
+		<div class="right">
+			<div id="pix_mode">
+				<a href="#" data-width="auto"  data-tooltip="tooltip" data-placement="bottom" title="Desktop" class="active">
+					<i class="material-icons">computer</i>
+				</a>
+				<a href="#"  data-tooltip="tooltip" data-placement="bottom" title="Tablet">
+					<i class="material-icons">tablet</i>
+				</a>
+				<a href="#" data-tooltip="tooltip" data-placement="bottom" title="Mobile" class="last">
+					<i class="material-icons">smartphone</i>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="pix_icon_modal" class="pix_modal pixbuilder modal fade" data-easein="fadeIn" tabindex="-1" role="dialog" aria-labelledby="costumModalLabel" aria-hidden="false" data-backdrop="static">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close pix_close" data-dismiss="modal" aria-hidden="true">
+						<i class="material-icons">close</i>
+					</button>
+                    <div class="pix_modal_icon">
+                        <i class="material-icons">filter_vintage</i>
+                    </div>
+                    <h5 class="modal-title" id="costumModalLabel">
+                        Icon Settings
+                    </h5>
+				</div>
+				<div class="modal-body">
+					<div class="col-md-6 col-xs-12 pix-col-no-padding-l">
+						<div class="form-group">
+							<label for="exampleInputEmail1">Icon Color</label>
+							<div id="pix-icon-color" class="input-group colorpicker-component">
+								<input type="text" value="" class="form-control" id="pix_icon_color"/>
+								<span class="input-group-addon"><i></i></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-xs-12 pix-col-no-padding-r">
+						<div class="form-group">
+							<label for="name" class="control-label pix_seo_label">Icon Size</label>
+							<input type="text" class="form-control" id="pix_icon_size" name="pageData_title" placeholder="Page title" value="">
+						</div>
+					</div>
+
+
+					<div class="col-md-12 col-xs-12 pix-col-no-padding-r pix-col-no-padding-l">
+						<div class="pix_icon_filter" id="ex6">
+							<label for="name" class="control-label pix_seo_label">Choose Icon</label>
+							<input type="text" class="form-control pix_filter_input" id="pix_icon_filter" name="pageData_title" placeholder="Type here to filter icons" value="">
+		                    <div class="pix_icons_div scrollbar-macosx" id="firassss">
+			                    <div class="">
+			                    	<div class="pix_icons_warning" id="pix_no_icons_found">No results found!</div>
+			                        <ul class="pix-icon-list example-list-quad" id="pix_icon_list_ul">
+			                            <li><a href="#" data-pix="pixicon-arrow116" class="pix_icon_elm"><i class='pixicon-arrow116'></i> arrow116</a></li>
+										<li><a href="#" data-pix="pixicon-barrow3" class="pix_icon_elm"><i class='pixicon-barrow3'></i> barrow3</a></li>
+										<li><a href="#" data-pix="pixicon-bath10" class="pix_icon_elm"><i class='pixicon-bath10'></i> bath10</a></li>
+										<li><a href="#" data-pix="pixicon-beds2" class="pix_icon_elm"><i class='pixicon-beds2'></i> beds2</a></li>
+										<li><a href="#" data-pix="pixicon-buildings25" class="pix_icon_elm"><i class='pixicon-buildings25'></i> buildings25</a></li>
+										<li><a href="#" data-pix="pixicon-bulbs1" class="pix_icon_elm"><i class='pixicon-bulbs1'></i> bulbs1</a></li>
+										<li><a href="#" data-pix="pixicon-cardboard34" class="pix_icon_elm"><i class='pixicon-cardboard34'></i> cardboard34</a></li>
+										<li><a href="#" data-pix="pixicon-chairs1" class="pix_icon_elm"><i class='pixicon-chairs1'></i> chairs1</a></li>
+										<li><a href="#" data-pix="pixicon-city3" class="pix_icon_elm"><i class='pixicon-city3'></i> city3</a></li>
+										<li><a href="#" data-pix="pixicon-city5" class="pix_icon_elm"><i class='pixicon-city5'></i> city5</a></li>
+										<li><a href="#" data-pix="pixicon-clips" class="pix_icon_elm"><i class='pixicon-clips'></i> clips</a></li>
+										<li><a href="#" data-pix="pixicon-coin" class="pix_icon_elm"><i class='pixicon-coin'></i> coin</a></li>
+										<li><a href="#" data-pix="pixicon-construction42" class="pix_icon_elm"><i class='pixicon-construction42'></i> construction42</a></li>
+										<li><a href="#" data-pix="pixicon-couch5" class="pix_icon_elm"><i class='pixicon-couch5'></i> couch5</a></li>
+										<li><a href="#" data-pix="pixicon-device17" class="pix_icon_elm"><i class='pixicon-device17'></i> device17</a></li>
+										<li><a href="#" data-pix="pixicon-direction65" class="pix_icon_elm"><i class='pixicon-direction65'></i> direction65</a></li>
+										<li><a href="#" data-pix="pixicon-door2" class="pix_icon_elm"><i class='pixicon-door2'></i> door2</a></li>
+										<li><a href="#" data-pix="pixicon-doors3" class="pix_icon_elm"><i class='pixicon-doors3'></i> doors3</a></li>
+										<li><a href="#" data-pix="pixicon-earphones7" class="pix_icon_elm"><i class='pixicon-earphones7'></i> earphones7</a></li>
+										<li><a href="#" data-pix="pixicon-exam" class="pix_icon_elm"><i class='pixicon-exam'></i> exam</a></li>
+										<li><a href="#" data-pix="pixicon-eyeglasses" class="pix_icon_elm"><i class='pixicon-eyeglasses'></i> eyeglasses</a></li>
+										<li><a href="#" data-pix="pixicon-fan1" class="pix_icon_elm"><i class='pixicon-fan1'></i> fan1</a></li>
+										<li><a href="#" data-pix="pixicon-fire1" class="pix_icon_elm"><i class='pixicon-fire1'></i> fire1</a></li>
+										<li><a href="#" data-pix="pixicon-furniture20" class="pix_icon_elm"><i class='pixicon-furniture20'></i> furniture20</a></li>
+										<li><a href="#" data-pix="pixicon-garden10" class="pix_icon_elm"><i class='pixicon-garden10'></i> garden10</a></li>
+										<li><a href="#" data-pix="pixicon-garden11" class="pix_icon_elm"><i class='pixicon-garden11'></i> garden11</a></li>
+										<li><a href="#" data-pix="pixicon-garden12" class="pix_icon_elm"><i class='pixicon-garden12'></i> garden12</a></li>
+										<li><a href="#" data-pix="pixicon-graphs4" class="pix_icon_elm"><i class='pixicon-graphs4'></i> graphs4</a></li>
+										<li><a href="#" data-pix="pixicon-hand260" class="pix_icon_elm"><i class='pixicon-hand260'></i> hand260</a></li>
+										<li><a href="#" data-pix="pixicon-horn" class="pix_icon_elm"><i class='pixicon-horn'></i> horn</a></li>
+										<li><a href="#" data-pix="pixicon-hotels" class="pix_icon_elm"><i class='pixicon-hotels'></i> hotels</a></li>
+										<li><a href="#" data-pix="pixicon-house226" class="pix_icon_elm"><i class='pixicon-house226'></i> house226</a></li>
+										<li><a href="#" data-pix="pixicon-house232" class="pix_icon_elm"><i class='pixicon-house232'></i> house232</a></li>
+										<li><a href="#" data-pix="pixicon-indoor2" class="pix_icon_elm"><i class='pixicon-indoor2'></i> indoor2</a></li>
+										<li><a href="#" data-pix="pixicon-interiordesign" class="pix_icon_elm"><i class='pixicon-interiordesign'></i> interiordesign</a></li>
+										<li><a href="#" data-pix="pixicon-key19" class="pix_icon_elm"><i class='pixicon-key19'></i> key19</a></li>
+										<li><a href="#" data-pix="pixicon-key21" class="pix_icon_elm"><i class='pixicon-key21'></i> key21</a></li>
+										<li><a href="#" data-pix="pixicon-letter121" class="pix_icon_elm"><i class='pixicon-letter121'></i> letter121</a></li>
+										<li><a href="#" data-pix="pixicon-lift2" class="pix_icon_elm"><i class='pixicon-lift2'></i> lift2</a></li>
+										<li><a href="#" data-pix="pixicon-light112" class="pix_icon_elm"><i class='pixicon-light112'></i> light112</a></li>
+										<li><a href="#" data-pix="pixicon-lock107" class="pix_icon_elm"><i class='pixicon-lock107'></i> lock107</a></li>
+										<li><a href="#" data-pix="pixicon-luggage20" class="pix_icon_elm"><i class='pixicon-luggage20'></i> luggage20</a></li>
+										<li><a href="#" data-pix="pixicon-machine3" class="pix_icon_elm"><i class='pixicon-machine3'></i> machine3</a></li>
+										<li><a href="#" data-pix="pixicon-machine" class="pix_icon_elm"><i class='pixicon-machine'></i> machine</a></li>
+										<li><a href="#" data-pix="pixicon-mail15" class="pix_icon_elm"><i class='pixicon-mail15'></i> mail15</a></li>
+										<li><a href="#" data-pix="pixicon-money207" class="pix_icon_elm"><i class='pixicon-money207'></i> money207</a></li>
+										<li><a href="#" data-pix="pixicon-money210" class="pix_icon_elm"><i class='pixicon-money210'></i> money210</a></li>
+										<li><a href="#" data-pix="pixicon-news3" class="pix_icon_elm"><i class='pixicon-news3'></i> news3</a></li>
+										<li><a href="#" data-pix="pixicon-notdisturb" class="pix_icon_elm"><i class='pixicon-notdisturb'></i> notdisturb</a></li>
+										<li><a href="#" data-pix="pixicon-officematerial" class="pix_icon_elm"><i class='pixicon-officematerial'></i> officematerial</a></li>
+										<li><a href="#" data-pix="pixicon-open10" class="pix_icon_elm"><i class='pixicon-open10'></i> open10</a></li>
+										<li><a href="#" data-pix="pixicon-order5" class="pix_icon_elm"><i class='pixicon-order5'></i> order5</a></li>
+										<li><a href="#" data-pix="pixicon-padlock10" class="pix_icon_elm"><i class='pixicon-padlock10'></i> padlock10</a></li>
+										<li><a href="#" data-pix="pixicon-parking1" class="pix_icon_elm"><i class='pixicon-parking1'></i> parking1</a></li>
+										<li><a href="#" data-pix="pixicon-pin96" class="pix_icon_elm"><i class='pixicon-pin96'></i> pin96</a></li>
+										<li><a href="#" data-pix="pixicon-plumber1" class="pix_icon_elm"><i class='pixicon-plumber1'></i> plumber1</a></li>
+										<li><a href="#" data-pix="pixicon-print62" class="pix_icon_elm"><i class='pixicon-print62'></i> print62</a></li>
+										<li><a href="#" data-pix="pixicon-purse12" class="pix_icon_elm"><i class='pixicon-purse12'></i> purse12</a></li>
+										<li><a href="#" data-pix="pixicon-radiator" class="pix_icon_elm"><i class='pixicon-radiator'></i> radiator</a></li>
+										<li><a href="#" data-pix="pixicon-realestate2" class="pix_icon_elm"><i class='pixicon-realestate2'></i> realestate2</a></li>
+										<li><a href="#" data-pix="pixicon-search9" class="pix_icon_elm"><i class='pixicon-search9'></i> search9</a></li>
+										<li><a href="#" data-pix="pixicon-shopcart" class="pix_icon_elm"><i class='pixicon-shopcart'></i> shopcart</a></li>
+										<li><a href="#" data-pix="pixicon-shower1" class="pix_icon_elm"><i class='pixicon-shower1'></i> shower1</a></li>
+										<li><a href="#" data-pix="pixicon-signal56" class="pix_icon_elm"><i class='pixicon-signal56'></i> signal56</a></li>
+										<li><a href="#" data-pix="pixicon-signal58" class="pix_icon_elm"><i class='pixicon-signal58'></i> signal58</a></li>
+										<li><a href="#" data-pix="pixicon-socket4" class="pix_icon_elm"><i class='pixicon-socket4'></i> socket4</a></li>
+										<li><a href="#" data-pix="pixicon-stats25" class="pix_icon_elm"><i class='pixicon-stats25'></i> stats25</a></li>
+										<li><a href="#" data-pix="pixicon-suitcase59" class="pix_icon_elm"><i class='pixicon-suitcase59'></i> suitcase59</a></li>
+										<li><a href="#" data-pix="pixicon-swim5" class="pix_icon_elm"><i class='pixicon-swim5'></i> swim5</a></li>
+										<li><a href="#" data-pix="pixicon-telephone146" class="pix_icon_elm"><i class='pixicon-telephone146'></i> telephone146</a></li>
+										<li><a href="#" data-pix="pixicon-telephone148" class="pix_icon_elm"><i class='pixicon-telephone148'></i> telephone148</a></li>
+										<li><a href="#" data-pix="pixicon-television34" class="pix_icon_elm"><i class='pixicon-television34'></i> television34</a></li>
+										<li><a href="#" data-pix="pixicon-title" class="pix_icon_elm"><i class='pixicon-title'></i> title</a></li>
+										<li><a href="#" data-pix="pixicon-toilet16" class="pix_icon_elm"><i class='pixicon-toilet16'></i> toilet16</a></li>
+										<li><a href="#" data-pix="pixicon-travel1" class="pix_icon_elm"><i class='pixicon-travel1'></i> travel1</a></li>
+										<li><a href="#" data-pix="pixicon-trees16" class="pix_icon_elm"><i class='pixicon-trees16'></i> trees16</a></li>
+										<li><a href="#" data-pix="pixicon-vacuum1" class="pix_icon_elm"><i class='pixicon-vacuum1'></i> vacuum1</a></li>
+										<li><a href="#" data-pix="pixicon-wash6" class="pix_icon_elm"><i class='pixicon-wash6'></i> wash6</a></li>
+										<li><a href="#" data-pix="pixicon-water78" class="pix_icon_elm"><i class='pixicon-water78'></i> water78</a></li>
+										<li><a href="#" data-pix="pixicon-weights" class="pix_icon_elm"><i class='pixicon-weights'></i> weights</a></li>
+										<li><a href="#" data-pix="pixicon-wheelbarrow" class="pix_icon_elm"><i class='pixicon-wheelbarrow'></i> wheelbarrow</a></li>
+										<li><a href="#" data-pix="pixicon-window81" class="pix_icon_elm"><i class='pixicon-window81'></i> window81</a></li>
+										<li><a href="#" data-pix="pixicon-architecture7" class="pix_icon_elm"><i class='pixicon-architecture7'></i> architecture7</a></li>
+										<li><a href="#" data-pix="pixicon-architecture8" class="pix_icon_elm"><i class='pixicon-architecture8'></i> architecture8</a></li>
+										<li><a href="#" data-pix="pixicon-building125" class="pix_icon_elm"><i class='pixicon-building125'></i> building125</a></li>
+										<li><a href="#" data-pix="pixicon-building126" class="pix_icon_elm"><i class='pixicon-building126'></i> building126</a></li>
+										<li><a href="#" data-pix="pixicon-building128" class="pix_icon_elm"><i class='pixicon-building128'></i> building128</a></li>
+										<li><a href="#" data-pix="pixicon-building129" class="pix_icon_elm"><i class='pixicon-building129'></i> building129</a></li>
+										<li><a href="#" data-pix="pixicon-construction48" class="pix_icon_elm"><i class='pixicon-construction48'></i> construction48</a></li>
+										<li><a href="#" data-pix="pixicon-constructions" class="pix_icon_elm"><i class='pixicon-constructions'></i> constructions</a></li>
+										<li><a href="#" data-pix="pixicon-hospitals3" class="pix_icon_elm"><i class='pixicon-hospitals3'></i> hospitals3</a></li>
+										<li><a href="#" data-pix="pixicon-house16" class="pix_icon_elm"><i class='pixicon-house16'></i> house16</a></li>
+										<li><a href="#" data-pix="pixicon-houses4" class="pix_icon_elm"><i class='pixicon-houses4'></i> houses4</a></li>
+										<li><a href="#" data-pix="pixicon-houses5" class="pix_icon_elm"><i class='pixicon-houses5'></i> houses5</a></li>
+										<li><a href="#" data-pix="pixicon-industry7" class="pix_icon_elm"><i class='pixicon-industry7'></i> industry7</a></li>
+										<li><a href="#" data-pix="pixicon-judaism" class="pix_icon_elm"><i class='pixicon-judaism'></i> judaism</a></li>
+										<li><a href="#" data-pix="pixicon-mills1" class="pix_icon_elm"><i class='pixicon-mills1'></i> mills1</a></li>
+										<li><a href="#" data-pix="pixicon-religion24" class="pix_icon_elm"><i class='pixicon-religion24'></i> religion24</a></li>
+										<li><a href="#" data-pix="pixicon-religion25" class="pix_icon_elm"><i class='pixicon-religion25'></i> religion25</a></li>
+										<li><a href="#" data-pix="pixicon-religion26" class="pix_icon_elm"><i class='pixicon-religion26'></i> religion26</a></li>
+										<li><a href="#" data-pix="pixicon-rural35" class="pix_icon_elm"><i class='pixicon-rural35'></i> rural35</a></li>
+										<li><a href="#" data-pix="pixicon-skyscrapers1" class="pix_icon_elm"><i class='pixicon-skyscrapers1'></i> skyscrapers1</a></li>
+										<li><a href="#" data-pix="pixicon-storage47" class="pix_icon_elm"><i class='pixicon-storage47'></i> storage47</a></li>
+										<li><a href="#" data-pix="pixicon-store1" class="pix_icon_elm"><i class='pixicon-store1'></i> store1</a></li>
+										<li><a href="#" data-pix="pixicon-announcement3" class="pix_icon_elm"><i class='pixicon-announcement3'></i> announcement3</a></li>
+										<li><a href="#" data-pix="pixicon-archive53" class="pix_icon_elm"><i class='pixicon-archive53'></i> archive53</a></li>
+										<li><a href="#" data-pix="pixicon-artistic13" class="pix_icon_elm"><i class='pixicon-artistic13'></i> artistic13</a></li>
+										<li><a href="#" data-pix="pixicon-attach31" class="pix_icon_elm"><i class='pixicon-attach31'></i> attach31</a></li>
+										<li><a href="#" data-pix="pixicon-attachment2" class="pix_icon_elm"><i class='pixicon-attachment2'></i> attachment2</a></li>
+										<li><a href="#" data-pix="pixicon-books93" class="pix_icon_elm"><i class='pixicon-books93'></i> books93</a></li>
+										<li><a href="#" data-pix="pixicon-books95" class="pix_icon_elm"><i class='pixicon-books95'></i> books95</a></li>
+										<li><a href="#" data-pix="pixicon-boxes27" class="pix_icon_elm"><i class='pixicon-boxes27'></i> boxes27</a></li>
+										<li><a href="#" data-pix="pixicon-boxes30" class="pix_icon_elm"><i class='pixicon-boxes30'></i> boxes30</a></li>
+										<li><a href="#" data-pix="pixicon-camera35" class="pix_icon_elm"><i class='pixicon-camera35'></i> camera35</a></li>
+										<li><a href="#" data-pix="pixicon-circle169" class="pix_icon_elm"><i class='pixicon-circle169'></i> circle169</a></li>
+										<li><a href="#" data-pix="pixicon-clips7" class="pix_icon_elm"><i class='pixicon-clips7'></i> clips7</a></li>
+										<li><a href="#" data-pix="pixicon-compactdisc6" class="pix_icon_elm"><i class='pixicon-compactdisc6'></i> compactdisc6</a></li>
+										<li><a href="#" data-pix="pixicon-craft1" class="pix_icon_elm"><i class='pixicon-craft1'></i> craft1</a></li>
+										<li><a href="#" data-pix="pixicon-cup81" class="pix_icon_elm"><i class='pixicon-cup81'></i> cup81</a></li>
+										<li><a href="#" data-pix="pixicon-cut60" class="pix_icon_elm"><i class='pixicon-cut60'></i> cut60</a></li>
+										<li><a href="#" data-pix="pixicon-cut61" class="pix_icon_elm"><i class='pixicon-cut61'></i> cut61</a></li>
+										<li><a href="#" data-pix="pixicon-cutting16" class="pix_icon_elm"><i class='pixicon-cutting16'></i> cutting16</a></li>
+										<li><a href="#" data-pix="pixicon-dailycalendar11" class="pix_icon_elm"><i class='pixicon-dailycalendar11'></i> dailycalendar11</a></li>
+										<li><a href="#" data-pix="pixicon-drawing35" class="pix_icon_elm"><i class='pixicon-drawing35'></i> drawing35</a></li>
+										<li><a href="#" data-pix="pixicon-drop8" class="pix_icon_elm"><i class='pixicon-drop8'></i> drop8</a></li>
+										<li><a href="#" data-pix="pixicon-drops11" class="pix_icon_elm"><i class='pixicon-drops11'></i> drops11</a></li>
+										<li><a href="#" data-pix="pixicon-ebook26" class="pix_icon_elm"><i class='pixicon-ebook26'></i> ebook26</a></li>
+										<li><a href="#" data-pix="pixicon-ebook28" class="pix_icon_elm"><i class='pixicon-ebook28'></i> ebook28</a></li>
+										<li><a href="#" data-pix="pixicon-garbagecan8" class="pix_icon_elm"><i class='pixicon-garbagecan8'></i> garbagecan8</a></li>
+										<li><a href="#" data-pix="pixicon-graphicseditor31" class="pix_icon_elm"><i class='pixicon-graphicseditor31'></i> graphicseditor31</a></li>
+										<li><a href="#" data-pix="pixicon-graphicseditor41" class="pix_icon_elm"><i class='pixicon-graphicseditor41'></i> graphicseditor41</a></li>
+										<li><a href="#" data-pix="pixicon-graphicseditor44" class="pix_icon_elm"><i class='pixicon-graphicseditor44'></i> graphicseditor44</a></li>
+										<li><a href="#" data-pix="pixicon-inbox52" class="pix_icon_elm"><i class='pixicon-inbox52'></i> inbox52</a></li>
+										<li><a href="#" data-pix="pixicon-ink" class="pix_icon_elm"><i class='pixicon-ink'></i> ink</a></li>
+										<li><a href="#" data-pix="pixicon-ipad39" class="pix_icon_elm"><i class='pixicon-ipad39'></i> ipad39</a></li>
+										<li><a href="#" data-pix="pixicon-letters23" class="pix_icon_elm"><i class='pixicon-letters23'></i> letters23</a></li>
+										<li><a href="#" data-pix="pixicon-magnifyingglass71" class="pix_icon_elm"><i class='pixicon-magnifyingglass71'></i> magnifyingglass71</a></li>
+										<li><a href="#" data-pix="pixicon-measure39" class="pix_icon_elm"><i class='pixicon-measure39'></i> measure39</a></li>
+										<li><a href="#" data-pix="pixicon-message43" class="pix_icon_elm"><i class='pixicon-message43'></i> message43</a></li>
+										<li><a href="#" data-pix="pixicon-milky4" class="pix_icon_elm"><i class='pixicon-milky4'></i> milky4</a></li>
+										<li><a href="#" data-pix="pixicon-newspaper22" class="pix_icon_elm"><i class='pixicon-newspaper22'></i> newspaper22</a></li>
+										<li><a href="#" data-pix="pixicon-newsreport3" class="pix_icon_elm"><i class='pixicon-newsreport3'></i> newsreport3</a></li>
+										<li><a href="#" data-pix="pixicon-notebook110" class="pix_icon_elm"><i class='pixicon-notebook110'></i> notebook110</a></li>
+										<li><a href="#" data-pix="pixicon-notepad6" class="pix_icon_elm"><i class='pixicon-notepad6'></i> notepad6</a></li>
+										<li><a href="#" data-pix="pixicon-officematerial10" class="pix_icon_elm"><i class='pixicon-officematerial10'></i> officematerial10</a></li>
+										<li><a href="#" data-pix="pixicon-officematerial11" class="pix_icon_elm"><i class='pixicon-officematerial11'></i> officematerial11</a></li>
+										<li><a href="#" data-pix="pixicon-officematerial13" class="pix_icon_elm"><i class='pixicon-officematerial13'></i> officematerial13</a></li>
+										<li><a href="#" data-pix="pixicon-officematerial6" class="pix_icon_elm"><i class='pixicon-officematerial6'></i> officematerial6</a></li>
+										<li><a href="#" data-pix="pixicon-officematerial7" class="pix_icon_elm"><i class='pixicon-officematerial7'></i> officematerial7</a></li>
+										<li><a href="#" data-pix="pixicon-package37" class="pix_icon_elm"><i class='pixicon-package37'></i> package37</a></li>
+										<li><a href="#" data-pix="pixicon-paint115" class="pix_icon_elm"><i class='pixicon-paint115'></i> paint115</a></li>
+										<li><a href="#" data-pix="pixicon-painter23" class="pix_icon_elm"><i class='pixicon-painter23'></i> painter23</a></li>
+										<li><a href="#" data-pix="pixicon-painting63" class="pix_icon_elm"><i class='pixicon-painting63'></i> painting63</a></li>
+										<li><a href="#" data-pix="pixicon-painting65" class="pix_icon_elm"><i class='pixicon-painting65'></i> painting65</a></li>
+										<li><a href="#" data-pix="pixicon-palette3" class="pix_icon_elm"><i class='pixicon-palette3'></i> palette3</a></li>
+										<li><a href="#" data-pix="pixicon-pamphlet" class="pix_icon_elm"><i class='pixicon-pamphlet'></i> pamphlet</a></li>
+										<li><a href="#" data-pix="pixicon-paper148" class="pix_icon_elm"><i class='pixicon-paper148'></i> paper148</a></li>
+										<li><a href="#" data-pix="pixicon-papers11" class="pix_icon_elm"><i class='pixicon-papers11'></i> papers11</a></li>
+										<li><a href="#" data-pix="pixicon-papers12" class="pix_icon_elm"><i class='pixicon-papers12'></i> papers12</a></li>
+										<li><a href="#" data-pix="pixicon-paste" class="pix_icon_elm"><i class='pixicon-paste'></i> paste</a></li>
+										<li><a href="#" data-pix="pixicon-pencil130" class="pix_icon_elm"><i class='pixicon-pencil130'></i> pencil130</a></li>
+										<li><a href="#" data-pix="pixicon-pencils19" class="pix_icon_elm"><i class='pixicon-pencils19'></i> pencils19</a></li>
+										<li><a href="#" data-pix="pixicon-pencils20" class="pix_icon_elm"><i class='pixicon-pencils20'></i> pencils20</a></li>
+										<li><a href="#" data-pix="pixicon-pines3" class="pix_icon_elm"><i class='pixicon-pines3'></i> pines3</a></li>
+										<li><a href="#" data-pix="pixicon-plant63" class="pix_icon_elm"><i class='pixicon-plant63'></i> plant63</a></li>
+										<li><a href="#" data-pix="pixicon-print87" class="pix_icon_elm"><i class='pixicon-print87'></i> print87</a></li>
+										<li><a href="#" data-pix="pixicon-print88" class="pix_icon_elm"><i class='pixicon-print88'></i> print88</a></li>
+										<li><a href="#" data-pix="pixicon-pushpin6" class="pix_icon_elm"><i class='pixicon-pushpin6'></i> pushpin6</a></li>
+										<li><a href="#" data-pix="pixicon-recycle12" class="pix_icon_elm"><i class='pixicon-recycle12'></i> recycle12</a></li>
+										<li><a href="#" data-pix="pixicon-resize19" class="pix_icon_elm"><i class='pixicon-resize19'></i> resize19</a></li>
+										<li><a href="#" data-pix="pixicon-roadsign21" class="pix_icon_elm"><i class='pixicon-roadsign21'></i> roadsign21</a></li>
+										<li><a href="#" data-pix="pixicon-scan1" class="pix_icon_elm"><i class='pixicon-scan1'></i> scan1</a></li>
+										<li><a href="#" data-pix="pixicon-schoolmaterial1" class="pix_icon_elm"><i class='pixicon-schoolmaterial1'></i> schoolmaterial1</a></li>
+										<li><a href="#" data-pix="pixicon-schoolmaterial2" class="pix_icon_elm"><i class='pixicon-schoolmaterial2'></i> schoolmaterial2</a></li>
+										<li><a href="#" data-pix="pixicon-shirt15" class="pix_icon_elm"><i class='pixicon-shirt15'></i> shirt15</a></li>
+										<li><a href="#" data-pix="pixicon-shoppingbag16" class="pix_icon_elm"><i class='pixicon-shoppingbag16'></i> shoppingbag16</a></li>
+										<li><a href="#" data-pix="pixicon-shoppingbag18" class="pix_icon_elm"><i class='pixicon-shoppingbag18'></i> shoppingbag18</a></li>
+										<li><a href="#" data-pix="pixicon-targeting13" class="pix_icon_elm"><i class='pixicon-targeting13'></i> targeting13</a></li>
+										<li><a href="#" data-pix="pixicon-television45" class="pix_icon_elm"><i class='pixicon-television45'></i> television45</a></li>
+										<li><a href="#" data-pix="pixicon-underline" class="pix_icon_elm"><i class='pixicon-underline'></i> underline</a></li>
+										<li><a href="#" data-pix="pixicon-usb49" class="pix_icon_elm"><i class='pixicon-usb49'></i> usb49</a></li>
+										<li><a href="#" data-pix="pixicon-webpage10" class="pix_icon_elm"><i class='pixicon-webpage10'></i> webpage10</a></li>
+										<li><a href="#" data-pix="pixicon-website36" class="pix_icon_elm"><i class='pixicon-website36'></i> website36</a></li>
+										<li><a href="#" data-pix="pixicon-writing52" class="pix_icon_elm"><i class='pixicon-writing52'></i> writing52</a></li>
+										<li><a href="#" data-pix="pixicon-writing53" class="pix_icon_elm"><i class='pixicon-writing53'></i> writing53</a></li>
+										<li><a href="#" data-pix="pixicon-writing55" class="pix_icon_elm"><i class='pixicon-writing55'></i> writing55</a></li>
+										<li><a href="#" data-pix="pixicon-writing56" class="pix_icon_elm"><i class='pixicon-writing56'></i> writing56</a></li>
+										<li><a href="#" data-pix="pixicon-writing57" class="pix_icon_elm"><i class='pixicon-writing57'></i> writing57</a></li>
+										<li><a href="#" data-pix="pixicon-writing58" class="pix_icon_elm"><i class='pixicon-writing58'></i> writing58</a></li>
+										<li><a href="#" data-pix="pixicon-boat" class="pix_icon_elm"><i class='pixicon-boat'></i> boat</a></li>
+										<li><a href="#" data-pix="pixicon-ribbon3" class="pix_icon_elm"><i class='pixicon-ribbon3'></i> ribbon3</a></li>
+										<li><a href="#" data-pix="pixicon-ribbonadd" class="pix_icon_elm"><i class='pixicon-ribbonadd'></i> ribbonadd</a></li>
+										<li><a href="#" data-pix="pixicon-ribbonerror" class="pix_icon_elm"><i class='pixicon-ribbonerror'></i> ribbonerror</a></li>
+										<li><a href="#" data-pix="pixicon-camera5" class="pix_icon_elm"><i class='pixicon-camera5'></i> camera5</a></li>
+										<li><a href="#" data-pix="pixicon-camera6" class="pix_icon_elm"><i class='pixicon-camera6'></i> camera6</a></li>
+										<li><a href="#" data-pix="pixicon-clouddone" class="pix_icon_elm"><i class='pixicon-clouddone'></i> clouddone</a></li>
+										<li><a href="#" data-pix="pixicon-clouderror" class="pix_icon_elm"><i class='pixicon-clouderror'></i> clouderror</a></li>
+										<li><a href="#" data-pix="pixicon-download4" class="pix_icon_elm"><i class='pixicon-download4'></i> download4</a></li>
+										<li><a href="#" data-pix="pixicon-upload4" class="pix_icon_elm"><i class='pixicon-upload4'></i> upload4</a></li>
+										<li><a href="#" data-pix="pixicon-cloud5" class="pix_icon_elm"><i class='pixicon-cloud5'></i> cloud5</a></li>
+										<li><a href="#" data-pix="pixicon-glass" class="pix_icon_elm"><i class='pixicon-glass'></i> glass</a></li>
+										<li><a href="#" data-pix="pixicon-coffee2" class="pix_icon_elm"><i class='pixicon-coffee2'></i> coffee2</a></li>
+										<li><a href="#" data-pix="pixicon-compass3" class="pix_icon_elm"><i class='pixicon-compass3'></i> compass3</a></li>
+										<li><a href="#" data-pix="pixicon-exitfullscreen" class="pix_icon_elm"><i class='pixicon-exitfullscreen'></i> exitfullscreen</a></li>
+										<li><a href="#" data-pix="pixicon-food5" class="pix_icon_elm"><i class='pixicon-food5'></i> food5</a></li>
+										<li><a href="#" data-pix="pixicon-close2" class="pix_icon_elm"><i class='pixicon-close2'></i> close2</a></li>
+										<li><a href="#" data-pix="pixicon-removefolder" class="pix_icon_elm"><i class='pixicon-removefolder'></i> removefolder</a></li>
+										<li><a href="#" data-pix="pixicon-addmessage" class="pix_icon_elm"><i class='pixicon-addmessage'></i> addmessage</a></li>
+										<li><a href="#" data-pix="pixicon-falsemessage" class="pix_icon_elm"><i class='pixicon-falsemessage'></i> falsemessage</a></li>
+										<li><a href="#" data-pix="pixicon-happymessage" class="pix_icon_elm"><i class='pixicon-happymessage'></i> happymessage</a></li>
+										<li><a href="#" data-pix="pixicon-sadmessage" class="pix_icon_elm"><i class='pixicon-sadmessage'></i> sadmessage</a></li>
+										<li><a href="#" data-pix="pixicon-messagetext" class="pix_icon_elm"><i class='pixicon-messagetext'></i> messagetext</a></li>
+										<li><a href="#" data-pix="pixicon-writtingmessage" class="pix_icon_elm"><i class='pixicon-writtingmessage'></i> writtingmessage</a></li>
+										<li><a href="#" data-pix="pixicon-diamond3" class="pix_icon_elm"><i class='pixicon-diamond3'></i> diamond3</a></li>
+										<li><a href="#" data-pix="pixicon-food3" class="pix_icon_elm"><i class='pixicon-food3'></i> food3</a></li>
+										<li><a href="#" data-pix="pixicon-food4" class="pix_icon_elm"><i class='pixicon-food4'></i> food4</a></li>
+										<li><a href="#" data-pix="pixicon-download5" class="pix_icon_elm"><i class='pixicon-download5'></i> download5</a></li>
+										<li><a href="#" data-pix="pixicon-downloadfolder" class="pix_icon_elm"><i class='pixicon-downloadfolder'></i> downloadfolder</a></li>
+										<li><a href="#" data-pix="pixicon-extend" class="pix_icon_elm"><i class='pixicon-extend'></i> extend</a></li>
+										<li><a href="#" data-pix="pixicon-eye4" class="pix_icon_elm"><i class='pixicon-eye4'></i> eye4</a></li>
+										<li><a href="#" data-pix="pixicon-food2" class="pix_icon_elm"><i class='pixicon-food2'></i> food2</a></li>
+										<li><a href="#" data-pix="pixicon-flag4" class="pix_icon_elm"><i class='pixicon-flag4'></i> flag4</a></li>
+										<li><a href="#" data-pix="pixicon-folder4" class="pix_icon_elm"><i class='pixicon-folder4'></i> folder4</a></li>
+										<li><a href="#" data-pix="pixicon-pin3" class="pix_icon_elm"><i class='pixicon-pin3'></i> pin3</a></li>
+										<li><a href="#" data-pix="pixicon-earth" class="pix_icon_elm"><i class='pixicon-earth'></i> earth</a></li>
+										<li><a href="#" data-pix="pixicon-statistics" class="pix_icon_elm"><i class='pixicon-statistics'></i> statistics</a></li>
+										<li><a href="#" data-pix="pixicon-stocks" class="pix_icon_elm"><i class='pixicon-stocks'></i> stocks</a></li>
+										<li><a href="#" data-pix="pixicon-stocks2" class="pix_icon_elm"><i class='pixicon-stocks2'></i> stocks2</a></li>
+										<li><a href="#" data-pix="pixicon-hammer2" class="pix_icon_elm"><i class='pixicon-hammer2'></i> hammer2</a></li>
+										<li><a href="#" data-pix="pixicon-water" class="pix_icon_elm"><i class='pixicon-water'></i> water</a></li>
+										<li><a href="#" data-pix="pixicon-earpods" class="pix_icon_elm"><i class='pixicon-earpods'></i> earpods</a></li>
+										<li><a href="#" data-pix="pixicon-heart5" class="pix_icon_elm"><i class='pixicon-heart5'></i> heart5</a></li>
+										<li><a href="#" data-pix="pixicon-brokenheart" class="pix_icon_elm"><i class='pixicon-brokenheart'></i> brokenheart</a></li>
+										<li><a href="#" data-pix="pixicon-home3" class="pix_icon_elm"><i class='pixicon-home3'></i> home3</a></li>
+										<li><a href="#" data-pix="pixicon-sandglass" class="pix_icon_elm"><i class='pixicon-sandglass'></i> sandglass</a></li>
+										<li><a href="#" data-pix="pixicon-image3" class="pix_icon_elm"><i class='pixicon-image3'></i> image3</a></li>
+										<li><a href="#" data-pix="pixicon-key3" class="pix_icon_elm"><i class='pixicon-key3'></i> key3</a></li>
+										<li><a href="#" data-pix="pixicon-support2" class="pix_icon_elm"><i class='pixicon-support2'></i> support2</a></li>
+										<li><a href="#" data-pix="pixicon-menu3" class="pix_icon_elm"><i class='pixicon-menu3'></i> menu3</a></li>
+										<li><a href="#" data-pix="pixicon-lock4" class="pix_icon_elm"><i class='pixicon-lock4'></i> lock4</a></li>
+										<li><a href="#" data-pix="pixicon-unlock3" class="pix_icon_elm"><i class='pixicon-unlock3'></i> unlock3</a></li>
+										<li><a href="#" data-pix="pixicon-speaker2" class="pix_icon_elm"><i class='pixicon-speaker2'></i> speaker2</a></li>
+										<li><a href="#" data-pix="pixicon-search5" class="pix_icon_elm"><i class='pixicon-search5'></i> search5</a></li>
+										<li><a href="#" data-pix="pixicon-search6" class="pix_icon_elm"><i class='pixicon-search6'></i> search6</a></li>
+										<li><a href="#" data-pix="pixicon-search7" class="pix_icon_elm"><i class='pixicon-search7'></i> search7</a></li>
+										<li><a href="#" data-pix="pixicon-message" class="pix_icon_elm"><i class='pixicon-message'></i> message</a></li>
+										<li><a href="#" data-pix="pixicon-message2" class="pix_icon_elm"><i class='pixicon-message2'></i> message2</a></li>
+										<li><a href="#" data-pix="pixicon-map3" class="pix_icon_elm"><i class='pixicon-map3'></i> map3</a></li>
+										<li><a href="#" data-pix="pixicon-addportfolio" class="pix_icon_elm"><i class='pixicon-addportfolio'></i> addportfolio</a></li>
+										<li><a href="#" data-pix="pixicon-microphone3" class="pix_icon_elm"><i class='pixicon-microphone3'></i> microphone3</a></li>
+										<li><a href="#" data-pix="pixicon-microphone4" class="pix_icon_elm"><i class='pixicon-microphone4'></i> microphone4</a></li>
+										<li><a href="#" data-pix="pixicon-minus2" class="pix_icon_elm"><i class='pixicon-minus2'></i> minus2</a></li>
+										<li><a href="#" data-pix="pixicon-gallery" class="pix_icon_elm"><i class='pixicon-gallery'></i> gallery</a></li>
+										<li><a href="#" data-pix="pixicon-trewind" class="pix_icon_elm"><i class='pixicon-trewind'></i> trewind</a></li>
+										<li><a href="#" data-pix="pixicon-fastrewind" class="pix_icon_elm"><i class='pixicon-fastrewind'></i> fastrewind</a></li>
+										<li><a href="#" data-pix="pixicon-up2" class="pix_icon_elm"><i class='pixicon-up2'></i> up2</a></li>
+										<li><a href="#" data-pix="pixicon-forward2" class="pix_icon_elm"><i class='pixicon-forward2'></i> forward2</a></li>
+										<li><a href="#" data-pix="pixicon-fastforward" class="pix_icon_elm"><i class='pixicon-fastforward'></i> fastforward</a></li>
+										<li><a href="#" data-pix="pixicon-pause2" class="pix_icon_elm"><i class='pixicon-pause2'></i> pause2</a></li>
+										<li><a href="#" data-pix="pixicon-play5" class="pix_icon_elm"><i class='pixicon-play5'></i> play5</a></li>
+										<li><a href="#" data-pix="pixicon-shuffle3" class="pix_icon_elm"><i class='pixicon-shuffle3'></i> shuffle3</a></li>
+										<li><a href="#" data-pix="pixicon-replay" class="pix_icon_elm"><i class='pixicon-replay'></i> replay</a></li>
+										<li><a href="#" data-pix="pixicon-stop2" class="pix_icon_elm"><i class='pixicon-stop2'></i> stop2</a></li>
+										<li><a href="#" data-pix="pixicon-music3" class="pix_icon_elm"><i class='pixicon-music3'></i> music3</a></li>
+										<li><a href="#" data-pix="pixicon-music4" class="pix_icon_elm"><i class='pixicon-music4'></i> music4</a></li>
+										<li><a href="#" data-pix="pixicon-video4" class="pix_icon_elm"><i class='pixicon-video4'></i> video4</a></li>
+										<li><a href="#" data-pix="pixicon-writtingtools" class="pix_icon_elm"><i class='pixicon-writtingtools'></i> writtingtools</a></li>
+										<li><a href="#" data-pix="pixicon-writtingtools2" class="pix_icon_elm"><i class='pixicon-writtingtools2'></i> writtingtools2</a></li>
+										<li><a href="#" data-pix="pixicon-paperfold" class="pix_icon_elm"><i class='pixicon-paperfold'></i> paperfold</a></li>
+										<li><a href="#" data-pix="pixicon-rulerpen" class="pix_icon_elm"><i class='pixicon-rulerpen'></i> rulerpen</a></li>
+										<li><a href="#" data-pix="pixicon-pen3" class="pix_icon_elm"><i class='pixicon-pen3'></i> pen3</a></li>
+										<li><a href="#" data-pix="pixicon-writtingtools3" class="pix_icon_elm"><i class='pixicon-writtingtools3'></i> writtingtools3</a></li>
+										<li><a href="#" data-pix="pixicon-add" class="pix_icon_elm"><i class='pixicon-add'></i> add</a></li>
+										<li><a href="#" data-pix="pixicon-laptop2" class="pix_icon_elm"><i class='pixicon-laptop2'></i> laptop2</a></li>
+										<li><a href="#" data-pix="pixicon-ticket3" class="pix_icon_elm"><i class='pixicon-ticket3'></i> ticket3</a></li>
+										<li><a href="#" data-pix="pixicon-printer4" class="pix_icon_elm"><i class='pixicon-printer4'></i> printer4</a></li>
+										<li><a href="#" data-pix="pixicon-person" class="pix_icon_elm"><i class='pixicon-person'></i> person</a></li>
+										<li><a href="#" data-pix="pixicon-addperson" class="pix_icon_elm"><i class='pixicon-addperson'></i> addperson</a></li>
+										<li><a href="#" data-pix="pixicon-removeperson" class="pix_icon_elm"><i class='pixicon-removeperson'></i> removeperson</a></li>
+										<li><a href="#" data-pix="pixicon-rain3" class="pix_icon_elm"><i class='pixicon-rain3'></i> rain3</a></li>
+										<li><a href="#" data-pix="pixicon-refresh4" class="pix_icon_elm"><i class='pixicon-refresh4'></i> refresh4</a></li>
+										<li><a href="#" data-pix="pixicon-settings3" class="pix_icon_elm"><i class='pixicon-settings3'></i> settings3</a></li>
+										<li><a href="#" data-pix="pixicon-settings4" class="pix_icon_elm"><i class='pixicon-settings4'></i> settings4</a></li>
+										<li><a href="#" data-pix="pixicon-share3" class="pix_icon_elm"><i class='pixicon-share3'></i> share3</a></li>
+										<li><a href="#" data-pix="pixicon-ribbondown" class="pix_icon_elm"><i class='pixicon-ribbondown'></i> ribbondown</a></li>
+										<li><a href="#" data-pix="pixicon-ribbonleft" class="pix_icon_elm"><i class='pixicon-ribbonleft'></i> ribbonleft</a></li>
+										<li><a href="#" data-pix="pixicon-ribbonright" class="pix_icon_elm"><i class='pixicon-ribbonright'></i> ribbonright</a></li>
+										<li><a href="#" data-pix="pixicon-ribbonup" class="pix_icon_elm"><i class='pixicon-ribbonup'></i> ribbonup</a></li>
+										<li><a href="#" data-pix="pixicon-shoppingcartempty" class="pix_icon_elm"><i class='pixicon-shoppingcartempty'></i> shoppingcartempty</a></li>
+										<li><a href="#" data-pix="pixicon-shoppingcartfull" class="pix_icon_elm"><i class='pixicon-shoppingcartfull'></i> shoppingcartfull</a></li>
+										<li><a href="#" data-pix="pixicon-audiosettings" class="pix_icon_elm"><i class='pixicon-audiosettings'></i> audiosettings</a></li>
+										<li><a href="#" data-pix="pixicon-mobile2" class="pix_icon_elm"><i class='pixicon-mobile2'></i> mobile2</a></li>
+										<li><a href="#" data-pix="pixicon-book3" class="pix_icon_elm"><i class='pixicon-book3'></i> book3</a></li>
+										<li><a href="#" data-pix="pixicon-blocks" class="pix_icon_elm"><i class='pixicon-blocks'></i> blocks</a></li>
+										<li><a href="#" data-pix="pixicon-storm" class="pix_icon_elm"><i class='pixicon-storm'></i> storm</a></li>
+										<li><a href="#" data-pix="pixicon-sun4" class="pix_icon_elm"><i class='pixicon-sun4'></i> sun4</a></li>
+										<li><a href="#" data-pix="pixicon-tablet2" class="pix_icon_elm"><i class='pixicon-tablet2'></i> tablet2</a></li>
+										<li><a href="#" data-pix="pixicon-lineshorizontal" class="pix_icon_elm"><i class='pixicon-lineshorizontal'></i> lineshorizontal</a></li>
+										<li><a href="#" data-pix="pixicon-linesvertical" class="pix_icon_elm"><i class='pixicon-linesvertical'></i> linesvertical</a></li>
+										<li><a href="#" data-pix="pixicon-ticket2" class="pix_icon_elm"><i class='pixicon-ticket2'></i> ticket2</a></li>
+										<li><a href="#" data-pix="pixicon-taskboard" class="pix_icon_elm"><i class='pixicon-taskboard'></i> taskboard</a></li>
+										<li><a href="#" data-pix="pixicon-addtaskboard" class="pix_icon_elm"><i class='pixicon-addtaskboard'></i> addtaskboard</a></li>
+										<li><a href="#" data-pix="pixicon-shirt167" class="pix_icon_elm"><i class='pixicon-shirt167'></i> shirt167</a></li>
+										<li><a href="#" data-pix="pixicon-delete2" class="pix_icon_elm"><i class='pixicon-delete2'></i> delete2</a></li>
+										<li><a href="#" data-pix="pixicon-shirt" class="pix_icon_elm"><i class='pixicon-shirt'></i> shirt</a></li>
+										<li><a href="#" data-pix="pixicon-desktopmonitor" class="pix_icon_elm"><i class='pixicon-desktopmonitor'></i> desktopmonitor</a></li>
+										<li><a href="#" data-pix="pixicon-Umbrella" class="pix_icon_elm"><i class='pixicon-Umbrella'></i> Umbrella</a></li>
+										<li><a href="#" data-pix="pixicon-upload5" class="pix_icon_elm"><i class='pixicon-upload5'></i> upload5</a></li>
+										<li><a href="#" data-pix="pixicon-uploadfolder" class="pix_icon_elm"><i class='pixicon-uploadfolder'></i> uploadfolder</a></li>
+										<li><a href="#" data-pix="pixicon-cloudy" class="pix_icon_elm"><i class='pixicon-cloudy'></i> cloudy</a></li>
+										<li><a href="#" data-pix="pixicon-video5" class="pix_icon_elm"><i class='pixicon-video5'></i> video5</a></li>
+										<li><a href="#" data-pix="pixicon-volumeup" class="pix_icon_elm"><i class='pixicon-volumeup'></i> volumeup</a></li>
+										<li><a href="#" data-pix="pixicon-volumedown" class="pix_icon_elm"><i class='pixicon-volumedown'></i> volumedown</a></li>
+										<li><a href="#" data-pix="pixicon-mute3" class="pix_icon_elm"><i class='pixicon-mute3'></i> mute3</a></li>
+										<li><a href="#" data-pix="pixicon-watch2" class="pix_icon_elm"><i class='pixicon-watch2'></i> watch2</a></li>
+										<li><a href="#" data-pix="pixicon-rain2" class="pix_icon_elm"><i class='pixicon-rain2'></i> rain2</a></li>
+										<li><a href="#" data-pix="pixicon-browser4" class="pix_icon_elm"><i class='pixicon-browser4'></i> browser4</a></li>
+										<li><a href="#" data-pix="pixicon-browser5" class="pix_icon_elm"><i class='pixicon-browser5'></i> browser5</a></li>
+										<li><a href="#" data-pix="pixicon-drink" class="pix_icon_elm"><i class='pixicon-drink'></i> drink</a></li>
+										<li><a href="#" data-pix="pixicon-calendar4" class="pix_icon_elm"><i class='pixicon-calendar4'></i> calendar4</a></li>
+										<li><a href="#" data-pix="pixicon-alarm2" class="pix_icon_elm"><i class='pixicon-alarm2'></i> alarm2</a></li>
+										<li><a href="#" data-pix="pixicon-addfolder" class="pix_icon_elm"><i class='pixicon-addfolder'></i> addfolder</a></li>
+										<li><a href="#" data-pix="pixicon-speed" class="pix_icon_elm"><i class='pixicon-speed'></i> speed</a></li>
+										<li><a href="#" data-pix="pixicon-notebook3" class="pix_icon_elm"><i class='pixicon-notebook3'></i> notebook3</a></li>
+										<li><a href="#" data-pix="pixicon-arrowleft" class="pix_icon_elm"><i class='pixicon-arrowleft'></i> arrowleft</a></li>
+										<li><a href="#" data-pix="pixicon-arrowdown" class="pix_icon_elm"><i class='pixicon-arrowdown'></i> arrowdown</a></li>
+										<li><a href="#" data-pix="pixicon-battery3" class="pix_icon_elm"><i class='pixicon-battery3'></i> battery3</a></li>
+										<li><a href="#" data-pix="pixicon-suitcase" class="pix_icon_elm"><i class='pixicon-suitcase'></i> suitcase</a></li>
+										<li><a href="#" data-pix="pixicon-arrowup" class="pix_icon_elm"><i class='pixicon-arrowup'></i> arrowup</a></li>
+										<li><a href="#" data-pix="pixicon-arrowright" class="pix_icon_elm"><i class='pixicon-arrowright'></i> arrowright</a></li>
+										<li><a href="#" data-pix="pixicon-suitcase2" class="pix_icon_elm"><i class='pixicon-suitcase2'></i> suitcase2</a></li>
+										<li><a href="#" data-pix="pixicon-disk2" class="pix_icon_elm"><i class='pixicon-disk2'></i> disk2</a></li>
+										<li><a href="#" data-pix="pixicon-battery4" class="pix_icon_elm"><i class='pixicon-battery4'></i> battery4</a></li>
+										<li><a href="#" data-pix="pixicon-battery5" class="pix_icon_elm"><i class='pixicon-battery5'></i> battery5</a></li>
+										<li><a href="#" data-pix="pixicon-check3" class="pix_icon_elm"><i class='pixicon-check3'></i> check3</a></li>
+										<li><a href="#" data-pix="pixicon-batteryfull" class="pix_icon_elm"><i class='pixicon-batteryfull'></i> batteryfull</a></li>
+										<li><a href="#" data-pix="pixicon-timer2" class="pix_icon_elm"><i class='pixicon-timer2'></i> timer2</a></li>
+										<li><a href="#" data-pix="pixicon-clock5" class="pix_icon_elm"><i class='pixicon-clock5'></i> clock5</a></li>
+										<li><a href="#" data-pix="pixicon-diagram" class="pix_icon_elm"><i class='pixicon-diagram'></i> diagram</a></li>
+										<li><a href="#" data-pix="pixicon-instagram3" class="pix_icon_elm"><i class='pixicon-instagram3'></i> instagram3</a></li>
+										<li><a href="#" data-pix="pixicon-instagram4" class="pix_icon_elm"><i class='pixicon-instagram4'></i> instagram4</a></li>
+										<li><a href="#" data-pix="pixicon-forrst" class="pix_icon_elm"><i class='pixicon-forrst'></i> forrst</a></li>
+										<li><a href="#" data-pix="pixicon-dribbble2" class="pix_icon_elm"><i class='pixicon-dribbble2'></i> dribbble2</a></li>
+										<li><a href="#" data-pix="pixicon-twitter2" class="pix_icon_elm"><i class='pixicon-twitter2'></i> twitter2</a></li>
+										<li><a href="#" data-pix="pixicon-flickr" class="pix_icon_elm"><i class='pixicon-flickr'></i> flickr</a></li>
+										<li><a href="#" data-pix="pixicon-twitter3" class="pix_icon_elm"><i class='pixicon-twitter3'></i> twitter3</a></li>
+										<li><a href="#" data-pix="pixicon-facebook2" class="pix_icon_elm"><i class='pixicon-facebook2'></i> facebook2</a></li>
+										<li><a href="#" data-pix="pixicon-skype" class="pix_icon_elm"><i class='pixicon-skype'></i> skype</a></li>
+										<li><a href="#" data-pix="pixicon-digg" class="pix_icon_elm"><i class='pixicon-digg'></i> digg</a></li>
+										<li><a href="#" data-pix="pixicon-google" class="pix_icon_elm"><i class='pixicon-google'></i> google</a></li>
+										<li><a href="#" data-pix="pixicon-html5" class="pix_icon_elm"><i class='pixicon-html5'></i> html5</a></li>
+										<li><a href="#" data-pix="pixicon-linkedin2" class="pix_icon_elm"><i class='pixicon-linkedin2'></i> linkedin2</a></li>
+										<li><a href="#" data-pix="pixicon-lastfm" class="pix_icon_elm"><i class='pixicon-lastfm'></i> lastfm</a></li>
+										<li><a href="#" data-pix="pixicon-vimeo" class="pix_icon_elm"><i class='pixicon-vimeo'></i> vimeo</a></li>
+										<li><a href="#" data-pix="pixicon-yahoo" class="pix_icon_elm"><i class='pixicon-yahoo'></i> yahoo</a></li>
+										<li><a href="#" data-pix="pixicon-tumblr2" class="pix_icon_elm"><i class='pixicon-tumblr2'></i> tumblr2</a></li>
+										<li><a href="#" data-pix="pixicon-apple" class="pix_icon_elm"><i class='pixicon-apple'></i> apple</a></li>
+										<li><a href="#" data-pix="pixicon-windows" class="pix_icon_elm"><i class='pixicon-windows'></i> windows</a></li>
+										<li><a href="#" data-pix="pixicon-youtube" class="pix_icon_elm"><i class='pixicon-youtube'></i> youtube</a></li>
+										<li><a href="#" data-pix="pixicon-delicious" class="pix_icon_elm"><i class='pixicon-delicious'></i> delicious</a></li>
+										<li><a href="#" data-pix="pixicon-rss2" class="pix_icon_elm"><i class='pixicon-rss2'></i> rss2</a></li>
+										<li><a href="#" data-pix="pixicon-picasa" class="pix_icon_elm"><i class='pixicon-picasa'></i> picasa</a></li>
+										<li><a href="#" data-pix="pixicon-deviantart" class="pix_icon_elm"><i class='pixicon-deviantart'></i> deviantart</a></li>
+										<li><a href="#" data-pix="pixicon-whatsapp" class="pix_icon_elm"><i class='pixicon-whatsapp'></i> whatsapp</a></li>
+										<li><a href="#" data-pix="pixicon-snapchat" class="pix_icon_elm"><i class='pixicon-snapchat'></i> snapchat</a></li>
+										<li><a href="#" data-pix="pixicon-blogger" class="pix_icon_elm"><i class='pixicon-blogger'></i> blogger</a></li>
+										<li><a href="#" data-pix="pixicon-wordpress" class="pix_icon_elm"><i class='pixicon-wordpress'></i> wordpress</a></li>
+										<li><a href="#" data-pix="pixicon-amazon" class="pix_icon_elm"><i class='pixicon-amazon'></i> amazon</a></li>
+										<li><a href="#" data-pix="pixicon-appstore" class="pix_icon_elm"><i class='pixicon-appstore'></i> appstore</a></li>
+										<li><a href="#" data-pix="pixicon-paypal" class="pix_icon_elm"><i class='pixicon-paypal'></i> paypal</a></li>
+										<li><a href="#" data-pix="pixicon-myspace" class="pix_icon_elm"><i class='pixicon-myspace'></i> myspace</a></li>
+										<li><a href="#" data-pix="pixicon-dropbox" class="pix_icon_elm"><i class='pixicon-dropbox'></i> dropbox</a></li>
+										<li><a href="#" data-pix="pixicon-windows8" class="pix_icon_elm"><i class='pixicon-windows8'></i> windows8</a></li>
+										<li><a href="#" data-pix="pixicon-pinterest" class="pix_icon_elm"><i class='pixicon-pinterest'></i> pinterest</a></li>
+										<li><a href="#" data-pix="pixicon-soundcloud" class="pix_icon_elm"><i class='pixicon-soundcloud'></i> soundcloud</a></li>
+										<li><a href="#" data-pix="pixicon-google-drive" class="pix_icon_elm"><i class='pixicon-google-drive'></i> google-drive</a></li>
+										<li><a href="#" data-pix="pixicon-android" class="pix_icon_elm"><i class='pixicon-android'></i> android</a></li>
+										<li><a href="#" data-pix="pixicon-behance" class="pix_icon_elm"><i class='pixicon-behance'></i> behance</a></li>
+										<li><a href="#" data-pix="pixicon-instagram" class="pix_icon_elm"><i class='pixicon-instagram'></i> instagram</a></li>
+										<li><a href="#" data-pix="pixicon-ebay" class="pix_icon_elm"><i class='pixicon-ebay'></i> ebay</a></li>
+										<li><a href="#" data-pix="pixicon-google-plus" class="pix_icon_elm"><i class='pixicon-google-plus'></i> google-plus</a></li>
+										<li><a href="#" data-pix="pixicon-github" class="pix_icon_elm"><i class='pixicon-github'></i> github</a></li>
+										<li><a href="#" data-pix="pixicon-stackoverflow" class="pix_icon_elm"><i class='pixicon-stackoverflow'></i> stackoverflow</a></li>
+										<li><a href="#" data-pix="pixicon-spotify" class="pix_icon_elm"><i class='pixicon-spotify'></i> spotify</a></li>
+										<li><a href="#" data-pix="pixicon-stumbleupon" class="pix_icon_elm"><i class='pixicon-stumbleupon'></i> stumbleupon</a></li>
+										<li><a href="#" data-pix="pixicon-visa" class="pix_icon_elm"><i class='pixicon-visa'></i> visa</a></li>
+										<li><a href="#" data-pix="pixicon-mastercard" class="pix_icon_elm"><i class='pixicon-mastercard'></i> mastercard</a></li>
+										<li><a href="#" data-pix="pixicon-amex" class="pix_icon_elm"><i class='pixicon-amex'></i> amex</a></li>
+										<li><a href="#" data-pix="pixicon-ios" class="pix_icon_elm"><i class='pixicon-ios'></i> ios</a></li>
+										<li><a href="#" data-pix="pixicon-osx" class="pix_icon_elm"><i class='pixicon-osx'></i> osx</a></li>
+										<li><a href="#" data-pix="pixicon-evernote" class="pix_icon_elm"><i class='pixicon-evernote'></i> evernote</a></li>
+										<li><a href="#" data-pix="pixicon-yelp" class="pix_icon_elm"><i class='pixicon-yelp'></i> yelp</a></li>
+										<li><a href="#" data-pix="pixicon-yelp2" class="pix_icon_elm"><i class='pixicon-yelp2'></i> yelp2</a></li>
+										<li><a href="#" data-pix="pixicon-medium" class="pix_icon_elm"><i class='pixicon-medium'></i> medium</a></li>
+										<li><a href="#" data-pix="pixicon-slack" class="pix_icon_elm"><i class='pixicon-slack'></i> slack</a></li>
+										<li><a href="#" data-pix="pixicon-vine" class="pix_icon_elm"><i class='pixicon-vine'></i> vine</a></li>
+										<li><a href="#" data-pix="pixicon-edge" class="pix_icon_elm"><i class='pixicon-edge'></i> edge</a></li>
+										<li><a href="#" data-pix="pixicon-outlook" class="pix_icon_elm"><i class='pixicon-outlook'></i> outlook</a></li>
+										<li><a href="#" data-pix="pixicon-pencilcase" class="pix_icon_elm"><i class='pixicon-pencilcase'></i> pencilcase</a></li>
+										<li><a href="#" data-pix="pixicon-play2" class="pix_icon_elm"><i class='pixicon-play2'></i> play2</a></li>
+										<li><a href="#" data-pix="pixicon-icloud" class="pix_icon_elm"><i class='pixicon-icloud'></i> icloud</a></li>
+										<li><a href="#" data-pix="pixicon-forrst2" class="pix_icon_elm"><i class='pixicon-forrst2'></i> forrst2</a></li>
+										<li><a href="#" data-pix="pixicon-dribbble3" class="pix_icon_elm"><i class='pixicon-dribbble3'></i> dribbble3</a></li>
+										<li><a href="#" data-pix="pixicon-twitter4" class="pix_icon_elm"><i class='pixicon-twitter4'></i> twitter4</a></li>
+										<li><a href="#" data-pix="pixicon-flickr2" class="pix_icon_elm"><i class='pixicon-flickr2'></i> flickr2</a></li>
+										<li><a href="#" data-pix="pixicon-twitter5" class="pix_icon_elm"><i class='pixicon-twitter5'></i> twitter5</a></li>
+										<li><a href="#" data-pix="pixicon-facebook3" class="pix_icon_elm"><i class='pixicon-facebook3'></i> facebook3</a></li>
+										<li><a href="#" data-pix="pixicon-skype2" class="pix_icon_elm"><i class='pixicon-skype2'></i> skype2</a></li>
+										<li><a href="#" data-pix="pixicon-digg2" class="pix_icon_elm"><i class='pixicon-digg2'></i> digg2</a></li>
+										<li><a href="#" data-pix="pixicon-google2" class="pix_icon_elm"><i class='pixicon-google2'></i> google2</a></li>
+										<li><a href="#" data-pix="pixicon-html52" class="pix_icon_elm"><i class='pixicon-html52'></i> html52</a></li>
+										<li><a href="#" data-pix="pixicon-linkedin3" class="pix_icon_elm"><i class='pixicon-linkedin3'></i> linkedin3</a></li>
+										<li><a href="#" data-pix="pixicon-lastfm2" class="pix_icon_elm"><i class='pixicon-lastfm2'></i> lastfm2</a></li>
+										<li><a href="#" data-pix="pixicon-vimeo2" class="pix_icon_elm"><i class='pixicon-vimeo2'></i> vimeo2</a></li>
+										<li><a href="#" data-pix="pixicon-yahoo2" class="pix_icon_elm"><i class='pixicon-yahoo2'></i> yahoo2</a></li>
+										<li><a href="#" data-pix="pixicon-tumblr3" class="pix_icon_elm"><i class='pixicon-tumblr3'></i> tumblr3</a></li>
+										<li><a href="#" data-pix="pixicon-apple2" class="pix_icon_elm"><i class='pixicon-apple2'></i> apple2</a></li>
+										<li><a href="#" data-pix="pixicon-windows2" class="pix_icon_elm"><i class='pixicon-windows2'></i> windows2</a></li>
+										<li><a href="#" data-pix="pixicon-youtube2" class="pix_icon_elm"><i class='pixicon-youtube2'></i> youtube2</a></li>
+										<li><a href="#" data-pix="pixicon-delicious2" class="pix_icon_elm"><i class='pixicon-delicious2'></i> delicious2</a></li>
+										<li><a href="#" data-pix="pixicon-rss3" class="pix_icon_elm"><i class='pixicon-rss3'></i> rss3</a></li>
+										<li><a href="#" data-pix="pixicon-picasa2" class="pix_icon_elm"><i class='pixicon-picasa2'></i> picasa2</a></li>
+										<li><a href="#" data-pix="pixicon-deviantart2" class="pix_icon_elm"><i class='pixicon-deviantart2'></i> deviantart2</a></li>
+										<li><a href="#" data-pix="pixicon-whatsapp2" class="pix_icon_elm"><i class='pixicon-whatsapp2'></i> whatsapp2</a></li>
+										<li><a href="#" data-pix="pixicon-snapchat2" class="pix_icon_elm"><i class='pixicon-snapchat2'></i> snapchat2</a></li>
+										<li><a href="#" data-pix="pixicon-blogger2" class="pix_icon_elm"><i class='pixicon-blogger2'></i> blogger2</a></li>
+										<li><a href="#" data-pix="pixicon-wordpress2" class="pix_icon_elm"><i class='pixicon-wordpress2'></i> wordpress2</a></li>
+										<li><a href="#" data-pix="pixicon-amazon2" class="pix_icon_elm"><i class='pixicon-amazon2'></i> amazon2</a></li>
+										<li><a href="#" data-pix="pixicon-appstore2" class="pix_icon_elm"><i class='pixicon-appstore2'></i> appstore2</a></li>
+										<li><a href="#" data-pix="pixicon-paypal2" class="pix_icon_elm"><i class='pixicon-paypal2'></i> paypal2</a></li>
+										<li><a href="#" data-pix="pixicon-myspace2" class="pix_icon_elm"><i class='pixicon-myspace2'></i> myspace2</a></li>
+										<li><a href="#" data-pix="pixicon-dropbox2" class="pix_icon_elm"><i class='pixicon-dropbox2'></i> dropbox2</a></li>
+										<li><a href="#" data-pix="pixicon-windows82" class="pix_icon_elm"><i class='pixicon-windows82'></i> windows82</a></li>
+										<li><a href="#" data-pix="pixicon-pinterest2" class="pix_icon_elm"><i class='pixicon-pinterest2'></i> pinterest2</a></li>
+										<li><a href="#" data-pix="pixicon-soundcloud2" class="pix_icon_elm"><i class='pixicon-soundcloud2'></i> soundcloud2</a></li>
+										<li><a href="#" data-pix="pixicon-google-drive2" class="pix_icon_elm"><i class='pixicon-google-drive2'></i> google-drive2</a></li>
+										<li><a href="#" data-pix="pixicon-android2" class="pix_icon_elm"><i class='pixicon-android2'></i> android2</a></li>
+										<li><a href="#" data-pix="pixicon-behance2" class="pix_icon_elm"><i class='pixicon-behance2'></i> behance2</a></li>
+										<li><a href="#" data-pix="pixicon-instagram2" class="pix_icon_elm"><i class='pixicon-instagram2'></i> instagram2</a></li>
+										<li><a href="#" data-pix="pixicon-ebay2" class="pix_icon_elm"><i class='pixicon-ebay2'></i> ebay2</a></li>
+										<li><a href="#" data-pix="pixicon-google-plus2" class="pix_icon_elm"><i class='pixicon-google-plus2'></i> google-plus2</a></li>
+										<li><a href="#" data-pix="pixicon-github2" class="pix_icon_elm"><i class='pixicon-github2'></i> github2</a></li>
+										<li><a href="#" data-pix="pixicon-stackoverflow2" class="pix_icon_elm"><i class='pixicon-stackoverflow2'></i> stackoverflow2</a></li>
+										<li><a href="#" data-pix="pixicon-spotify2" class="pix_icon_elm"><i class='pixicon-spotify2'></i> spotify2</a></li>
+										<li><a href="#" data-pix="pixicon-stumbleupon2" class="pix_icon_elm"><i class='pixicon-stumbleupon2'></i> stumbleupon2</a></li>
+										<li><a href="#" data-pix="pixicon-visa2" class="pix_icon_elm"><i class='pixicon-visa2'></i> visa2</a></li>
+										<li><a href="#" data-pix="pixicon-mastercard2" class="pix_icon_elm"><i class='pixicon-mastercard2'></i> mastercard2</a></li>
+										<li><a href="#" data-pix="pixicon-amex2" class="pix_icon_elm"><i class='pixicon-amex2'></i> amex2</a></li>
+										<li><a href="#" data-pix="pixicon-ios2" class="pix_icon_elm"><i class='pixicon-ios2'></i> ios2</a></li>
+										<li><a href="#" data-pix="pixicon-osx2" class="pix_icon_elm"><i class='pixicon-osx2'></i> osx2</a></li>
+										<li><a href="#" data-pix="pixicon-evernote2" class="pix_icon_elm"><i class='pixicon-evernote2'></i> evernote2</a></li>
+										<li><a href="#" data-pix="pixicon-yelp3" class="pix_icon_elm"><i class='pixicon-yelp3'></i> yelp3</a></li>
+										<li><a href="#" data-pix="pixicon-yelp4" class="pix_icon_elm"><i class='pixicon-yelp4'></i> yelp4</a></li>
+										<li><a href="#" data-pix="pixicon-medium2" class="pix_icon_elm"><i class='pixicon-medium2'></i> medium2</a></li>
+										<li><a href="#" data-pix="pixicon-slack2" class="pix_icon_elm"><i class='pixicon-slack2'></i> slack2</a></li>
+										<li><a href="#" data-pix="pixicon-vine2" class="pix_icon_elm"><i class='pixicon-vine2'></i> vine2</a></li>
+										<li><a href="#" data-pix="pixicon-edge2" class="pix_icon_elm"><i class='pixicon-edge2'></i> edge2</a></li>
+										<li><a href="#" data-pix="pixicon-outlook2" class="pix_icon_elm"><i class='pixicon-outlook2'></i> outlook2</a></li>
+										<li><a href="#" data-pix="pixicon-pencilcase2" class="pix_icon_elm"><i class='pixicon-pencilcase2'></i> pencilcase2</a></li>
+										<li><a href="#" data-pix="pixicon-play22" class="pix_icon_elm"><i class='pixicon-play22'></i> play22</a></li>
+										<li><a href="#" data-pix="pixicon-icloud2" class="pix_icon_elm"><i class='pixicon-icloud2'></i> icloud2</a></li>
+										<li><a href="#" data-pix="pixicon-album" class="pix_icon_elm"><i class='pixicon-album'></i> album</a></li>
+										<li><a href="#" data-pix="pixicon-arc" class="pix_icon_elm"><i class='pixicon-arc'></i> arc</a></li>
+										<li><a href="#" data-pix="pixicon-back-2" class="pix_icon_elm"><i class='pixicon-back-2'></i> back-2</a></li>
+										<li><a href="#" data-pix="pixicon-bandaid" class="pix_icon_elm"><i class='pixicon-bandaid'></i> bandaid</a></li>
+										<li><a href="#" data-pix="pixicon-car" class="pix_icon_elm"><i class='pixicon-car'></i> car</a></li>
+										<li><a href="#" data-pix="pixicon-diamond" class="pix_icon_elm"><i class='pixicon-diamond'></i> diamond</a></li>
+										<li><a href="#" data-pix="pixicon-door-lock" class="pix_icon_elm"><i class='pixicon-door-lock'></i> door-lock</a></li>
+										<li><a href="#" data-pix="pixicon-eyedropper" class="pix_icon_elm"><i class='pixicon-eyedropper'></i> eyedropper</a></li>
+										<li><a href="#" data-pix="pixicon-female" class="pix_icon_elm"><i class='pixicon-female'></i> female</a></li>
+										<li><a href="#" data-pix="pixicon-gym" class="pix_icon_elm"><i class='pixicon-gym'></i> gym</a></li>
+										<li><a href="#" data-pix="pixicon-hammer" class="pix_icon_elm"><i class='pixicon-hammer'></i> hammer</a></li>
+										<li><a href="#" data-pix="pixicon-headphones" class="pix_icon_elm"><i class='pixicon-headphones'></i> headphones</a></li>
+										<li><a href="#" data-pix="pixicon-helm" class="pix_icon_elm"><i class='pixicon-helm'></i> helm</a></li>
+										<li><a href="#" data-pix="pixicon-hourglass" class="pix_icon_elm"><i class='pixicon-hourglass'></i> hourglass</a></li>
+										<li><a href="#" data-pix="pixicon-leaf" class="pix_icon_elm"><i class='pixicon-leaf'></i> leaf</a></li>
+										<li><a href="#" data-pix="pixicon-magic-wand" class="pix_icon_elm"><i class='pixicon-magic-wand'></i> magic-wand</a></li>
+										<li><a href="#" data-pix="pixicon-male" class="pix_icon_elm"><i class='pixicon-male'></i> male</a></li>
+										<li><a href="#" data-pix="pixicon-map-2" class="pix_icon_elm"><i class='pixicon-map-2'></i> map-2</a></li>
+										<li><a href="#" data-pix="pixicon-next-2" class="pix_icon_elm"><i class='pixicon-next-2'></i> next-2</a></li>
+										<li><a href="#" data-pix="pixicon-paint-bucket" class="pix_icon_elm"><i class='pixicon-paint-bucket'></i> paint-bucket</a></li>
+										<li><a href="#" data-pix="pixicon-pendrive" class="pix_icon_elm"><i class='pixicon-pendrive'></i> pendrive</a></li>
+										<li><a href="#" data-pix="pixicon-photo" class="pix_icon_elm"><i class='pixicon-photo'></i> photo</a></li>
+										<li><a href="#" data-pix="pixicon-piggy" class="pix_icon_elm"><i class='pixicon-piggy'></i> piggy</a></li>
+										<li><a href="#" data-pix="pixicon-plugin" class="pix_icon_elm"><i class='pixicon-plugin'></i> plugin</a></li>
+										<li><a href="#" data-pix="pixicon-refresh-2" class="pix_icon_elm"><i class='pixicon-refresh-2'></i> refresh-2</a></li>
+										<li><a href="#" data-pix="pixicon-rocket" class="pix_icon_elm"><i class='pixicon-rocket'></i> rocket</a></li>
+										<li><a href="#" data-pix="pixicon-settings" class="pix_icon_elm"><i class='pixicon-settings'></i> settings</a></li>
+										<li><a href="#" data-pix="pixicon-shield" class="pix_icon_elm"><i class='pixicon-shield'></i> shield</a></li>
+										<li><a href="#" data-pix="pixicon-smile" class="pix_icon_elm"><i class='pixicon-smile'></i> smile</a></li>
+										<li><a href="#" data-pix="pixicon-usb" class="pix_icon_elm"><i class='pixicon-usb'></i> usb</a></li>
+										<li><a href="#" data-pix="pixicon-vector" class="pix_icon_elm"><i class='pixicon-vector'></i> vector</a></li>
+										<li><a href="#" data-pix="pixicon-wine" class="pix_icon_elm"><i class='pixicon-wine'></i> wine</a></li>
+										<li><a href="#" data-pix="pixicon-cloud-upload" class="pix_icon_elm"><i class='pixicon-cloud-upload'></i> cloud-upload</a></li>
+										<li><a href="#" data-pix="pixicon-cash" class="pix_icon_elm"><i class='pixicon-cash'></i> cash</a></li>
+										<li><a href="#" data-pix="pixicon-close" class="pix_icon_elm"><i class='pixicon-close'></i> close</a></li>
+										<li><a href="#" data-pix="pixicon-bluetooth" class="pix_icon_elm"><i class='pixicon-bluetooth'></i> bluetooth</a></li>
+										<li><a href="#" data-pix="pixicon-cloud-download" class="pix_icon_elm"><i class='pixicon-cloud-download'></i> cloud-download</a></li>
+										<li><a href="#" data-pix="pixicon-way" class="pix_icon_elm"><i class='pixicon-way'></i> way</a></li>
+										<li><a href="#" data-pix="pixicon-close-circle" class="pix_icon_elm"><i class='pixicon-close-circle'></i> close-circle</a></li>
+										<li><a href="#" data-pix="pixicon-id" class="pix_icon_elm"><i class='pixicon-id'></i> id</a></li>
+										<li><a href="#" data-pix="pixicon-angle-up" class="pix_icon_elm"><i class='pixicon-angle-up'></i> angle-up</a></li>
+										<li><a href="#" data-pix="pixicon-wristwatch" class="pix_icon_elm"><i class='pixicon-wristwatch'></i> wristwatch</a></li>
+										<li><a href="#" data-pix="pixicon-angle-up-circle" class="pix_icon_elm"><i class='pixicon-angle-up-circle'></i> angle-up-circle</a></li>
+										<li><a href="#" data-pix="pixicon-world" class="pix_icon_elm"><i class='pixicon-world'></i> world</a></li>
+										<li><a href="#" data-pix="pixicon-angle-right" class="pix_icon_elm"><i class='pixicon-angle-right'></i> angle-right</a></li>
+										<li><a href="#" data-pix="pixicon-volume" class="pix_icon_elm"><i class='pixicon-volume'></i> volume</a></li>
+										<li><a href="#" data-pix="pixicon-angle-right-circle" class="pix_icon_elm"><i class='pixicon-angle-right-circle'></i> angle-right-circle</a></li>
+										<li><a href="#" data-pix="pixicon-users" class="pix_icon_elm"><i class='pixicon-users'></i> users</a></li>
+										<li><a href="#" data-pix="pixicon-angle-left" class="pix_icon_elm"><i class='pixicon-angle-left'></i> angle-left</a></li>
+										<li><a href="#" data-pix="pixicon-user-female" class="pix_icon_elm"><i class='pixicon-user-female'></i> user-female</a></li>
+										<li><a href="#" data-pix="pixicon-angle-left-circle" class="pix_icon_elm"><i class='pixicon-angle-left-circle'></i> angle-left-circle</a></li>
+										<li><a href="#" data-pix="pixicon-up-arrow" class="pix_icon_elm"><i class='pixicon-up-arrow'></i> up-arrow</a></li>
+										<li><a href="#" data-pix="pixicon-angle-down" class="pix_icon_elm"><i class='pixicon-angle-down'></i> angle-down</a></li>
+										<li><a href="#" data-pix="pixicon-switch" class="pix_icon_elm"><i class='pixicon-switch'></i> switch</a></li>
+										<li><a href="#" data-pix="pixicon-angle-down-circle" class="pix_icon_elm"><i class='pixicon-angle-down-circle'></i> angle-down-circle</a></li>
+										<li><a href="#" data-pix="pixicon-scissors" class="pix_icon_elm"><i class='pixicon-scissors'></i> scissors</a></li>
+										<li><a href="#" data-pix="pixicon-wallet" class="pix_icon_elm"><i class='pixicon-wallet'></i> wallet</a></li>
+										<li><a href="#" data-pix="pixicon-safe" class="pix_icon_elm"><i class='pixicon-safe'></i> safe</a></li>
+										<li><a href="#" data-pix="pixicon-volume2" class="pix_icon_elm"><i class='pixicon-volume2'></i> volume2</a></li>
+										<li><a href="#" data-pix="pixicon-volume1" class="pix_icon_elm"><i class='pixicon-volume1'></i> volume1</a></li>
+										<li><a href="#" data-pix="pixicon-voicemail" class="pix_icon_elm"><i class='pixicon-voicemail'></i> voicemail</a></li>
+										<li><a href="#" data-pix="pixicon-video" class="pix_icon_elm"><i class='pixicon-video'></i> video</a></li>
+										<li><a href="#" data-pix="pixicon-user" class="pix_icon_elm"><i class='pixicon-user'></i> user</a></li>
+										<li><a href="#" data-pix="pixicon-upload" class="pix_icon_elm"><i class='pixicon-upload'></i> upload</a></li>
+										<li><a href="#" data-pix="pixicon-unlock" class="pix_icon_elm"><i class='pixicon-unlock'></i> unlock</a></li>
+										<li><a href="#" data-pix="pixicon-umbrella" class="pix_icon_elm"><i class='pixicon-umbrella'></i> umbrella</a></li>
+										<li><a href="#" data-pix="pixicon-trash" class="pix_icon_elm"><i class='pixicon-trash'></i> trash</a></li>
+										<li><a href="#" data-pix="pixicon-tools" class="pix_icon_elm"><i class='pixicon-tools'></i> tools</a></li>
+										<li><a href="#" data-pix="pixicon-timer" class="pix_icon_elm"><i class='pixicon-timer'></i> timer</a></li>
+										<li><a href="#" data-pix="pixicon-ticket" class="pix_icon_elm"><i class='pixicon-ticket'></i> ticket</a></li>
+										<li><a href="#" data-pix="pixicon-target" class="pix_icon_elm"><i class='pixicon-target'></i> target</a></li>
+										<li><a href="#" data-pix="pixicon-sun" class="pix_icon_elm"><i class='pixicon-sun'></i> sun</a></li>
+										<li><a href="#" data-pix="pixicon-study" class="pix_icon_elm"><i class='pixicon-study'></i> study</a></li>
+										<li><a href="#" data-pix="pixicon-stopwatch" class="pix_icon_elm"><i class='pixicon-stopwatch'></i> stopwatch</a></li>
+										<li><a href="#" data-pix="pixicon-star" class="pix_icon_elm"><i class='pixicon-star'></i> star</a></li>
+										<li><a href="#" data-pix="pixicon-speaker" class="pix_icon_elm"><i class='pixicon-speaker'></i> speaker</a></li>
+										<li><a href="#" data-pix="pixicon-signal" class="pix_icon_elm"><i class='pixicon-signal'></i> signal</a></li>
+										<li><a href="#" data-pix="pixicon-shuffle" class="pix_icon_elm"><i class='pixicon-shuffle'></i> shuffle</a></li>
+										<li><a href="#" data-pix="pixicon-shopbag" class="pix_icon_elm"><i class='pixicon-shopbag'></i> shopbag</a></li>
+										<li><a href="#" data-pix="pixicon-share" class="pix_icon_elm"><i class='pixicon-share'></i> share</a></li>
+										<li><a href="#" data-pix="pixicon-server" class="pix_icon_elm"><i class='pixicon-server'></i> server</a></li>
+										<li><a href="#" data-pix="pixicon-search" class="pix_icon_elm"><i class='pixicon-search'></i> search</a></li>
+										<li><a href="#" data-pix="pixicon-film" class="pix_icon_elm"><i class='pixicon-film'></i> film</a></li>
+										<li><a href="#" data-pix="pixicon-science" class="pix_icon_elm"><i class='pixicon-science'></i> science</a></li>
+										<li><a href="#" data-pix="pixicon-disk" class="pix_icon_elm"><i class='pixicon-disk'></i> disk</a></li>
+										<li><a href="#" data-pix="pixicon-ribbon" class="pix_icon_elm"><i class='pixicon-ribbon'></i> ribbon</a></li>
+										<li><a href="#" data-pix="pixicon-repeat" class="pix_icon_elm"><i class='pixicon-repeat'></i> repeat</a></li>
+										<li><a href="#" data-pix="pixicon-refresh" class="pix_icon_elm"><i class='pixicon-refresh'></i> refresh</a></li>
+										<li><a href="#" data-pix="pixicon-add-user" class="pix_icon_elm"><i class='pixicon-add-user'></i> add-user</a></li>
+										<li><a href="#" data-pix="pixicon-refresh-cloud" class="pix_icon_elm"><i class='pixicon-refresh-cloud'></i> refresh-cloud</a></li>
+										<li><a href="#" data-pix="pixicon-paperclip" class="pix_icon_elm"><i class='pixicon-paperclip'></i> paperclip</a></li>
+										<li><a href="#" data-pix="pixicon-radio" class="pix_icon_elm"><i class='pixicon-radio'></i> radio</a></li>
+										<li><a href="#" data-pix="pixicon-note2" class="pix_icon_elm"><i class='pixicon-note2'></i> note2</a></li>
+										<li><a href="#" data-pix="pixicon-print" class="pix_icon_elm"><i class='pixicon-print'></i> print</a></li>
+										<li><a href="#" data-pix="pixicon-network" class="pix_icon_elm"><i class='pixicon-network'></i> network</a></li>
+										<li><a href="#" data-pix="pixicon-prev" class="pix_icon_elm"><i class='pixicon-prev'></i> prev</a></li>
+										<li><a href="#" data-pix="pixicon-mute" class="pix_icon_elm"><i class='pixicon-mute'></i> mute</a></li>
+										<li><a href="#" data-pix="pixicon-power" class="pix_icon_elm"><i class='pixicon-power'></i> power</a></li>
+										<li><a href="#" data-pix="pixicon-medal" class="pix_icon_elm"><i class='pixicon-medal'></i> medal</a></li>
+										<li><a href="#" data-pix="pixicon-portfolio" class="pix_icon_elm"><i class='pixicon-portfolio'></i> portfolio</a></li>
+										<li><a href="#" data-pix="pixicon-like2" class="pix_icon_elm"><i class='pixicon-like2'></i> like2</a></li>
+										<li><a href="#" data-pix="pixicon-plus" class="pix_icon_elm"><i class='pixicon-plus'></i> plus</a></li>
+										<li><a href="#" data-pix="pixicon-left-arrow" class="pix_icon_elm"><i class='pixicon-left-arrow'></i> left-arrow</a></li>
+										<li><a href="#" data-pix="pixicon-play" class="pix_icon_elm"><i class='pixicon-play'></i> play</a></li>
+										<li><a href="#" data-pix="pixicon-key" class="pix_icon_elm"><i class='pixicon-key'></i> key</a></li>
+										<li><a href="#" data-pix="pixicon-plane" class="pix_icon_elm"><i class='pixicon-plane'></i> plane</a></li>
+										<li><a href="#" data-pix="pixicon-joy" class="pix_icon_elm"><i class='pixicon-joy'></i> joy</a></li>
+										<li><a href="#" data-pix="pixicon-photo-gallery" class="pix_icon_elm"><i class='pixicon-photo-gallery'></i> photo-gallery</a></li>
+										<li><a href="#" data-pix="pixicon-pin" class="pix_icon_elm"><i class='pixicon-pin'></i> pin</a></li>
+										<li><a href="#" data-pix="pixicon-phone" class="pix_icon_elm"><i class='pixicon-phone'></i> phone</a></li>
+										<li><a href="#" data-pix="pixicon-plug" class="pix_icon_elm"><i class='pixicon-plug'></i> plug</a></li>
+										<li><a href="#" data-pix="pixicon-pen" class="pix_icon_elm"><i class='pixicon-pen'></i> pen</a></li>
+										<li><a href="#" data-pix="pixicon-right-arrow" class="pix_icon_elm"><i class='pixicon-right-arrow'></i> right-arrow</a></li>
+										<li><a href="#" data-pix="pixicon-paper-plane" class="pix_icon_elm"><i class='pixicon-paper-plane'></i> paper-plane</a></li>
+										<li><a href="#" data-pix="pixicon-delete-user" class="pix_icon_elm"><i class='pixicon-delete-user'></i> delete-user</a></li>
+										<li><a href="#" data-pix="pixicon-paint" class="pix_icon_elm"><i class='pixicon-paint'></i> paint</a></li>
+										<li><a href="#" data-pix="pixicon-bottom-arrow" class="pix_icon_elm"><i class='pixicon-bottom-arrow'></i> bottom-arrow</a></li>
+										<li><a href="#" data-pix="pixicon-notebook" class="pix_icon_elm"><i class='pixicon-notebook'></i> notebook</a></li>
+										<li><a href="#" data-pix="pixicon-note" class="pix_icon_elm"><i class='pixicon-note'></i> note</a></li>
+										<li><a href="#" data-pix="pixicon-next" class="pix_icon_elm"><i class='pixicon-next'></i> next</a></li>
+										<li><a href="#" data-pix="pixicon-news-paper" class="pix_icon_elm"><i class='pixicon-news-paper'></i> news-paper</a></li>
+										<li><a href="#" data-pix="pixicon-musiclist" class="pix_icon_elm"><i class='pixicon-musiclist'></i> musiclist</a></li>
+										<li><a href="#" data-pix="pixicon-music" class="pix_icon_elm"><i class='pixicon-music'></i> music</a></li>
+										<li><a href="#" data-pix="pixicon-mouse" class="pix_icon_elm"><i class='pixicon-mouse'></i> mouse</a></li>
+										<li><a href="#" data-pix="pixicon-more" class="pix_icon_elm"><i class='pixicon-more'></i> more</a></li>
+										<li><a href="#" data-pix="pixicon-moon" class="pix_icon_elm"><i class='pixicon-moon'></i> moon</a></li>
+										<li><a href="#" data-pix="pixicon-monitor" class="pix_icon_elm"><i class='pixicon-monitor'></i> monitor</a></li>
+										<li><a href="#" data-pix="pixicon-micro" class="pix_icon_elm"><i class='pixicon-micro'></i> micro</a></li>
+										<li><a href="#" data-pix="pixicon-menu" class="pix_icon_elm"><i class='pixicon-menu'></i> menu</a></li>
+										<li><a href="#" data-pix="pixicon-map" class="pix_icon_elm"><i class='pixicon-map'></i> map</a></li>
+										<li><a href="#" data-pix="pixicon-map-marker" class="pix_icon_elm"><i class='pixicon-map-marker'></i> map-marker</a></li>
+										<li><a href="#" data-pix="pixicon-mail" class="pix_icon_elm"><i class='pixicon-mail'></i> mail</a></li>
+										<li><a href="#" data-pix="pixicon-mail-open" class="pix_icon_elm"><i class='pixicon-mail-open'></i> mail-open</a></li>
+										<li><a href="#" data-pix="pixicon-mail-open-file" class="pix_icon_elm"><i class='pixicon-mail-open-file'></i> mail-open-file</a></li>
+										<li><a href="#" data-pix="pixicon-magnet" class="pix_icon_elm"><i class='pixicon-magnet'></i> magnet</a></li>
+										<li><a href="#" data-pix="pixicon-loop" class="pix_icon_elm"><i class='pixicon-loop'></i> loop</a></li>
+										<li><a href="#" data-pix="pixicon-look" class="pix_icon_elm"><i class='pixicon-look'></i> look</a></li>
+										<li><a href="#" data-pix="pixicon-lock" class="pix_icon_elm"><i class='pixicon-lock'></i> lock</a></li>
+										<li><a href="#" data-pix="pixicon-lintern" class="pix_icon_elm"><i class='pixicon-lintern'></i> lintern</a></li>
+										<li><a href="#" data-pix="pixicon-link" class="pix_icon_elm"><i class='pixicon-link'></i> link</a></li>
+										<li><a href="#" data-pix="pixicon-like" class="pix_icon_elm"><i class='pixicon-like'></i> like</a></li>
+										<li><a href="#" data-pix="pixicon-light" class="pix_icon_elm"><i class='pixicon-light'></i> light</a></li>
+										<li><a href="#" data-pix="pixicon-less" class="pix_icon_elm"><i class='pixicon-less'></i> less</a></li>
+										<li><a href="#" data-pix="pixicon-keypad" class="pix_icon_elm"><i class='pixicon-keypad'></i> keypad</a></li>
+										<li><a href="#" data-pix="pixicon-junk" class="pix_icon_elm"><i class='pixicon-junk'></i> junk</a></li>
+										<li><a href="#" data-pix="pixicon-info" class="pix_icon_elm"><i class='pixicon-info'></i> info</a></li>
+										<li><a href="#" data-pix="pixicon-home" class="pix_icon_elm"><i class='pixicon-home'></i> home</a></li>
+										<li><a href="#" data-pix="pixicon-help2" class="pix_icon_elm"><i class='pixicon-help2'></i> help2</a></li>
+										<li><a href="#" data-pix="pixicon-help1" class="pix_icon_elm"><i class='pixicon-help1'></i> help1</a></li>
+										<li><a href="#" data-pix="pixicon-graph3" class="pix_icon_elm"><i class='pixicon-graph3'></i> graph3</a></li>
+										<li><a href="#" data-pix="pixicon-graph2" class="pix_icon_elm"><i class='pixicon-graph2'></i> graph2</a></li>
+										<li><a href="#" data-pix="pixicon-graph1" class="pix_icon_elm"><i class='pixicon-graph1'></i> graph1</a></li>
+										<li><a href="#" data-pix="pixicon-graph" class="pix_icon_elm"><i class='pixicon-graph'></i> graph</a></li>
+										<li><a href="#" data-pix="pixicon-global" class="pix_icon_elm"><i class='pixicon-global'></i> global</a></li>
+										<li><a href="#" data-pix="pixicon-gleam" class="pix_icon_elm"><i class='pixicon-gleam'></i> gleam</a></li>
+										<li><a href="#" data-pix="pixicon-glasses" class="pix_icon_elm"><i class='pixicon-glasses'></i> glasses</a></li>
+										<li><a href="#" data-pix="pixicon-gift" class="pix_icon_elm"><i class='pixicon-gift'></i> gift</a></li>
+										<li><a href="#" data-pix="pixicon-folder" class="pix_icon_elm"><i class='pixicon-folder'></i> folder</a></li>
+										<li><a href="#" data-pix="pixicon-flag" class="pix_icon_elm"><i class='pixicon-flag'></i> flag</a></li>
+										<li><a href="#" data-pix="pixicon-filter" class="pix_icon_elm"><i class='pixicon-filter'></i> filter</a></li>
+										<li><a href="#" data-pix="pixicon-file" class="pix_icon_elm"><i class='pixicon-file'></i> file</a></li>
+										<li><a href="#" data-pix="pixicon-expand1" class="pix_icon_elm"><i class='pixicon-expand1'></i> expand1</a></li>
+										<li><a href="#" data-pix="pixicon-exapnd2" class="pix_icon_elm"><i class='pixicon-exapnd2'></i> exapnd2</a></li>
+										<li><a href="#" data-pix="pixicon-edit" class="pix_icon_elm"><i class='pixicon-edit'></i> edit</a></li>
+										<li><a href="#" data-pix="pixicon-drop" class="pix_icon_elm"><i class='pixicon-drop'></i> drop</a></li>
+										<li><a href="#" data-pix="pixicon-drawer" class="pix_icon_elm"><i class='pixicon-drawer'></i> drawer</a></li>
+										<li><a href="#" data-pix="pixicon-download" class="pix_icon_elm"><i class='pixicon-download'></i> download</a></li>
+										<li><a href="#" data-pix="pixicon-display2" class="pix_icon_elm"><i class='pixicon-display2'></i> display2</a></li>
+										<li><a href="#" data-pix="pixicon-display1" class="pix_icon_elm"><i class='pixicon-display1'></i> display1</a></li>
+										<li><a href="#" data-pix="pixicon-diskette" class="pix_icon_elm"><i class='pixicon-diskette'></i> diskette</a></li>
+										<li><a href="#" data-pix="pixicon-date" class="pix_icon_elm"><i class='pixicon-date'></i> date</a></li>
+										<li><a href="#" data-pix="pixicon-cup" class="pix_icon_elm"><i class='pixicon-cup'></i> cup</a></li>
+										<li><a href="#" data-pix="pixicon-culture" class="pix_icon_elm"><i class='pixicon-culture'></i> culture</a></li>
+										<li><a href="#" data-pix="pixicon-crop" class="pix_icon_elm"><i class='pixicon-crop'></i> crop</a></li>
+										<li><a href="#" data-pix="pixicon-credit" class="pix_icon_elm"><i class='pixicon-credit'></i> credit</a></li>
+										<li><a href="#" data-pix="pixicon-copy-file" class="pix_icon_elm"><i class='pixicon-copy-file'></i> copy-file</a></li>
+										<li><a href="#" data-pix="pixicon-config" class="pix_icon_elm"><i class='pixicon-config'></i> config</a></li>
+										<li><a href="#" data-pix="pixicon-compass" class="pix_icon_elm"><i class='pixicon-compass'></i> compass</a></li>
+										<li><a href="#" data-pix="pixicon-comment" class="pix_icon_elm"><i class='pixicon-comment'></i> comment</a></li>
+										<li><a href="#" data-pix="pixicon-coffee" class="pix_icon_elm"><i class='pixicon-coffee'></i> coffee</a></li>
+										<li><a href="#" data-pix="pixicon-cloud" class="pix_icon_elm"><i class='pixicon-cloud'></i> cloud</a></li>
+										<li><a href="#" data-pix="pixicon-clock" class="pix_icon_elm"><i class='pixicon-clock'></i> clock</a></li>
+										<li><a href="#" data-pix="pixicon-check" class="pix_icon_elm"><i class='pixicon-check'></i> check</a></li>
+										<li><a href="#" data-pix="pixicon-chat" class="pix_icon_elm"><i class='pixicon-chat'></i> chat</a></li>
+										<li><a href="#" data-pix="pixicon-cart" class="pix_icon_elm"><i class='pixicon-cart'></i> cart</a></li>
+										<li><a href="#" data-pix="pixicon-camera" class="pix_icon_elm"><i class='pixicon-camera'></i> camera</a></li>
+										<li><a href="#" data-pix="pixicon-call" class="pix_icon_elm"><i class='pixicon-call'></i> call</a></li>
+										<li><a href="#" data-pix="pixicon-calculator" class="pix_icon_elm"><i class='pixicon-calculator'></i> calculator</a></li>
+										<li><a href="#" data-pix="pixicon-browser" class="pix_icon_elm"><i class='pixicon-browser'></i> browser</a></li>
+										<li><a href="#" data-pix="pixicon-box2" class="pix_icon_elm"><i class='pixicon-box2'></i> box2</a></li>
+										<li><a href="#" data-pix="pixicon-box1" class="pix_icon_elm"><i class='pixicon-box1'></i> box1</a></li>
+										<li><a href="#" data-pix="pixicon-bookmarks" class="pix_icon_elm"><i class='pixicon-bookmarks'></i> bookmarks</a></li>
+										<li><a href="#" data-pix="pixicon-bicycle" class="pix_icon_elm"><i class='pixicon-bicycle'></i> bicycle</a></li>
+										<li><a href="#" data-pix="pixicon-bell" class="pix_icon_elm"><i class='pixicon-bell'></i> bell</a></li>
+										<li><a href="#" data-pix="pixicon-battery" class="pix_icon_elm"><i class='pixicon-battery'></i> battery</a></li>
+										<li><a href="#" data-pix="pixicon-ball" class="pix_icon_elm"><i class='pixicon-ball'></i> ball</a></li>
+										<li><a href="#" data-pix="pixicon-back" class="pix_icon_elm"><i class='pixicon-back'></i> back</a></li>
+										<li><a href="#" data-pix="pixicon-attention" class="pix_icon_elm"><i class='pixicon-attention'></i> attention</a></li>
+										<li><a href="#" data-pix="pixicon-anchor" class="pix_icon_elm"><i class='pixicon-anchor'></i> anchor</a></li>
+										<li><a href="#" data-pix="pixicon-albums" class="pix_icon_elm"><i class='pixicon-albums'></i> albums</a></li>
+										<li><a href="#" data-pix="pixicon-alarm" class="pix_icon_elm"><i class='pixicon-alarm'></i> alarm</a></li>
+										<li><a href="#" data-pix="pixicon-airplay" class="pix_icon_elm"><i class='pixicon-airplay'></i> airplay</a></li>
+										<li><a href="#" data-pix="pixicon-box22" class="pix_icon_elm"><i class='pixicon-box22'></i> box22</a></li>
+										<li><a href="#" data-pix="pixicon-write" class="pix_icon_elm"><i class='pixicon-write'></i> write</a></li>
+										<li><a href="#" data-pix="pixicon-clock4" class="pix_icon_elm"><i class='pixicon-clock4'></i> clock4</a></li>
+										<li><a href="#" data-pix="pixicon-reply2" class="pix_icon_elm"><i class='pixicon-reply2'></i> reply2</a></li>
+										<li><a href="#" data-pix="pixicon-reply-all" class="pix_icon_elm"><i class='pixicon-reply-all'></i> reply-all</a></li>
+										<li><a href="#" data-pix="pixicon-forward" class="pix_icon_elm"><i class='pixicon-forward'></i> forward</a></li>
+										<li><a href="#" data-pix="pixicon-flag3" class="pix_icon_elm"><i class='pixicon-flag3'></i> flag3</a></li>
+										<li><a href="#" data-pix="pixicon-search4" class="pix_icon_elm"><i class='pixicon-search4'></i> search4</a></li>
+										<li><a href="#" data-pix="pixicon-trash3" class="pix_icon_elm"><i class='pixicon-trash3'></i> trash3</a></li>
+										<li><a href="#" data-pix="pixicon-envelope2" class="pix_icon_elm"><i class='pixicon-envelope2'></i> envelope2</a></li>
+										<li><a href="#" data-pix="pixicon-bubble2" class="pix_icon_elm"><i class='pixicon-bubble2'></i> bubble2</a></li>
+										<li><a href="#" data-pix="pixicon-bubbles" class="pix_icon_elm"><i class='pixicon-bubbles'></i> bubbles</a></li>
+										<li><a href="#" data-pix="pixicon-user2" class="pix_icon_elm"><i class='pixicon-user2'></i> user2</a></li>
+										<li><a href="#" data-pix="pixicon-users2" class="pix_icon_elm"><i class='pixicon-users2'></i> users2</a></li>
+										<li><a href="#" data-pix="pixicon-cloud4" class="pix_icon_elm"><i class='pixicon-cloud4'></i> cloud4</a></li>
+										<li><a href="#" data-pix="pixicon-download3" class="pix_icon_elm"><i class='pixicon-download3'></i> download3</a></li>
+										<li><a href="#" data-pix="pixicon-upload3" class="pix_icon_elm"><i class='pixicon-upload3'></i> upload3</a></li>
+										<li><a href="#" data-pix="pixicon-rain" class="pix_icon_elm"><i class='pixicon-rain'></i> rain</a></li>
+										<li><a href="#" data-pix="pixicon-sun2" class="pix_icon_elm"><i class='pixicon-sun2'></i> sun2</a></li>
+										<li><a href="#" data-pix="pixicon-moon2" class="pix_icon_elm"><i class='pixicon-moon2'></i> moon2</a></li>
+										<li><a href="#" data-pix="pixicon-bell2" class="pix_icon_elm"><i class='pixicon-bell2'></i> bell2</a></li>
+										<li><a href="#" data-pix="pixicon-folder2" class="pix_icon_elm"><i class='pixicon-folder2'></i> folder2</a></li>
+										<li><a href="#" data-pix="pixicon-pin2" class="pix_icon_elm"><i class='pixicon-pin2'></i> pin2</a></li>
+										<li><a href="#" data-pix="pixicon-sound2" class="pix_icon_elm"><i class='pixicon-sound2'></i> sound2</a></li>
+										<li><a href="#" data-pix="pixicon-microphone2" class="pix_icon_elm"><i class='pixicon-microphone2'></i> microphone2</a></li>
+										<li><a href="#" data-pix="pixicon-camera4" class="pix_icon_elm"><i class='pixicon-camera4'></i> camera4</a></li>
+										<li><a href="#" data-pix="pixicon-image2" class="pix_icon_elm"><i class='pixicon-image2'></i> image2</a></li>
+										<li><a href="#" data-pix="pixicon-cog2" class="pix_icon_elm"><i class='pixicon-cog2'></i> cog2</a></li>
+										<li><a href="#" data-pix="pixicon-calendar3" class="pix_icon_elm"><i class='pixicon-calendar3'></i> calendar3</a></li>
+										<li><a href="#" data-pix="pixicon-book2" class="pix_icon_elm"><i class='pixicon-book2'></i> book2</a></li>
+										<li><a href="#" data-pix="pixicon-map-marker2" class="pix_icon_elm"><i class='pixicon-map-marker2'></i> map-marker2</a></li>
+										<li><a href="#" data-pix="pixicon-store" class="pix_icon_elm"><i class='pixicon-store'></i> store</a></li>
+										<li><a href="#" data-pix="pixicon-support" class="pix_icon_elm"><i class='pixicon-support'></i> support</a></li>
+										<li><a href="#" data-pix="pixicon-tag3" class="pix_icon_elm"><i class='pixicon-tag3'></i> tag3</a></li>
+										<li><a href="#" data-pix="pixicon-heart4" class="pix_icon_elm"><i class='pixicon-heart4'></i> heart4</a></li>
+										<li><a href="#" data-pix="pixicon-video-camera" class="pix_icon_elm"><i class='pixicon-video-camera'></i> video-camera</a></li>
+										<li><a href="#" data-pix="pixicon-trophy2" class="pix_icon_elm"><i class='pixicon-trophy2'></i> trophy2</a></li>
+										<li><a href="#" data-pix="pixicon-cart2" class="pix_icon_elm"><i class='pixicon-cart2'></i> cart2</a></li>
+										<li><a href="#" data-pix="pixicon-eye3" class="pix_icon_elm"><i class='pixicon-eye3'></i> eye3</a></li>
+										<li><a href="#" data-pix="pixicon-cancel" class="pix_icon_elm"><i class='pixicon-cancel'></i> cancel</a></li>
+										<li><a href="#" data-pix="pixicon-chart" class="pix_icon_elm"><i class='pixicon-chart'></i> chart</a></li>
+										<li><a href="#" data-pix="pixicon-target3" class="pix_icon_elm"><i class='pixicon-target3'></i> target3</a></li>
+										<li><a href="#" data-pix="pixicon-printer3" class="pix_icon_elm"><i class='pixicon-printer3'></i> printer3</a></li>
+										<li><a href="#" data-pix="pixicon-location3" class="pix_icon_elm"><i class='pixicon-location3'></i> location3</a></li>
+										<li><a href="#" data-pix="pixicon-bookmark" class="pix_icon_elm"><i class='pixicon-bookmark'></i> bookmark</a></li>
+										<li><a href="#" data-pix="pixicon-monitor2" class="pix_icon_elm"><i class='pixicon-monitor2'></i> monitor2</a></li>
+										<li><a href="#" data-pix="pixicon-cross2" class="pix_icon_elm"><i class='pixicon-cross2'></i> cross2</a></li>
+										<li><a href="#" data-pix="pixicon-plus2" class="pix_icon_elm"><i class='pixicon-plus2'></i> plus2</a></li>
+										<li><a href="#" data-pix="pixicon-left" class="pix_icon_elm"><i class='pixicon-left'></i> left</a></li>
+										<li><a href="#" data-pix="pixicon-up" class="pix_icon_elm"><i class='pixicon-up'></i> up</a></li>
+										<li><a href="#" data-pix="pixicon-browser2" class="pix_icon_elm"><i class='pixicon-browser2'></i> browser2</a></li>
+										<li><a href="#" data-pix="pixicon-windows3" class="pix_icon_elm"><i class='pixicon-windows3'></i> windows3</a></li>
+										<li><a href="#" data-pix="pixicon-switch2" class="pix_icon_elm"><i class='pixicon-switch2'></i> switch2</a></li>
+										<li><a href="#" data-pix="pixicon-dashboard" class="pix_icon_elm"><i class='pixicon-dashboard'></i> dashboard</a></li>
+										<li><a href="#" data-pix="pixicon-play4" class="pix_icon_elm"><i class='pixicon-play4'></i> play4</a></li>
+										<li><a href="#" data-pix="pixicon-fast-forward2" class="pix_icon_elm"><i class='pixicon-fast-forward2'></i> fast-forward2</a></li>
+										<li><a href="#" data-pix="pixicon-next2" class="pix_icon_elm"><i class='pixicon-next2'></i> next2</a></li>
+										<li><a href="#" data-pix="pixicon-refresh2" class="pix_icon_elm"><i class='pixicon-refresh2'></i> refresh2</a></li>
+										<li><a href="#" data-pix="pixicon-film2" class="pix_icon_elm"><i class='pixicon-film2'></i> film2</a></li>
+										<li><a href="#" data-pix="pixicon-home2" class="pix_icon_elm"><i class='pixicon-home2'></i> home2</a></li>
+										<li><a href="#" data-pix="pixicon-mobile" class="pix_icon_elm"><i class='pixicon-mobile'></i> mobile</a></li>
+										<li><a href="#" data-pix="pixicon-laptop" class="pix_icon_elm"><i class='pixicon-laptop'></i> laptop</a></li>
+										<li><a href="#" data-pix="pixicon-desktop" class="pix_icon_elm"><i class='pixicon-desktop'></i> desktop</a></li>
+										<li><a href="#" data-pix="pixicon-tablet" class="pix_icon_elm"><i class='pixicon-tablet'></i> tablet</a></li>
+										<li><a href="#" data-pix="pixicon-phone2" class="pix_icon_elm"><i class='pixicon-phone2'></i> phone2</a></li>
+										<li><a href="#" data-pix="pixicon-document" class="pix_icon_elm"><i class='pixicon-document'></i> document</a></li>
+										<li><a href="#" data-pix="pixicon-documents" class="pix_icon_elm"><i class='pixicon-documents'></i> documents</a></li>
+										<li><a href="#" data-pix="pixicon-search2" class="pix_icon_elm"><i class='pixicon-search2'></i> search2</a></li>
+										<li><a href="#" data-pix="pixicon-clipboard" class="pix_icon_elm"><i class='pixicon-clipboard'></i> clipboard</a></li>
+										<li><a href="#" data-pix="pixicon-newspaper" class="pix_icon_elm"><i class='pixicon-newspaper'></i> newspaper</a></li>
+										<li><a href="#" data-pix="pixicon-notebook2" class="pix_icon_elm"><i class='pixicon-notebook2'></i> notebook2</a></li>
+										<li><a href="#" data-pix="pixicon-book-open" class="pix_icon_elm"><i class='pixicon-book-open'></i> book-open</a></li>
+										<li><a href="#" data-pix="pixicon-browser3" class="pix_icon_elm"><i class='pixicon-browser3'></i> browser3</a></li>
+										<li><a href="#" data-pix="pixicon-calendar" class="pix_icon_elm"><i class='pixicon-calendar'></i> calendar</a></li>
+										<li><a href="#" data-pix="pixicon-presentation" class="pix_icon_elm"><i class='pixicon-presentation'></i> presentation</a></li>
+										<li><a href="#" data-pix="pixicon-picture" class="pix_icon_elm"><i class='pixicon-picture'></i> picture</a></li>
+										<li><a href="#" data-pix="pixicon-pictures" class="pix_icon_elm"><i class='pixicon-pictures'></i> pictures</a></li>
+										<li><a href="#" data-pix="pixicon-video2" class="pix_icon_elm"><i class='pixicon-video2'></i> video2</a></li>
+										<li><a href="#" data-pix="pixicon-camera2" class="pix_icon_elm"><i class='pixicon-camera2'></i> camera2</a></li>
+										<li><a href="#" data-pix="pixicon-printer" class="pix_icon_elm"><i class='pixicon-printer'></i> printer</a></li>
+										<li><a href="#" data-pix="pixicon-toolbox" class="pix_icon_elm"><i class='pixicon-toolbox'></i> toolbox</a></li>
+										<li><a href="#" data-pix="pixicon-briefcase" class="pix_icon_elm"><i class='pixicon-briefcase'></i> briefcase</a></li>
+										<li><a href="#" data-pix="pixicon-wallet2" class="pix_icon_elm"><i class='pixicon-wallet2'></i> wallet2</a></li>
+										<li><a href="#" data-pix="pixicon-gift2" class="pix_icon_elm"><i class='pixicon-gift2'></i> gift2</a></li>
+										<li><a href="#" data-pix="pixicon-bargraph" class="pix_icon_elm"><i class='pixicon-bargraph'></i> bargraph</a></li>
+										<li><a href="#" data-pix="pixicon-grid" class="pix_icon_elm"><i class='pixicon-grid'></i> grid</a></li>
+										<li><a href="#" data-pix="pixicon-expand" class="pix_icon_elm"><i class='pixicon-expand'></i> expand</a></li>
+										<li><a href="#" data-pix="pixicon-focus" class="pix_icon_elm"><i class='pixicon-focus'></i> focus</a></li>
+										<li><a href="#" data-pix="pixicon-edit2" class="pix_icon_elm"><i class='pixicon-edit2'></i> edit2</a></li>
+										<li><a href="#" data-pix="pixicon-adjustments" class="pix_icon_elm"><i class='pixicon-adjustments'></i> adjustments</a></li>
+										<li><a href="#" data-pix="pixicon-ribbon2" class="pix_icon_elm"><i class='pixicon-ribbon2'></i> ribbon2</a></li>
+										<li><a href="#" data-pix="pixicon-hourglass2" class="pix_icon_elm"><i class='pixicon-hourglass2'></i> hourglass2</a></li>
+										<li><a href="#" data-pix="pixicon-lock2" class="pix_icon_elm"><i class='pixicon-lock2'></i> lock2</a></li>
+										<li><a href="#" data-pix="pixicon-megaphone" class="pix_icon_elm"><i class='pixicon-megaphone'></i> megaphone</a></li>
+										<li><a href="#" data-pix="pixicon-shield2" class="pix_icon_elm"><i class='pixicon-shield2'></i> shield2</a></li>
+										<li><a href="#" data-pix="pixicon-trophy" class="pix_icon_elm"><i class='pixicon-trophy'></i> trophy</a></li>
+										<li><a href="#" data-pix="pixicon-flag2" class="pix_icon_elm"><i class='pixicon-flag2'></i> flag2</a></li>
+										<li><a href="#" data-pix="pixicon-map2" class="pix_icon_elm"><i class='pixicon-map2'></i> map2</a></li>
+										<li><a href="#" data-pix="pixicon-puzzle" class="pix_icon_elm"><i class='pixicon-puzzle'></i> puzzle</a></li>
+										<li><a href="#" data-pix="pixicon-basket" class="pix_icon_elm"><i class='pixicon-basket'></i> basket</a></li>
+										<li><a href="#" data-pix="pixicon-envelope" class="pix_icon_elm"><i class='pixicon-envelope'></i> envelope</a></li>
+										<li><a href="#" data-pix="pixicon-streetsign" class="pix_icon_elm"><i class='pixicon-streetsign'></i> streetsign</a></li>
+										<li><a href="#" data-pix="pixicon-telescope" class="pix_icon_elm"><i class='pixicon-telescope'></i> telescope</a></li>
+										<li><a href="#" data-pix="pixicon-gears" class="pix_icon_elm"><i class='pixicon-gears'></i> gears</a></li>
+										<li><a href="#" data-pix="pixicon-key2" class="pix_icon_elm"><i class='pixicon-key2'></i> key2</a></li>
+										<li><a href="#" data-pix="pixicon-paperclip2" class="pix_icon_elm"><i class='pixicon-paperclip2'></i> paperclip2</a></li>
+										<li><a href="#" data-pix="pixicon-attachment" class="pix_icon_elm"><i class='pixicon-attachment'></i> attachment</a></li>
+										<li><a href="#" data-pix="pixicon-pricetags" class="pix_icon_elm"><i class='pixicon-pricetags'></i> pricetags</a></li>
+										<li><a href="#" data-pix="pixicon-lightbulb" class="pix_icon_elm"><i class='pixicon-lightbulb'></i> lightbulb</a></li>
+										<li><a href="#" data-pix="pixicon-layers" class="pix_icon_elm"><i class='pixicon-layers'></i> layers</a></li>
+										<li><a href="#" data-pix="pixicon-pencil" class="pix_icon_elm"><i class='pixicon-pencil'></i> pencil</a></li>
+										<li><a href="#" data-pix="pixicon-tools2" class="pix_icon_elm"><i class='pixicon-tools2'></i> tools2</a></li>
+										<li><a href="#" data-pix="pixicon-tools-2" class="pix_icon_elm"><i class='pixicon-tools-2'></i> tools-2</a></li>
+										<li><a href="#" data-pix="pixicon-scissors2" class="pix_icon_elm"><i class='pixicon-scissors2'></i> scissors2</a></li>
+										<li><a href="#" data-pix="pixicon-paintbrush" class="pix_icon_elm"><i class='pixicon-paintbrush'></i> paintbrush</a></li>
+										<li><a href="#" data-pix="pixicon-magnifying-glass" class="pix_icon_elm"><i class='pixicon-magnifying-glass'></i> magnifying-glass</a></li>
+										<li><a href="#" data-pix="pixicon-circle-compass" class="pix_icon_elm"><i class='pixicon-circle-compass'></i> circle-compass</a></li>
+										<li><a href="#" data-pix="pixicon-linegraph" class="pix_icon_elm"><i class='pixicon-linegraph'></i> linegraph</a></li>
+										<li><a href="#" data-pix="pixicon-mic" class="pix_icon_elm"><i class='pixicon-mic'></i> mic</a></li>
+										<li><a href="#" data-pix="pixicon-strategy" class="pix_icon_elm"><i class='pixicon-strategy'></i> strategy</a></li>
+										<li><a href="#" data-pix="pixicon-beaker" class="pix_icon_elm"><i class='pixicon-beaker'></i> beaker</a></li>
+										<li><a href="#" data-pix="pixicon-caution" class="pix_icon_elm"><i class='pixicon-caution'></i> caution</a></li>
+										<li><a href="#" data-pix="pixicon-recycle" class="pix_icon_elm"><i class='pixicon-recycle'></i> recycle</a></li>
+										<li><a href="#" data-pix="pixicon-anchor2" class="pix_icon_elm"><i class='pixicon-anchor2'></i> anchor2</a></li>
+										<li><a href="#" data-pix="pixicon-profile-male" class="pix_icon_elm"><i class='pixicon-profile-male'></i> profile-male</a></li>
+										<li><a href="#" data-pix="pixicon-profile-female" class="pix_icon_elm"><i class='pixicon-profile-female'></i> profile-female</a></li>
+										<li><a href="#" data-pix="pixicon-bike" class="pix_icon_elm"><i class='pixicon-bike'></i> bike</a></li>
+										<li><a href="#" data-pix="pixicon-wine2" class="pix_icon_elm"><i class='pixicon-wine2'></i> wine2</a></li>
+										<li><a href="#" data-pix="pixicon-hotairballoon" class="pix_icon_elm"><i class='pixicon-hotairballoon'></i> hotairballoon</a></li>
+										<li><a href="#" data-pix="pixicon-globe" class="pix_icon_elm"><i class='pixicon-globe'></i> globe</a></li>
+										<li><a href="#" data-pix="pixicon-genius" class="pix_icon_elm"><i class='pixicon-genius'></i> genius</a></li>
+										<li><a href="#" data-pix="pixicon-map-pin" class="pix_icon_elm"><i class='pixicon-map-pin'></i> map-pin</a></li>
+										<li><a href="#" data-pix="pixicon-dial" class="pix_icon_elm"><i class='pixicon-dial'></i> dial</a></li>
+										<li><a href="#" data-pix="pixicon-chat2" class="pix_icon_elm"><i class='pixicon-chat2'></i> chat2</a></li>
+										<li><a href="#" data-pix="pixicon-heart" class="pix_icon_elm"><i class='pixicon-heart'></i> heart</a></li>
+										<li><a href="#" data-pix="pixicon-cloud2" class="pix_icon_elm"><i class='pixicon-cloud2'></i> cloud2</a></li>
+										<li><a href="#" data-pix="pixicon-upload2" class="pix_icon_elm"><i class='pixicon-upload2'></i> upload2</a></li>
+										<li><a href="#" data-pix="pixicon-download2" class="pix_icon_elm"><i class='pixicon-download2'></i> download2</a></li>
+										<li><a href="#" data-pix="pixicon-target2" class="pix_icon_elm"><i class='pixicon-target2'></i> target2</a></li>
+										<li><a href="#" data-pix="pixicon-hazardous" class="pix_icon_elm"><i class='pixicon-hazardous'></i> hazardous</a></li>
+										<li><a href="#" data-pix="pixicon-piechart" class="pix_icon_elm"><i class='pixicon-piechart'></i> piechart</a></li>
+										<li><a href="#" data-pix="pixicon-speedometer" class="pix_icon_elm"><i class='pixicon-speedometer'></i> speedometer</a></li>
+										<li><a href="#" data-pix="pixicon-global2" class="pix_icon_elm"><i class='pixicon-global2'></i> global2</a></li>
+										<li><a href="#" data-pix="pixicon-compass2" class="pix_icon_elm"><i class='pixicon-compass2'></i> compass2</a></li>
+										<li><a href="#" data-pix="pixicon-lifesaver" class="pix_icon_elm"><i class='pixicon-lifesaver'></i> lifesaver</a></li>
+										<li><a href="#" data-pix="pixicon-clock2" class="pix_icon_elm"><i class='pixicon-clock2'></i> clock2</a></li>
+										<li><a href="#" data-pix="pixicon-aperture" class="pix_icon_elm"><i class='pixicon-aperture'></i> aperture</a></li>
+										<li><a href="#" data-pix="pixicon-quote" class="pix_icon_elm"><i class='pixicon-quote'></i> quote</a></li>
+										<li><a href="#" data-pix="pixicon-scope" class="pix_icon_elm"><i class='pixicon-scope'></i> scope</a></li>
+										<li><a href="#" data-pix="pixicon-alarmclock" class="pix_icon_elm"><i class='pixicon-alarmclock'></i> alarmclock</a></li>
+										<li><a href="#" data-pix="pixicon-refresh3" class="pix_icon_elm"><i class='pixicon-refresh3'></i> refresh3</a></li>
+										<li><a href="#" data-pix="pixicon-happy" class="pix_icon_elm"><i class='pixicon-happy'></i> happy</a></li>
+										<li><a href="#" data-pix="pixicon-sad" class="pix_icon_elm"><i class='pixicon-sad'></i> sad</a></li>
+										<li><a href="#" data-pix="pixicon-facebook" class="pix_icon_elm"><i class='pixicon-facebook'></i> facebook</a></li>
+										<li><a href="#" data-pix="pixicon-twitter" class="pix_icon_elm"><i class='pixicon-twitter'></i> twitter</a></li>
+										<li><a href="#" data-pix="pixicon-googleplus" class="pix_icon_elm"><i class='pixicon-googleplus'></i> googleplus</a></li>
+										<li><a href="#" data-pix="pixicon-rss" class="pix_icon_elm"><i class='pixicon-rss'></i> rss</a></li>
+										<li><a href="#" data-pix="pixicon-tumblr" class="pix_icon_elm"><i class='pixicon-tumblr'></i> tumblr</a></li>
+										<li><a href="#" data-pix="pixicon-linkedin" class="pix_icon_elm"><i class='pixicon-linkedin'></i> linkedin</a></li>
+										<li><a href="#" data-pix="pixicon-dribbble" class="pix_icon_elm"><i class='pixicon-dribbble'></i> dribbble</a></li>
+										<li><a href="#" data-pix="pixicon-heart2" class="pix_icon_elm"><i class='pixicon-heart2'></i> heart2</a></li>
+										<li><a href="#" data-pix="pixicon-cloud22" class="pix_icon_elm"><i class='pixicon-cloud22'></i> cloud22</a></li>
+										<li><a href="#" data-pix="pixicon-star3" class="pix_icon_elm"><i class='pixicon-star3'></i> star3</a></li>
+										<li><a href="#" data-pix="pixicon-tv" class="pix_icon_elm"><i class='pixicon-tv'></i> tv</a></li>
+										<li><a href="#" data-pix="pixicon-sound" class="pix_icon_elm"><i class='pixicon-sound'></i> sound</a></li>
+										<li><a href="#" data-pix="pixicon-video22" class="pix_icon_elm"><i class='pixicon-video22'></i> video22</a></li>
+										<li><a href="#" data-pix="pixicon-trash4" class="pix_icon_elm"><i class='pixicon-trash4'></i> trash4</a></li>
+										<li><a href="#" data-pix="pixicon-user3" class="pix_icon_elm"><i class='pixicon-user3'></i> user3</a></li>
+										<li><a href="#" data-pix="pixicon-key22" class="pix_icon_elm"><i class='pixicon-key22'></i> key22</a></li>
+										<li><a href="#" data-pix="pixicon-search22" class="pix_icon_elm"><i class='pixicon-search22'></i> search22</a></li>
+										<li><a href="#" data-pix="pixicon-settings2" class="pix_icon_elm"><i class='pixicon-settings2'></i> settings2</a></li>
+										<li><a href="#" data-pix="pixicon-camera22" class="pix_icon_elm"><i class='pixicon-camera22'></i> camera22</a></li>
+										<li><a href="#" data-pix="pixicon-tag" class="pix_icon_elm"><i class='pixicon-tag'></i> tag</a></li>
+										<li><a href="#" data-pix="pixicon-lock22" class="pix_icon_elm"><i class='pixicon-lock22'></i> lock22</a></li>
+										<li><a href="#" data-pix="pixicon-bulb" class="pix_icon_elm"><i class='pixicon-bulb'></i> bulb</a></li>
+										<li><a href="#" data-pix="pixicon-pen2" class="pix_icon_elm"><i class='pixicon-pen2'></i> pen2</a></li>
+										<li><a href="#" data-pix="pixicon-diamond2" class="pix_icon_elm"><i class='pixicon-diamond2'></i> diamond2</a></li>
+										<li><a href="#" data-pix="pixicon-display" class="pix_icon_elm"><i class='pixicon-display'></i> display</a></li>
+										<li><a href="#" data-pix="pixicon-location" class="pix_icon_elm"><i class='pixicon-location'></i> location</a></li>
+										<li><a href="#" data-pix="pixicon-eye" class="pix_icon_elm"><i class='pixicon-eye'></i> eye</a></li>
+										<li><a href="#" data-pix="pixicon-bubble" class="pix_icon_elm"><i class='pixicon-bubble'></i> bubble</a></li>
+										<li><a href="#" data-pix="pixicon-stack" class="pix_icon_elm"><i class='pixicon-stack'></i> stack</a></li>
+										<li><a href="#" data-pix="pixicon-cup2" class="pix_icon_elm"><i class='pixicon-cup2'></i> cup2</a></li>
+										<li><a href="#" data-pix="pixicon-phone22" class="pix_icon_elm"><i class='pixicon-phone22'></i> phone22</a></li>
+										<li><a href="#" data-pix="pixicon-news" class="pix_icon_elm"><i class='pixicon-news'></i> news</a></li>
+										<li><a href="#" data-pix="pixicon-mail3" class="pix_icon_elm"><i class='pixicon-mail3'></i> mail3</a></li>
+										<li><a href="#" data-pix="pixicon-like3" class="pix_icon_elm"><i class='pixicon-like3'></i> like3</a></li>
+										<li><a href="#" data-pix="pixicon-photo2" class="pix_icon_elm"><i class='pixicon-photo2'></i> photo2</a></li>
+										<li><a href="#" data-pix="pixicon-note3" class="pix_icon_elm"><i class='pixicon-note3'></i> note3</a></li>
+										<li><a href="#" data-pix="pixicon-clock22" class="pix_icon_elm"><i class='pixicon-clock22'></i> clock22</a></li>
+										<li><a href="#" data-pix="pixicon-paperplane" class="pix_icon_elm"><i class='pixicon-paperplane'></i> paperplane</a></li>
+										<li><a href="#" data-pix="pixicon-params" class="pix_icon_elm"><i class='pixicon-params'></i> params</a></li>
+										<li><a href="#" data-pix="pixicon-banknote" class="pix_icon_elm"><i class='pixicon-banknote'></i> banknote</a></li>
+										<li><a href="#" data-pix="pixicon-data" class="pix_icon_elm"><i class='pixicon-data'></i> data</a></li>
+										<li><a href="#" data-pix="pixicon-music2" class="pix_icon_elm"><i class='pixicon-music2'></i> music2</a></li>
+										<li><a href="#" data-pix="pixicon-megaphone2" class="pix_icon_elm"><i class='pixicon-megaphone2'></i> megaphone2</a></li>
+										<li><a href="#" data-pix="pixicon-study2" class="pix_icon_elm"><i class='pixicon-study2'></i> study2</a></li>
+										<li><a href="#" data-pix="pixicon-lab" class="pix_icon_elm"><i class='pixicon-lab'></i> lab</a></li>
+										<li><a href="#" data-pix="pixicon-food" class="pix_icon_elm"><i class='pixicon-food'></i> food</a></li>
+										<li><a href="#" data-pix="pixicon-t-shirt" class="pix_icon_elm"><i class='pixicon-t-shirt'></i> t-shirt</a></li>
+										<li><a href="#" data-pix="pixicon-fire" class="pix_icon_elm"><i class='pixicon-fire'></i> fire</a></li>
+										<li><a href="#" data-pix="pixicon-clip" class="pix_icon_elm"><i class='pixicon-clip'></i> clip</a></li>
+										<li><a href="#" data-pix="pixicon-shop" class="pix_icon_elm"><i class='pixicon-shop'></i> shop</a></li>
+										<li><a href="#" data-pix="pixicon-calendar2" class="pix_icon_elm"><i class='pixicon-calendar2'></i> calendar2</a></li>
+										<li><a href="#" data-pix="pixicon-wallet22" class="pix_icon_elm"><i class='pixicon-wallet22'></i> wallet22</a></li>
+										<li><a href="#" data-pix="pixicon-vynil" class="pix_icon_elm"><i class='pixicon-vynil'></i> vynil</a></li>
+										<li><a href="#" data-pix="pixicon-truck" class="pix_icon_elm"><i class='pixicon-truck'></i> truck</a></li>
+										<li><a href="#" data-pix="pixicon-world2" class="pix_icon_elm"><i class='pixicon-world2'></i> world2</a></li>
+										<li><a href="#" data-pix="pixicon-eye2" class="pix_icon_elm"><i class='pixicon-eye2'></i> eye2</a></li>
+										<li><a href="#" data-pix="pixicon-paper-clip" class="pix_icon_elm"><i class='pixicon-paper-clip'></i> paper-clip</a></li>
+										<li><a href="#" data-pix="pixicon-mail2" class="pix_icon_elm"><i class='pixicon-mail2'></i> mail2</a></li>
+										<li><a href="#" data-pix="pixicon-toggle" class="pix_icon_elm"><i class='pixicon-toggle'></i> toggle</a></li>
+										<li><a href="#" data-pix="pixicon-layout" class="pix_icon_elm"><i class='pixicon-layout'></i> layout</a></li>
+										<li><a href="#" data-pix="pixicon-link2" class="pix_icon_elm"><i class='pixicon-link2'></i> link2</a></li>
+										<li><a href="#" data-pix="pixicon-bell3" class="pix_icon_elm"><i class='pixicon-bell3'></i> bell3</a></li>
+										<li><a href="#" data-pix="pixicon-lock3" class="pix_icon_elm"><i class='pixicon-lock3'></i> lock3</a></li>
+										<li><a href="#" data-pix="pixicon-unlock2" class="pix_icon_elm"><i class='pixicon-unlock2'></i> unlock2</a></li>
+										<li><a href="#" data-pix="pixicon-ribbon22" class="pix_icon_elm"><i class='pixicon-ribbon22'></i> ribbon22</a></li>
+										<li><a href="#" data-pix="pixicon-image" class="pix_icon_elm"><i class='pixicon-image'></i> image</a></li>
+										<li><a href="#" data-pix="pixicon-signal2" class="pix_icon_elm"><i class='pixicon-signal2'></i> signal2</a></li>
+										<li><a href="#" data-pix="pixicon-target22" class="pix_icon_elm"><i class='pixicon-target22'></i> target22</a></li>
+										<li><a href="#" data-pix="pixicon-clipboard2" class="pix_icon_elm"><i class='pixicon-clipboard2'></i> clipboard2</a></li>
+										<li><a href="#" data-pix="pixicon-clock3" class="pix_icon_elm"><i class='pixicon-clock3'></i> clock3</a></li>
+										<li><a href="#" data-pix="pixicon-watch" class="pix_icon_elm"><i class='pixicon-watch'></i> watch</a></li>
+										<li><a href="#" data-pix="pixicon-air-play" class="pix_icon_elm"><i class='pixicon-air-play'></i> air-play</a></li>
+										<li><a href="#" data-pix="pixicon-camera3" class="pix_icon_elm"><i class='pixicon-camera3'></i> camera3</a></li>
+										<li><a href="#" data-pix="pixicon-video3" class="pix_icon_elm"><i class='pixicon-video3'></i> video3</a></li>
+										<li><a href="#" data-pix="pixicon-disc" class="pix_icon_elm"><i class='pixicon-disc'></i> disc</a></li>
+										<li><a href="#" data-pix="pixicon-printer2" class="pix_icon_elm"><i class='pixicon-printer2'></i> printer2</a></li>
+										<li><a href="#" data-pix="pixicon-monitor3" class="pix_icon_elm"><i class='pixicon-monitor3'></i> monitor3</a></li>
+										<li><a href="#" data-pix="pixicon-server2" class="pix_icon_elm"><i class='pixicon-server2'></i> server2</a></li>
+										<li><a href="#" data-pix="pixicon-cog" class="pix_icon_elm"><i class='pixicon-cog'></i> cog</a></li>
+										<li><a href="#" data-pix="pixicon-heart3" class="pix_icon_elm"><i class='pixicon-heart3'></i> heart3</a></li>
+										<li><a href="#" data-pix="pixicon-paragraph" class="pix_icon_elm"><i class='pixicon-paragraph'></i> paragraph</a></li>
+										<li><a href="#" data-pix="pixicon-align-justify" class="pix_icon_elm"><i class='pixicon-align-justify'></i> align-justify</a></li>
+										<li><a href="#" data-pix="pixicon-align-left" class="pix_icon_elm"><i class='pixicon-align-left'></i> align-left</a></li>
+										<li><a href="#" data-pix="pixicon-align-center" class="pix_icon_elm"><i class='pixicon-align-center'></i> align-center</a></li>
+										<li><a href="#" data-pix="pixicon-align-right" class="pix_icon_elm"><i class='pixicon-align-right'></i> align-right</a></li>
+										<li><a href="#" data-pix="pixicon-book" class="pix_icon_elm"><i class='pixicon-book'></i> book</a></li>
+										<li><a href="#" data-pix="pixicon-layers2" class="pix_icon_elm"><i class='pixicon-layers2'></i> layers2</a></li>
+										<li><a href="#" data-pix="pixicon-stack2" class="pix_icon_elm"><i class='pixicon-stack2'></i> stack2</a></li>
+										<li><a href="#" data-pix="pixicon-stack-2" class="pix_icon_elm"><i class='pixicon-stack-2'></i> stack-2</a></li>
+										<li><a href="#" data-pix="pixicon-paper" class="pix_icon_elm"><i class='pixicon-paper'></i> paper</a></li>
+										<li><a href="#" data-pix="pixicon-paper-stack" class="pix_icon_elm"><i class='pixicon-paper-stack'></i> paper-stack</a></li>
+										<li><a href="#" data-pix="pixicon-search3" class="pix_icon_elm"><i class='pixicon-search3'></i> search3</a></li>
+										<li><a href="#" data-pix="pixicon-zoom-in" class="pix_icon_elm"><i class='pixicon-zoom-in'></i> zoom-in</a></li>
+										<li><a href="#" data-pix="pixicon-zoom-out" class="pix_icon_elm"><i class='pixicon-zoom-out'></i> zoom-out</a></li>
+										<li><a href="#" data-pix="pixicon-reply" class="pix_icon_elm"><i class='pixicon-reply'></i> reply</a></li>
+										<li><a href="#" data-pix="pixicon-circle-plus" class="pix_icon_elm"><i class='pixicon-circle-plus'></i> circle-plus</a></li>
+										<li><a href="#" data-pix="pixicon-circle-minus" class="pix_icon_elm"><i class='pixicon-circle-minus'></i> circle-minus</a></li>
+										<li><a href="#" data-pix="pixicon-circle-check" class="pix_icon_elm"><i class='pixicon-circle-check'></i> circle-check</a></li>
+										<li><a href="#" data-pix="pixicon-circle-cross" class="pix_icon_elm"><i class='pixicon-circle-cross'></i> circle-cross</a></li>
+										<li><a href="#" data-pix="pixicon-square-plus" class="pix_icon_elm"><i class='pixicon-square-plus'></i> square-plus</a></li>
+										<li><a href="#" data-pix="pixicon-square-minus" class="pix_icon_elm"><i class='pixicon-square-minus'></i> square-minus</a></li>
+										<li><a href="#" data-pix="pixicon-square-check" class="pix_icon_elm"><i class='pixicon-square-check'></i> square-check</a></li>
+										<li><a href="#" data-pix="pixicon-square-cross" class="pix_icon_elm"><i class='pixicon-square-cross'></i> square-cross</a></li>
+										<li><a href="#" data-pix="pixicon-microphone" class="pix_icon_elm"><i class='pixicon-microphone'></i> microphone</a></li>
+										<li><a href="#" data-pix="pixicon-record" class="pix_icon_elm"><i class='pixicon-record'></i> record</a></li>
+										<li><a href="#" data-pix="pixicon-skip-back" class="pix_icon_elm"><i class='pixicon-skip-back'></i> skip-back</a></li>
+										<li><a href="#" data-pix="pixicon-rewind" class="pix_icon_elm"><i class='pixicon-rewind'></i> rewind</a></li>
+										<li><a href="#" data-pix="pixicon-play3" class="pix_icon_elm"><i class='pixicon-play3'></i> play3</a></li>
+										<li><a href="#" data-pix="pixicon-pause" class="pix_icon_elm"><i class='pixicon-pause'></i> pause</a></li>
+										<li><a href="#" data-pix="pixicon-stop" class="pix_icon_elm"><i class='pixicon-stop'></i> stop</a></li>
+										<li><a href="#" data-pix="pixicon-fast-forward" class="pix_icon_elm"><i class='pixicon-fast-forward'></i> fast-forward</a></li>
+										<li><a href="#" data-pix="pixicon-skip-forward" class="pix_icon_elm"><i class='pixicon-skip-forward'></i> skip-forward</a></li>
+										<li><a href="#" data-pix="pixicon-shuffle2" class="pix_icon_elm"><i class='pixicon-shuffle2'></i> shuffle2</a></li>
+										<li><a href="#" data-pix="pixicon-repeat2" class="pix_icon_elm"><i class='pixicon-repeat2'></i> repeat2</a></li>
+										<li><a href="#" data-pix="pixicon-folder3" class="pix_icon_elm"><i class='pixicon-folder3'></i> folder3</a></li>
+										<li><a href="#" data-pix="pixicon-umbrella2" class="pix_icon_elm"><i class='pixicon-umbrella2'></i> umbrella2</a></li>
+										<li><a href="#" data-pix="pixicon-moon3" class="pix_icon_elm"><i class='pixicon-moon3'></i> moon3</a></li>
+										<li><a href="#" data-pix="pixicon-thermometer" class="pix_icon_elm"><i class='pixicon-thermometer'></i> thermometer</a></li>
+										<li><a href="#" data-pix="pixicon-drop2" class="pix_icon_elm"><i class='pixicon-drop2'></i> drop2</a></li>
+										<li><a href="#" data-pix="pixicon-sun3" class="pix_icon_elm"><i class='pixicon-sun3'></i> sun3</a></li>
+										<li><a href="#" data-pix="pixicon-cloud3" class="pix_icon_elm"><i class='pixicon-cloud3'></i> cloud3</a></li>
+										<li><a href="#" data-pix="pixicon-cloud-upload2" class="pix_icon_elm"><i class='pixicon-cloud-upload2'></i> cloud-upload2</a></li>
+										<li><a href="#" data-pix="pixicon-cloud-download2" class="pix_icon_elm"><i class='pixicon-cloud-download2'></i> cloud-download2</a></li>
+										<li><a href="#" data-pix="pixicon-upload22" class="pix_icon_elm"><i class='pixicon-upload22'></i> upload22</a></li>
+										<li><a href="#" data-pix="pixicon-download22" class="pix_icon_elm"><i class='pixicon-download22'></i> download22</a></li>
+										<li><a href="#" data-pix="pixicon-location2" class="pix_icon_elm"><i class='pixicon-location2'></i> location2</a></li>
+										<li><a href="#" data-pix="pixicon-location-2" class="pix_icon_elm"><i class='pixicon-location-2'></i> location-2</a></li>
+										<li><a href="#" data-pix="pixicon-map22" class="pix_icon_elm"><i class='pixicon-map22'></i> map22</a></li>
+										<li><a href="#" data-pix="pixicon-battery2" class="pix_icon_elm"><i class='pixicon-battery2'></i> battery2</a></li>
+										<li><a href="#" data-pix="pixicon-head" class="pix_icon_elm"><i class='pixicon-head'></i> head</a></li>
+										<li><a href="#" data-pix="pixicon-briefcase2" class="pix_icon_elm"><i class='pixicon-briefcase2'></i> briefcase2</a></li>
+										<li><a href="#" data-pix="pixicon-speech-bubble" class="pix_icon_elm"><i class='pixicon-speech-bubble'></i> speech-bubble</a></li>
+										<li><a href="#" data-pix="pixicon-anchor22" class="pix_icon_elm"><i class='pixicon-anchor22'></i> anchor22</a></li>
+										<li><a href="#" data-pix="pixicon-globe2" class="pix_icon_elm"><i class='pixicon-globe2'></i> globe2</a></li>
+										<li><a href="#" data-pix="pixicon-box" class="pix_icon_elm"><i class='pixicon-box'></i> box</a></li>
+										<li><a href="#" data-pix="pixicon-reload" class="pix_icon_elm"><i class='pixicon-reload'></i> reload</a></li>
+										<li><a href="#" data-pix="pixicon-share2" class="pix_icon_elm"><i class='pixicon-share2'></i> share2</a></li>
+										<li><a href="#" data-pix="pixicon-marquee" class="pix_icon_elm"><i class='pixicon-marquee'></i> marquee</a></li>
+										<li><a href="#" data-pix="pixicon-marquee-plus" class="pix_icon_elm"><i class='pixicon-marquee-plus'></i> marquee-plus</a></li>
+										<li><a href="#" data-pix="pixicon-marquee-minus" class="pix_icon_elm"><i class='pixicon-marquee-minus'></i> marquee-minus</a></li>
+										<li><a href="#" data-pix="pixicon-tag2" class="pix_icon_elm"><i class='pixicon-tag2'></i> tag2</a></li>
+										<li><a href="#" data-pix="pixicon-power2" class="pix_icon_elm"><i class='pixicon-power2'></i> power2</a></li>
+										<li><a href="#" data-pix="pixicon-command" class="pix_icon_elm"><i class='pixicon-command'></i> command</a></li>
+										<li><a href="#" data-pix="pixicon-alt" class="pix_icon_elm"><i class='pixicon-alt'></i> alt</a></li>
+										<li><a href="#" data-pix="pixicon-esc" class="pix_icon_elm"><i class='pixicon-esc'></i> esc</a></li>
+										<li><a href="#" data-pix="pixicon-bar-graph" class="pix_icon_elm"><i class='pixicon-bar-graph'></i> bar-graph</a></li>
+										<li><a href="#" data-pix="pixicon-bar-graph-2" class="pix_icon_elm"><i class='pixicon-bar-graph-2'></i> bar-graph-2</a></li>
+										<li><a href="#" data-pix="pixicon-pie-graph" class="pix_icon_elm"><i class='pixicon-pie-graph'></i> pie-graph</a></li>
+										<li><a href="#" data-pix="pixicon-star2" class="pix_icon_elm"><i class='pixicon-star2'></i> star2</a></li>
+										<li><a href="#" data-pix="pixicon-arrow-left" class="pix_icon_elm"><i class='pixicon-arrow-left'></i> arrow-left</a></li>
+										<li><a href="#" data-pix="pixicon-arrow-right" class="pix_icon_elm"><i class='pixicon-arrow-right'></i> arrow-right</a></li>
+										<li><a href="#" data-pix="pixicon-arrow-up" class="pix_icon_elm"><i class='pixicon-arrow-up'></i> arrow-up</a></li>
+										<li><a href="#" data-pix="pixicon-arrow-down" class="pix_icon_elm"><i class='pixicon-arrow-down'></i> arrow-down</a></li>
+										<li><a href="#" data-pix="pixicon-volume3" class="pix_icon_elm"><i class='pixicon-volume3'></i> volume3</a></li>
+										<li><a href="#" data-pix="pixicon-mute2" class="pix_icon_elm"><i class='pixicon-mute2'></i> mute2</a></li>
+										<li><a href="#" data-pix="pixicon-content-right" class="pix_icon_elm"><i class='pixicon-content-right'></i> content-right</a></li>
+										<li><a href="#" data-pix="pixicon-content-left" class="pix_icon_elm"><i class='pixicon-content-left'></i> content-left</a></li>
+										<li><a href="#" data-pix="pixicon-grid2" class="pix_icon_elm"><i class='pixicon-grid2'></i> grid2</a></li>
+										<li><a href="#" data-pix="pixicon-grid-2" class="pix_icon_elm"><i class='pixicon-grid-2'></i> grid-2</a></li>
+										<li><a href="#" data-pix="pixicon-columns" class="pix_icon_elm"><i class='pixicon-columns'></i> columns</a></li>
+										<li><a href="#" data-pix="pixicon-loader" class="pix_icon_elm"><i class='pixicon-loader'></i> loader</a></li>
+										<li><a href="#" data-pix="pixicon-bag" class="pix_icon_elm"><i class='pixicon-bag'></i> bag</a></li>
+										<li><a href="#" data-pix="pixicon-ban" class="pix_icon_elm"><i class='pixicon-ban'></i> ban</a></li>
+										<li><a href="#" data-pix="pixicon-flag22" class="pix_icon_elm"><i class='pixicon-flag22'></i> flag22</a></li>
+										<li><a href="#" data-pix="pixicon-trash2" class="pix_icon_elm"><i class='pixicon-trash2'></i> trash2</a></li>
+										<li><a href="#" data-pix="pixicon-expand2" class="pix_icon_elm"><i class='pixicon-expand2'></i> expand2</a></li>
+										<li><a href="#" data-pix="pixicon-contract" class="pix_icon_elm"><i class='pixicon-contract'></i> contract</a></li>
+										<li><a href="#" data-pix="pixicon-maximize" class="pix_icon_elm"><i class='pixicon-maximize'></i> maximize</a></li>
+										<li><a href="#" data-pix="pixicon-minimize" class="pix_icon_elm"><i class='pixicon-minimize'></i> minimize</a></li>
+										<li><a href="#" data-pix="pixicon-plus3" class="pix_icon_elm"><i class='pixicon-plus3'></i> plus3</a></li>
+										<li><a href="#" data-pix="pixicon-minus" class="pix_icon_elm"><i class='pixicon-minus'></i> minus</a></li>
+										<li><a href="#" data-pix="pixicon-check2" class="pix_icon_elm"><i class='pixicon-check2'></i> check2</a></li>
+										<li><a href="#" data-pix="pixicon-cross" class="pix_icon_elm"><i class='pixicon-cross'></i> cross</a></li>
+										<li><a href="#" data-pix="pixicon-move" class="pix_icon_elm"><i class='pixicon-move'></i> move</a></li>
+										<li><a href="#" data-pix="pixicon-delete" class="pix_icon_elm"><i class='pixicon-delete'></i> delete</a></li>
+										<li><a href="#" data-pix="pixicon-menu2" class="pix_icon_elm"><i class='pixicon-menu2'></i> menu2</a></li>
+										<li><a href="#" data-pix="pixicon-archive" class="pix_icon_elm"><i class='pixicon-archive'></i> archive</a></li>
+										<li><a href="#" data-pix="pixicon-inbox" class="pix_icon_elm"><i class='pixicon-inbox'></i> inbox</a></li>
+										<li><a href="#" data-pix="pixicon-outbox" class="pix_icon_elm"><i class='pixicon-outbox'></i> outbox</a></li>
+										<li><a href="#" data-pix="pixicon-file2" class="pix_icon_elm"><i class='pixicon-file2'></i> file2</a></li>
+										<li><a href="#" data-pix="pixicon-file-add" class="pix_icon_elm"><i class='pixicon-file-add'></i> file-add</a></li>
+										<li><a href="#" data-pix="pixicon-file-subtract" class="pix_icon_elm"><i class='pixicon-file-subtract'></i> file-subtract</a></li>
+										<li><a href="#" data-pix="pixicon-help" class="pix_icon_elm"><i class='pixicon-help'></i> help</a></li>
+										<li><a href="#" data-pix="pixicon-open" class="pix_icon_elm"><i class='pixicon-open'></i> open</a></li>
+										<li><a href="#" data-pix="pixicon-ellipsis" class="pix_icon_elm"><i class='pixicon-ellipsis'></i> ellipsis</a></li>
+			                        </ul>
+			                    </div>
+			                </div>
+		                </div>
+	                </div>
+
+
+					
+				</div>
+				<div class="clearfix"></div>
+				<div class="modal-footer">
+					<button class="pix-btn-primary pix_dark_gray_bg pix_md_btn" data-dismiss="modal" aria-hidden="true">
+						Close
+					</button>
+					<button class="pix-btn-primary pix_green_bg pix_md_btn save_btn" type="button" data-dismiss="modal" id="pix_icon_save">
+						Save changes
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="pix_field_modal" class="pix_modal pixbuilder modal fade" data-easein="fadeIn" tabindex="-1" role="dialog" aria-labelledby="costumModalLabel" aria-hidden="false" data-backdrop="static">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close pix_close" data-dismiss="modal" aria-hidden="true">
+						<i class="material-icons">close</i>
+					</button>
+                    <div class="pix_modal_icon">
+                        <i class="material-icons">settings_applications</i>
+                    </div>
+                    <h5 class="modal-title" id="costumModalLabel">
+                        Field Settings
+                    </h5>
+				</div>
+				<div class="modal-body">
+
+					<div id="pix_input_field_settings" class="pix_fields_modals">
+<!--						<input type="hidden" id="pageData_id" value="">-->
+						<div class="form-group">
+							<label for="name" class="control-label pix_seo_label">Field Name:</label>
+							<input type="text" class="form-control" id="pix_input_field_name" name="" placeholder="" value="">
+						</div>
+						<div class="form-group">
+							<label for="name" class="control-label pix_seo_label">Field Placeholder:</label>
+							<input type="text" class="form-control" id="pix_input_field_place" name="" placeholder="" value="">
+						</div>
+						<div class="checkbox">
+							<label>
+								<input id="pix_input_required" type="checkbox"> Required Field.
+							</label>
+						</div>
+					</div>
+                    <div id="pix_txt_field_settings" class="pix_fields_modals">
+                        <div class="form-group">
+                            <label for="name" class="control-label pix_seo_label">Field Name:</label>
+                            <input type="text" class="form-control" id="pix_txt_field_name" name="" placeholder="" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="control-label pix_seo_label">Field Placeholder:</label>
+                            <input type="text" class="form-control" id="pix_txt_field_place" name="" placeholder="" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="control-label pix_seo_label">Rows:</label>
+                            <input type="text" class="form-control" id="pix_txt_field_rows" name="" placeholder="" value="">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input id="pix_txt_required"  type="checkbox"> Required Field.
+                            </label>
+                        </div>
+                    </div>
+                    <div id="pix_check_field_settings" class="pix_fields_modals">
+                        <div class="form-group">
+                            <label for="pix_check_name" class="control-label">Check item name:</label>
+                            <input type="text" class="form-control" id="pix_check_name" name="" placeholder="" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="pix_check_value" class="control-label">Check item value:</label>
+                            <input type="text" class="form-control" id="pix_check_value" name="" placeholder="" value="">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input id="pix_check_required" type="checkbox"> Required to check.
+                            </label>
+                        </div>
+                    </div>
+                    <div id="pix_radio_field_settings" class="pix_fields_modals">
+                        <div class="form-group">
+                            <label for="pix_radio_name" class="control-label">Radio group name:</label>
+                            <input type="text" class="form-control" id="pix_radio_name" name="" placeholder="" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="pix_radio_value" class="control-label">Check item value:</label>
+                            <input type="text" class="form-control" id="pix_radio_value" name="" placeholder="" value="">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input id="pix_radio_required" type="checkbox"> Required Field.
+                            </label>
+                        </div>
+                    </div>
+                    <div id="pix_select_field_settings" class="pix_fields_modals">
+                        <div class="form-group">
+                            <label for="pix_radio_name" class="control-label">Select options:</label>
+                            <textarea type="text" class="form-control" id="pix_select_options" name="" placeholder=""></textarea>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input id="pix_select_required" type="checkbox"> Required Field.
+                            </label>
+                        </div>
+                    </div>
+
+				</div>
+				<div class="modal-footer">
+					<!-- <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">
+						Cancel
+					</button>
+					<button class="btn btn-primary save_btn" id="pix_field_settings_save" type="button" data-dismiss="modal">
+						Save changes
+					</button> -->
+					<button class="pix-btn-primary pix_dark_gray_bg pix_md_btn" data-dismiss="modal" aria-hidden="true">
+						Close
+					</button>
+					<button class="pix-btn-primary pix_green_bg pix_md_btn save_btn" type="button" data-dismiss="modal" id="pix_field_settings_save">
+						Save changes
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+    <div id="pix_add_popups" class="pix_modal pixbuilder modal fade" data-easein="fadeIn" tabindex="-1" role="dialog" aria-labelledby="costumModalLabel" aria-hidden="false">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close pix_close" data-dismiss="modal" aria-hidden="true">
+						<i class="material-icons">close</i>
+					</button>
+                    <div class="pix_modal_icon">
+                        <i class="material-icons">library_books</i>
+                    </div>
+                    <h5 class="modal-title" id="costumModalLabel">
+                        Popups
+                    </h5>
+				</div>
+				<div class="modal-body">
+                    <div class="pix_small_content_window scrollbar-macosx">
+                        <div id="pix_popups">
+                        	<div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="1">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/1.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="2">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/2.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="3">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/3.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="4">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/4.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="5">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/5.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="6">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/6.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="7">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/7.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="8">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/8.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="9">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/9.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="10">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/10.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="11">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/11.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="12">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/12.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="13">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/13.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="14">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/14.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="15">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/15.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="16">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/16.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="17">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/17.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="18">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/18.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="19">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/19.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="20">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/20.png">
+                                    </a>
+                                </div><div class="col-md-3 pix_img_div">
+                                    <a class="pix_g_img pix_popup_img" href="#" data-popup-id="21">
+                                        <img src="https://pixfort.com/items/1/popups/thumbs/21.png">
+                                    </a>
+                                </div>                        </div>
+                    </div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="modal-footer">
+					<button class="pix-btn-primary pix_dark_gray_bg pix_md_btn" data-dismiss="modal" aria-hidden="true">
+						Close
+					</button>
+					<button class="pix-btn-primary pix_green_bg pix_md_btn" id="pix_add_popup" data-dismiss="modal" aria-hidden="true" data-return="">
+						Add
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- Custom context menus -->
+<ul id='pix_img_menu' class='custom-menu'>
+    <li data-action="pix_img_edit"><i class="fa fa-floppy-o" aria-hidden="true"></i> Change Image</li>
+</ul>
+<ul id='pix_link_menu' class='custom-menu'>
+    <li data-action="pix_link_edit"><i class="material-icons">link</i> Edit link</li>
+</ul>
+
+<ul id='pix_context_menu' class='custom-menu btn-group-vertical' role="group">
+    <li class="pix_menu_item pix_image_menu" data-action="pix_img_edit"><i class="material-icons">collections</i> Change Image</li>
+    <li class="pix_menu_item pix_link_menu" data-action="pix_link_edit"><i class="material-icons">link</i> Edit link</li>
+    <li class="pix_menu_item pix_link_menu_parent" data-action="pix_link_edit_parent"><i class="material-icons">link</i> Edit link</li>
+    <li class="pix_menu_item pix_button_menu" data-action="pix_button_edit"><i class="fa fa-floppy-o" aria-hidden="true"></i> Edit Button</li>
+    <li class="pix_menu_item pix_icon_menu" data-action="pix_icon_edit"><i class="material-icons">filter_vintage</i> Edit Icon</li>
+
+
+    <li class="pix_menu_item pix_element_menu" data-action="pix_element_duplicate"><i class="material-icons">filter_none</i> Duplicate</li>
+    <li class="pix_menu_item pix_element_menu" data-action="pix_element_delete"><i class="material-icons">delete</i> Delete</li>
+
+    <li class="pix_menu_item pix_field_input" data-action="pix_field_settings_in">Field Settings</li>
+    <li class="pix_menu_item pix_field_text" data-action="pix_field_settings_txt">Message Settings</li>
+    <li class="pix_menu_item pix_field_check" data-action="pix_field_settings_check">Checkbox Settings</li>
+    <li class="pix_menu_item pix_field_radio" data-action="pix_field_settings_radio">Radio Settings</li>
+
+    <li class="pix_menu_item pix_form_menu" data-action="pix_field_delete">Remove Field</li>
+</ul>
+
+<!-- PIXBUILDER Main Area -->
+<div class="pix_empty">
+    <div id="f1">
+        <div id="f2">
+            <div id="f3">
+                <div id="firas" class="page-body">
+
+                    <div id="pixGrid" data-page="" class="page-body">
+                        <div class="pix_section pix_nav_menu pix_scroll_header normal pix-padding-v-10" data-scroll-bg="#fff">
+  <div class="container">
+   <div class="row">
+    <div class="col-md-10 col-xs-12 pix-inner-col col-sm-10">
+     <div class="pix-content">
+      <nav class="navbar navbar-default pix-no-margin-bottom pix-navbar-default">
+       <div class="container-fluid">
+        <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#pix-navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand logo-img logo-img-a pix-adjust-height" href="#"><img src="images/main/logo-big.png" alt="" class="img-responsive pix-logo-img"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="pix-navbar-collapse">
+         <ul class="nav navbar-nav navbar-right media-middle pix-header-nav pix-adjust-height" id="pix-header-nav">
+          <li class="dropdown"><a href="#" class="pix-gray">FEATURES</a>
+          </li>
+          <li class="dropdown">
+           <a href="#" class="dropdown-toggle pix-gray" data-toggle="dropdown">
+            DROPDOWN
+           </a>
+           <ul class="dropdown-menu dropdown-menu-left">
+            <li><a href="#" class="null" data-toggle="null">Menu Builder</a>
+            </li>
+            <li><a href="#" class="null" data-toggle="null">Custom Link</a>
+            </li>
+            <li><a href="#" class="null" data-toggle="null">Integrations</a>
+            </li>
+           </ul>
+          </li>
+          <li class="dropdown"><a href="#" class="pix-gray">CONTACT</a></li>
+         </ul>
+        </div>
+       </div>
+      </nav>
+     </div>
+    </div>
+    <div class="col-md-2 col-xs-12 pix-inner-col col-sm-2">
+     <div class="pix-content pix-adjust-height text-right" id="pix-header-btn">
+      <div class="pix-header-item2 pix-padding-v-10">
+       <a href="#" class="btn green-bg btn-flat btn-md pix-white small-text btn-round-lg">
+        <span class="pix_edit_text">
+         <strong>Order Now</strong>
+        </span>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <div class="pix_section pix-padding-v-130 pix-seo-1">
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12 col-xs-12">
+     <div class="pix-content text-center pix-padding-bottom-30 ">
+      <h1 class="pix-white text-center pix-no-margin-top">
+       <span class="pix_edit_text"><strong>Get Better Results Today</strong></span>
+      </h1>
+      <p class="pix-orange-2 big-text-20 text-center pix-margin-bottom-30 pix-md-width-text">
+       <span class="pix_edit_text">We provides you with user management functionality that results in faster development, faster revenue, more users, and the ability to serve your users.</span>
+      </p>
+      <div>
+       <a href="#" class="btn btn-xl green-bg pix-white btn-round-lg btn-flat wide">
+        <span class="pix_edit_text">
+         <strong>Order SEO Services</strong>
+        </span>
+       </a>
+      </div>
+      
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <div class="pix_section pix-padding">
+  <div class="container">
+   <div class="row">
+    <div class="col-md-7 col-xs-12">
+     <div class="pix-content">
+      <h1 class="pix-black-gray-dark pix-no-margin-top pix-sm-lineheight">
+       <span class="pix_edit_text"><strong>The best Headings Are the Biggest Ones!</strong></span>
+      </h1>
+      <h5 class="pix-black-gray-light">
+       <span class="pix_edit_text">From logo design to website designs and developers are ready to complete perfect your custom jobs.</span>
+      </h5>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <div class="pix_section pix-padding-v-30">
+  <div class="container">
+   <div class="row">
+    <div class="col-md-6 col-xs-12">
+     <div class="pix-content pix-margin-v-30">
+      <div class="media">
+       <div class="media-left media-middle">
+        <span class="pix-margin-bottom-10">
+         <img src="images/seo/icon-1.png" alt="">
+        </span>
+       </div>
+       <div class="media-body media-middle">
+        <div class="pix-padding-left-5">
+         <h5 class="media-heading pix-black-gray-dark pix-no-margin-bottom">
+          <span class="pix_edit_text">
+           <strong>Improve Website Speed</strong>
+          </span>
+         </h5>
+         <p class="pix-black-gray-light">
+          <span class="pix_edit_text">Here's a free video course on how to install WordPress, add new content, use themes.</span>
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="col-md-6 col-xs-12">
+     <div class="pix-content pix-margin-v-30">
+      <div class="media">
+       <div class="media-left media-middle">
+        <span class="pix-margin-bottom-10">
+         <img src="images/seo/icon-2.png" alt="">
+        </span>
+       </div>
+       <div class="media-body media-middle">
+        <div class="pix-padding-left-5">
+         <h5 class="media-heading pix-black-gray-dark pix-no-margin-bottom">
+          <span class="pix_edit_text">
+           <strong>Save Your Money</strong>
+          </span>
+         </h5>
+         <p class="pix-black-gray-light">
+          <span class="pix_edit_text">Here's a free video course on how to install WordPress, add new content, use themes.</span>
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="col-md-6 col-xs-12">
+     <div class="pix-content pix-margin-v-30">
+      <div class="media">
+       <div class="media-left media-middle">
+        <span class="pix-margin-bottom-10">
+         <img src="images/seo/icon-3.png" alt="">
+        </span>
+       </div>
+       <div class="media-body media-middle">
+        <div class="pix-padding-left-5">
+         <h5 class="media-heading pix-black-gray-dark pix-no-margin-bottom">
+          <span class="pix_edit_text">
+           <strong>Get More Leads</strong>
+          </span>
+         </h5>
+         <p class="pix-black-gray-light">
+          <span class="pix_edit_text">Here's a free video course on how to install WordPress, add new content, use themes.</span>
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="col-md-6 col-xs-12">
+     <div class="pix-content pix-margin-v-30">
+      <div class="media">
+       <div class="media-left media-middle">
+        <span class="pix-margin-bottom-10">
+         <img src="images/seo/icon-4.png" alt="">
+        </span>
+       </div>
+       <div class="media-body media-middle">
+        <div class="pix-padding-left-5">
+         <h5 class="media-heading pix-black-gray-dark pix-no-margin-bottom">
+          <span class="pix_edit_text">
+           <strong>Rating Improvement</strong>
+          </span>
+         </h5>
+         <p class="pix-black-gray-light">
+          <span class="pix_edit_text">Here's a free video course on how to install WordPress, add new content, use themes.</span>
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+
+   </div>
+  </div>
+ </div>
+
+ <div class="pix_section pix-padding gray-bg">
+  <div class="container">
+   <div class="row">
+    <div class="col-md-7 col-xs-12">
+     <div class="pix-content">
+      <h1 class="pix-black-gray-dark pix-no-margin-top pix-sm-lineheight">
+       <span class="pix_edit_text"><strong>We Create Advanced & Creative Landings!</strong></span>
+      </h1>
+      <h5 class="pix-black-gray-light">
+       <span class="pix_edit_text">From logo design to website designers & devs ready to work on your next projects.</span>
+      </h5>
+     </div>
+    </div>
+    <div class="col-md-6 col-xs-12">
+     <div class="pix-content pix-radius-3 orange-bg pix-padding-h-20 pix-padding-v-20 pix-margin-v-30">
+      <h2 class="pix-white pix-no-margin-top">
+       <span class="pix_edit_text"><strong>Create High Quality Landing Pages.</strong></span>
+      </h2>
+      <p class="pix-orange-2 pix-margin-bottom-20 big-text">
+       <span class="pix_edit_text">Here's a free video course made by our team on how to install Unbounce template and add new content.</span>
+      </p>
+      <a href="#" class="btn btn-md green-bg pix-white btn-round-lg btn-flat pix-margin-bottom-20">
+       <span class="pix_edit_text">
+        <strong>Order Now</strong>
+       </span>
+      </a>
+     </div>
+    </div>
+    <div class="col-md-6 col-xs-12">
+     <div class="pix-content pix-radius-3 green-bg pix-padding-h-20 pix-padding-v-20 pix-margin-v-30">
+      <h2 class="pix-white pix-no-margin-top">
+       <span class="pix_edit_text"><strong>The Most Advanced Builder in Market.</strong></span>
+      </h2>
+      <p class="pix-green-2 pix-margin-bottom-20 big-text">
+       <span class="pix_edit_text">Here's a free video course made by our team on how to install Unbounce template and add new content.</span>
+      </p>
+      <a href="#" class="btn btn-md orange-bg pix-white btn-round-lg btn-flat pix-margin-bottom-20">
+       <span class="pix_edit_text">
+        <strong>Order Now</strong>
+       </span>
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <div class="pix_section pix-padding">
+  <div class="container">
+   <div class="row">
+    <div class="col-md-6 col-xs-12 text-center">
+     <img src="images/seo/promo-left-seo.png" alt="" class="img-responsive">
+    </div>
+    <div class="col-md-6 col-xs-12">
+     <div class="pix-content pix-padding-top-60">
+      <h2 class="pix-black-gray-dark pix-margin-top-30 pix-no-margin-bottom">
+       <span class="pix_edit_text"><strong>Creating Landing Page Has Never Been Easier!</strong></span>
+      </h2>
+      <h4 class="pix-black-gray-dark pix-no-margin-top">
+       <span class="pix_edit_text">We are a group of designer and developers with super skills.</span>
+      </h4>
+      <p class="pix-black-gray-light big-text pix-margin-bottom-10">
+       <span class="pix_edit_text">
+        We provides you with user management functionality that results in faster development, faster revenue, more users, and the ability to serve your users better by engaging with them more efficiently.
+       </span>
+      </p>
+      <a href="#" class="btn btn-lg green-bg pix-white btn-round-lg btn-flat wide pix-margin-right-10 pix-margin-top-10">
+       <span class="pix_edit_text">
+        <strong>Download App</strong>
+       </span>
+      </a>
+      <a href="#" class="btn btn-lg orange-bg pix-white btn-round-lg btn-flat wide pix-margin-right-10 pix-margin-top-10">
+       <span class="pix_edit_text">
+        <strong>Live Preview</strong>
+       </span>
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <div class="pix_section pix-padding-v-50 gray-bg">
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12 col-xs-12">
+     <div class="pix-content pix-xs-width-text">
+      <h1 class="pix-black-gray-dark pix-no-margin-top pix-sm-lineheight">
+       <span class="pix_edit_text"><strong>Save Money With Awesome Prices!</strong></span>
+      </h1>
+      <h5 class="pix-black-gray-light">
+       <span class="pix_edit_text">From logo design to website designers & devs ready to work on your next projects.</span>
+      </h5>
+     </div>
+    </div>
+    <div class="col-md-4 col-xs-12">
+     <div class="pix-content pix-radius-3 white-bg pix-padding-h-20 pix-padding-v-30 text-center pix-margin-v-20">
+      <h1 class="pix-green pix-no-margin-top">
+       <span class="pix_edit_text"><strong>$9.99</strong></span>
+      </h1>
+      <h5 class="pix-black-gray-dark pix-no-margin-top">
+       <span class="pix_edit_text"><strong>Small Plan</strong></span>
+      </h5>
+      <p class="pix-black-gray-light big-line-height big-text">
+       <span class="pix_edit_text">
+        1 Landing Page<br>
+        1 GB Storage<br>
+        Free Domain<br>
+        250 Page Views<br>
+       </span>
+      </p>
+      <a href="#" class="btn btn-md orange-bg pix-white btn-round-lg btn-flat pix-margin-right-10 pix-margin-top-10">
+       <span class="pix_edit_text">
+        <strong>Order Now</strong>
+       </span>
+      </a>
+     </div>
+    </div>
+    <div class="col-md-4 col-xs-12">
+     <div class="pix-content pix-radius-3 orange-bg pix-padding-h-20 pix-padding-v-30 text-center pix-margin-v-20">
+      <h1 class="pix-white pix-no-margin-top">
+       <span class="pix_edit_text"><strong>$14.99</strong></span>
+      </h1>
+      <h5 class="pix-white pix-no-margin-top">
+       <span class="pix_edit_text"><strong>Personal Plan</strong></span>
+      </h5>
+      <p class="pix-orange-2 big-line-height big-text">
+       <span class="pix_edit_text">
+        3 Landing Page<br>
+        5 GB Storage<br>
+        Free Domain<br>
+        500 Page Views<br>
+       </span>
+      </p>
+      <a href="#" class="btn btn-md green-bg pix-white btn-round-lg btn-flat pix-margin-right-10 pix-margin-top-10">
+       <span class="pix_edit_text">
+        <strong>Order Now</strong>
+       </span>
+      </a>
+     </div>
+    </div>
+    <div class="col-md-4 col-xs-12">
+     <div class="pix-content pix-radius-3 white-bg pix-padding-h-20 pix-padding-v-30 text-center pix-margin-v-20">
+      <h1 class="pix-green pix-no-margin-top">
+       <span class="pix_edit_text"><strong>$29.99</strong></span>
+      </h1>
+      <h5 class="pix-black-gray-dark pix-no-margin-top">
+       <span class="pix_edit_text"><strong>Corporate Plan</strong></span>
+      </h5>
+      <p class="pix-black-gray-light big-line-height big-text">
+       <span class="pix_edit_text">
+        5 Landing Page<br>
+        10 GB Storage<br>
+        Free Domain<br>
+        1000 Page Views<br>
+       </span>
+      </p>
+      <a href="#" class="btn btn-md orange-bg pix-white btn-round-lg btn-flat pix-margin-right-10 pix-margin-top-10">
+       <span class="pix_edit_text">
+        <strong>Order Now</strong>
+       </span>
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <div class="pix_section pix-padding-v-50">
+  <div class="container">
+   <div class="row">
+    <div class="col-md-7 col-xs-12">
+     <div class="pix-content pix-xs-width-text pix-padding-top-60">
+      <h1 class="pix-black-gray-dark pix-no-margin-top pix-sm-lineheight">
+       <span class="pix_edit_text"><strong>Download Our Services Today!</strong></span>
+      </h1>
+      <h4 class="pix-black-gray-dark">
+       <span class="pix_edit_text">All templates are available on envato.</span>
+      </h4>
+      <p class="pix-black-gray-light big-text">
+       <span class="pix_edit_text">Here's a free video course made by our team on how to install Unbounce templates and add new content.</span>
+      </p>
+     </div>
+    </div>
+    <div class="col-md-5 col-xs-12">
+     <div class="pix-content green-bg pix-radius-3 pix-padding-v-20 pix-margin-v-30 pix-padding-h-30">
+      <form class="pix-form-style pixfort-form pix-padding-top-30 pix-padding-bottom-15 pix-form-white-bg form-round-lg">
+       <div class="form-group">
+        <input type="text" class="form-control" placeholder="Enter Your Full Name">
+       </div>
+       <div class="form-group">
+        <input type="email" class="form-control" placeholder="Enter Your Email Address" required>
+       </div>
+       <button type="submit" class="btn btn-xl orange-bg pix-white btn-round-lg btn-flat btn-block small-text"><span class="pix_edit_text"><strong>Order SEO Services</strong></span></button>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <div class="pix_section pix-padding-v-75 gray-bg">
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12 col-xs-12">
+     <div class="pix-content">
+      <div class="media">
+       <div class="media-body media-middle media-box-area">
+        <div class="pix-inner">
+         <h1 class="pix-black-gray-dark pix-no-margin-top">
+          <span class="pix_edit_text"><strong>A New CTA is Available!</strong></span>
+         </h1>
+         <p class="pix-black-gray-light big-text-20 pix-no-margin-top pix-no-margin-bottom">
+          <span class="pix_edit_text">Logo design to website designers & devs ready to work on your projects.</span>
+         </p>
+        </div>
+       </div>
+       <div class="media-right media-middle text-center media-box-area">
+        <div class="pix-inner">
+         <a href="#" class="btn btn-lg green-bg pix-white btn-round-lg btn-flat pix-margin-top-10 wide">
+          <span class="pix_edit_text">
+           <strong>Download App</strong>
+          </span>
+         </a>
+        </div>
+       </div>
+      </div>
+      
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <div class="pix_section pix-padding-v-75">
+  <div class="container">
+   <div class="row">
+    <div class="col-md-5 col-xs-12">
+     <div>
+      <a class="" href="#"><img src="images/main/logo-big.png" alt="" class="img-responsive"></a>
+     </div>
+     <div class="clearfix"></div>
+     <div class="pix-padding-v-20">
+      <p class="pix-black-gray-light">
+       <span class="pix_edit_text">
+        <strong>MEGAPACK</strong> provides you with a full user manage functionality that results in revenue.<br><br>
+        MEGAPACK Copyright © 2017 PixFort All Rights Reserved
+       </span>
+      </p>
+     </div>
+     <div class="pix-padding-bottom-20">
+      <a href="#" class="small-social">
+       <i class="pixicon-facebook3 big-icon-50 pix-slight-white"></i>
+      </a>
+      <a href="#" class="small-social">
+       <i class="pixicon-twitter4 big-icon-50 pix-slight-white"></i>
+      </a>
+      <a href="#" class="small-social">
+       <i class="pixicon-instagram4 big-icon-50 pix-slight-white"></i>
+      </a>
+     </div>
+    </div>
+    <div class="col-md-7 col-xs-12">
+     <div class="pix-content pix-radius-3 gray-bg pix-padding-h-20 pix-padding-v-20">
+      <h3 class="pix-black-gray-dark pix-no-margin-top pix-no-margin-bottom">
+       <span class="pix_edit_text"><strong>Order Services Today!</strong></span>
+      </h3>
+      <p class="pix-gray pix-margin-bottom-20 big-text">
+       <span class="pix_edit_text">We provides you with a full user management functionality that results in faster development, revenue, user and the ability.</span>
+      </p>
+      <a href="#" class="btn btn-md orange-bg pix-white btn-round-lg btn-flat pix-margin-bottom-20">
+       <span class="pix_edit_text">
+        <strong>Order Now</strong>
+       </span>
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="pix_start_panel">
+        <div>
+            <a href="#" class="pix_start_btn" data-left-sidebar="sections_panel" data-left-active-btn="add_section">
+                <div class="pix_start_icon"><i class="material-icons">dashboard</i></div>
+                <div class="pix_start_text">Start with Sections</div>
+            </a>
+            <a href="#" class="pix_start_btn" data-left-sidebar="templates_panel" data-left-active-btn="pix_pages">
+                <div class="pix_start_icon"><i class="material-icons">view_carousel</i></div>
+                <div class="pix_start_text">Choose a Template</div>
+            </a>
+
+        </div>
+    </div>
+</div>
+<div id="pix_temp"></div>
+
+
+
+<script type="text/template" id="tpl-page-item">
+    <li class="pix_pages_list_item <%= active_class %>">
+        <div class="pix_item_head">
+            <a class="pix_item_page_name" href="#" data-cid="<%= cid %>">
+                <span class="pix_point"></span> <span class="page_name_span"><%= name %></span>
+            </a>
+            <a class="pix_edit_page_name" href="#" data-cid="<%= cid %>"><i class="material-icons pix_animate_ease">edit</i></a>
+        </div>
+        <div class="pix_item_buttons">
+            <ul class="pix_item_buttons_ul nav-justified">
+                <li>
+                    <a href="#" class="pix_seo_btn" data-cid="<%= cid %>"><span class=""><i class="material-icons">av_timer</i> SEO</span></a>
+                </li>
+                <li>
+                    <a href="#" class="pix_duplicate_btn" data-cid="<%= cid %>"><span class=""><i class="material-icons">filter_none</i> Duplicate</span></a>
+                </li>
+                <li>
+                    <a href="#" class="pix_del_btn" data-cid="<%= cid %>"><span><i class="material-icons">delete</i> Delete</span></a>
+                </li>
+            </ul>
+        </div>
+    </li>
+</script>
+<script type="text/template" id="tpl-seo-popup">
+    <form action="" class="pix-seo-popup">
+        <div class="form-group">
+            <label>Page Title:</label>
+            <input type="text" class="form-control title" value="<%= title %>"/>
+        </div>
+        <div class="form-group">
+            <label>Page Meta Description:</label>
+            <textarea class="form-control page_description" rows="3"><%= page_description %></textarea>
+        </div>
+        <div class="form-group">
+            <label>Page Meta Keywords:</label>
+            <textarea class="form-control page_keywords" rows="3"><%= page_keywords %></textarea>
+        </div>
+        <div class="form-group">
+            <label>Header Includes:</label>
+            <textarea class="form-control page_includes" rows="3"><%= page_includes %></textarea>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12" style="padding:0px;">
+                <label>Google Analytics tracking ID:</label>
+            </div>
+            <div class="col-md-3" style="padding:0px;padding-right:10px;">
+                <img style="width:200px;height:auto;" src="https://pixfort.com/imgs/svg/google_analytics-horizontal.svg">
+            </div>
+            <div class="col-md-9" style="padding:0px;">
+                <input type="text" class="form-control google_tracking" value="<%= google_tracking %>" placeholder="e.g. UA-36285466-2"/>
+            </div>
+            <div class="col-md-12" style="padding:0px;">
+                To find your tracking ID check <a target="_blank" href="http://help.pixfort.com/using-pixfort-builder/miscellaneous/add-google-analytics">this article</a>.
+            </div>
+        </div>
+    </form>
+</script>
+<script type="text/template" id="tpl-gallery-popup">
+    <div id="pix_output_gallery_div">
+        <div class="pix_current_image_div">
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Image URL</label>
+                        <input type="text" class="form-control pix_img_url" id="pix_gallery_modal_url" placeholder="" value="">
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group pix_modal_alt_div">
+                        <label for="exampleInputEmail1">Image alt</label>
+                        <input type="text" class="form-control pix_img_alt" id="pix_gallery_modal_alt" placeholder="Image Alternative" value="">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pix_img_preview text-center"><a data-fancybox="edit_image" href=""><img src=""></a></div>
+                </div>
+            </div>
+        </div><div class="pix_gallery_images" style="display:none;">
+            <div class="pix_small_content_window pix_gallery_scroll scrollbar-macosx">
+                <div id="pix_img_edit_gallery" class="pix_image_modal_imgs"></div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/javascript" src="https://pixfort.com/core/build/plugins/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="https://pixfort.com/core/build/plugins/jquery-ui.js"></script>
+<script type="text/javascript" src="https://pixfort.com/core/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src='https://pixfort.com/core/build/plugins/ace.js'></script>
+<script type="text/javascript" src="https://pixfort.com/core/build/plugins/ext-language_tools.js"></script>
+<script type="text/javascript" src="https://pixfort.com/core/build/pixfort_demo.min.js?v=1.0.5"></script>
+<script>
+    pix_system.init();
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-104971156-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>
